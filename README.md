@@ -241,7 +241,7 @@ tests/      red.py aud.py mon.py hrd.py tool_probe.py judge.py crit.py sum_test.
 mock/       mock_server.py (stdlib OpenAI-compatible stand-in)
 results/    results.csv, raw/ (your run records land here)
 scripts/    export_results.py, sanitize_results.py
-docs/       RESULTS-NOTES.md, excerpts/ (one sanitised excerpt per cited notebook section)
+docs/       RESULTS-NOTES.md, SEATS.md, excerpts/ (one sanitised excerpt per cited notebook section)
 ```
 
 ## License
