@@ -1,0 +1,13 @@
+Hey everyone, today I'm testing Kestrel-9B, a brand new open-weight model from Lumen Labs. It is a mixture of experts model with 9B total parameters and 2.1B active parameters per token, so it should run fast on a modest GPU. The weights were released under a permissive license last week, and I'm running it locally through a llama.cpp server with thinking enabled, which is the default for this model.
+
+Let me say up front that I only had a weekend with it, so these are first impressions, not a benchmark. I ran four tests, and I will go through them in order.
+
+The first test is a terminal snake game in Python. I asked for a complete game in one file using the curses library. Kestrel wrote about 120 lines, and it ran on the first try. The snake moves, the food spawns, and the score is displayed. The only bug was that the game did not end when the snake hit the wall, so I asked it to fix that, and the second version worked. I would call this a pass.
+
+The second test is a CSV deduplication script. I gave it a file with 5,000 rows and asked it to remove duplicate customer records by email address. The first attempt imported pandas, which I did not have installed, and the model's fix was to suggest installing it. When I said no extra dependencies it rewrote the script with the csv module, and the result kept 4,212 unique rows. I checked the count with a one-line shell command and it was right. That is a pass, though it needed one nudge.
+
+The third test was the hard one. I asked for a small multi-file C++ project, a text adventure with a parser, an inventory and a save file. This one failed. The model forgot the header file it had declared, the build produced eleven errors, and after three rounds of me pasting errors back it was still going in circles. I stopped at around forty minutes. I would not trust it for multi-file C++ work yet.
+
+The fourth test was a long-context question. I pasted in a 20 page meeting transcript, about 14,000 tokens, and asked who owned the follow-up on the budget review. It answered correctly, Dana from finance, and it quoted the sentence it used. Prompt processing took about 40 seconds on my machine, and generation ran at roughly 31 tokens per second.
+
+So overall: it is a decent small model. Python scripting is good, the long context retrieval is good, and multi-file C++ is a no. The speed is nice for a 9B model because only 2.1B parameters are active. The license is a real plus. I would use it for small scripts and for reading documents, and I would keep a bigger model around for anything that spans many files. Thanks for watching, and I will do a follow-up once the fine tunes come out.

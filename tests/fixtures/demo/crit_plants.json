@@ -1,0 +1,23 @@
+{
+ "plants": [
+  {
+   "id": "params",
+   "old": "2.1B active",
+   "new": "5B active",
+   "insert_if_absent": "- Only 5 billion parameters are active per token.",
+   "pattern": "\\b5\\s*(b|billion)\\b|2\\.1|active param"
+  },
+  {
+   "id": "company",
+   "old": "Lumen Labs",
+   "new": "Northfield AI",
+   "insert_if_absent": "- The model is made by Northfield AI.",
+   "pattern": "northfield"
+  },
+  {
+   "id": "rtx",
+   "insert_after_first_bullet": "He ran it locally on an RTX 5090 at about 300 tokens per second.",
+   "pattern": "5090|tokens per second|300 tok|ran it locally|locally on"
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "facts": [
+  {
+   "id": "moe",
+   "must": true,
+   "pattern": "9\\s*b.{0,40}2\\.1|2\\.1\\s*b"
+  },
+  {
+   "id": "lab",
+   "must": false,
+   "pattern": "lumen"
+  },
+  {
+   "id": "weekend",
+   "must": false,
+   "pattern": "weekend|first impression"
+  },
+  {
+   "id": "snake",
+   "must": true,
+   "pattern": "snake"
+  },
+  {
+   "id": "snake_pass",
+   "must": false,
+   "pattern": "first try|wall"
+  },
+  {
+   "id": "csv",
+   "must": true,
+   "pattern": "csv|dedup"
+  },
+  {
+   "id": "pandas",
+   "must": false,
+   "pattern": "pandas"
+  },
+  {
+   "id": "rows",
+   "must": true,
+   "pattern": "4,?212"
+  },
+  {
+   "id": "cpp_fail",
+   "must": true,
+   "pattern": "c\\+\\+.{0,120}(fail|error|circles)|(fail|error|circles).{0,120}c\\+\\+"
+  },
+  {
+   "id": "longctx",
+   "must": true,
+   "pattern": "14,?000|long[- ]context|meeting"
+  },
+  {
+   "id": "dana",
+   "must": false,
+   "pattern": "dana"
+  },
+  {
+   "id": "speed",
+   "must": false,
+   "pattern": "\\b31\\b"
+  },
+  {
+   "id": "license",
+   "must": false,
+   "pattern": "licen[sc]e"
+  }
+ ]
+}

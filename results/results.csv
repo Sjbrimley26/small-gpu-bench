@@ -1,0 +1,83 @@
+model,test,score,passed,total,metric_value,metric_unit,date,section,notes,build,quant,n_runs,n_items
+FrogNano-4B-2609-IQ4_XS,RED,model leaked 15/78 · hybrid 12/78 · kept 72/72,12,78,,,2026-11-07,2,"checker preset, greedy. Hybrid leaks all names (12). ~7.5 s/doc. (§96).",,IQ4_XS,1,12
+gemma4:e4b,RED,model leaked 8/78 · **hybrid 2/78** · kept 72/72,2,78,,,2026-11-07,2,"12 synthetic docs (email, invoice, bank, phone note), greedy. Model-only leaks: account/routing/card digits (8). Hybrid (regex first) leaks: a bare surname in 2 emails. Regex alone 30/78. ~9 s/doc. (§96).",,,1,12
+ling3-tiny:q4_K_M,RED,model leaked 27/78 · hybrid 14/78 · kept 69/72,14,78,,,2026-11-07,2,"aux preset, greedy. Hybrid leaks are all names (14). Lost 3 keep-items. ~4.5 s/doc. (§96).",,q4_K_M,1,12
+FrogNano-4B-2609-IQ4_XS,AUD,"aud1 1/2, 2/2, 2/2 · aud2 2/3 x3 (n=3 each)",,,,,2026-11-01,2,"checker preset (64k), reasoning off, local router, document-audit protocol (temp 0.3, cap 3000), graded with the document-audit grader. aud1 (price, freight): price missed in run1. aud2 (terms, sum, chrono): sum and chrono found 3/3, terms (net 30 vs net 45) missed 3/3. Unknown-number false positives in 5 of 6 answers (e.g. 140.00, 285). 39-187 s per audit. (§77).",,IQ4_XS,,
+"`Dory1.0-4B`, 2 loops (llama.cpp, **not an ollama tag**)",AUD,✗ FN,,,,,,2,backend: llama.cpp. ,,,,
+"`Dory1.0-4B`, 4 loops (llama.cpp)",AUD,✗ FNᵛ,,,,,,2,backend: llama.cpp. ,,,,
+bolt-e4b,AUD,"✗ FN off · aud1 3/3, aud2 3/3 any on (§73)",3,3,,,,2,,,,,
+gemma4:e4b,AUD,**✓ both**,,,,,,2,,,,,
+granite3.3:2b,AUD,✗ FN,,,,,,2,,,,,
+granite4.2:3b,AUD,✗ loop,,,,,,2,,,,,
+granite4:3b-h,AUD,✗ FN,,,,,,2,,,,,
+granite4:7b-a1b-h,AUD,✗ FN,,,,,,2,,,,,
+lfm2-8b-a1b,AUD,✗ FN,,,,,,2,,,,,
+ling3-tiny:q4_K_M,AUD,**✗ FN** · ◐ traceᵗ · ✗ missⁿᵗ,,,,,,2,,,q4_K_M,,
+llama3.2:3b,AUD,◐ freight,,,,,,2,,,,,
+nemotron-3-nano:4b,AUD,◐ freight,,,,,,2,,,,,
+openbmb/minicpm5-2b,AUD,◐ freight,,,,,,2,,,,,
+qwen3.5:4b,AUD,✗ cap,,,,,,2,,,,,
+"`Dory1.0-4B`, 2 loops (llama.cpp, **not an ollama tag**)",MON,✗ cap ᵛ,,,,,,2,backend: llama.cpp. ,,,,1
+`Qwen3-30B-A3B-Instruct-2507` Q4_K_M,MON,✗ 0/4 (821.61)ˢ,0,4,,,,2.2,,,Q4_K_M,,1
+`gemma-4-26B-A4B-it-ARA-heresy` MXFP4_MoEᵍ,MON,✗ 0/4 artifactˢ,0,4,,,,2.2,,,,,1
+bolt-e4b,MON,"✓ (CHAT math, think off)",,,,,,2,,,,,1
+gemma4:e4b,MON,"✓ (CHAT math, think off)",,,,,,2,,,,,1
+granite4.2:3b,MON,✗,,,,,,2,,,,,1
+lfm2-8b-a1b,MON,✗,,,,,,2,,,,,1
+ling3-tiny:q4_K_M,MON,**✓ 6.0**,,,6.0,s,,2,,,q4_K_M,,1
+nemotron-3-nano:4b,MON,✓ 24.6 s,,,24.6,s,,2,,,,,1
+openbmb/minicpm5-2b,MON,✓ 78 s,,,78,s,,2,,,,,1
+qwen3.5:4b,MON,✓ 207 s,,,207,s,,2,,,,,1
+"`Dory1.0-4B`, 2 loops (llama.cpp, **not an ollama tag**)",HRD,6/10ᵛ,6,10,,,,2,backend: llama.cpp. ,,,,10
+ling3-tiny:q4_K_M,HRD,4/10 · 6/10ᶜ,4,10,,,,2,,,q4_K_M,,10
+nemotron-3-nano:4b,HRD,8/10 · 9/10,8,10,,,,2,,,,,10
+qwen3.5:4b,HRD,3/10 · 2/10,3,10,,,,2,,,,,10
+Qwen3.5-4B,TOOL,12/12ᵖ,12,12,,,,2.2,,,,,
+"`Dory1.0-4B`, 1 loop (llama.cpp)",TOOL,✓4 ✓20,,,,,,2,backend: llama.cpp. ,,,,
+"`Dory1.0-4B`, 2 loops (llama.cpp, **not an ollama tag**)",TOOL,✓4 ✓20,,,,,,2,backend: llama.cpp. ,,,,
+`Qwen3-30B-A3B-Instruct-2507` Q4_K_M,TOOL,12/12ᵖ,12,12,,,,2.2,,,Q4_K_M,,
+`Qwen3.5-9B` Q4_K_M,TOOL,12/12ᵖ,12,12,,,,2.2,,,Q4_K_M,,
+`gemma-4-26B-A4B-it-ARA-heresy` MXFP4_MoEᵍ,TOOL,12/12ᵖ,12,12,,,,2.2,,,,,
+bolt-e4b,TOOL,✓4 ✓20,,,,,,2,,,,,
+gemma4:e4b,TOOL,✓4 ✓20,,,,,,2,,,,,
+granite3.3:2b,TOOL,✓4 ✗20,,,,,,2,,,,,
+granite4.2:3b,TOOL,✓4 ✗20,,,,,,2,,,,,
+granite4.2:8b,TOOL,"9/12ᵖ (loops 9/9, calc 0/3)",9,12,,,,2.2,,,,,
+granite4:3b-h,TOOL,✓4 ✗20,,,,,,2,,,,,
+granite4:7b-a1b-h,TOOL,✓4 ✗20 · chains 3/3,3,3,,,,2,,,,,
+granite4:micro,TOOL,✓4 ✗20 · chains 3/3,3,3,,,,2,,,,,
+lfm2-8b-a1b,TOOL,✓4 ✓20,,,,,,2,,,,,
+ling3-tiny:q4_K_M,TOOL,✓4 ✓20 · **live 5/7**ᵍ,5,7,,,,2,,,q4_K_M,,
+llama3.2:3b,TOOL,**✓4 ✓20**,,,,,,2,,,,,
+nemotron-3-nano:4b,TOOL,12/12,12,12,,,,2,,,,,
+qwen3-abliterated:4b-2507,TOOL,2/2,2,2,,,,2,,,,,
+qwen3.5:4b,TOOL,12/12*,12,12,,,,2,,,,,
+FrogNano-4B-2609-IQ4_XS,JUDGE,◐ 9/10 scored pairs · 5/18 unparsed,9,10,,,2026-11-07,2,"checker preset (32k, reasoning off), run0 greedy + 2 runs at generic 0.7/0.95 (no vendor preset). 5 of 18 replies looped to cap or broke JSON, incl. gold run1. When parsed it names every plant. (§96).",,IQ4_XS,3,6
+gemma4:e4b,JUDGE,**15/15** defects below gold · planted 20/24 named,15,15,,,2026-11-07,2,"writer preset (16k, reasoning off), run0 greedy + 2 runs vendor 1.0/0.95/64. Scores G 4,4,4; F1 3; F3 2; CONTRA 2-3; OMIT 3; OFF 1. Never scored 5 even on gold; 18/18 parsed. OMIT gap named 1/3 runs. (§96).",,,3,6
+ling3-tiny:q4_K_M,JUDGE,◐ 10/15 defects below gold · 3/18 unparsed (greedy loops),10,15,,,2026-11-07,2,"aux preset (64k), reasoning off. Greedy run looped repeating one problem to the 1200 cap on F1/F3/OMIT (no score). Sampled runs scored F3 and F1 4 against gold 4-5 in run 2. (§96).",,q4_K_M,3,6
+FrogNano-4B-2609-IQ4_XS,CRIT,paired 5/5 · named **17/18** cross vs 13/18 self,17,18,,,2026-11-07,2,"judge checker preset (32k), same items. 3/24 unparsed; twice scored own planted twin equal to clean. (§96.1).",,IQ4_XS,,12
+bolt-e4b,CRIT,"think off: named 12/18 on FrogNano, **6/18** on gemma4 · 5/24 unparsed",18,36,,,2026-11-07,2,"audit preset (no-think arm) 32k reasoning off, run0 greedy + run1 vendor. Every planted twin scored 2. Unparsed = malformed JSON on clean items. (§96.2).",,,,12
+bolt-e4b,CRIT,"think on (audit preset): **18/18** named, 6/6 paired, 0 unparsed",18,18,,,2026-11-07,2,"audit preset 32k reasoning on, 1 run vendor think, cap 8000, ~122 s/call. Best critic tested. (§96.2).",,,1,12
+gemma4:e4b,CRIT,paired 6/6 · named **14/18** cross vs **7/18** self,14,18,,,2026-11-07,2,"judge writer preset on 3 FrogNano + 3 own real SUM summaries, each with a 3-error planted twin, 2 runs. 0/24 unparsed. (§96.1).",,,2,12
+FrogNano-4B-2609-IQ4_XS,SUM,"**COV 23/24, 23/24, 22/24 · MUST 10/10 x3** · faithfulness unsupported 24-29% (upper bound)",23,24,,,2026-11-01,2,"(Ollama /api/chat swapped for router /v1), checker preset (64k), reasoning off, temp 0.2, cap 1500, 3 runs, 63-68 s, no repeats (dupS 0%), no unsupported numbers, never missed MUST. Missed flash-124b every run, text-only once. Judge gpt-oss:120b via faithfulness.py: 10/35, 9/32, 7/29 unsupported, 0 contradicted; nearly all are 'quote-unverified' (judge said S, quote failed the 4-gram check), so this is a strict upper bound. §80.",,IQ4_XS,3,24
+"`Dory1.0-4B`, 1 loop (llama.cpp)",SUM,"**COV 23/24, 22/24, 21/24 · MUST 10/10, 10/10, 9/10** · faithfulness unsupported 48% (upper bound)",22,24,,,2026-10-25,2,"3 runs (not 1: §8 and notebook record one; the raw run files are r1-r3). llama.cpp PR build + Vulkan via dory-run.py, thinking off, max_tokens 4000, seed 100, ctx 12288; 104-172 s, 643-973 words. Misses harness + flash-124b, says the browser-OS sandbox 'did not work' (wrong; the video calls it a feature), invents 'lightning bolt'; catches the overwrite loop. Unsupported 26/54, 18/38, 29/59. Not an ollama tag. §8.",,,3,24
+"`Dory1.0-4B`, 2 loops (llama.cpp, **not an ollama tag**)",SUM,"**COV 22/24, 23/24, 23/24 · MUST 10/10 x3** · faithfulness unsupported 31% (upper bound)",23,24,,,2026-10-25,2,"backend: llama.cpp. 3 runs (not 1, same correction as the 1-loop row). Same build/settings; 174-300 s, 596-976 words. Misses harness + flash-124b, same sandbox error, invents 'lightning bolt'; clear failures list, catches the overwrite loop. Unsupported 3/38, 25/59, 19/50. §8.",,,3,24
+bolt-e4b,SUM,"**COV 22/24, 22/24, 18/24 · MUST 10/10, 10/10, 9/10** · faithfulness unsupported 25% (upper bound)",22,24,,,2026-10-25,2,"3 runs., ctx 12288, think off, temp 0.2, seed 100+n, num_predict 1500; 149-240 s. Reads like gemma4:e4b (same base): misses harness + flash-124b, says the C++ game showed 'surgical editing' and omits the overwrite loop. Temp-1.0/top_p 0.95 arm: COV 21, 22, 22, unsupported 13%. §8.",,,3,24
+gemma4:e4b,SUM,"**COV 23/24, 23/24, 20/24 · MUST 10/10 x3** · faithfulness unsupported 20% (upper bound)",23,24,,,2026-10-25,2,"3 runs., ctx 12288, think off, temp 0.2, seed 100+n, num_predict 1500; 74-483 s (first run pays the 6.6 GB load). Missed flash-124b every run, roleplay/V8/text-only once each; catches the overwrite loop and FPS failure. Temp-1.0 arm: COV 22, 19, 22, unsupported 30%. Judge gpt-oss:120b, 0 contradicted; % is a strict upper bound (+/-10). §8.",,,3,24
+granite3.3:2b,SUM,**COV 14/24 · MUST 9/10** · faithfulness unsupported 30% (1 run),14,24,,,2026-10-25,2,"1 run (anecdote)., ctx 12288, think off, temp 0.2, seed 100+n, num_predict 1500; 99 s. Former aux preset, built for summarization but omits the overwrite loop, invents 'solved by API key, allowing local execution'; fewest invented events. Unsupported 6/20. §8.",,,1,24
+granite4.2:3b,SUM,"**COV 21/24, 18/24, 18/24** · MUST 10/10, 8/10, 9/10 · faithfulness not judged (n=3)",18,24,,,2026-11-06,2,"3 runs, summarization-test-router.py on summary preset (ctx 12288, reasoning default, temp 0.2, output cap 1500 tokens), 6.6k-token input, not truncated. runs 1 and 2 hit the 1500-token output cap; unsupported numbers in 2 runs.",,,3,24
+granite4:3b-h,SUM,**COV 9/24 · MUST 6/10** · faithfulness unsupported 17% (1 run),9,24,,,2026-10-25,2,"1 run (anecdote)., ctx 12288, think off, temp 0.2, seed 100+n, num_predict 1500; 69 s, 162 words in one paragraph. Says the printer sim 'struggled' (wrong), watch site 'high-end'; no overwrite loop, no rate limiting. Unsupported 1/6 (shortest summary, so the % is noisy). §8.",,,1,24
+granite4:7b-a1b-h,SUM,"**COV 10/24, 14/24, 9/24** · MUST 8/10, 9/10, 6/10 · faithfulness not judged (n=3)",10,24,,,2026-11-06,2,"3 runs, summarization-test-router.py on summary preset (ctx 12288, reasoning default, temp 0.2, output cap 1500 tokens), 6.6k-token input, not truncated. run 3 hit the cap in a repetition loop (dupS 70%).",,,3,24
+granite4:micro,SUM,"**COV 14/24, 17/24, 13/24** · MUST 9/10, 9/10, 8/10 · faithfulness not judged (n=3)",14,24,,,2026-11-06,2,"3 runs, summarization-test-router.py on summary preset (ctx 12288, reasoning default, temp 0.2, output cap 1500 tokens), 6.6k-token input, not truncated.",,,3,24
+lfm2-8b-a1b,SUM,"**COV 12/24, 16/24, 10/24** · MUST 7/10, 8/10, 7/10 · faithfulness not judged (n=3)",12,24,,,2026-11-06,2,"3 runs, summarization-test-router.py on summary preset (ctx 12288, reasoning default, temp 0.2, output cap 1500 tokens), 6.6k-token input, not truncated.",,,3,24
+ling3-tiny-64k,SUM,"**COV 19/24, 19/24, 20/24 · MUST 10/10 x3** · faithfulness unsupported 16-49% (upper bound)",19,24,,,2026-11-01,2,"Same router script and settings on the aux preset, 38-43 s. Misses v8-engine, roleplay, flight-game, flash-124b (subway/text-only in some). Unsupported 5/31, 12/32, 17/35 (0 contradicted), mostly quote-unverified; run 3 has dupS 5% and unsupported numbers '1','2' in runs 2-3. §80.",,,,24
+ling3-tiny:q4_K_M,SUM,**COV 20/24 · MUST 10/10** · faithfulness not judged on this tag (1 run),20,24,,,2026-10-25,2,"1 run (anecdote)., ctx 12288, think off, temp 0.2, seed 100+n, num_predict 1500; 117 s. Output byte-identical to ling3-tiny-64k at 12k: the tag only changes the default ctx, so this is the same model text, not a second measurement. §8.",,q4_K_M,1,24
+llama3.2:3b,SUM,"**COV 13/24, 10/24, 11/24** · MUST 9/10, 7/10, 7/10 · faithfulness not judged (n=3)",11,24,,,2026-11-06,2,"3 runs, summarization-test-router.py on summary preset (ctx 12288, reasoning default, temp 0.2, output cap 1500 tokens), 6.6k-token input, not truncated.",,,3,24
+nemotron-3-nano:4b,SUM,"**COV 16/24, 18/24, 16/24 · MUST 9/10, 10/10, 9/10** · faithfulness unsupported 32% (upper bound)",16,24,,,2026-10-25,2,"3 runs., ctx 12288, think off, temp 0.2, seed 100+n, num_predict 1500; 83-103 s, shortest outputs (238-374 words). Invents 'all apps failed silently', 'printer not functional', 'unsuitable for long tasks'; drops Ant Group in 2 of 3. §8.",,,3,24
+openbmb/minicpm5-2b,SUM,"**COV 20/24, 21/24, 19/24 · MUST 10/10, 10/10, 9/10** · faithfulness unsupported 61% (upper bound)",20,24,,,2026-10-25,2,"3 runs., ctx 12288, think off, temp 0.2, seed 100+n, num_predict 1500; 37-69 s, longest outputs (511-586 words). Invented 'Open Code vs Codex' aesthetics test, garbled wrestling, dashboard under printer; drops open-weight on r3. Unsupported 26/45, 24/42, 27/40 — the least faithful row in §8. §8.",,,3,24
+gemma3:4b,OCR,4/5,4,5,,,,3,"CAVEAT: the 4/5 rows appear to come from a run on a page whose amount column was clipped at the right edge (see tests/ocr.py; the lab log shows 4 of 5 models missing only the total). The ported test uses a wider page, so scores are not comparable. A 'coordinates' row is a pointing test, not ported.",,,,5
+qwen2.5vl:3b,OCR,4/5 + **coordinates**,4,5,,,,3,"CAVEAT: the 4/5 rows appear to come from a run on a page whose amount column was clipped at the right edge (see tests/ocr.py; the lab log shows 4 of 5 models missing only the total). The ported test uses a wider page, so scores are not comparable. A 'coordinates' row is a pointing test, not ported.",,,,5
+qwen3-vl:2b,OCR,"**coordinates, 58.3 s**",,,,,,3,"CAVEAT: the 4/5 rows appear to come from a run on a page whose amount column was clipped at the right edge (see tests/ocr.py; the lab log shows 4 of 5 models missing only the total). The ported test uses a wider page, so scores are not comparable. A 'coordinates' row is a pointing test, not ported.",,,,5
+qwen3.5:4b,OCR,4/5,4,5,,,,3,"CAVEAT: the 4/5 rows appear to come from a run on a page whose amount column was clipped at the right edge (see tests/ocr.py; the lab log shows 4 of 5 models missing only the total). The ported test uses a wider page, so scores are not comparable. A 'coordinates' row is a pointing test, not ported.",,,,5
+gemma4:e4b,PTUNE,holdout 11 -> 26 · right 51→50 · wrong 20→12 · unsure 20→29,,,15,holdout score points (right − 2×wrong),2026-11-12,,"backend: llama.cpp (local seat); Ollama Cloud (prompt writer). prompt-tune loop: prompts for the private payee categorizer written by glm-5.3-flash, which saw counts only. Tuned prompt abstains more (wrong 20 → 12), so the score gain is not established (paired sign test p = 1.00). Writer tokens 38,635 in / 148,100 out over 6 rounds. Task and loop: github.com/Sjbrimley26/prompt-tune. Aggregates only; see docs/excerpts/prompt-tune.md.",,,1,91
+gemma4:e4b,PTUNE,holdout 11 -> 20 · right 51→48 · wrong 20→14 · unsure 20→29,,,9,holdout score points (right − 2×wrong),2026-11-12,,"backend: llama.cpp (local seat); Ollama Cloud (prompt writer). same loop with deepseek-v4.1-flash as writer (27,836 completion tokens over 4 rounds). The tuned prompt failed to answer on 33 of 91 holdout keys: it is longer, and the local seat fails more on longer prompts. No candidate beat production (p = 0.55). Aggregates only; see docs/excerpts/prompt-tune.md.",,,1,91

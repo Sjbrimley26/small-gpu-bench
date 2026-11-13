@@ -1,0 +1,202 @@
+{
+ "a1": {
+  "bases": [
+   "The receiving clerk walks the yard before opening the dock and notes anything out of place",
+   "Paperwork for the north warehouse run is filed the same afternoon it arrives",
+   "The yard lead keeps a running list of items held back for a quality check",
+   "Damage found at the door is photographed before the load is moved",
+   "Trim stock is restacked by profile rather than by supplier",
+   "The mill prefers a single consolidated order each month over several small ones",
+   "Freight scheduling is agreed with the coordinator early in the week",
+   "Door slabs are checked for squareness before they are accepted",
+   "Hardware is counted against the packing list whenever the pallet is opened",
+   "The shop keeps a finish sample of every profile currently on order",
+   "A wet bundle is dried and re-strapped before it goes into storage",
+   "The purchasing desk reviews open orders every Friday morning",
+   "Suppliers are asked to confirm lead times in writing rather than by phone",
+   "Racking is reorganised whenever a slow-moving item is retired",
+   "The yard camera covers the north gate and the loading bay doors",
+   "Forklift servicing is booked quarterly to avoid a mid-season failure",
+   "Slab blanks are banded in fours to reduce handling damage",
+   "The shop foreman flags any profile that has been substituted without notice",
+   "Vendor statements are reconciled before the month is closed",
+   "The dock is cleared each evening so the morning delivery is not delayed",
+   "Anything short against the manifest is chased the same day",
+   "The warehouse calendar runs on local time while delivery windows are quoted in UTC",
+   "Purchase orders are raised in the name of the company that will consume the stock",
+   "Over-shipments are logged and credited rather than returned",
+   "The mill warns about scheduling risk whenever a profile runs on a single line",
+   "Moulding profiles are stored flat to prevent twisting",
+   "A second count is done whenever the first figure looks wrong",
+   "The purchasing manager keeps a short list of suppliers who answer the phone",
+   "Inbound loads are tarped if there is any chance of rain overnight",
+   "The claim file is kept with the receiving paperwork for the same delivery",
+   "Casing and jamb stock are separated so they are not picked by mistake",
+   "Thresholds are inspected for bowing before they are stacked",
+   "The yard keeps one spare pallet of hardware for urgent jobs",
+   "Delivery appointments are confirmed the day before the truck leaves",
+   "Vendor pricing is reviewed against the last agreed schedule",
+   "Handling marks on the packaging are photographed for the record",
+   "The office chases missing paperwork before the invoice is approved",
+   "Anything held at the door is released only after the check is signed off",
+   "Stock rotation is by delivery date rather than by location",
+   "The mill acknowledges a change to the schedule within a working day",
+   "Freight is consolidated wherever two runs can travel together",
+   "Pallet racking is inspected for damage after every heavy delivery",
+   "Slab heights are checked against the standard before the load is accepted",
+   "The shop returns any profile that does not match the agreed sample",
+   "Counts are witnessed by a second person on high-value loads",
+   "The yard lead keeps the spare keys and the gate log",
+   "Moulding is shrink wrapped rather than tarped for short storage",
+   "Purchase orders that run past their month are flagged for review",
+   "The dock light was replaced so evening deliveries can be checked properly",
+   "Hardware shortages are reported before the job is scheduled",
+   "The mill sends a weekly note about which lines are running",
+   "Any substitution is recorded against the purchase order",
+   "The office keeps a list of carriers who have damaged a load",
+   "Stacking height is limited so the top banding is not crushed",
+   "Two people sign off on any adjustment to the receiving log",
+   "The purchasing desk keeps the vendor contact list up to date",
+   "Trim is bought from one mill and slabs from another, so their prices move independently",
+   "Nothing leaves the yard without a signed pick ticket",
+   "The yard crew clears snow from the dock before the first delivery"
+  ],
+  "tails": [
+   "and the note is passed to the office the same morning",
+   "which keeps the record straight for the claim file",
+   "so nothing sits on the dock longer than it has to",
+   "and any gap is raised with the supplier the next working day",
+   "which the desk checks against the previous schedule",
+   "and the detail is written on the receiving sheet before the load is moved"
+  ],
+  "plants": [
+   [
+    "finance",
+    "Finance note, first week of February. Freight for the north warehouse run was quoted at the outset as 4 loads at 285.00 each, and the June statement carried the run as a single line invoiced at 1,420.00 for the same four loads."
+   ],
+   [
+    "memo",
+    "Buying memo, mid March. Trim board TMB-8FT moved to 12.40 per board in the spring renegotiation with the mill, down from the winter rate, and the change was applied to all open orders."
+   ],
+   [
+    "june",
+    "Receiving note, mid June. The delivery that week included trim board TMB-8FT entered at 14.10 per board, taken straight to the shop for a finish check before storage."
+   ],
+   [
+    "call",
+    "Notes from the mill call, late June. The mill confirmed an 8 percent price increase on all trim products taking effect in Q3, agreed on the call, with the 5/8 profile most exposed because only one line runs it and lead times already ran six to eight weeks."
+   ],
+   [
+    "audit",
+    "Audit note, closing. The review found that Eastside phone orders are still keyed by hand, so their totals lag the other two companies and the comparison across the three companies is not like for like."
+   ]
+  ],
+  "seed": 20260930,
+  "fracs": [
+   0.1,
+   0.36,
+   0.63,
+   0.79,
+   0.93
+  ],
+  "n_sentences": 340
+ },
+ "a2": {
+  "bases": [
+   "The showroom lead walks the display floor before opening and straightens anything left out of place",
+   "Sample doors on the display wall are rotated by style at the start of each season",
+   "The counter staff write down every special request on the order sheet before the customer leaves",
+   "Delivery drivers sign the route sheet when they take the keys and again when they return them",
+   "The estimating desk checks every takeoff against the architect drawings before a quote is released",
+   "Returned hardware is inspected, bagged and shelved with its original label",
+   "The back office files signed quotes by customer name rather than by date",
+   "Customers who ask for a lead time are told the supplier's last written estimate",
+   "The loading crew stages tomorrow's orders along the east wall each evening",
+   "Anything fragile is wrapped in blankets and strapped upright in the truck",
+   "The dispatcher phones the job site when the truck is an hour away",
+   "Damaged glass is photographed from two angles before it is cleared away",
+   "The yard foreman keeps a whiteboard of which bays are free for incoming trucks",
+   "Prehung units are checked for swing direction before they are wrapped",
+   "The bookkeeper reconciles card receipts against the till roll every morning",
+   "Credit applications are reviewed by the manager and a second signer",
+   "Contractor accounts are reviewed once a year and closed if they have gone quiet",
+   "The sales team shares a binder of finish samples that is updated whenever a supplier changes a stain",
+   "Warranty claims are logged with a photograph, the original invoice and the install date",
+   "The shop trims doors to height only after the customer has confirmed the floor covering",
+   "Stair parts are stored in labelled tubes so the rails do not bow",
+   "A damaged carton is opened at the dock and the contents are counted on the spot",
+   "The branch keeps a written list of which carriers will deliver to the hills after a storm",
+   "New staff spend their first week shadowing the counter before they handle a quote",
+   "The delivery schedule is posted at the door each afternoon for the following morning",
+   "Phone messages are written on a pad and initialled by whoever returns the call",
+   "Quotes older than the supplier's price validity are refreshed before they are honoured",
+   "The manager reviews slow-moving stock each quarter and decides what to clear",
+   "Every transfer between branches travels with a packing slip signed on both ends",
+   "Pallet jacks are charged overnight and checked for worn wheels each Monday",
+   "The dock door seals are inspected after every winter storm",
+   "Special orders are paid for in advance and tagged with the customer's name",
+   "The estimator keeps a running note of which profiles the mill is likely to discontinue",
+   "A customer who changes a size after the order is placed signs a change form",
+   "Door hardware kits are matched to the bore pattern before they are bagged",
+   "Staff wear gloves when handling raw primed stock so the finish is not marked",
+   "The front desk keeps a spare set of keys for each delivery truck in a locked box",
+   "A forklift is never left on the ramp overnight",
+   "Questions about a supplier's invoice go to the bookkeeper and are answered in writing",
+   "Coverings for outdoor storage are inspected for tears before the rainy months",
+   "The branch manager walks the yard every Friday and signs the safety sheet",
+   "Fire exits and extinguishers are checked on the first working day of each month",
+   "Returns are accepted only for unopened stock in its original packaging",
+   "The shop foreman logs every blade change on a card kept at the saw",
+   "Customers collecting orders are asked to inspect them at the counter before they sign",
+   "A job folder travels with each large order from quote to final delivery",
+   "The truck mirrors and lights are checked each morning before the first route",
+   "Reorder points for fast-moving trim are reviewed after the busiest weeks",
+   "The cleaners are asked to leave the sample wall untouched until the showroom lead arrives",
+   "Supplier price lists are kept in a shared folder and the older copies are archived",
+   "Casual labour is booked through the agency at least a week before a large delivery",
+   "The estimator signs off any quote that includes a custom size",
+   "Door units that fail the squareness check are tagged and returned to the supplier",
+   "The loading ramp is swept and salted at the first sign of ice",
+   "Every substitution of a product on an order is explained to the customer in writing",
+   "The warehouse radio channel is reserved for yard movements and emergencies",
+   "Weekly meetings begin with a review of any customer complaints from the previous week",
+   "The warehouse keeps a spare pallet of shrink wrap near the dock for urgent repacking",
+   "Stock location labels are replaced when they fade so pickers are not guessing"
+  ],
+  "tails": [
+   "and the note is placed in the job folder for the next shift",
+   "which gives the office a record to refer to if the customer calls",
+   "so the morning crew does not have to ask what happened",
+   "and any exception is mentioned at the Monday meeting",
+   "which the manager checks against the supplier's last confirmation",
+   "and the detail is copied to the branch diary before the end of the day",
+   "so a second person can pick the work up without a phone call"
+  ],
+  "plants": [
+   [
+    "terms_a",
+    "Contract note, early April. The supplier agreement with Northgate Millworks sets payment at net 30 days from the invoice date, and the branch has arranged its cash planning around that cycle."
+   ],
+   [
+    "count",
+    "Stock note, mid May. The three pallets of cabinet hinge stock held 120, 85 and 95 units, and the count sheet totals them at 330 units for the quarter-end report."
+   ],
+   [
+    "terms_b",
+    "Accounts note, September. Northgate Millworks invoices are paid at net 45 days under the supplier agreement, which is the cycle the bookkeeper follows when scheduling payments."
+   ],
+   [
+    "chrono",
+    "Delivery log, late July. The replacement jamb kits were ordered on 22 July and arrived on 14 July, and the crew unpacked them straight into the finishing bay."
+   ]
+  ],
+  "seed": 20261025,
+  "fracs": [
+   0.14,
+   0.31,
+   0.58,
+   0.82
+  ],
+  "n_sentences": 350
+ }
+}

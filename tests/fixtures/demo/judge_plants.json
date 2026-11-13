@@ -1,0 +1,82 @@
+{
+ "variants": [
+  {
+   "id": "F1",
+   "edits": [
+    {
+     "op": "replace",
+     "old": "9B total / 2.1B active",
+     "new": "19B total / 5B active"
+    }
+   ],
+   "plants": {
+    "params": "19\\s*b|5\\s*b active|parameter|9b|2\\.1"
+   }
+  },
+  {
+   "id": "F3",
+   "from": "F1",
+   "edits": [
+    {
+     "op": "replace",
+     "old": "Lumen Labs",
+     "new": "Northfield AI"
+    },
+    {
+     "op": "insert_after",
+     "anchor": "- These are first impressions after a weekend, not a benchmark; four tests were run.",
+     "text": "- He ran it locally on an RTX 5090 at about 300 tokens per second."
+    }
+   ],
+   "plants": {
+    "params": "19\\s*b|5\\s*b active|parameter|9b|2\\.1",
+    "company": "northfield|lumen",
+    "rtx": "5090|locally|tokens per second|300"
+   }
+  },
+  {
+   "id": "CONTRA",
+   "edits": [
+    {
+     "op": "replace",
+     "old": "- Multi-file C++ text adventure: failed. Missing header file, eleven build errors, still going in circles after three rounds; stopped after about forty minutes.",
+     "new": "- Multi-file C++ text adventure: the best result of the video; it compiled cleanly and ran on the first try."
+    },
+    {
+     "op": "replace",
+     "old": "- Bad: multi-file C++.",
+     "new": "- Bad: nothing."
+    }
+   ],
+   "plants": {
+    "cpp": "c\\+\\+|compil|first try|header|eleven|fail"
+   }
+  },
+  {
+   "id": "OMIT",
+   "edits": [
+    {
+     "op": "truncate_after",
+     "line": "RESULTS",
+     "keep_lines": 2,
+     "append": "\n\nOVERALL\nA mixed first test."
+    }
+   ],
+   "plants": {
+    "omit": "omit|missing|incomplete|leaves out|left out|does not (mention|cover|include)|doesn't (mention|cover|include)|lacks|only covers|not mention"
+   }
+  },
+  {
+   "id": "OFF",
+   "edits": [
+    {
+     "op": "replace_all",
+     "text": "Summary of the video.\n\n- The host bakes a sourdough loaf with a 72-hour cold ferment.\n- He compares rye and whole-wheat starters and prefers rye for flavour.\n- The crumb came out open; the crust burned slightly at 260 C.\n- Overall he recommends a lower oven temperature and a longer bake."
+    }
+   ],
+   "plants": {
+    "off": "unrelated|different|sourdough|bread|not (about|related)|irrelevant|does not match|doesn't match"
+   }
+  }
+ ]
+}
