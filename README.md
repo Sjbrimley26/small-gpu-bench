@@ -69,6 +69,8 @@ repo, runs with `--selftest` (grader checks, no model), and writes one JSON reco
 | `tests/crit.py` | CRIT | JUDGE on model-written summaries and a planted twin of each; self vs cross writer | paired drop; plants named |
 | `tests/sum_test.py` | SUM | single-pass summary scored in code against a fact list; `--pipeline` adds the verify pipeline | facts hit; numbers not in source |
 | `tests/ocr.py` | OCR | read 5 planted values from an invoice page drawn in code (vision model needed) | fields right /5 |
+| `tests/cat.py` | CAT (synthetic) | categorize 200 invented bank-statement payees (descriptor noise, abbreviations, misleading and two-business names, unknowable ones) into 14 categories or UNSURE; fixture generated from a seed in code | right / wrong / blank on category rows; abstained vs false fill on unknowable rows; whole fixture and the hard tail separately |
+| `tests/arena.py` | ARENA (synthetic) | offline: several models' CAT records vote on the same payees | each model alone vs weighted vote (quorum 1, 2) vs full agreement; agreement-tier precision; oracle ceiling |
 
 **Bring-your-own data for JUDGE, CRIT and SUM.** The lab ran these on a copyrighted YouTube transcript, which is not
 included. `tests/fixtures/demo/` holds a short **invented** transcript, summary, fact list and plant specs so the
@@ -237,7 +239,7 @@ repo (an agent harness, a knowledge base, a catalogue). Their rows are not in `r
 
 ```
 patterns/   escalate.py, summarize_verify.py
-tests/      red.py aud.py mon.py hrd.py tool_probe.py judge.py crit.py sum_test.py ocr.py, common.py, smoke.sh, fixtures/
+tests/      red.py aud.py mon.py hrd.py tool_probe.py judge.py crit.py sum_test.py ocr.py cat.py arena.py, common.py, smoke.sh, fixtures/
 mock/       mock_server.py (stdlib OpenAI-compatible stand-in)
 results/    results.csv, raw/ (your run records land here)
 scripts/    export_results.py, sanitize_results.py

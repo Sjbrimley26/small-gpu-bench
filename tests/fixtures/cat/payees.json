@@ -1,0 +1,1822 @@
+{
+ "seed": 20261114,
+ "synthetic": true,
+ "categories": [
+  "Groceries",
+  "Dining Out",
+  "Fuel",
+  "Utilities",
+  "Software & Streaming",
+  "Insurance",
+  "Health & Pharmacy",
+  "Home & Hardware",
+  "Clothing",
+  "Travel",
+  "Entertainment",
+  "Auto Service",
+  "Transfers & Cash",
+  "Income"
+ ],
+ "rows": [
+  {
+   "tier": "misleading",
+   "raw": "RECURRING PAYMENT PERVORA PHARMACY INSURANCE AUSTIN OK 05/13",
+   "payee": "PERVORA PHARMACY INSURANCE",
+   "direction": "out",
+   "gold": "Insurance",
+   "rule_covered": false,
+   "id": "p000"
+  },
+  {
+   "tier": "opaque",
+   "raw": "ZELLE PAYMENT TO Teo Marsh",
+   "payee": "ZELLE PAYMENT TO TEO MARSH",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p001"
+  },
+  {
+   "tier": "clear",
+   "raw": "DEBIT CARD PURCHASE QUITRAN BAKERY",
+   "payee": "QUITRAN BAKERY",
+   "direction": "out",
+   "gold": "Dining Out",
+   "rule_covered": true,
+   "id": "p002"
+  },
+  {
+   "tier": "income",
+   "raw": "PAYROLL DEPOSIT FULSEN LTD",
+   "payee": "PAYROLL DEPOSIT FULSEN LTD",
+   "direction": "in",
+   "gold": "Income",
+   "rule_covered": true,
+   "id": "p003"
+  },
+  {
+   "tier": "brand",
+   "raw": "RECURRING PAYMENT TST* CAVPELL #3360",
+   "payee": "CAVPELL",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p004"
+  },
+  {
+   "tier": "weak",
+   "raw": "POS DEBIT QUIKRY ELEC 02/12",
+   "payee": "QUIKRY ELEC",
+   "direction": "out",
+   "gold": "Utilities",
+   "rule_covered": false,
+   "id": "p005"
+  },
+  {
+   "tier": "weak",
+   "raw": "PURCHASE AUTHORIZED ON PP*DRAVORA OIL CHAN #9932 OMAHA OK 04/19",
+   "payee": "DRAVORA OIL CHAN",
+   "direction": "out",
+   "gold": "Auto Service",
+   "rule_covered": false,
+   "id": "p006"
+  },
+  {
+   "tier": "brand",
+   "raw": "RECURRING PAYMENT PP*TAMSEN #3024 RENO ID",
+   "payee": "TAMSEN",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p007"
+  },
+  {
+   "tier": "income",
+   "raw": "PAYROLL DEPOSIT DRAARI INC",
+   "payee": "PAYROLL DEPOSIT DRAARI INC",
+   "direction": "in",
+   "gold": "Income",
+   "rule_covered": true,
+   "id": "p008"
+  },
+  {
+   "tier": "dual",
+   "raw": "DEBIT CARD PURCHASE HESKPELL AUTO REPAIR & TIRE CENTER #5184",
+   "payee": "HESKPELL AUTO REPAIR & TIRE CENTER",
+   "direction": "out",
+   "gold": "Auto Service",
+   "rule_covered": false,
+   "id": "p009"
+  },
+  {
+   "tier": "misleading",
+   "raw": "RECURRING PAYMENT SQ *DRAWICK MARKET PHARMACY #3759 06/04",
+   "payee": "DRAWICK MARKET PHARMACY",
+   "direction": "out",
+   "gold": "Health & Pharmacy",
+   "rule_covered": false,
+   "id": "p010"
+  },
+  {
+   "tier": "clear",
+   "raw": "PURCHASE AUTHORIZED ON LORBOST DENTAL",
+   "payee": "LORBOST DENTAL",
+   "direction": "out",
+   "gold": "Health & Pharmacy",
+   "rule_covered": true,
+   "id": "p011"
+  },
+  {
+   "tier": "clear",
+   "raw": "PURCHASE AUTHORIZED ON TST* QUIPELL STREAMING 05/21",
+   "payee": "QUIPELL STREAMING",
+   "direction": "out",
+   "gold": "Software & Streaming",
+   "rule_covered": true,
+   "id": "p012"
+  },
+  {
+   "tier": "misleading",
+   "raw": "DEBIT CARD PURCHASE MOSDELL BAKERY PHYSICAL THERAPY",
+   "payee": "MOSDELL BAKERY PHYSICAL THERAPY",
+   "direction": "out",
+   "gold": "Health & Pharmacy",
+   "rule_covered": false,
+   "id": "p013"
+  },
+  {
+   "tier": "opaque",
+   "raw": "SQ *RAFE DELACROIX",
+   "payee": "RAFE DELACROIX",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p014"
+  },
+  {
+   "tier": "weak",
+   "raw": "PURCHASE AUTHORIZED ON LORLEY HARD DENVER TX",
+   "payee": "LORLEY HARD",
+   "direction": "out",
+   "gold": "Home & Hardware",
+   "rule_covered": false,
+   "id": "p015"
+  },
+  {
+   "tier": "transfer",
+   "raw": "ATM WITHDRAWAL ZANBOST BANK TUCSON TX",
+   "payee": "ATM WITHDRAWAL ZANBOST BANK",
+   "direction": "out",
+   "gold": "Transfers & Cash",
+   "rule_covered": true,
+   "id": "p016"
+  },
+  {
+   "tier": "clear",
+   "raw": "CHECKCARD OSTLIN CAR RENTAL #4272 TULSA TX",
+   "payee": "OSTLIN CAR RENTAL",
+   "direction": "out",
+   "gold": "Travel",
+   "rule_covered": true,
+   "id": "p017"
+  },
+  {
+   "tier": "brand",
+   "raw": "PURCHASE AUTHORIZED ON SQ *PERARI #1261 TACOMA OK",
+   "payee": "PERARI",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p018"
+  },
+  {
+   "tier": "dual",
+   "raw": "CHECKCARD SQ *LORSEN LUMBER & HARDWARE #1321",
+   "payee": "LORSEN LUMBER & HARDWARE",
+   "direction": "out",
+   "gold": "Home & Hardware",
+   "rule_covered": false,
+   "id": "p019"
+  },
+  {
+   "tier": "dual",
+   "raw": "PURCHASE AUTHORIZED ON FULTRAN NATURAL GAS COMPANY MESA ID 06/22",
+   "payee": "FULTRAN NATURAL GAS COMPANY",
+   "direction": "out",
+   "gold": "Utilities",
+   "rule_covered": false,
+   "id": "p020"
+  },
+  {
+   "tier": "clear",
+   "raw": "RECURRING PAYMENT SQ *PERWICK GARDEN CENTER AUSTIN NE 09/10",
+   "payee": "PERWICK GARDEN CENTER",
+   "direction": "out",
+   "gold": "Home & Hardware",
+   "rule_covered": true,
+   "id": "p021"
+  },
+  {
+   "tier": "misleading",
+   "raw": "RECURRING PAYMENT PERLEY GROCERY WATER DISTRICT",
+   "payee": "PERLEY GROCERY WATER DISTRICT",
+   "direction": "out",
+   "gold": "Utilities",
+   "rule_covered": false,
+   "id": "p022"
+  },
+  {
+   "tier": "weak",
+   "raw": "DEBIT CARD PURCHASE SQ *YARLEY HTL #7326 BOISE AZ",
+   "payee": "YARLEY HTL",
+   "direction": "out",
+   "gold": "Travel",
+   "rule_covered": false,
+   "id": "p023"
+  },
+  {
+   "tier": "clear",
+   "raw": "PURCHASE AUTHORIZED ON PP*NOLKRY FUEL",
+   "payee": "NOLKRY FUEL",
+   "direction": "out",
+   "gold": "Fuel",
+   "rule_covered": true,
+   "id": "p024"
+  },
+  {
+   "tier": "income",
+   "raw": "INTEREST PAID LORDELL BANK 07/11",
+   "payee": "INTEREST PAID LORDELL BANK",
+   "direction": "in",
+   "gold": "Income",
+   "rule_covered": true,
+   "id": "p025"
+  },
+  {
+   "tier": "weak",
+   "raw": "POS DEBIT TAMLIN GROCE #1045",
+   "payee": "TAMLIN GROCE",
+   "direction": "out",
+   "gold": "Groceries",
+   "rule_covered": false,
+   "id": "p026"
+  },
+  {
+   "tier": "brand",
+   "raw": "PURCHASE AUTHORIZED ON BRANGARD TULSA CO 10/10",
+   "payee": "BRANGARD",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p027"
+  },
+  {
+   "tier": "opaque",
+   "raw": "PAYPAL *OrlaBrenner",
+   "payee": "PAYPAL ORLABRENNER",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p028"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT PP*QUIBOST MUTUAL INSURANCE AUSTIN NV 11/25",
+   "payee": "QUIBOST MUTUAL INSURANCE",
+   "direction": "out",
+   "gold": "Insurance",
+   "rule_covered": true,
+   "id": "p029"
+  },
+  {
+   "tier": "income",
+   "raw": "INTEREST PAID VELDELL BANK 10/20",
+   "payee": "INTEREST PAID VELDELL BANK",
+   "direction": "in",
+   "gold": "Income",
+   "rule_covered": true,
+   "id": "p030"
+  },
+  {
+   "tier": "dual",
+   "raw": "RECURRING PAYMENT DRADELL INN & GRILL #6627",
+   "payee": "DRADELL INN & GRILL",
+   "direction": "out",
+   "gold": "Travel",
+   "rule_covered": false,
+   "id": "p031"
+  },
+  {
+   "tier": "dual",
+   "raw": "POS PURCHASE TAMMONT MARKET & FUEL #2774 11/07",
+   "payee": "TAMMONT MARKET & FUEL",
+   "direction": "out",
+   "gold": "Groceries",
+   "rule_covered": false,
+   "id": "p032"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT FULGARD CLOUD #0324 DENVER NV 05/14",
+   "payee": "FULGARD CLOUD",
+   "direction": "out",
+   "gold": "Software & Streaming",
+   "rule_covered": true,
+   "id": "p033"
+  },
+  {
+   "tier": "weak",
+   "raw": "POS PURCHASE QUIARI BOWL #2875",
+   "payee": "QUIARI BOWL",
+   "direction": "out",
+   "gold": "Entertainment",
+   "rule_covered": false,
+   "id": "p034"
+  },
+  {
+   "tier": "income",
+   "raw": "INTEREST PAID DRATON BANK 04/26",
+   "payee": "INTEREST PAID DRATON BANK",
+   "direction": "in",
+   "gold": "Income",
+   "rule_covered": true,
+   "id": "p035"
+  },
+  {
+   "tier": "clear",
+   "raw": "DEBIT CARD PURCHASE YARKRY CAFE #4848",
+   "payee": "YARKRY CAFE",
+   "direction": "out",
+   "gold": "Dining Out",
+   "rule_covered": true,
+   "id": "p036"
+  },
+  {
+   "tier": "weak",
+   "raw": "POS DEBIT LORWICK MUT INS #1702",
+   "payee": "LORWICK MUT INS",
+   "direction": "out",
+   "gold": "Insurance",
+   "rule_covered": false,
+   "id": "p037"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT KORPELL PIZZA TACOMA NV",
+   "payee": "KORPELL PIZZA",
+   "direction": "out",
+   "gold": "Dining Out",
+   "rule_covered": true,
+   "id": "p038"
+  },
+  {
+   "tier": "brand",
+   "raw": "POS PURCHASE PP*YARWICK RENO NV",
+   "payee": "YARWICK",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p039"
+  },
+  {
+   "tier": "clear",
+   "raw": "DEBIT CARD PURCHASE SQ *BRANARI ASSURANCE #6511 TULSA CO",
+   "payee": "BRANARI ASSURANCE",
+   "direction": "out",
+   "gold": "Insurance",
+   "rule_covered": true,
+   "id": "p040"
+  },
+  {
+   "tier": "misleading",
+   "raw": "RECURRING PAYMENT PP*MOSVORA FUEL MUTUAL INSURANCE #4388 DENVER AZ 10/23",
+   "payee": "MOSVORA FUEL MUTUAL INSURANCE",
+   "direction": "out",
+   "gold": "Insurance",
+   "rule_covered": false,
+   "id": "p041"
+  },
+  {
+   "tier": "brand",
+   "raw": "RECURRING PAYMENT PP*CAVLIN OMAHA OK",
+   "payee": "CAVLIN",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p042"
+  },
+  {
+   "tier": "misleading",
+   "raw": "DEBIT CARD PURCHASE SQ *NOLLIN MARKET APPS #4099 DENVER AZ",
+   "payee": "NOLLIN MARKET APPS",
+   "direction": "out",
+   "gold": "Software & Streaming",
+   "rule_covered": false,
+   "id": "p043"
+  },
+  {
+   "tier": "transfer",
+   "raw": "ATM WITHDRAWAL TAMVORA BANK MESA ID",
+   "payee": "ATM WITHDRAWAL TAMVORA BANK",
+   "direction": "out",
+   "gold": "Transfers & Cash",
+   "rule_covered": true,
+   "id": "p044"
+  },
+  {
+   "tier": "clear",
+   "raw": "RECURRING PAYMENT KORMONT SUPERMARKET #6173",
+   "payee": "KORMONT SUPERMARKET",
+   "direction": "out",
+   "gold": "Groceries",
+   "rule_covered": true,
+   "id": "p045"
+  },
+  {
+   "tier": "weak",
+   "raw": "RECURRING PAYMENT YARSEN CAF #2418 MESA OK 06/20",
+   "payee": "YARSEN CAF",
+   "direction": "out",
+   "gold": "Dining Out",
+   "rule_covered": false,
+   "id": "p046"
+  },
+  {
+   "tier": "income",
+   "raw": "INTEREST PAID CAVSEN BANK 07/18",
+   "payee": "INTEREST PAID CAVSEN BANK",
+   "direction": "in",
+   "gold": "Income",
+   "rule_covered": true,
+   "id": "p047"
+  },
+  {
+   "tier": "opaque",
+   "raw": "CKO*XJGDRA",
+   "payee": "CKO XJGDRA",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p048"
+  },
+  {
+   "tier": "income",
+   "raw": "PAYROLL DEPOSIT BRANSEN LLC",
+   "payee": "PAYROLL DEPOSIT BRANSEN LLC",
+   "direction": "in",
+   "gold": "Income",
+   "rule_covered": true,
+   "id": "p049"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS PURCHASE CAVTON TELECOM",
+   "payee": "CAVTON TELECOM",
+   "direction": "out",
+   "gold": "Utilities",
+   "rule_covered": true,
+   "id": "p050"
+  },
+  {
+   "tier": "misleading",
+   "raw": "POS DEBIT TST* PERSEN FUEL DENTAL 10/26",
+   "payee": "PERSEN FUEL DENTAL",
+   "direction": "out",
+   "gold": "Health & Pharmacy",
+   "rule_covered": false,
+   "id": "p051"
+  },
+  {
+   "tier": "dual",
+   "raw": "POS DEBIT TST* VELTRAN CINEMA & GRILL #9854 TUCSON AZ 03/27",
+   "payee": "VELTRAN CINEMA & GRILL",
+   "direction": "out",
+   "gold": "Entertainment",
+   "rule_covered": false,
+   "id": "p052"
+  },
+  {
+   "tier": "weak",
+   "raw": "RECURRING PAYMENT PERDELL BAKE DENVER NV",
+   "payee": "PERDELL BAKE",
+   "direction": "out",
+   "gold": "Dining Out",
+   "rule_covered": false,
+   "id": "p053"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT OSTTRAN SHOES",
+   "payee": "OSTTRAN SHOES",
+   "direction": "out",
+   "gold": "Clothing",
+   "rule_covered": true,
+   "id": "p054"
+  },
+  {
+   "tier": "clear",
+   "raw": "DEBIT CARD PURCHASE DRAMONT PETROLEUM TUCSON TX",
+   "payee": "DRAMONT PETROLEUM",
+   "direction": "out",
+   "gold": "Fuel",
+   "rule_covered": true,
+   "id": "p055"
+  },
+  {
+   "tier": "brand",
+   "raw": "PURCHASE AUTHORIZED ON LORMONT 01/22",
+   "payee": "LORMONT",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p056"
+  },
+  {
+   "tier": "clear",
+   "raw": "DEBIT CARD PURCHASE TST* ZANTON MUTUAL INSURANCE #2464 OMAHA NE 10/28",
+   "payee": "ZANTON MUTUAL INSURANCE",
+   "direction": "out",
+   "gold": "Insurance",
+   "rule_covered": true,
+   "id": "p057"
+  },
+  {
+   "tier": "clear",
+   "raw": "DEBIT CARD PURCHASE BRANKRY OIL CHANGE #0352 DENVER ID",
+   "payee": "BRANKRY OIL CHANGE",
+   "direction": "out",
+   "gold": "Auto Service",
+   "rule_covered": true,
+   "id": "p058"
+  },
+  {
+   "tier": "clear",
+   "raw": "DEBIT CARD PURCHASE SQ *DRASEN WASTE SERVICES DENVER WA 07/08",
+   "payee": "DRASEN WASTE SERVICES",
+   "direction": "out",
+   "gold": "Utilities",
+   "rule_covered": true,
+   "id": "p059"
+  },
+  {
+   "tier": "weak",
+   "raw": "RECURRING PAYMENT TST* MOSMONT PETRO #1502 10/12",
+   "payee": "MOSMONT PETRO",
+   "direction": "out",
+   "gold": "Fuel",
+   "rule_covered": false,
+   "id": "p060"
+  },
+  {
+   "tier": "misleading",
+   "raw": "RECURRING PAYMENT VELLIN LUMBER INN #5845 06/18",
+   "payee": "VELLIN LUMBER INN",
+   "direction": "out",
+   "gold": "Travel",
+   "rule_covered": false,
+   "id": "p061"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT TST* MOSBOST INN #0374 11/22",
+   "payee": "MOSBOST INN",
+   "direction": "out",
+   "gold": "Travel",
+   "rule_covered": true,
+   "id": "p062"
+  },
+  {
+   "tier": "weak",
+   "raw": "CHECKCARD HESKVORA CAR WSH #7405",
+   "payee": "HESKVORA CAR WSH",
+   "direction": "out",
+   "gold": "Auto Service",
+   "rule_covered": false,
+   "id": "p063"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS PURCHASE TST* HESKBOST WASTE SERVICES #8477 12/11",
+   "payee": "HESKBOST WASTE SERVICES",
+   "direction": "out",
+   "gold": "Utilities",
+   "rule_covered": true,
+   "id": "p064"
+  },
+  {
+   "tier": "clear",
+   "raw": "RECURRING PAYMENT TST* BRANMONT STREAMING MESA OK 03/13",
+   "payee": "BRANMONT STREAMING",
+   "direction": "out",
+   "gold": "Software & Streaming",
+   "rule_covered": true,
+   "id": "p065"
+  },
+  {
+   "tier": "misleading",
+   "raw": "POS DEBIT PP*KORGARD HARDWARE AUTO REPAIR #8331 TULSA CO",
+   "payee": "KORGARD HARDWARE AUTO REPAIR",
+   "direction": "out",
+   "gold": "Auto Service",
+   "rule_covered": false,
+   "id": "p066"
+  },
+  {
+   "tier": "clear",
+   "raw": "PURCHASE AUTHORIZED ON MOSSEN LUMBER #7040 TACOMA TX",
+   "payee": "MOSSEN LUMBER",
+   "direction": "out",
+   "gold": "Home & Hardware",
+   "rule_covered": true,
+   "id": "p067"
+  },
+  {
+   "tier": "opaque",
+   "raw": "VENMO PAYMENT Rafe Marsh",
+   "payee": "VENMO PAYMENT RAFE MARSH",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p068"
+  },
+  {
+   "tier": "weak",
+   "raw": "POS DEBIT SQ *QUIVORA GROC #8098 PHOENIX AZ",
+   "payee": "QUIVORA GROC",
+   "direction": "out",
+   "gold": "Groceries",
+   "rule_covered": false,
+   "id": "p069"
+  },
+  {
+   "tier": "clear",
+   "raw": "DEBIT CARD PURCHASE BRANDELL DENTAL TACOMA AZ 02/14",
+   "payee": "BRANDELL DENTAL",
+   "direction": "out",
+   "gold": "Health & Pharmacy",
+   "rule_covered": true,
+   "id": "p070"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT YARGARD SHOES #1202 TACOMA CO",
+   "payee": "YARGARD SHOES",
+   "direction": "out",
+   "gold": "Clothing",
+   "rule_covered": true,
+   "id": "p071"
+  },
+  {
+   "tier": "income",
+   "raw": "PAYROLL DEPOSIT HESKDELL INC",
+   "payee": "PAYROLL DEPOSIT HESKDELL INC",
+   "direction": "in",
+   "gold": "Income",
+   "rule_covered": true,
+   "id": "p072"
+  },
+  {
+   "tier": "weak",
+   "raw": "POS DEBIT SQ *MOSWICK OUTFTR #6333",
+   "payee": "MOSWICK OUTFTR",
+   "direction": "out",
+   "gold": "Clothing",
+   "rule_covered": false,
+   "id": "p073"
+  },
+  {
+   "tier": "weak",
+   "raw": "RECURRING PAYMENT KORWICK WTR DIST #5621",
+   "payee": "KORWICK WTR DIST",
+   "direction": "out",
+   "gold": "Utilities",
+   "rule_covered": false,
+   "id": "p074"
+  },
+  {
+   "tier": "opaque",
+   "raw": "PAYPAL *TeoQuill",
+   "payee": "PAYPAL TEOQUILL",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p075"
+  },
+  {
+   "tier": "clear",
+   "raw": "PURCHASE AUTHORIZED ON SQ *ZANMONT PHARMACY #9971 07/02",
+   "payee": "ZANMONT PHARMACY",
+   "direction": "out",
+   "gold": "Health & Pharmacy",
+   "rule_covered": true,
+   "id": "p076"
+  },
+  {
+   "tier": "clear",
+   "raw": "RECURRING PAYMENT LORARI TIRE CENTER MESA NE 05/16",
+   "payee": "LORARI TIRE CENTER",
+   "direction": "out",
+   "gold": "Auto Service",
+   "rule_covered": true,
+   "id": "p077"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS PURCHASE VELTON HOTEL #3129",
+   "payee": "VELTON HOTEL",
+   "direction": "out",
+   "gold": "Travel",
+   "rule_covered": true,
+   "id": "p078"
+  },
+  {
+   "tier": "brand",
+   "raw": "PURCHASE AUTHORIZED ON SQ *QUISEN BOISE WA 06/05",
+   "payee": "QUISEN",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p079"
+  },
+  {
+   "tier": "dual",
+   "raw": "DEBIT CARD PURCHASE FULTON FUEL & MARKET",
+   "payee": "FULTON FUEL & MARKET",
+   "direction": "out",
+   "gold": "Fuel",
+   "rule_covered": false,
+   "id": "p080"
+  },
+  {
+   "tier": "clear",
+   "raw": "PURCHASE AUTHORIZED ON TST* PERLIN APPS #9488 11/21",
+   "payee": "PERLIN APPS",
+   "direction": "out",
+   "gold": "Software & Streaming",
+   "rule_covered": true,
+   "id": "p081"
+  },
+  {
+   "tier": "misleading",
+   "raw": "PURCHASE AUTHORIZED ON SQ *LORPELL CAFE SHOES #3862 PHOENIX AZ 06/12",
+   "payee": "LORPELL CAFE SHOES",
+   "direction": "out",
+   "gold": "Clothing",
+   "rule_covered": false,
+   "id": "p082"
+  },
+  {
+   "tier": "weak",
+   "raw": "PURCHASE AUTHORIZED ON CAVTRAN TIRE CE",
+   "payee": "CAVTRAN TIRE CE",
+   "direction": "out",
+   "gold": "Auto Service",
+   "rule_covered": false,
+   "id": "p083"
+  },
+  {
+   "tier": "clear",
+   "raw": "CHECKCARD OSTKRY SHOES #3333 10/22",
+   "payee": "OSTKRY SHOES",
+   "direction": "out",
+   "gold": "Clothing",
+   "rule_covered": true,
+   "id": "p084"
+  },
+  {
+   "tier": "weak",
+   "raw": "PURCHASE AUTHORIZED ON HESKLIN HOTE #4063",
+   "payee": "HESKLIN HOTE",
+   "direction": "out",
+   "gold": "Travel",
+   "rule_covered": false,
+   "id": "p085"
+  },
+  {
+   "tier": "transfer",
+   "raw": "ONLINE TRANSFER TO SAVINGS YARVORA BANK RENO AZ",
+   "payee": "ONLINE TRANSFER TO SAVINGS YARVORA BANK",
+   "direction": "out",
+   "gold": "Transfers & Cash",
+   "rule_covered": true,
+   "id": "p086"
+  },
+  {
+   "tier": "brand",
+   "raw": "POS DEBIT HESKTRAN RENO TX",
+   "payee": "HESKTRAN",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p087"
+  },
+  {
+   "tier": "opaque",
+   "raw": "VENMO PAYMENT Lena Okafor",
+   "payee": "VENMO PAYMENT LENA OKAFOR",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p088"
+  },
+  {
+   "tier": "transfer",
+   "raw": "ATM WITHDRAWAL KORBOST BANK MESA NE",
+   "payee": "ATM WITHDRAWAL KORBOST BANK",
+   "direction": "out",
+   "gold": "Transfers & Cash",
+   "rule_covered": true,
+   "id": "p089"
+  },
+  {
+   "tier": "clear",
+   "raw": "CHECKCARD SQ *FULVORA INN #5065 AUSTIN NV 07/03",
+   "payee": "FULVORA INN",
+   "direction": "out",
+   "gold": "Travel",
+   "rule_covered": true,
+   "id": "p090"
+  },
+  {
+   "tier": "dual",
+   "raw": "RECURRING PAYMENT YARMONT MARKET & PHARMACY TACOMA WA",
+   "payee": "YARMONT MARKET & PHARMACY",
+   "direction": "out",
+   "gold": "Groceries",
+   "rule_covered": false,
+   "id": "p091"
+  },
+  {
+   "tier": "clear",
+   "raw": "CHECKCARD FULLIN THEATRE #5821",
+   "payee": "FULLIN THEATRE",
+   "direction": "out",
+   "gold": "Entertainment",
+   "rule_covered": true,
+   "id": "p092"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS PURCHASE FULPELL CAR WASH",
+   "payee": "FULPELL CAR WASH",
+   "direction": "out",
+   "gold": "Auto Service",
+   "rule_covered": true,
+   "id": "p093"
+  },
+  {
+   "tier": "dual",
+   "raw": "CHECKCARD SQ *HESKGARD PHARMACY & MARKET #7819 MESA OK",
+   "payee": "HESKGARD PHARMACY & MARKET",
+   "direction": "out",
+   "gold": "Health & Pharmacy",
+   "rule_covered": false,
+   "id": "p094"
+  },
+  {
+   "tier": "clear",
+   "raw": "CHECKCARD SQ *NOLPELL PAINT SUPPLY #3336",
+   "payee": "NOLPELL PAINT SUPPLY",
+   "direction": "out",
+   "gold": "Home & Hardware",
+   "rule_covered": true,
+   "id": "p095"
+  },
+  {
+   "tier": "opaque",
+   "raw": "CHECK # 8065 RAFE HALLORAN",
+   "payee": "CHECK RAFE HALLORAN",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p096"
+  },
+  {
+   "tier": "weak",
+   "raw": "PURCHASE AUTHORIZED ON BRANLIN MUTUAL INSUR #4771",
+   "payee": "BRANLIN MUTUAL INSUR",
+   "direction": "out",
+   "gold": "Insurance",
+   "rule_covered": false,
+   "id": "p097"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT PP*NOLDELL CINEMA #8407 RENO AZ 07/15",
+   "payee": "NOLDELL CINEMA",
+   "direction": "out",
+   "gold": "Entertainment",
+   "rule_covered": true,
+   "id": "p098"
+  },
+  {
+   "tier": "brand",
+   "raw": "CHECKCARD FULLEY #6096 04/24",
+   "payee": "FULLEY",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p099"
+  },
+  {
+   "tier": "misleading",
+   "raw": "RECURRING PAYMENT ZANDELL MARKET APPS #9124",
+   "payee": "ZANDELL MARKET APPS",
+   "direction": "out",
+   "gold": "Software & Streaming",
+   "rule_covered": false,
+   "id": "p100"
+  },
+  {
+   "tier": "opaque",
+   "raw": "CHECK # 1215 RAFE TORVEN",
+   "payee": "CHECK RAFE TORVEN",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p101"
+  },
+  {
+   "tier": "misleading",
+   "raw": "POS PURCHASE OSTSEN HARDWARE AIRLINES #6678 BOISE ID",
+   "payee": "OSTSEN HARDWARE AIRLINES",
+   "direction": "out",
+   "gold": "Travel",
+   "rule_covered": false,
+   "id": "p102"
+  },
+  {
+   "tier": "clear",
+   "raw": "PURCHASE AUTHORIZED ON HESKLEY PHYSICAL THERAPY #8232 10/06",
+   "payee": "HESKLEY PHYSICAL THERAPY",
+   "direction": "out",
+   "gold": "Health & Pharmacy",
+   "rule_covered": true,
+   "id": "p103"
+  },
+  {
+   "tier": "clear",
+   "raw": "CHECKCARD PP*QUIGARD GRILL #1356 05/11",
+   "payee": "QUIGARD GRILL",
+   "direction": "out",
+   "gold": "Dining Out",
+   "rule_covered": true,
+   "id": "p104"
+  },
+  {
+   "tier": "misleading",
+   "raw": "POS PURCHASE SQ *CAVKRY BAKERY CAR WASH #2726 BOISE OK",
+   "payee": "CAVKRY BAKERY CAR WASH",
+   "direction": "out",
+   "gold": "Auto Service",
+   "rule_covered": false,
+   "id": "p105"
+  },
+  {
+   "tier": "dual",
+   "raw": "POS DEBIT ZANLIN GRILL & CINEMA #3680 PHOENIX TX",
+   "payee": "ZANLIN GRILL & CINEMA",
+   "direction": "out",
+   "gold": "Dining Out",
+   "rule_covered": false,
+   "id": "p106"
+  },
+  {
+   "tier": "transfer",
+   "raw": "ONLINE TRANSFER TO SAVINGS DRAKRY BANK BOISE WA",
+   "payee": "ONLINE TRANSFER TO SAVINGS DRAKRY BANK",
+   "direction": "out",
+   "gold": "Transfers & Cash",
+   "rule_covered": true,
+   "id": "p107"
+  },
+  {
+   "tier": "opaque",
+   "raw": "VENMO PAYMENT Pavel Lindqvist",
+   "payee": "VENMO PAYMENT PAVEL LINDQVIST",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p108"
+  },
+  {
+   "tier": "clear",
+   "raw": "RECURRING PAYMENT TST* PERTON BOWLING #5733 AUSTIN TX 12/09",
+   "payee": "PERTON BOWLING",
+   "direction": "out",
+   "gold": "Entertainment",
+   "rule_covered": true,
+   "id": "p109"
+  },
+  {
+   "tier": "weak",
+   "raw": "PURCHASE AUTHORIZED ON DRABOST PETROLE #9381 TACOMA NV",
+   "payee": "DRABOST PETROLE",
+   "direction": "out",
+   "gold": "Fuel",
+   "rule_covered": false,
+   "id": "p110"
+  },
+  {
+   "tier": "clear",
+   "raw": "RECURRING PAYMENT PP*BRANVORA APPS #0494",
+   "payee": "BRANVORA APPS",
+   "direction": "out",
+   "gold": "Software & Streaming",
+   "rule_covered": true,
+   "id": "p111"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS PURCHASE QUIWICK TELECOM #2312",
+   "payee": "QUIWICK TELECOM",
+   "direction": "out",
+   "gold": "Utilities",
+   "rule_covered": true,
+   "id": "p112"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT SQ *CAVWICK CINEMA #4303 TUCSON OK 07/10",
+   "payee": "CAVWICK CINEMA",
+   "direction": "out",
+   "gold": "Entertainment",
+   "rule_covered": true,
+   "id": "p113"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS PURCHASE OSTGARD INSURANCE #2714",
+   "payee": "OSTGARD INSURANCE",
+   "direction": "out",
+   "gold": "Insurance",
+   "rule_covered": true,
+   "id": "p114"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT TST* MOSTON OUTFITTERS #0391",
+   "payee": "MOSTON OUTFITTERS",
+   "direction": "out",
+   "gold": "Clothing",
+   "rule_covered": true,
+   "id": "p115"
+  },
+  {
+   "tier": "brand",
+   "raw": "CHECKCARD TST* DRATRAN #1583",
+   "payee": "DRATRAN",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p116"
+  },
+  {
+   "tier": "clear",
+   "raw": "RECURRING PAYMENT PP*MOSLEY PHYSICAL THERAPY #0912 TACOMA OK",
+   "payee": "MOSLEY PHYSICAL THERAPY",
+   "direction": "out",
+   "gold": "Health & Pharmacy",
+   "rule_covered": true,
+   "id": "p117"
+  },
+  {
+   "tier": "weak",
+   "raw": "DEBIT CARD PURCHASE DRAGARD APP #3984 DENVER NV 09/19",
+   "payee": "DRAGARD APP",
+   "direction": "out",
+   "gold": "Software & Streaming",
+   "rule_covered": false,
+   "id": "p118"
+  },
+  {
+   "tier": "clear",
+   "raw": "RECURRING PAYMENT NOLTON CAFE AUSTIN ID 03/21",
+   "payee": "NOLTON CAFE",
+   "direction": "out",
+   "gold": "Dining Out",
+   "rule_covered": true,
+   "id": "p119"
+  },
+  {
+   "tier": "clear",
+   "raw": "RECURRING PAYMENT VELGARD WASTE SERVICES #2681 03/20",
+   "payee": "VELGARD WASTE SERVICES",
+   "direction": "out",
+   "gold": "Utilities",
+   "rule_covered": true,
+   "id": "p120"
+  },
+  {
+   "tier": "dual",
+   "raw": "POS DEBIT PP*YARLIN GAS & ELECTRIC #5270 08/14",
+   "payee": "YARLIN GAS & ELECTRIC",
+   "direction": "out",
+   "gold": "Utilities",
+   "rule_covered": false,
+   "id": "p121"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT VELSEN SUPERMARKET #9430 01/23",
+   "payee": "VELSEN SUPERMARKET",
+   "direction": "out",
+   "gold": "Groceries",
+   "rule_covered": true,
+   "id": "p122"
+  },
+  {
+   "tier": "dual",
+   "raw": "POS PURCHASE PP*CAVGARD TIRE CENTER & AUTO REPAIR #7534 TULSA CO",
+   "payee": "CAVGARD TIRE CENTER & AUTO REPAIR",
+   "direction": "out",
+   "gold": "Auto Service",
+   "rule_covered": false,
+   "id": "p123"
+  },
+  {
+   "tier": "weak",
+   "raw": "PURCHASE AUTHORIZED ON SQ *LORTON CINE #2313 TUCSON WA 05/04",
+   "payee": "LORTON CINE",
+   "direction": "out",
+   "gold": "Entertainment",
+   "rule_covered": false,
+   "id": "p124"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT NOLMONT WATER DISTRICT BOISE WA 01/07",
+   "payee": "NOLMONT WATER DISTRICT",
+   "direction": "out",
+   "gold": "Utilities",
+   "rule_covered": true,
+   "id": "p125"
+  },
+  {
+   "tier": "misleading",
+   "raw": "POS PURCHASE PP*TAMARI MARKET AUTO REPAIR PHOENIX OK 01/26",
+   "payee": "TAMARI MARKET AUTO REPAIR",
+   "direction": "out",
+   "gold": "Auto Service",
+   "rule_covered": false,
+   "id": "p126"
+  },
+  {
+   "tier": "transfer",
+   "raw": "ATM WITHDRAWAL NOLWICK BANK TULSA ID",
+   "payee": "ATM WITHDRAWAL NOLWICK BANK",
+   "direction": "out",
+   "gold": "Transfers & Cash",
+   "rule_covered": true,
+   "id": "p127"
+  },
+  {
+   "tier": "dual",
+   "raw": "POS PURCHASE SQ *QUITON MARKET & PHARMACY 11/28",
+   "payee": "QUITON MARKET & PHARMACY",
+   "direction": "out",
+   "gold": "Groceries",
+   "rule_covered": false,
+   "id": "p128"
+  },
+  {
+   "tier": "clear",
+   "raw": "DEBIT CARD PURCHASE PP*OSTLEY CAR WASH #3740 TUCSON NV",
+   "payee": "OSTLEY CAR WASH",
+   "direction": "out",
+   "gold": "Auto Service",
+   "rule_covered": true,
+   "id": "p129"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS PURCHASE MOSKRY SHOES OMAHA NE",
+   "payee": "MOSKRY SHOES",
+   "direction": "out",
+   "gold": "Clothing",
+   "rule_covered": true,
+   "id": "p130"
+  },
+  {
+   "tier": "misleading",
+   "raw": "DEBIT CARD PURCHASE SQ *YARDELL FUEL HOTEL TUCSON NE",
+   "payee": "YARDELL FUEL HOTEL",
+   "direction": "out",
+   "gold": "Travel",
+   "rule_covered": false,
+   "id": "p131"
+  },
+  {
+   "tier": "clear",
+   "raw": "RECURRING PAYMENT PP*OSTMONT FUEL STOP 08/05",
+   "payee": "OSTMONT FUEL STOP",
+   "direction": "out",
+   "gold": "Fuel",
+   "rule_covered": true,
+   "id": "p132"
+  },
+  {
+   "tier": "weak",
+   "raw": "CHECKCARD LORKRY PHYSICAL THER #0996 TACOMA WA 08/05",
+   "payee": "LORKRY PHYSICAL THER",
+   "direction": "out",
+   "gold": "Health & Pharmacy",
+   "rule_covered": false,
+   "id": "p133"
+  },
+  {
+   "tier": "weak",
+   "raw": "RECURRING PAYMENT SQ *VELBOST APPRL #8592 AUSTIN OK 07/19",
+   "payee": "VELBOST APPRL",
+   "direction": "out",
+   "gold": "Clothing",
+   "rule_covered": false,
+   "id": "p134"
+  },
+  {
+   "tier": "clear",
+   "raw": "PURCHASE AUTHORIZED ON YARTON FUEL STOP MESA WA 09/14",
+   "payee": "YARTON FUEL STOP",
+   "direction": "out",
+   "gold": "Fuel",
+   "rule_covered": true,
+   "id": "p135"
+  },
+  {
+   "tier": "transfer",
+   "raw": "ONLINE TRANSFER TO SAVINGS BRANTON BANK TACOMA ID",
+   "payee": "ONLINE TRANSFER TO SAVINGS BRANTON BANK",
+   "direction": "out",
+   "gold": "Transfers & Cash",
+   "rule_covered": true,
+   "id": "p136"
+  },
+  {
+   "tier": "clear",
+   "raw": "CHECKCARD LORTRAN ASSURANCE 12/10",
+   "payee": "LORTRAN ASSURANCE",
+   "direction": "out",
+   "gold": "Insurance",
+   "rule_covered": true,
+   "id": "p137"
+  },
+  {
+   "tier": "dual",
+   "raw": "DEBIT CARD PURCHASE SQ *CAVVORA PHARMACY & MARKET",
+   "payee": "CAVVORA PHARMACY & MARKET",
+   "direction": "out",
+   "gold": "Health & Pharmacy",
+   "rule_covered": false,
+   "id": "p138"
+  },
+  {
+   "tier": "dual",
+   "raw": "DEBIT CARD PURCHASE DRALEY CAFE & BAKERY #8548 TUCSON NE",
+   "payee": "DRALEY CAFE & BAKERY",
+   "direction": "out",
+   "gold": "Dining Out",
+   "rule_covered": false,
+   "id": "p139"
+  },
+  {
+   "tier": "clear",
+   "raw": "PURCHASE AUTHORIZED ON VELVORA INSURANCE #5744 BOISE OK",
+   "payee": "VELVORA INSURANCE",
+   "direction": "out",
+   "gold": "Insurance",
+   "rule_covered": true,
+   "id": "p140"
+  },
+  {
+   "tier": "clear",
+   "raw": "RECURRING PAYMENT CAVMONT CLOUD 09/21",
+   "payee": "CAVMONT CLOUD",
+   "direction": "out",
+   "gold": "Software & Streaming",
+   "rule_covered": true,
+   "id": "p141"
+  },
+  {
+   "tier": "income",
+   "raw": "INTEREST PAID BRANLEY BANK 06/01",
+   "payee": "INTEREST PAID BRANLEY BANK",
+   "direction": "in",
+   "gold": "Income",
+   "rule_covered": true,
+   "id": "p142"
+  },
+  {
+   "tier": "clear",
+   "raw": "PURCHASE AUTHORIZED ON MOSARI ARCADE PHOENIX CO 03/22",
+   "payee": "MOSARI ARCADE",
+   "direction": "out",
+   "gold": "Entertainment",
+   "rule_covered": true,
+   "id": "p143"
+  },
+  {
+   "tier": "brand",
+   "raw": "POS PURCHASE TAMBOST #9543",
+   "payee": "TAMBOST",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p144"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS PURCHASE PERMONT PAINT SUPPLY DENVER CO",
+   "payee": "PERMONT PAINT SUPPLY",
+   "direction": "out",
+   "gold": "Home & Hardware",
+   "rule_covered": true,
+   "id": "p145"
+  },
+  {
+   "tier": "weak",
+   "raw": "POS DEBIT PP*OSTPELL FL #3922 OMAHA AZ 06/18",
+   "payee": "OSTPELL FL",
+   "direction": "out",
+   "gold": "Fuel",
+   "rule_covered": false,
+   "id": "p146"
+  },
+  {
+   "tier": "weak",
+   "raw": "DEBIT CARD PURCHASE TAMTON CAF",
+   "payee": "TAMTON CAF",
+   "direction": "out",
+   "gold": "Dining Out",
+   "rule_covered": false,
+   "id": "p147"
+  },
+  {
+   "tier": "weak",
+   "raw": "POS PURCHASE HESKTON PHARM OMAHA WA 04/01",
+   "payee": "HESKTON PHARM",
+   "direction": "out",
+   "gold": "Health & Pharmacy",
+   "rule_covered": false,
+   "id": "p148"
+  },
+  {
+   "tier": "weak",
+   "raw": "POS DEBIT PP*OSTARI STREAM #7770 PHOENIX NE",
+   "payee": "OSTARI STREAM",
+   "direction": "out",
+   "gold": "Software & Streaming",
+   "rule_covered": false,
+   "id": "p149"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT SQ *NOLSEN CAR RENTAL #9204 RENO NE 05/15",
+   "payee": "NOLSEN CAR RENTAL",
+   "direction": "out",
+   "gold": "Travel",
+   "rule_covered": true,
+   "id": "p150"
+  },
+  {
+   "tier": "opaque",
+   "raw": "CHECK # 1697 INES QUILL",
+   "payee": "CHECK INES QUILL",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p151"
+  },
+  {
+   "tier": "dual",
+   "raw": "CHECKCARD PP*VELARI GRILL & INN",
+   "payee": "VELARI GRILL & INN",
+   "direction": "out",
+   "gold": "Dining Out",
+   "rule_covered": false,
+   "id": "p152"
+  },
+  {
+   "tier": "transfer",
+   "raw": "ATM WITHDRAWAL VELKRY BANK TUCSON CO",
+   "payee": "ATM WITHDRAWAL VELKRY BANK",
+   "direction": "out",
+   "gold": "Transfers & Cash",
+   "rule_covered": true,
+   "id": "p153"
+  },
+  {
+   "tier": "clear",
+   "raw": "RECURRING PAYMENT FULARI MARKET #2113 TACOMA ID 12/05",
+   "payee": "FULARI MARKET",
+   "direction": "out",
+   "gold": "Groceries",
+   "rule_covered": true,
+   "id": "p154"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS PURCHASE SQ *OSTVORA SUPERMARKET #5997 BOISE TX 03/28",
+   "payee": "OSTVORA SUPERMARKET",
+   "direction": "out",
+   "gold": "Groceries",
+   "rule_covered": true,
+   "id": "p155"
+  },
+  {
+   "tier": "weak",
+   "raw": "CHECKCARD PERKRY GRDN CTR #0785 BOISE AZ 11/11",
+   "payee": "PERKRY GRDN CTR",
+   "direction": "out",
+   "gold": "Home & Hardware",
+   "rule_covered": false,
+   "id": "p156"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS PURCHASE SQ *HESKKRY PETROLEUM #8143 BOISE ID 08/22",
+   "payee": "HESKKRY PETROLEUM",
+   "direction": "out",
+   "gold": "Fuel",
+   "rule_covered": true,
+   "id": "p157"
+  },
+  {
+   "tier": "clear",
+   "raw": "DEBIT CARD PURCHASE TST* ZANPELL HARDWARE #0247 AUSTIN NV",
+   "payee": "ZANPELL HARDWARE",
+   "direction": "out",
+   "gold": "Home & Hardware",
+   "rule_covered": true,
+   "id": "p158"
+  },
+  {
+   "tier": "dual",
+   "raw": "CHECKCARD SQ *HESKARI BAKERY & CAFE TUCSON NV",
+   "payee": "HESKARI BAKERY & CAFE",
+   "direction": "out",
+   "gold": "Dining Out",
+   "rule_covered": false,
+   "id": "p159"
+  },
+  {
+   "tier": "transfer",
+   "raw": "ONLINE TRANSFER TO SAVINGS OSTTON BANK DENVER TX",
+   "payee": "ONLINE TRANSFER TO SAVINGS OSTTON BANK",
+   "direction": "out",
+   "gold": "Transfers & Cash",
+   "rule_covered": true,
+   "id": "p160"
+  },
+  {
+   "tier": "income",
+   "raw": "PAYROLL DEPOSIT VELLEY LLC",
+   "payee": "PAYROLL DEPOSIT VELLEY LLC",
+   "direction": "in",
+   "gold": "Income",
+   "rule_covered": true,
+   "id": "p161"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT TST* CAVARI FUEL #6342 TUCSON ID",
+   "payee": "CAVARI FUEL",
+   "direction": "out",
+   "gold": "Fuel",
+   "rule_covered": true,
+   "id": "p162"
+  },
+  {
+   "tier": "clear",
+   "raw": "DEBIT CARD PURCHASE OSTBOST SHOES BOISE NE 02/05",
+   "payee": "OSTBOST SHOES",
+   "direction": "out",
+   "gold": "Clothing",
+   "rule_covered": true,
+   "id": "p163"
+  },
+  {
+   "tier": "opaque",
+   "raw": "ZELLE PAYMENT TO Orla Lindqvist",
+   "payee": "ZELLE PAYMENT TO ORLA LINDQVIST",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p164"
+  },
+  {
+   "tier": "clear",
+   "raw": "PURCHASE AUTHORIZED ON CAVLEY PAINT SUPPLY",
+   "payee": "CAVLEY PAINT SUPPLY",
+   "direction": "out",
+   "gold": "Home & Hardware",
+   "rule_covered": true,
+   "id": "p165"
+  },
+  {
+   "tier": "misleading",
+   "raw": "CHECKCARD PP*KORSEN GROCERY ARCADE TUCSON TX 06/22",
+   "payee": "KORSEN GROCERY ARCADE",
+   "direction": "out",
+   "gold": "Entertainment",
+   "rule_covered": false,
+   "id": "p166"
+  },
+  {
+   "tier": "dual",
+   "raw": "DEBIT CARD PURCHASE NOLGARD MARKET & FUEL #7278 05/21",
+   "payee": "NOLGARD MARKET & FUEL",
+   "direction": "out",
+   "gold": "Groceries",
+   "rule_covered": false,
+   "id": "p167"
+  },
+  {
+   "tier": "misleading",
+   "raw": "RECURRING PAYMENT TST* HESKSEN MARKET CINEMA #0933 AUSTIN CO 10/17",
+   "payee": "HESKSEN MARKET CINEMA",
+   "direction": "out",
+   "gold": "Entertainment",
+   "rule_covered": false,
+   "id": "p168"
+  },
+  {
+   "tier": "opaque",
+   "raw": "CKO*JPUHDM",
+   "payee": "CKO JPUHDM",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p169"
+  },
+  {
+   "tier": "misleading",
+   "raw": "DEBIT CARD PURCHASE LORGARD ELECTRIC STREAMING #5517",
+   "payee": "LORGARD ELECTRIC STREAMING",
+   "direction": "out",
+   "gold": "Software & Streaming",
+   "rule_covered": false,
+   "id": "p170"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT NOLVORA CAR WASH #2401 MESA NV",
+   "payee": "NOLVORA CAR WASH",
+   "direction": "out",
+   "gold": "Auto Service",
+   "rule_covered": true,
+   "id": "p171"
+  },
+  {
+   "tier": "weak",
+   "raw": "POS PURCHASE TAMGARD PHYS THER 05/06",
+   "payee": "TAMGARD PHYS THER",
+   "direction": "out",
+   "gold": "Health & Pharmacy",
+   "rule_covered": false,
+   "id": "p172"
+  },
+  {
+   "tier": "clear",
+   "raw": "CHECKCARD TST* QUIDELL FOODS BOISE CO 01/06",
+   "payee": "QUIDELL FOODS",
+   "direction": "out",
+   "gold": "Groceries",
+   "rule_covered": true,
+   "id": "p173"
+  },
+  {
+   "tier": "opaque",
+   "raw": "ZELLE PAYMENT TO Ines Quill",
+   "payee": "ZELLE PAYMENT TO INES QUILL",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p174"
+  },
+  {
+   "tier": "misleading",
+   "raw": "DEBIT CARD PURCHASE ZANWICK PHARMACY ARCADE",
+   "payee": "ZANWICK PHARMACY ARCADE",
+   "direction": "out",
+   "gold": "Entertainment",
+   "rule_covered": false,
+   "id": "p175"
+  },
+  {
+   "tier": "opaque",
+   "raw": "CKO*FBEZWN",
+   "payee": "CKO FBEZWN",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p176"
+  },
+  {
+   "tier": "misleading",
+   "raw": "PURCHASE AUTHORIZED ON KORKRY ELECTRIC WATER DISTRICT #4764",
+   "payee": "KORKRY ELECTRIC WATER DISTRICT",
+   "direction": "out",
+   "gold": "Utilities",
+   "rule_covered": false,
+   "id": "p177"
+  },
+  {
+   "tier": "weak",
+   "raw": "DEBIT CARD PURCHASE CAVDELL INN TULSA CO 11/17",
+   "payee": "CAVDELL INN",
+   "direction": "out",
+   "gold": "Travel",
+   "rule_covered": false,
+   "id": "p178"
+  },
+  {
+   "tier": "misleading",
+   "raw": "POS DEBIT ZANARI HARDWARE APPAREL #1141",
+   "payee": "ZANARI HARDWARE APPAREL",
+   "direction": "out",
+   "gold": "Clothing",
+   "rule_covered": false,
+   "id": "p179"
+  },
+  {
+   "tier": "brand",
+   "raw": "POS DEBIT PP*BRANTRAN #9142 PHOENIX OK 08/25",
+   "payee": "BRANTRAN",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p180"
+  },
+  {
+   "tier": "transfer",
+   "raw": "ONLINE TRANSFER TO SAVINGS HESKWICK BANK AUSTIN WA",
+   "payee": "ONLINE TRANSFER TO SAVINGS HESKWICK BANK",
+   "direction": "out",
+   "gold": "Transfers & Cash",
+   "rule_covered": true,
+   "id": "p181"
+  },
+  {
+   "tier": "transfer",
+   "raw": "ATM WITHDRAWAL QUILIN BANK TACOMA ID",
+   "payee": "ATM WITHDRAWAL QUILIN BANK",
+   "direction": "out",
+   "gold": "Transfers & Cash",
+   "rule_covered": true,
+   "id": "p182"
+  },
+  {
+   "tier": "clear",
+   "raw": "CHECKCARD SQ *TAMTRAN PHARMACY #3282",
+   "payee": "TAMTRAN PHARMACY",
+   "direction": "out",
+   "gold": "Health & Pharmacy",
+   "rule_covered": true,
+   "id": "p183"
+  },
+  {
+   "tier": "brand",
+   "raw": "DEBIT CARD PURCHASE PP*YARPELL #3206 12/27",
+   "payee": "YARPELL",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p184"
+  },
+  {
+   "tier": "weak",
+   "raw": "CHECKCARD QUIMONT SOFTWR #4419 TUCSON ID",
+   "payee": "QUIMONT SOFTWR",
+   "direction": "out",
+   "gold": "Software & Streaming",
+   "rule_covered": false,
+   "id": "p185"
+  },
+  {
+   "tier": "misleading",
+   "raw": "DEBIT CARD PURCHASE KORLEY BAKERY ASSURANCE #2960 AUSTIN TX",
+   "payee": "KORLEY BAKERY ASSURANCE",
+   "direction": "out",
+   "gold": "Insurance",
+   "rule_covered": false,
+   "id": "p186"
+  },
+  {
+   "tier": "dual",
+   "raw": "POS DEBIT FULWICK FUEL & MARKET 02/11",
+   "payee": "FULWICK FUEL & MARKET",
+   "direction": "out",
+   "gold": "Fuel",
+   "rule_covered": false,
+   "id": "p187"
+  },
+  {
+   "tier": "misleading",
+   "raw": "PURCHASE AUTHORIZED ON LORVORA PHARMACY ASSURANCE #0508 RENO NV",
+   "payee": "LORVORA PHARMACY ASSURANCE",
+   "direction": "out",
+   "gold": "Insurance",
+   "rule_covered": false,
+   "id": "p188"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT SQ *PERPELL BAKERY #1416 TUCSON OK 07/03",
+   "payee": "PERPELL BAKERY",
+   "direction": "out",
+   "gold": "Dining Out",
+   "rule_covered": true,
+   "id": "p189"
+  },
+  {
+   "tier": "misleading",
+   "raw": "CHECKCARD SQ *VELWICK PHARMACY APPAREL",
+   "payee": "VELWICK PHARMACY APPAREL",
+   "direction": "out",
+   "gold": "Clothing",
+   "rule_covered": false,
+   "id": "p190"
+  },
+  {
+   "tier": "opaque",
+   "raw": "SQ *ORLA DELACROIX",
+   "payee": "ORLA DELACROIX",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p191"
+  },
+  {
+   "tier": "opaque",
+   "raw": "PAYPAL *LenaMarsh",
+   "payee": "PAYPAL LENAMARSH",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p192"
+  },
+  {
+   "tier": "transfer",
+   "raw": "ONLINE TRANSFER TO SAVINGS ZANTRAN BANK PHOENIX ID",
+   "payee": "ONLINE TRANSFER TO SAVINGS ZANTRAN BANK",
+   "direction": "out",
+   "gold": "Transfers & Cash",
+   "rule_covered": true,
+   "id": "p193"
+  },
+  {
+   "tier": "opaque",
+   "raw": "SQ *JOSS MARSH",
+   "payee": "JOSS MARSH",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p194"
+  },
+  {
+   "tier": "misleading",
+   "raw": "POS PURCHASE HESKMONT ELECTRIC WATER DISTRICT #4052",
+   "payee": "HESKMONT ELECTRIC WATER DISTRICT",
+   "direction": "out",
+   "gold": "Utilities",
+   "rule_covered": false,
+   "id": "p195"
+  },
+  {
+   "tier": "dual",
+   "raw": "POS PURCHASE FULDELL HARDWARE & LUMBER #7370 TUCSON TX 08/03",
+   "payee": "FULDELL HARDWARE & LUMBER",
+   "direction": "out",
+   "gold": "Home & Hardware",
+   "rule_covered": false,
+   "id": "p196"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS PURCHASE TST* BRANPELL HOTEL #8270 11/13",
+   "payee": "BRANPELL HOTEL",
+   "direction": "out",
+   "gold": "Travel",
+   "rule_covered": true,
+   "id": "p197"
+  },
+  {
+   "tier": "clear",
+   "raw": "POS DEBIT TST* MOSPELL FOODS #5177 OMAHA NE",
+   "payee": "MOSPELL FOODS",
+   "direction": "out",
+   "gold": "Groceries",
+   "rule_covered": true,
+   "id": "p198"
+  },
+  {
+   "tier": "brand",
+   "raw": "RECURRING PAYMENT SQ *TAMPELL PHOENIX CO",
+   "payee": "TAMPELL",
+   "direction": "out",
+   "gold": "UNSURE",
+   "rule_covered": false,
+   "id": "p199"
+  }
+ ]
+}

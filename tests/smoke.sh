@@ -40,7 +40,7 @@ rec() {    # rec TEST  -> a result JSON for TEST must exist in the smoke output 
 }
 
 # 1. offline self-tests (graders, fixtures, pattern logic: no server involved)
-for t in red aud mon hrd tool_probe judge crit sum_test ocr; do step "selftest-$t" python3 tests/$t.py --selftest; done
+for t in red aud mon hrd tool_probe judge crit sum_test ocr cat arena; do step "selftest-$t" python3 tests/$t.py --selftest; done
 step selftest-summarize_verify python3 patterns/summarize_verify.py --selftest
 step selftest-escalate python3 patterns/escalate.py --selftest
 
@@ -55,7 +55,11 @@ step run-judge      python3 tests/judge.py "${R[@]}" --runs 2
 step run-crit       python3 tests/crit.py "${R[@]}" --runs 2 --judge-writer small
 step run-sum        python3 tests/sum_test.py "${R[@]}" --runs 1 --pipeline
 step run-ocr        python3 tests/ocr.py "${R[@]}" --runs 1
-for T in RED AUD MON HRD TOOL JUDGE CRIT SUM OCR; do rec $T; done
+step run-cat        python3 tests/cat.py "${R[@]}" --limit 60
+MODEL=mock-small step run-cat-small python3 tests/cat.py "${R[@]}" --limit 60 --no-schema
+for T in RED AUD MON HRD TOOL JUDGE CRIT SUM OCR CAT; do rec $T; done
+step run-arena      python3 tests/arena.py "${R[@]}" $(ls "$OUT"/raw/CAT-*.json)
+rec ARENA
 
 # 3. the patterns end to end
 step run-summarize-verify python3 patterns/summarize_verify.py tests/fixtures/demo/transcript.txt --quiet --out "$OUT/demo.summary.md"

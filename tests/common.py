@@ -36,7 +36,7 @@ def _url(base):
     return base + ("/chat/completions" if base.endswith("/v1") else "/v1/chat/completions")
 
 
-def chat(args, messages, *, max_tokens, temperature=0.0, top_p=None, seed=None, tools=None):
+def chat(args, messages, *, max_tokens, temperature=0.0, top_p=None, seed=None, tools=None, response_format=None):
     """One non-streaming chat call. Never raises: errors come back as {'error': ...}."""
     body = {"model": args.model or "local", "messages": messages, "stream": False,
             "max_tokens": max_tokens, "temperature": temperature}
@@ -46,6 +46,8 @@ def chat(args, messages, *, max_tokens, temperature=0.0, top_p=None, seed=None, 
         body["seed"] = seed
     if tools:
         body["tools"] = tools
+    if response_format:
+        body["response_format"] = response_format
     if args.think != "auto":
         body["chat_template_kwargs"] = {"enable_thinking": args.think == "on"}
     headers = {"Content-Type": "application/json"}

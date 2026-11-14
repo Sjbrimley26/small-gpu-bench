@@ -87,6 +87,17 @@ def reply_for(model, messages, tools):
         return json.dumps({"price": price, "item": kind, "condition": "good", "pickup_only": "ickup" in user,
                            "red_flags": flags}), None
     # --- tests
+    if system.startswith("You assign one bank-statement payee"):   # CAT: keyword guess, last business word wins
+        payee = re.search(r"PAYEE: (.*)", user).group(1)
+        kw = [("PAYROLL", "Income"), ("INTEREST PAID", "Income"), ("ATM", "Transfers & Cash"), ("TRANSFER", "Transfers & Cash"),
+              ("MARKET", "Groceries"), ("GROC", "Groceries"), ("CAFE", "Dining Out"), ("BAKERY", "Dining Out"), ("GRILL", "Dining Out"),
+              ("FUEL", "Fuel"), ("ELEC", "Utilities"), ("INSURANCE", "Insurance"), ("PHARMACY", "Health & Pharmacy"),
+              ("DENTAL", "Health & Pharmacy"), ("HARDWARE", "Home & Hardware"), ("LUMBER", "Home & Hardware"),
+              ("STREAMING", "Software & Streaming"), ("SOFTWARE", "Software & Streaming"), ("CINEMA", "Entertainment"),
+              ("AUTO REPAIR", "Auto Service"), ("INN", "Travel")]
+        hit = min(((payee.rfind(k), c) for k, c in kw if k in payee), default=None, key=lambda x: -x[0])
+        ans = "Groceries" if "small" in model else (hit[1] if hit else "UNSURE")
+        return json.dumps({"category": ans}), None
     if "Read this document page" in first_user:           # OCR (the mock cannot see; it returns the planted values)
         return "TITLE: 88213\nPO: 4471\nDATE: 2026-09-14\nTOTAL: 1345.99\nVENDOR: ACME DOOR AND TRIM SUPPLY", None
     if "sanitizes business documents" in system:           # RED
