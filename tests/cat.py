@@ -307,7 +307,11 @@ def summarize(rows, answers):
     for t in TIER_ORDER:
         tr = [r for r in rows if r["tier"] == t]
         if tr:
-            ok = sum(outcome(answers.get(r["id"]), r["gold"]) in ("right", "abstain_ok") for r in tr)
+            ok = 0
+            for r in tr:
+                v = answers.get(r["id"])
+                ans, err = v if isinstance(v, tuple) else (v, False)
+                ok += outcome(ans, r["gold"], err) in ("right", "abstain_ok")
             by_tier[t] = [ok, len(tr)]
     out["by_tier"] = by_tier
     return out
@@ -355,6 +359,9 @@ def selftest():
     cat_rows = sum(r["gold"] != UNSURE for r in rows)
     c("perfect answers score all right", s["all"]["right"] == cat_rows and s["all"]["wrong"] == 0
       and s["all"]["abstain_ok"] == len(rows) - cat_rows)
+    c("perfect answers score every tier fully ok", all(a == b for a, b in s["by_tier"].values()))
+    tup = summarize(rows, {r["id"]: (a, False) for r, a in ((r, perfect[r["id"]]) for r in rows)})
+    c("by_tier reads (answer, errored) tuples like all/tail do", tup["by_tier"] == s["by_tier"])
     sure = summarize(rows, {r["id"]: "Fuel" for r in rows})
     c("always-Fuel scores a false fill on every unknowable row", sure["all"]["false_fill"] == len(rows) - cat_rows)
     c("tail slice excludes rule tiers", s["tail"]["right"] + s["tail"]["abstain_ok"] ==
