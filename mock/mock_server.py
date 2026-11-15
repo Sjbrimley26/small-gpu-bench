@@ -17,11 +17,23 @@ Behaviour worth knowing:
 """
 import argparse
 import json
+import os
 import re
 import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 META = False
+_SQL_GOLD = None
+
+
+def _sql_gold():
+    """question text -> gold SQL, read from the SQL-SYN fixture (the mock answers by lookup; it is not a model)."""
+    global _SQL_GOLD
+    if _SQL_GOLD is None:
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests", "fixtures", "sql", "questions.json")
+        with open(path, encoding="utf-8") as f:
+            _SQL_GOLD = {q["question"]: q["gold"] for q in json.load(f)["questions"]}
+    return _SQL_GOLD
 
 
 def _redact(text):
@@ -87,6 +99,31 @@ def reply_for(model, messages, tools):
         return json.dumps({"price": price, "item": kind, "condition": "good", "pickup_only": "ickup" in user,
                            "red_flags": flags}), None
     # --- tests
+    if system.startswith("You are a SQLite expert"):      # SQL-SYN: gold by lookup; "small" is wrong; every 5th reply adds prose, every 7th a fence
+        qtext = re.search(r"QUESTION: (.*)\nSQL:", user, re.S).group(1)
+        if "small" in model:
+            return "SELECT 1", None
+        sqltext = _sql_gold().get(qtext, "SELECT 1")
+        n = sum(map(ord, qtext))
+        if n % 5 == 0:
+            return sqltext + "\n\nThis query answers the question.", None
+        if n % 7 == 0:
+            return "```sql\n" + sqltext + "\n```", None
+        return sqltext, None
+    if system.startswith("You extract facts from one rental listing"):   # RENT: read the structured fields, guess the rest
+        price = re.search(r"Price field: \$?([\d,]+)", user)
+        attrs = re.search(r"Attributes: (.*)", user).group(1)
+        br, ba = re.search(r"(\d+)BR", attrs), re.search(r"([\d.]+)Ba", attrs)
+        loc = re.search(r"Location: (.*)", user).group(1)
+        low = user.lower()
+        kind = next((k for k in ("mobile home", "townhouse", "duplex", "condo", "apartment", "room") if k in low), "house")
+        pets = "dogs ok" if "dogs are ok" in attrs.lower() else "cats only" if "cats are ok" in attrs.lower() else "unclear"
+        if "small" in model:                                   # wrong on purpose: breaks the BR cross-check
+            br = type("M", (), {"group": lambda self, i: "9"})()
+        flags = [f for k, f in (("gift card", "gift card"), ("wire transfer", "wire payment"), ("overseas", "owner abroad"),
+                                ("no dogs", "no dogs"), ("no viewings", "no viewing")) if k in low]
+        return json.dumps({"rent": int(price.group(1).replace(",", "")) if price else None, "beds": float(br.group(1)) if br else None,
+                           "baths": float(ba.group(1)) if ba else None, "kind": kind, "pets": pets, "town": loc, "red_flags": flags}), None
     if system.startswith("You assign one bank-statement payee"):   # CAT: keyword guess, last business word wins
         payee = re.search(r"PAYEE: (.*)", user).group(1)
         kw = [("PAYROLL", "Income"), ("INTEREST PAID", "Income"), ("ATM", "Transfers & Cash"), ("TRANSFER", "Transfers & Cash"),

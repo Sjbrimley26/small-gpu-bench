@@ -1,0 +1,2018 @@
+{
+ "seed": 20261115,
+ "synthetic": true,
+ "n_rows": 100,
+ "rows": [
+  {
+   "tier": "plain",
+   "title": "Updated 4BR house near the hospital",
+   "price": "$2,125",
+   "attrs": "4BR / 2Ba 2020ft2 \u00b7 house \u00b7 air conditioning \u00b7 carport",
+   "location": "Dralinford",
+   "body": "Available now: four bedrooms, two baths, home on 5722 Ulmgard Ln. Lots of closet space. Close to the elementary school. Granite counters in the kitchen. Asking $2,125/mo on a twelve month lease. Application fee is $45, deposit is one month's rent. Dogs welcome with a $300 pet deposit. Text 555-0159 to schedule a viewing.",
+   "gold": {
+    "rent": 2125,
+    "beds": 4,
+    "baths": 2,
+    "kind": "house",
+    "pets": "dogs ok",
+    "town": "Dralinford",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r000"
+  },
+  {
+   "tier": "nodogs_buried",
+   "title": "Quiet 3BR duplex near the old mill",
+   "price": "$1,675",
+   "attrs": "3BR / 1Ba 1330ft2 \u00b7 w/d hookups",
+   "location": "Korkryville",
+   "body": "This three-bedroom half of a duplex has one bath and about 1330 square feet. Bright kitchen with a pantry. Water, sewer and trash are paid by the owner. A covered patio out back. Granite counters in the kitchen. Asking $1,675/mo on a twelve month lease. We prefer tenants who plan to stay at least a year. Income should be about three times the rent. Renters insurance is required before move-in. Photos were taken last month. Please read the whole ad before you reach out. Repairs are handled within a few days of a request. Cats are okay with a deposit. No dogs, no exceptions. Utilities not listed here are paid by the tenant. We prefer tenants who plan to stay at least a year. We run a credit and background check on every adult applicant. The lot is on a gentle slope with good drainage. Smoking is not allowed inside. Text 555-0139 to schedule a viewing.",
+   "gold": {
+    "rent": 1675,
+    "beds": 3,
+    "baths": 1,
+    "kind": "duplex",
+    "pets": "cats only",
+    "town": "Korkryville",
+    "red_flags": [
+     "no dogs"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r001"
+  },
+  {
+   "tier": "pets_mixed",
+   "title": "Clean 2BR condo near the farmers market",
+   "price": "$1,450",
+   "attrs": "2BR / 1Ba 1010ft2 \u00b7 condo \u00b7 dogs are OK - wooof \u00b7 off-street parking",
+   "location": "Velmeredale",
+   "body": "A two bedroom, one bath condominium on 1617 Zanari Way. Granite counters in the kitchen. Dishwasher and gas range included. Close to the elementary school. Asking $1,450/mo on a twelve month lease. Application fee is $45, deposit is one month's rent. Small dogs only, 25 lb limit. Text 555-0113 to schedule a viewing.",
+   "gold": {
+    "rent": 1450,
+    "beds": 2,
+    "baths": 1,
+    "kind": "condo",
+    "pets": "dogs ok",
+    "town": "Velmeredale",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r002"
+  },
+  {
+   "tier": "pets_mixed",
+   "title": "Spacious 1BR apartment near the lake",
+   "price": "$1,150",
+   "attrs": "1BR / 2Ba 700ft2 \u00b7 apartment \u00b7 cats are OK - purrr \u00b7 off-street parking \u00b7 laundry in bldg",
+   "location": "Quinmereville",
+   "body": "This one-bedroom apartment has two baths and about 700 square feet. Storage shed on the lot. Quiet street with little traffic. Central air and heat. $1,150 a month, first month and deposit due at signing. Application fee is $50, deposit is one month's rent. Dogs are welcome too, one dog under 40 lb. To see it, text 555-0148.",
+   "gold": {
+    "rent": 1150,
+    "beds": 1,
+    "baths": 2,
+    "kind": "apartment",
+    "pets": "dogs ok",
+    "town": "Quinmereville",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r003"
+  },
+  {
+   "tier": "scam",
+   "title": "Charming 2BR half of a duplex near Main Street shops",
+   "price": "$1,600",
+   "attrs": "2BR / 1Ba 1110ft2 \u00b7 duplex \u00b7 w/d hookups",
+   "location": "Vellinfield",
+   "body": "This two-bedroom half of a duplex has one bath and about 1110 square feet. New carpet and fresh paint throughout. Dishwasher and gas range included. Ceiling fans in every room. $1,600 a month, first month and deposit due at signing. Application fee is $50, deposit is one month's rent. Payment of the first month goes by Western Union wire, and the keys follow once it is received. No viewings or showings until the deposit has cleared; the photos speak for themselves.",
+   "gold": {
+    "rent": 1600,
+    "beds": 2,
+    "baths": 1,
+    "kind": "duplex",
+    "pets": "unclear",
+    "town": "Vellinfield",
+    "red_flags": [
+     "no viewing",
+     "wire payment"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r004"
+  },
+  {
+   "tier": "nodogs_buried",
+   "title": "Cozy 3BR home near the community college",
+   "price": "$2,000",
+   "attrs": "3BR / 1.5Ba 1520ft2 \u00b7 off-street parking \u00b7 w/d hookups",
+   "location": "Vellinridge",
+   "body": "A three bedroom, one and a half bath home on 5832 Yarkry Ct. Brand new water heater. Bright kitchen with a pantry. Storage shed on the lot. Laminate floors, no carpet in the main rooms. Rent is $2,000 per month. There is a grocery store a short drive away. The area has an easy commute to the main highway. Smoking is not allowed inside. Trash pickup is on Tuesdays. The furnace was serviced this fall. Rent is due on the first and late after the fifth. Cats are okay with a deposit. No dogs, no exceptions. The owner has kept this place maintained for a long time. Income should be about three times the rent. The area has an easy commute to the main highway. We run a credit and background check on every adult applicant. Schools in the district have a good reputation locally. Text 555-0114 to schedule a viewing.",
+   "gold": {
+    "rent": 2000,
+    "beds": 3,
+    "baths": 1.5,
+    "kind": "house",
+    "pets": "cats only",
+    "town": "Vellinridge",
+    "red_flags": [
+     "no dogs"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r005"
+  },
+  {
+   "tier": "plain",
+   "title": "Cozy 2BR duplex near the community college",
+   "price": "$1,525",
+   "attrs": "2BR / 1.5Ba 990ft2 \u00b7 no smoking",
+   "location": "Tammeremont",
+   "body": "A two bedroom, one and a half bath duplex on 4103 Zanvora Dr. Quiet street with little traffic. New carpet and fresh paint throughout. Close to the elementary school. Rent is $1,525 per month. Application fee is $35, deposit is one month's rent. Cats are welcome, one or two. Cats only. Text 555-0195 to schedule a viewing.",
+   "gold": {
+    "rent": 1525,
+    "beds": 2,
+    "baths": 1.5,
+    "kind": "duplex",
+    "pets": "cats only",
+    "town": "Tammeremont",
+    "red_flags": []
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r006"
+  },
+  {
+   "tier": "scam",
+   "title": "Roomy 2BR condominium near Main Street shops",
+   "price": "$1,450",
+   "attrs": "2BR / 1Ba 930ft2 \u00b7 condo",
+   "location": "Zanlinmont",
+   "body": "Available now: two bedrooms, one baths, condo on 5963 Quinlin St. Storage shed on the lot. Central air and heat. Washer and dryer hookups. $1,450 a month, first month and deposit due at signing. Application fee is $45, deposit is one month's rent. I am out of the country for work right now and everything is done by email. Payment of the first month goes by Western Union wire, and the keys follow once it is received. Call or text 555-0188 to see it this week.",
+   "gold": {
+    "rent": 1450,
+    "beds": 2,
+    "baths": 1,
+    "kind": "condo",
+    "pets": "unclear",
+    "town": "Zanlinmont",
+    "red_flags": [
+     "owner abroad",
+     "wire payment"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r007"
+  },
+  {
+   "tier": "other_kind",
+   "title": "RV pad with hookups in Quindellmont",
+   "price": "$240",
+   "attrs": "outdoor",
+   "location": "Quindellmont",
+   "body": "RV pad with hookups at 7427 Ulmwick Ln. It is not a living space and is not for sleeping in. $240 a month, one month deposit. Utilities not listed here are paid by the tenant. Neighbors here have been in place for years and keep to themselves. Call or text 555-0167 to see it this week.",
+   "gold": {
+    "rent": 240,
+    "beds": null,
+    "baths": null,
+    "kind": "other",
+    "pets": "unclear",
+    "town": "Quindellmont",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r008"
+  },
+  {
+   "tier": "scam",
+   "title": "Quiet 2BR single-family home near the old mill",
+   "price": "$1,750",
+   "attrs": "2BR / 1Ba 1120ft2 \u00b7 house \u00b7 no smoking \u00b7 off-street parking",
+   "location": "Brevlindale",
+   "body": "This two-bedroom home has one bath and about 1120 square feet. Washer and dryer hookups. New carpet and fresh paint throughout. Brand new water heater. Asking $1,750/mo on a twelve month lease. Application fee is $50, deposit is one month's rent. No viewings or showings until the deposit has cleared; the photos speak for themselves.",
+   "gold": {
+    "rent": 1750,
+    "beds": 2,
+    "baths": 1,
+    "kind": "house",
+    "pets": "unclear",
+    "town": "Brevlindale",
+    "red_flags": [
+     "no viewing"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r009"
+  },
+  {
+   "tier": "room",
+   "title": "Room for rent in Zanvoramont",
+   "price": "$550",
+   "attrs": "1BR / 1Ba 150ft2 \u00b7 room",
+   "location": "Zanvoramont",
+   "body": "Room for rent in a shared house on 7754 Zanmere Dr. Furnished room, shared kitchen and bath. $550 a month, utilities split between the housemates. Utilities not listed here are paid by the tenant. Rent is due on the first and late after the fifth. Cats ok. To see it, text 555-0190.",
+   "gold": {
+    "rent": 550,
+    "beds": 1,
+    "baths": 1,
+    "kind": "room",
+    "pets": "cats only",
+    "town": "Zanvoramont",
+    "red_flags": [
+     "room for rent"
+    ]
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r010"
+  },
+  {
+   "tier": "other_kind",
+   "title": "Detached garage for rent in Yartranville",
+   "price": "$160",
+   "attrs": "280ft2",
+   "location": "Yartranville",
+   "body": "Detached garage for rent at 7583 Brevbost Ct. It is not a living space and is not for sleeping in. $160 a month, one month deposit. Renters insurance is required before move-in. Trash pickup is on Tuesdays. Text 555-0130 to schedule a viewing.",
+   "gold": {
+    "rent": 160,
+    "beds": null,
+    "baths": null,
+    "kind": "other",
+    "pets": "unclear",
+    "town": "Yartranville",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r011"
+  },
+  {
+   "tier": "plain",
+   "title": "Clean 3BR single-family home near the lake",
+   "price": "$2,325",
+   "attrs": "3BR / 1Ba 1380ft2",
+   "location": "Zanwickford",
+   "body": "A three bedroom, one bath home on 7510 Yarmere St. Granite counters in the kitchen. Central air and heat. Laminate floors, no carpet in the main rooms. Asking $2,325/mo on a twelve month lease. Application fee is $35, deposit is one month's rent. Dogs welcome with a $300 pet deposit. To see it, text 555-0191.",
+   "gold": {
+    "rent": 2325,
+    "beds": 3,
+    "baths": 1,
+    "kind": "house",
+    "pets": "dogs ok",
+    "town": "Zanwickford",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r012"
+  },
+  {
+   "tier": "pets_attrs",
+   "title": "Roomy 3BR condo near Main Street shops",
+   "price": "$1,675",
+   "attrs": "3BR / 2Ba 1470ft2 \u00b7 condo \u00b7 cats are OK - purrr",
+   "location": "Drabostville",
+   "body": "A three bedroom, two bath condominium on 6584 Jorvpell Ct. A covered patio out back. Close to the elementary school. Updated bathroom with a tub and shower. Asking $1,675/mo on a twelve month lease. Application fee is $45, deposit is one month's rent. Text 555-0172 to schedule a viewing.",
+   "gold": {
+    "rent": 1675,
+    "beds": 3,
+    "baths": 2,
+    "kind": "condo",
+    "pets": "cats only",
+    "town": "Drabostville",
+    "red_flags": []
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r013"
+  },
+  {
+   "tier": "nodogs_buried",
+   "title": "Spacious 2BR half of a duplex near the community college",
+   "price": "$1,525",
+   "attrs": "2BR / 1.5Ba 1040ft2",
+   "location": "Ostbostburg",
+   "body": "A two bedroom, one and a half bath half of a duplex on 2299 Jorvmere Ln. Lawn care is handled for you. Washer and dryer hookups. Storage shed on the lot. Brand new water heater. $1,525 a month, first month and deposit due at signing. Smoking is not allowed inside. The lot is on a gentle slope with good drainage. Snow and ice removal on the driveway is up to the tenant. There is a grocery store a short drive away. The area has an easy commute to the main highway. Renters insurance is required before move-in. Cats are okay with a deposit. No dogs, no exceptions. Income should be about three times the rent. Photos were taken last month. The lot is on a gentle slope with good drainage. Snow and ice removal on the driveway is up to the tenant. Utilities not listed here are paid by the tenant. To see it, text 555-0156.",
+   "gold": {
+    "rent": 1525,
+    "beds": 2,
+    "baths": 1.5,
+    "kind": "duplex",
+    "pets": "cats only",
+    "town": "Ostbostburg",
+    "red_flags": [
+     "no dogs"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r014"
+  },
+  {
+   "tier": "pets_passing",
+   "title": "Quiet 2BR house near the old mill",
+   "price": "$1,525",
+   "attrs": "2BR / 2.5Ba 1030ft2 \u00b7 off-street parking \u00b7 air conditioning",
+   "location": "Quinarifield",
+   "body": "This two-bedroom home has two and a half baths and about 1030 square feet. Central air and heat. Off-street parking for two cars. Laminate floors, no carpet in the main rooms. Rent is $1,525 per month. Application fee is $50, deposit is one month's rent. The back lot is great for the one dog you may bring ($300 deposit). Utilities not listed here are paid by the tenant. The lease is twelve months with a option to renew. Text 555-0114 to schedule a viewing.",
+   "gold": {
+    "rent": 1525,
+    "beds": 2,
+    "baths": 2.5,
+    "kind": "house",
+    "pets": "dogs ok",
+    "town": "Quinarifield",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r015"
+  },
+  {
+   "tier": "restricted",
+   "title": "Clean 2BR mobile home near the old mill",
+   "price": "$1,150",
+   "attrs": "2BR / 1Ba 1020ft2 \u00b7 manufactured",
+   "location": "Ulmkryridge",
+   "body": "Available now: two bedrooms, one baths, mobile home on 2566 Yarwick St. Water, sewer and trash are paid by the owner. Lots of closet space. Granite counters in the kitchen. Asking $1,150/mo on a twelve month lease. Application fee is $45, deposit is one month's rent. This is an active adult community; residents must be 55 or older. To see it, text 555-0106.",
+   "gold": {
+    "rent": 1150,
+    "beds": 2,
+    "baths": 1,
+    "kind": "mobile home",
+    "pets": "unclear",
+    "town": "Ulmkryridge",
+    "red_flags": [
+     "55+ only"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r016"
+  },
+  {
+   "tier": "price_disagree",
+   "title": "Roomy 2BR apartment near the lake",
+   "price": "$1,500",
+   "attrs": "2BR / 1Ba 980ft2 \u00b7 apartment",
+   "location": "Yarkryburg",
+   "body": "This two-bedroom apartment has one bath and about 980 square feet. Laminate floors, no carpet in the main rooms. Close to the elementary school. Granite counters in the kitchen. Reduced! Now $1,175 a month; the posted price is out of date. Application fee is $50, deposit is one month's rent. To see it, text 555-0184.",
+   "gold": {
+    "rent": 1175,
+    "beds": 2,
+    "baths": 1,
+    "kind": "apartment",
+    "pets": "unclear",
+    "town": "Yarkryburg",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r017"
+  },
+  {
+   "tier": "plain",
+   "title": "Cozy 3BR townhome near the old mill",
+   "price": "$1,750",
+   "attrs": "3BR / 1Ba 1590ft2",
+   "location": "Korlinford",
+   "body": "This three-bedroom townhouse has one bath and about 1590 square feet. Granite counters in the kitchen. Updated bathroom with a tub and shower. A covered patio out back. Rent is $1,750 per month. Application fee is $45, deposit is one month's rent. Sorry, cats only (one cat, $200 deposit). Call or text 555-0103 to see it this week.",
+   "gold": {
+    "rent": 1750,
+    "beds": 3,
+    "baths": 1,
+    "kind": "townhouse",
+    "pets": "cats only",
+    "town": "Korlinford",
+    "red_flags": []
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r018"
+  },
+  {
+   "tier": "other_kind",
+   "title": "Workshop bay with roll-up door in Tamkryfield",
+   "price": "$475",
+   "attrs": "600ft2",
+   "location": "Tamkryfield",
+   "body": "Workshop bay with roll-up door at 211 Mavpell Way. It is not a living space and is not for sleeping in. $475 a month, one month deposit. Smoking is not allowed inside. Renters insurance is required before move-in. Call or text 555-0156 to see it this week.",
+   "gold": {
+    "rent": 475,
+    "beds": null,
+    "baths": null,
+    "kind": "other",
+    "pets": "unclear",
+    "town": "Tamkryfield",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r019"
+  },
+  {
+   "tier": "price_disagree",
+   "title": "Charming 2BR half of a duplex near the community college",
+   "price": "$1",
+   "attrs": "2BR / 1Ba 1000ft2 \u00b7 duplex \u00b7 off-street parking",
+   "location": "Jorvdellburg",
+   "body": "This two-bedroom half of a duplex has one bath and about 1000 square feet. Laminate floors, no carpet in the main rooms. Updated bathroom with a tub and shower. Close to the elementary school. Rent is $1,375 per month (the price field is only a placeholder). Application fee is $50, deposit is one month's rent. Call or text 555-0175 to see it this week.",
+   "gold": {
+    "rent": 1375,
+    "beds": 2,
+    "baths": 1,
+    "kind": "duplex",
+    "pets": "unclear",
+    "town": "Jorvdellburg",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r020"
+  },
+  {
+   "tier": "nodogs_buried",
+   "title": "Roomy 2BR townhome near the farmers market",
+   "price": "$1,475",
+   "attrs": "2BR / 1.5Ba 1060ft2 \u00b7 off-street parking \u00b7 air conditioning",
+   "location": "Heskpelldale",
+   "body": "This two-bedroom townhouse has one and a half baths and about 1060 square feet. Laminate floors, no carpet in the main rooms. Quiet street with little traffic. Central air and heat. Granite counters in the kitchen. $1,475 a month, first month and deposit due at signing. Please read the whole ad before you reach out. Repairs are handled within a few days of a request. The furnace was serviced this fall. Neighbors here have been in place for years and keep to themselves. We prefer tenants who plan to stay at least a year. Renters insurance is required before move-in. Cats are okay with a deposit. No dogs, no exceptions. Snow and ice removal on the driveway is up to the tenant. There is a grocery store a short drive away. Please read the whole ad before you reach out. Schools in the district have a good reputation locally. The area has an easy commute to the main highway. Call or text 555-0144 to see it this week.",
+   "gold": {
+    "rent": 1475,
+    "beds": 2,
+    "baths": 1.5,
+    "kind": "townhouse",
+    "pets": "cats only",
+    "town": "Heskpelldale",
+    "red_flags": [
+     "no dogs"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r021"
+  },
+  {
+   "tier": "scam",
+   "title": "Updated 2BR apartment near the farmers market",
+   "price": "$1,200",
+   "attrs": "2BR / 2Ba 940ft2 \u00b7 apartment \u00b7 no smoking",
+   "location": "Tamlinford",
+   "body": "This two-bedroom apartment has two baths and about 940 square feet. Ceiling fans in every room. Close to the elementary school. Dishwasher and gas range included. Rent is $1,200 per month. Application fee is $50, deposit is one month's rent. No viewings or showings until the deposit has cleared; the photos speak for themselves. Payment of the first month goes by Western Union wire, and the keys follow once it is received.",
+   "gold": {
+    "rent": 1200,
+    "beds": 2,
+    "baths": 2,
+    "kind": "apartment",
+    "pets": "unclear",
+    "town": "Tamlinford",
+    "red_flags": [
+     "no viewing",
+     "wire payment"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r022"
+  },
+  {
+   "tier": "pets_mixed",
+   "title": "Bright 4BR townhome near the lake",
+   "price": "$2,100",
+   "attrs": "4BR / 2Ba 1550ft2 \u00b7 townhouse \u00b7 cats are OK - purrr \u00b7 laundry in bldg",
+   "location": "Noldelldale",
+   "body": "Available now: four bedrooms, two baths, townhome on 3270 Tamlin Ct. Water, sewer and trash are paid by the owner. Storage shed on the lot. Quiet street with little traffic. Asking $2,100/mo on a twelve month lease. Application fee is $45, deposit is one month's rent. Cats are fine. Dogs: sorry, no dogs. Call or text 555-0168 to see it this week.",
+   "gold": {
+    "rent": 2100,
+    "beds": 4,
+    "baths": 2,
+    "kind": "townhouse",
+    "pets": "cats only",
+    "town": "Noldelldale",
+    "red_flags": [
+     "no dogs"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r023"
+  },
+  {
+   "tier": "room",
+   "title": "Room for rent in Brevvoramont",
+   "price": "$600",
+   "attrs": "1BR / 1Ba 160ft2 \u00b7 room",
+   "location": "Brevvoramont",
+   "body": "Room for rent in a shared house on 9033 Yarari St. Furnished room, shared kitchen and bath. $600 a month, utilities split between the housemates. Repairs are handled within a few days of a request. Renters insurance is required before move-in. To see it, text 555-0120.",
+   "gold": {
+    "rent": 600,
+    "beds": 1,
+    "baths": 1,
+    "kind": "room",
+    "pets": "unclear",
+    "town": "Brevvoramont",
+    "red_flags": [
+     "room for rent"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r024"
+  },
+  {
+   "tier": "pets_attrs",
+   "title": "Charming 2BR half of a duplex near the rail trail",
+   "price": "$1,250",
+   "attrs": "2BR / 2Ba 950ft2 \u00b7 duplex \u00b7 cats are OK - purrr \u00b7 air conditioning",
+   "location": "Ulmbostburg",
+   "body": "A two bedroom, two bath half of a duplex on 7669 Nolbost St. Lawn care is handled for you. Updated bathroom with a tub and shower. Dishwasher and gas range included. Rent is $1,250 per month. Application fee is $45, deposit is one month's rent. Text 555-0116 to schedule a viewing.",
+   "gold": {
+    "rent": 1250,
+    "beds": 2,
+    "baths": 2,
+    "kind": "duplex",
+    "pets": "cats only",
+    "town": "Ulmbostburg",
+    "red_flags": []
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r025"
+  },
+  {
+   "tier": "studio",
+   "title": "Studio apartment near the farmers market",
+   "price": "$900",
+   "attrs": "studio / 1Ba 395ft2 \u00b7 apartment",
+   "location": "Heskgardville",
+   "body": "A bright studio with one bathroom at 7903 Ixenkry Ct. Close to the elementary school. Central air and heat. Bright kitchen with a pantry. Rent is $900 per month. Text 555-0116 to schedule a viewing.",
+   "gold": {
+    "rent": 900,
+    "beds": 0,
+    "baths": 1,
+    "kind": "apartment",
+    "pets": "unclear",
+    "town": "Heskgardville",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r026"
+  },
+  {
+   "tier": "pets_passing",
+   "title": "Charming 2BR duplex near the rail trail",
+   "price": "$1,375",
+   "attrs": "2BR / 2Ba 950ft2",
+   "location": "Cavbostburg",
+   "body": "This two-bedroom duplex has two baths and about 950 square feet. Quiet street with little traffic. Close to the elementary school. Dishwasher and gas range included. Asking $1,375/mo on a twelve month lease. Application fee is $35, deposit is one month's rent. The back lot is great for the one dog you may bring ($300 deposit). We run a credit and background check on every adult applicant. Trash pickup is on Tuesdays. To see it, text 555-0115.",
+   "gold": {
+    "rent": 1375,
+    "beds": 2,
+    "baths": 2,
+    "kind": "duplex",
+    "pets": "dogs ok",
+    "town": "Cavbostburg",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r027"
+  },
+  {
+   "tier": "pets_absent",
+   "title": "Roomy 2BR townhouse near Main Street shops",
+   "price": "$1,675",
+   "attrs": "2BR / 1Ba 1170ft2 \u00b7 townhouse \u00b7 off-street parking",
+   "location": "Tamvoraford",
+   "body": "Available now: two bedrooms, one baths, townhouse on 2806 Drasen Way. New carpet and fresh paint throughout. Off-street parking for two cars. Water, sewer and trash are paid by the owner. Rent is $1,675 per month. Application fee is $45, deposit is one month's rent. Ask us about pets. Rent is due on the first and late after the fifth. Renters insurance is required before move-in. Call or text 555-0161 to see it this week.",
+   "gold": {
+    "rent": 1675,
+    "beds": 2,
+    "baths": 1,
+    "kind": "townhouse",
+    "pets": "unclear",
+    "town": "Tamvoraford",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r028"
+  },
+  {
+   "tier": "plain",
+   "title": "Clean 1BR apartment near the hospital",
+   "price": "$950",
+   "attrs": "1BR / 1Ba 630ft2 \u00b7 off-street parking",
+   "location": "Nolgardfield",
+   "body": "Available now: one bedrooms, one baths, apartment on 116 Velsen Ave. Granite counters in the kitchen. Lots of closet space. Storage shed on the lot. $950 a month, first month and deposit due at signing. Application fee is $50, deposit is one month's rent. Pets are not permitted in this building. Call or text 555-0169 to see it this week.",
+   "gold": {
+    "rent": 950,
+    "beds": 1,
+    "baths": 1,
+    "kind": "apartment",
+    "pets": "no pets",
+    "town": "Nolgardfield",
+    "red_flags": []
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r029"
+  },
+  {
+   "tier": "pets_mixed",
+   "title": "Cozy 2BR manufactured home near the old mill",
+   "price": "$975",
+   "attrs": "2BR / 2Ba 960ft2 \u00b7 manufactured \u00b7 cats are OK - purrr",
+   "location": "Zanarihaven",
+   "body": "A two bedroom, two bath mobile home on 4512 Brevari Ave. Laminate floors, no carpet in the main rooms. Washer and dryer hookups. Updated bathroom with a tub and shower. $975 a month, first month and deposit due at signing. Application fee is $35, deposit is one month's rent. Dogs are welcome too, one dog under 40 lb. Text 555-0151 to schedule a viewing.",
+   "gold": {
+    "rent": 975,
+    "beds": 2,
+    "baths": 2,
+    "kind": "mobile home",
+    "pets": "dogs ok",
+    "town": "Zanarihaven",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r030"
+  },
+  {
+   "tier": "restricted",
+   "title": "Clean 3BR duplex near the community college",
+   "price": "$1,550",
+   "attrs": "3BR / 1Ba 1210ft2 \u00b7 duplex \u00b7 air conditioning",
+   "location": "Ulmdellmont",
+   "body": "This three-bedroom half of a duplex has one bath and about 1210 square feet. Ceiling fans in every room. Bright kitchen with a pantry. Granite counters in the kitchen. $1,550 a month, first month and deposit due at signing. Application fee is $50, deposit is one month's rent. Section 8 vouchers only, please do not apply otherwise. Call or text 555-0166 to see it this week.",
+   "gold": {
+    "rent": 1550,
+    "beds": 3,
+    "baths": 1,
+    "kind": "duplex",
+    "pets": "unclear",
+    "town": "Ulmdellmont",
+    "red_flags": [
+     "section 8 only"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r031"
+  },
+  {
+   "tier": "long_body",
+   "title": "Charming 4BR townhome near the lake",
+   "price": "$2,325",
+   "attrs": "4BR / 2.5Ba 1900ft2 \u00b7 townhouse \u00b7 laundry in bldg \u00b7 w/d hookups",
+   "location": "Ixenlinburg",
+   "body": "This four-bedroom townhouse has two and a half baths and about 1900 square feet. Ceiling fans in every room. Central air and heat. Lots of closet space. Asking $2,325/mo on a twelve month lease. The lease is twelve months with a option to renew. Income should be about three times the rent. Trash pickup is on Tuesdays. Renters insurance is required before move-in. A covered patio out back. Photos were taken last month. Central air and heat. Laminate floors, no carpet in the main rooms. Close to the elementary school. Renters insurance is required before move-in. The area has an easy commute to the main highway. Neighbors here have been in place for years and keep to themselves. We run a credit and background check on every adult applicant. Rent is due on the first and late after the fifth. Granite counters in the kitchen. Close to the elementary school. Snow and ice removal on the driveway is up to the tenant. Bright kitchen with a pantry. Please read the whole ad before you reach out. Trash pickup is on Tuesdays. Off-street parking for two cars. There is a grocery store a short drive away. The lot is on a gentle slope with good drainage. Off-street parking for two cars. The owner has kept this place maintained for a long time. Smoking is not allowed inside. Renters insurance is required before move-in. Lawn care is handled for you. Off-street parking for two cars. Income should be about three times the rent. The area has an easy commute to the main highway. Ceiling fans in every room. Lots of closet space. The lot is on a gentle slope with good drainage. Dishwasher and gas range included. We prefer tenants who plan to stay at least a year. A covered patio out back. Updated bathroom with a tub and shower. Income should be about three times the rent. Please read the whole ad before you reach out. Renters insurance is required before move-in. Snow and ice removal on the driveway is up to the tenant. Repairs are handled within a few days of a request. Water, sewer and trash are paid by the owner. Schools in the district have a good reputation locally. New carpet and fresh paint throughout. Brand new water heater. Dishwasher and gas range included. The lease is twelve months with a option to renew. Quiet street with little traffic. Dishwasher and gas range included. Central air and heat. Please read the whole ad before you reach out. Granite counters in the kitchen. We prefer tenants who plan to stay at least a year. Income should be about three times the rent. Renters insurance is required before move-in. Trash pickup is on Tuesdays. Neighbors here have been in place for years and keep to themselves. Central air and heat. Storage shed on the lot. Storage shed on the lot. Laminate floors, no carpet in the main rooms. New carpet and fresh paint throughout. The area has an easy commute to the main highway. The area has an easy commute to the main highway. The lot is on a gentle slope with good drainage. The lease is twelve months with a option to renew. Ceiling fans in every room. Trash pickup is on Tuesdays. There is a grocery store a short drive away. The owner has kept this place maintained for a long time. Dishwasher and gas range included. Repairs are handled within a few days of a request. The area has an easy commute to the main highway. Renters insurance is required before move-in. Ceiling fans in every room. The lease is twelve months with a option to renew. We run a credit and background check on every adult applicant. Rent is due on the first and late after the fifth. Off-street parking for two cars. Rent is due on the first and late after the fifth. Quiet street with little traffic. Please read the whole ad before you reach out. Storage shed on the lot. Please read the whole ad before you reach out. A covered patio out back. The lease is twelve months with a option to renew. Washer and dryer hookups. Neighbors here have been in place for years and keep to themselves. The owner has kept this place maintained for a long time. Water, sewer and trash are paid by the owner. Utilities not listed here are paid by the tenant. The lot is on a gentle slope with good drainage. Dishwasher and gas range included. Dishwasher and gas range included. Storage shed on the lot. Photos were taken last month. Water, sewer and trash are paid by the owner. Updated bathroom with a tub and shower. Central air and heat. Dishwasher and gas range included. Lawn care is handled for you. Quiet street with little traffic. Lawn care is handled for you. Photos were taken last month. Renters insurance is required before move-in. Rent is due on the first and late after the fifth. Utilities not listed here are paid by the tenant. Neighbors here have been in place for years and keep to themselves. Washer and dryer hookups. Water, sewer and trash are paid by the owner. New carpet and fresh paint throughout. Dishwasher and gas range included. Income should be about three times the rent. Lots of closet space. The area has an easy commute to the main highway. Washer and dryer hookups. Granite counters in the kitchen. Storage shed on the lot. Smoking is not allowed inside. Rent is due on the first and late after the fifth. We run a credit and background check on every adult applicant. Pets: no dogs. To see it, text 555-0103.",
+   "gold": {
+    "rent": 2325,
+    "beds": 4,
+    "baths": 2.5,
+    "kind": "townhouse",
+    "pets": "unclear",
+    "town": "Ixenlinburg",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r032"
+  },
+  {
+   "tier": "half_baths",
+   "title": "Roomy 2BR half of a duplex near the old mill",
+   "price": "$1,525",
+   "attrs": "2BR / 2.5Ba 1150ft2 \u00b7 duplex \u00b7 laundry in bldg",
+   "location": "Cavwickridge",
+   "body": "A two bedroom, two and a half bath duplex on 7017 Ixenari St. Brand new water heater. Water, sewer and trash are paid by the owner. Central air and heat. Rent is $1,525 per month. Application fee is $35, deposit is one month's rent. Text 555-0130 to schedule a viewing.",
+   "gold": {
+    "rent": 1525,
+    "beds": 2,
+    "baths": 2.5,
+    "kind": "duplex",
+    "pets": "unclear",
+    "town": "Cavwickridge",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r033"
+  },
+  {
+   "tier": "long_body",
+   "title": "Roomy 3BR house near the farmers market",
+   "price": "$1,950",
+   "attrs": "3BR / 1.5Ba 1410ft2 \u00b7 house",
+   "location": "Zankrydale",
+   "body": "A three bedroom, one and a half bath single-family home on 7563 Quinkry Ave. Brand new water heater. Washer and dryer hookups. A covered patio out back. $1,950 a month, first month and deposit due at signing. A covered patio out back. Repairs are handled within a few days of a request. Lots of closet space. Lots of closet space. Close to the elementary school. Central air and heat. Trash pickup is on Tuesdays. A covered patio out back. Repairs are handled within a few days of a request. There is a grocery store a short drive away. Granite counters in the kitchen. The furnace was serviced this fall. New carpet and fresh paint throughout. A covered patio out back. Schools in the district have a good reputation locally. Neighbors here have been in place for years and keep to themselves. Ceiling fans in every room. Smoking is not allowed inside. Laminate floors, no carpet in the main rooms. Storage shed on the lot. We run a credit and background check on every adult applicant. Snow and ice removal on the driveway is up to the tenant. Washer and dryer hookups. Please read the whole ad before you reach out. Laminate floors, no carpet in the main rooms. Water, sewer and trash are paid by the owner. Schools in the district have a good reputation locally. Bright kitchen with a pantry. Lots of closet space. Storage shed on the lot. The lot is on a gentle slope with good drainage. Bright kitchen with a pantry. Utilities not listed here are paid by the tenant. Laminate floors, no carpet in the main rooms. Income should be about three times the rent. The furnace was serviced this fall. We run a credit and background check on every adult applicant. Income should be about three times the rent. Rent is due on the first and late after the fifth. Bright kitchen with a pantry. Updated bathroom with a tub and shower. Updated bathroom with a tub and shower. Water, sewer and trash are paid by the owner. We prefer tenants who plan to stay at least a year. The area has an easy commute to the main highway. Washer and dryer hookups. Lots of closet space. Off-street parking for two cars. Renters insurance is required before move-in. Storage shed on the lot. Snow and ice removal on the driveway is up to the tenant. The lease is twelve months with a option to renew. Lots of closet space. Central air and heat. Granite counters in the kitchen. Water, sewer and trash are paid by the owner. Please read the whole ad before you reach out. Cats are okay with a deposit. No dogs. The lease is twelve months with a option to renew. Trash pickup is on Tuesdays. A covered patio out back. The furnace was serviced this fall. Dishwasher and gas range included. Rent is due on the first and late after the fifth. Ceiling fans in every room. Please read the whole ad before you reach out. Utilities not listed here are paid by the tenant. Storage shed on the lot. Lots of closet space. The lease is twelve months with a option to renew. The area has an easy commute to the main highway. Income should be about three times the rent. Updated bathroom with a tub and shower. Granite counters in the kitchen. Lawn care is handled for you. Photos were taken last month. The lease is twelve months with a option to renew. Smoking is not allowed inside. Bright kitchen with a pantry. Snow and ice removal on the driveway is up to the tenant. Utilities not listed here are paid by the tenant. Renters insurance is required before move-in. New carpet and fresh paint throughout. A covered patio out back. New carpet and fresh paint throughout. Lots of closet space. Quiet street with little traffic. Smoking is not allowed inside. Smoking is not allowed inside. Please read the whole ad before you reach out. Bright kitchen with a pantry. Smoking is not allowed inside. Laminate floors, no carpet in the main rooms. We prefer tenants who plan to stay at least a year. Storage shed on the lot. Trash pickup is on Tuesdays. Dishwasher and gas range included. Schools in the district have a good reputation locally. Lawn care is handled for you. Ceiling fans in every room. Washer and dryer hookups. To see it, text 555-0180.",
+   "gold": {
+    "rent": 1950,
+    "beds": 3,
+    "baths": 1.5,
+    "kind": "house",
+    "pets": "cats only",
+    "town": "Zankrydale",
+    "red_flags": [
+     "no dogs"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r034"
+  },
+  {
+   "tier": "pets_absent",
+   "title": "Bright 3BR manufactured home near the lake",
+   "price": "$1,325",
+   "attrs": "3BR / 2Ba 1610ft2 \u00b7 manufactured",
+   "location": "Cavsenford",
+   "body": "A three bedroom, two bath mobile home on 6527 Velari Ct. Dishwasher and gas range included. Granite counters in the kitchen. Quiet street with little traffic. Asking $1,325/mo on a twelve month lease. Application fee is $35, deposit is one month's rent. The owner has kept this place maintained for a long time. Photos were taken last month. Call or text 555-0128 to see it this week.",
+   "gold": {
+    "rent": 1325,
+    "beds": 3,
+    "baths": 2,
+    "kind": "mobile home",
+    "pets": "unclear",
+    "town": "Cavsenford",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r035"
+  },
+  {
+   "tier": "restricted",
+   "title": "Charming 3BR condo near the old mill",
+   "price": "$1,975",
+   "attrs": "3BR / 2Ba 1260ft2 \u00b7 condo",
+   "location": "Yartranburg",
+   "body": "This three-bedroom condo has two baths and about 1260 square feet. New carpet and fresh paint throughout. Off-street parking for two cars. Close to the elementary school. $1,975 a month, first month and deposit due at signing. Application fee is $45, deposit is one month's rent. This is an active adult community; residents must be 55 or older. To see it, text 555-0166.",
+   "gold": {
+    "rent": 1975,
+    "beds": 3,
+    "baths": 2,
+    "kind": "condo",
+    "pets": "unclear",
+    "town": "Yartranburg",
+    "red_flags": [
+     "55+ only"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r036"
+  },
+  {
+   "tier": "studio",
+   "title": "Studio apartment near the rail trail",
+   "price": "$650",
+   "attrs": "0BR / 1Ba 410ft2 \u00b7 apartment",
+   "location": "Quinvorahaven",
+   "body": "A bright studio with one bathroom at 7764 Quinwick Rd. Bright kitchen with a pantry. New carpet and fresh paint throughout. Updated bathroom with a tub and shower. Asking $650/mo on a twelve month lease. Call or text 555-0197 to see it this week.",
+   "gold": {
+    "rent": 650,
+    "beds": 0,
+    "baths": 1,
+    "kind": "apartment",
+    "pets": "unclear",
+    "town": "Quinvorahaven",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r037"
+  },
+  {
+   "tier": "pets_absent",
+   "title": "Spacious 2BR apartment near the community college",
+   "price": "$1,325",
+   "attrs": "2BR / 1Ba 930ft2 \u00b7 apartment",
+   "location": "Jorvdellhaven",
+   "body": "This two-bedroom apartment has one bath and about 930 square feet. Bright kitchen with a pantry. Lawn care is handled for you. Off-street parking for two cars. Asking $1,325/mo on a twelve month lease. Application fee is $50, deposit is one month's rent. Smoking is not allowed inside. We prefer tenants who plan to stay at least a year. Call or text 555-0141 to see it this week.",
+   "gold": {
+    "rent": 1325,
+    "beds": 2,
+    "baths": 1,
+    "kind": "apartment",
+    "pets": "unclear",
+    "town": "Jorvdellhaven",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r038"
+  },
+  {
+   "tier": "long_body",
+   "title": "Clean 3BR townhouse near Main Street shops",
+   "price": "$1,850",
+   "attrs": "3BR / 2Ba 1590ft2 \u00b7 townhouse \u00b7 air conditioning \u00b7 no smoking",
+   "location": "Ixenbostmont",
+   "body": "This three-bedroom townhome has two baths and about 1590 square feet. Storage shed on the lot. Water, sewer and trash are paid by the owner. Laminate floors, no carpet in the main rooms. Asking $1,850/mo on a twelve month lease. Dishwasher and gas range included. Washer and dryer hookups. Lawn care is handled for you. New carpet and fresh paint throughout. A covered patio out back. Laminate floors, no carpet in the main rooms. The owner has kept this place maintained for a long time. Storage shed on the lot. Schools in the district have a good reputation locally. The owner has kept this place maintained for a long time. Neighbors here have been in place for years and keep to themselves. The furnace was serviced this fall. We run a credit and background check on every adult applicant. There is a grocery store a short drive away. Repairs are handled within a few days of a request. The lease is twelve months with a option to renew. Lawn care is handled for you. Utilities not listed here are paid by the tenant. Snow and ice removal on the driveway is up to the tenant. Repairs are handled within a few days of a request. Lawn care is handled for you. Brand new water heater. Quiet street with little traffic. The lease is twelve months with a option to renew. We run a credit and background check on every adult applicant. Snow and ice removal on the driveway is up to the tenant. A covered patio out back. There is a grocery store a short drive away. Repairs are handled within a few days of a request. Utilities not listed here are paid by the tenant. Bright kitchen with a pantry. Lots of closet space. The owner has kept this place maintained for a long time. Ceiling fans in every room. Laminate floors, no carpet in the main rooms. Off-street parking for two cars. The lease is twelve months with a option to renew. Utilities not listed here are paid by the tenant. Close to the elementary school. Ceiling fans in every room. Renters insurance is required before move-in. Brand new water heater. Lawn care is handled for you. Neighbors here have been in place for years and keep to themselves. The lot is on a gentle slope with good drainage. There is a grocery store a short drive away. Schools in the district have a good reputation locally. Off-street parking for two cars. Brand new water heater. Off-street parking for two cars. Quiet street with little traffic. Washer and dryer hookups. Schools in the district have a good reputation locally. The area has an easy commute to the main highway. Trash pickup is on Tuesdays. We prefer tenants who plan to stay at least a year. Trash pickup is on Tuesdays. Trash pickup is on Tuesdays. Laminate floors, no carpet in the main rooms. Please read the whole ad before you reach out. Income should be about three times the rent. The lot is on a gentle slope with good drainage. Granite counters in the kitchen. Dishwasher and gas range included. Granite counters in the kitchen. Rent is due on the first and late after the fifth. Schools in the district have a good reputation locally. Renters insurance is required before move-in. Laminate floors, no carpet in the main rooms. Laminate floors, no carpet in the main rooms. Dishwasher and gas range included. The lot is on a gentle slope with good drainage. New carpet and fresh paint throughout. Photos were taken last month. Brand new water heater. Smoking is not allowed inside. Ceiling fans in every room. Income should be about three times the rent. Trash pickup is on Tuesdays. Off-street parking for two cars. Photos were taken last month. The area has an easy commute to the main highway. Schools in the district have a good reputation locally. Photos were taken last month. Updated bathroom with a tub and shower. Brand new water heater. Utilities not listed here are paid by the tenant. Bright kitchen with a pantry. Bright kitchen with a pantry. A covered patio out back. Updated bathroom with a tub and shower. The lease is twelve months with a option to renew. A covered patio out back. Please read the whole ad before you reach out. The area has an easy commute to the main highway. The owner has kept this place maintained for a long time. The lot is on a gentle slope with good drainage. Lots of closet space. Snow and ice removal on the driveway is up to the tenant. Repairs are handled within a few days of a request. Trash pickup is on Tuesdays. Dishwasher and gas range included. Neighbors here have been in place for years and keep to themselves. Rent is due on the first and late after the fifth. Snow and ice removal on the driveway is up to the tenant. Please read the whole ad before you reach out. The area has an easy commute to the main highway. Laminate floors, no carpet in the main rooms. Bright kitchen with a pantry. The lot is on a gentle slope with good drainage. Dishwasher and gas range included. A covered patio out back. Water, sewer and trash are paid by the owner. Laminate floors, no carpet in the main rooms. Laminate floors, no carpet in the main rooms. We run a credit and background check on every adult applicant. Smoking is not allowed inside. Neighbors here have been in place for years and keep to themselves. Dishwasher and gas range included. Ceiling fans in every room. The lot is on a gentle slope with good drainage. Trash pickup is on Tuesdays. Repairs are handled within a few days of a request. The furnace was serviced this fall. Off-street parking for two cars. Off-street parking for two cars. Quiet street with little traffic. The furnace was serviced this fall. Renters insurance is required before move-in. Please read the whole ad before you reach out. Smoking is not allowed inside. We prefer tenants who plan to stay at least a year. Income should be about three times the rent. Please read the whole ad before you reach out. Pets: no dogs. To see it, text 555-0113.",
+   "gold": {
+    "rent": 1850,
+    "beds": 3,
+    "baths": 2,
+    "kind": "townhouse",
+    "pets": "unclear",
+    "town": "Ixenbostmont",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r039"
+  },
+  {
+   "tier": "plain",
+   "title": "Spacious 3BR condo near the hospital",
+   "price": "$1,650",
+   "attrs": "3BR / 1.5Ba 1410ft2 \u00b7 condo \u00b7 laundry in bldg \u00b7 no smoking",
+   "location": "Quinpellburg",
+   "body": "This three-bedroom condominium has one and a half baths and about 1410 square feet. Washer and dryer hookups. Lawn care is handled for you. Off-street parking for two cars. Rent is $1,650 per month. Application fee is $45, deposit is one month's rent. Dogs welcome with a $300 pet deposit. Text 555-0124 to schedule a viewing.",
+   "gold": {
+    "rent": 1650,
+    "beds": 3,
+    "baths": 1.5,
+    "kind": "condo",
+    "pets": "dogs ok",
+    "town": "Quinpellburg",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r040"
+  },
+  {
+   "tier": "other_kind",
+   "title": "Covered parking space in Zanariford",
+   "price": "$85",
+   "attrs": "outdoor",
+   "location": "Zanariford",
+   "body": "Covered parking space at 4770 Quinlin Ln. It is not a living space and is not for sleeping in. $85 a month, one month deposit. Renters insurance is required before move-in. The area has an easy commute to the main highway. Text 555-0171 to schedule a viewing.",
+   "gold": {
+    "rent": 85,
+    "beds": null,
+    "baths": null,
+    "kind": "other",
+    "pets": "unclear",
+    "town": "Zanariford",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r041"
+  },
+  {
+   "tier": "scam",
+   "title": "Quiet 2BR condominium near the hospital",
+   "price": "$1,475",
+   "attrs": "2BR / 1Ba 900ft2 \u00b7 condo",
+   "location": "Noltranhaven",
+   "body": "Available now: two bedrooms, one baths, condo on 4503 Ixenmere Ave. Close to the elementary school. Lots of closet space. Updated bathroom with a tub and shower. Asking $1,475/mo on a twelve month lease. Application fee is $35, deposit is one month's rent. We only take the deposit as gift cards, and will tell you which ones when you write. Text 555-0190 to schedule a viewing.",
+   "gold": {
+    "rent": 1475,
+    "beds": 2,
+    "baths": 1,
+    "kind": "condo",
+    "pets": "unclear",
+    "town": "Noltranhaven",
+    "red_flags": [
+     "gift card"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r042"
+  },
+  {
+   "tier": "pets_passing",
+   "title": "Clean 2BR townhouse near the old mill",
+   "price": "$1,675",
+   "attrs": "2BR / 2Ba 950ft2",
+   "location": "Heskbostfield",
+   "body": "A two bedroom, two bath townhome on 437 Jorvpell Ln. Bright kitchen with a pantry. Brand new water heater. A covered patio out back. Asking $1,675/mo on a twelve month lease. Application fee is $35, deposit is one month's rent. The back lot is great for the one dog you may bring ($300 deposit). Smoking is not allowed inside. Neighbors here have been in place for years and keep to themselves. Call or text 555-0139 to see it this week.",
+   "gold": {
+    "rent": 1675,
+    "beds": 2,
+    "baths": 2,
+    "kind": "townhouse",
+    "pets": "dogs ok",
+    "town": "Heskbostfield",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r043"
+  },
+  {
+   "tier": "other_kind",
+   "title": "Storage unit, ground floor in Heskvorafield",
+   "price": "$110",
+   "attrs": "50ft2",
+   "location": "Heskvorafield",
+   "body": "Storage unit, ground floor at 357 Tamtran Ave. It is not a living space and is not for sleeping in. $110 a month, one month deposit. Trash pickup is on Tuesdays. We run a credit and background check on every adult applicant. Text 555-0172 to schedule a viewing.",
+   "gold": {
+    "rent": 110,
+    "beds": null,
+    "baths": null,
+    "kind": "other",
+    "pets": "unclear",
+    "town": "Heskvorafield",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r044"
+  },
+  {
+   "tier": "cats_only",
+   "title": "Bright 2BR condominium near the farmers market",
+   "price": "$1,425",
+   "attrs": "2BR / 1.5Ba 970ft2 \u00b7 condo",
+   "location": "Quinsenford",
+   "body": "A two bedroom, one and a half bath condominium on 4936 Ostvora Dr. Off-street parking for two cars. Ceiling fans in every room. Granite counters in the kitchen. Asking $1,425/mo on a twelve month lease. Application fee is $50, deposit is one month's rent. One cat is fine; no dogs allowed. Call or text 555-0108 to see it this week.",
+   "gold": {
+    "rent": 1425,
+    "beds": 2,
+    "baths": 1.5,
+    "kind": "condo",
+    "pets": "cats only",
+    "town": "Quinsenford",
+    "red_flags": [
+     "no dogs"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r045"
+  },
+  {
+   "tier": "pets_attrs",
+   "title": "Clean 3BR mobile home near Main Street shops",
+   "price": "$1,350",
+   "attrs": "3BR / 2Ba 1450ft2 \u00b7 manufactured \u00b7 cats are OK - purrr",
+   "location": "Drabostford",
+   "body": "A three bedroom, two bath manufactured home on 8260 Drabost Ave. Lots of closet space. Lawn care is handled for you. Granite counters in the kitchen. Asking $1,350/mo on a twelve month lease. Application fee is $50, deposit is one month's rent. Call or text 555-0107 to see it this week.",
+   "gold": {
+    "rent": 1350,
+    "beds": 3,
+    "baths": 2,
+    "kind": "mobile home",
+    "pets": "cats only",
+    "town": "Drabostford",
+    "red_flags": []
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r046"
+  },
+  {
+   "tier": "pets_absent",
+   "title": "Quiet 3BR condominium near the old mill",
+   "price": "$2,025",
+   "attrs": "3BR / 1Ba 1440ft2 \u00b7 condo \u00b7 laundry in bldg \u00b7 air conditioning",
+   "location": "Jorvgardville",
+   "body": "This three-bedroom condo has one bath and about 1440 square feet. Brand new water heater. Quiet street with little traffic. Close to the elementary school. Rent is $2,025 per month. Application fee is $35, deposit is one month's rent. Pets are considered case by case. The owner has kept this place maintained for a long time. The lease is twelve months with a option to renew. Call or text 555-0108 to see it this week.",
+   "gold": {
+    "rent": 2025,
+    "beds": 3,
+    "baths": 1,
+    "kind": "condo",
+    "pets": "unclear",
+    "town": "Jorvgardville",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r047"
+  },
+  {
+   "tier": "pets_mixed",
+   "title": "Charming 3BR half of a duplex near the lake",
+   "price": "$1,575",
+   "attrs": "3BR / 1Ba 1470ft2 \u00b7 duplex \u00b7 cats are OK - purrr \u00b7 laundry in bldg \u00b7 off-street parking",
+   "location": "Nolpellville",
+   "body": "This three-bedroom duplex has one bath and about 1470 square feet. Lawn care is handled for you. Water, sewer and trash are paid by the owner. Dishwasher and gas range included. Rent is $1,575 per month. Application fee is $45, deposit is one month's rent. Cats are fine. Dogs: sorry, no dogs. Call or text 555-0185 to see it this week.",
+   "gold": {
+    "rent": 1575,
+    "beds": 3,
+    "baths": 1,
+    "kind": "duplex",
+    "pets": "cats only",
+    "town": "Nolpellville",
+    "red_flags": [
+     "no dogs"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r048"
+  },
+  {
+   "tier": "scam",
+   "title": "Updated 1BR apartment near the farmers market",
+   "price": "$1,150",
+   "attrs": "1BR / 2Ba 770ft2 \u00b7 apartment \u00b7 no smoking \u00b7 air conditioning",
+   "location": "Tampellford",
+   "body": "This one-bedroom apartment has two baths and about 770 square feet. Brand new water heater. Water, sewer and trash are paid by the owner. A covered patio out back. Asking $1,150/mo on a twelve month lease. Application fee is $45, deposit is one month's rent. The deposit has to be sent by wire transfer before anything else happens. The owner is working overseas on an oil rig for the year, so a property manager handles the paperwork by email. Call or text 555-0174 to see it this week.",
+   "gold": {
+    "rent": 1150,
+    "beds": 1,
+    "baths": 2,
+    "kind": "apartment",
+    "pets": "unclear",
+    "town": "Tampellford",
+    "red_flags": [
+     "owner abroad",
+     "wire payment"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r049"
+  },
+  {
+   "tier": "price_disagree",
+   "title": "Clean 2BR house near the rail trail",
+   "price": "$2,100",
+   "attrs": "2BR / 1.5Ba 990ft2 \u00b7 house",
+   "location": "Nollindale",
+   "body": "This two-bedroom home has one and a half baths and about 990 square feet. Ceiling fans in every room. Water, sewer and trash are paid by the owner. New carpet and fresh paint throughout. Reduced! Now $1,750 a month; the posted price is out of date. Application fee is $45, deposit is one month's rent. Text 555-0106 to schedule a viewing.",
+   "gold": {
+    "rent": 1750,
+    "beds": 2,
+    "baths": 1.5,
+    "kind": "house",
+    "pets": "unclear",
+    "town": "Nollindale",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r050"
+  },
+  {
+   "tier": "scam",
+   "title": "Bright 2BR condominium near the farmers market",
+   "price": "$400",
+   "attrs": "2BR / 1Ba 1040ft2 \u00b7 condo \u00b7 w/d hookups \u00b7 no smoking",
+   "location": "Mavlinfield",
+   "body": "Available now: two bedrooms, one baths, condo on 7707 Tampell Dr. Ceiling fans in every room. Dishwasher and gas range included. Lots of closet space. Rent is $400 per month. Application fee is $45, deposit is one month's rent. No viewings or showings until the deposit has cleared; the photos speak for themselves.",
+   "gold": {
+    "rent": 400,
+    "beds": 2,
+    "baths": 1,
+    "kind": "condo",
+    "pets": "unclear",
+    "town": "Mavlinfield",
+    "red_flags": [
+     "no viewing",
+     "price far below area"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r051"
+  },
+  {
+   "tier": "plain",
+   "title": "Cozy 3BR mobile home near Main Street shops",
+   "price": "$1,175",
+   "attrs": "3BR / 2Ba 1440ft2 \u00b7 manufactured \u00b7 laundry in bldg",
+   "location": "Brevwickburg",
+   "body": "Available now: three bedrooms, two baths, mobile home on 7966 Mavdell Way. Laminate floors, no carpet in the main rooms. Brand new water heater. Off-street parking for two cars. Rent is $1,175 per month. Application fee is $35, deposit is one month's rent. Pets are not permitted in this building. Text 555-0185 to schedule a viewing.",
+   "gold": {
+    "rent": 1175,
+    "beds": 3,
+    "baths": 2,
+    "kind": "mobile home",
+    "pets": "no pets",
+    "town": "Brevwickburg",
+    "red_flags": []
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r052"
+  },
+  {
+   "tier": "scam",
+   "title": "Charming 2BR apartment near the old mill",
+   "price": "$1,325",
+   "attrs": "2BR / 1Ba 930ft2 \u00b7 apartment",
+   "location": "Veldellridge",
+   "body": "Available now: two bedrooms, one baths, apartment on 9294 Brevbost Ct. Washer and dryer hookups. Central air and heat. Lots of closet space. Asking $1,325/mo on a twelve month lease. Application fee is $45, deposit is one month's rent. I am out of the country for work right now and everything is done by email. To see it, text 555-0153.",
+   "gold": {
+    "rent": 1325,
+    "beds": 2,
+    "baths": 1,
+    "kind": "apartment",
+    "pets": "unclear",
+    "town": "Veldellridge",
+    "red_flags": [
+     "owner abroad"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r053"
+  },
+  {
+   "tier": "half_baths",
+   "title": "Spacious 2BR townhouse near the community college",
+   "price": "$1,625",
+   "attrs": "2BR / 2.5Ba 890ft2 \u00b7 townhouse \u00b7 carport",
+   "location": "Ostpellmont",
+   "body": "This two-bedroom townhouse has two and a half baths and about 890 square feet. Off-street parking for two cars. Quiet street with little traffic. Central air and heat. Rent is $1,625 per month. Application fee is $45, deposit is one month's rent. Call or text 555-0159 to see it this week.",
+   "gold": {
+    "rent": 1625,
+    "beds": 2,
+    "baths": 2.5,
+    "kind": "townhouse",
+    "pets": "unclear",
+    "town": "Ostpellmont",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r054"
+  },
+  {
+   "tier": "utilities",
+   "title": "Charming 2BR condo near the hospital",
+   "price": "$1,475",
+   "attrs": "2BR / 1Ba 920ft2 \u00b7 condo",
+   "location": "Zanmereford",
+   "body": "Available now: two bedrooms, one baths, condominium on 3649 Ulmtran Rd. Water, sewer and trash are paid by the owner. Ceiling fans in every room. Lawn care is handled for you. $1,475 a month with all utilities included. Application fee is $50, deposit is one month's rent. Text 555-0187 to schedule a viewing.",
+   "gold": {
+    "rent": 1475,
+    "beds": 2,
+    "baths": 1,
+    "kind": "condo",
+    "pets": "unclear",
+    "town": "Zanmereford",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r055"
+  },
+  {
+   "tier": "long_body",
+   "title": "Charming 3BR home near the hospital",
+   "price": "$2,225",
+   "attrs": "3BR / 2Ba 1520ft2 \u00b7 house",
+   "location": "Yarbostdale",
+   "body": "A three bedroom, two bath house on 1838 Nolkry Way. Dishwasher and gas range included. Brand new water heater. Granite counters in the kitchen. Asking $2,225/mo on a twelve month lease. Storage shed on the lot. Laminate floors, no carpet in the main rooms. Rent is due on the first and late after the fifth. Lots of closet space. Water, sewer and trash are paid by the owner. Washer and dryer hookups. Ceiling fans in every room. Income should be about three times the rent. Bright kitchen with a pantry. Trash pickup is on Tuesdays. Smoking is not allowed inside. Close to the elementary school. Utilities not listed here are paid by the tenant. The lease is twelve months with a option to renew. The area has an easy commute to the main highway. Granite counters in the kitchen. The area has an easy commute to the main highway. Ceiling fans in every room. Utilities not listed here are paid by the tenant. We run a credit and background check on every adult applicant. Snow and ice removal on the driveway is up to the tenant. Please read the whole ad before you reach out. The lot is on a gentle slope with good drainage. Lots of closet space. Rent is due on the first and late after the fifth. A covered patio out back. Photos were taken last month. Quiet street with little traffic. Rent is due on the first and late after the fifth. Trash pickup is on Tuesdays. Smoking is not allowed inside. Quiet street with little traffic. Granite counters in the kitchen. Granite counters in the kitchen. Off-street parking for two cars. Utilities not listed here are paid by the tenant. Lawn care is handled for you. Income should be about three times the rent. Neighbors here have been in place for years and keep to themselves. New carpet and fresh paint throughout. Schools in the district have a good reputation locally. Trash pickup is on Tuesdays. The area has an easy commute to the main highway. Neighbors here have been in place for years and keep to themselves. Bright kitchen with a pantry. Please read the whole ad before you reach out. Bright kitchen with a pantry. The lot is on a gentle slope with good drainage. A covered patio out back. Dishwasher and gas range included. Snow and ice removal on the driveway is up to the tenant. Rent is due on the first and late after the fifth. Updated bathroom with a tub and shower. Utilities not listed here are paid by the tenant. The area has an easy commute to the main highway. Washer and dryer hookups. Snow and ice removal on the driveway is up to the tenant. Off-street parking for two cars. Income should be about three times the rent. Schools in the district have a good reputation locally. Photos were taken last month. The lot is on a gentle slope with good drainage. Rent is due on the first and late after the fifth. Quiet street with little traffic. Washer and dryer hookups. The owner has kept this place maintained for a long time. Brand new water heater. Granite counters in the kitchen. Central air and heat. Lots of closet space. Smoking is not allowed inside. Water, sewer and trash are paid by the owner. Central air and heat. Close to the elementary school. Water, sewer and trash are paid by the owner. Water, sewer and trash are paid by the owner. Lawn care is handled for you. Laminate floors, no carpet in the main rooms. The furnace was serviced this fall. The owner has kept this place maintained for a long time. Laminate floors, no carpet in the main rooms. Snow and ice removal on the driveway is up to the tenant. Repairs are handled within a few days of a request. Neighbors here have been in place for years and keep to themselves. Bright kitchen with a pantry. Storage shed on the lot. Granite counters in the kitchen. Bright kitchen with a pantry. A covered patio out back. Smoking is not allowed inside. Close to the elementary school. Neighbors here have been in place for years and keep to themselves. Rent is due on the first and late after the fifth. We prefer tenants who plan to stay at least a year. We prefer tenants who plan to stay at least a year. Please read the whole ad before you reach out. We prefer tenants who plan to stay at least a year. Granite counters in the kitchen. Snow and ice removal on the driveway is up to the tenant. We prefer tenants who plan to stay at least a year. Water, sewer and trash are paid by the owner. Granite counters in the kitchen. Close to the elementary school. Updated bathroom with a tub and shower. Lots of closet space. The area has an easy commute to the main highway. Granite counters in the kitchen. Ceiling fans in every room. Water, sewer and trash are paid by the owner. A covered patio out back. New carpet and fresh paint throughout. Income should be about three times the rent. Photos were taken last month. Central air and heat. Close to the elementary school. Smoking is not allowed inside. Washer and dryer hookups. Trash pickup is on Tuesdays. The owner has kept this place maintained for a long time. Brand new water heater. The owner has kept this place maintained for a long time. Laminate floors, no carpet in the main rooms. Laminate floors, no carpet in the main rooms. Lots of closet space. A covered patio out back. Schools in the district have a good reputation locally. Please read the whole ad before you reach out. We prefer tenants who plan to stay at least a year. Off-street parking for two cars. New carpet and fresh paint throughout. Please read the whole ad before you reach out. New carpet and fresh paint throughout. Pets: no dogs. Text 555-0140 to schedule a viewing.",
+   "gold": {
+    "rent": 2225,
+    "beds": 3,
+    "baths": 2,
+    "kind": "house",
+    "pets": "unclear",
+    "town": "Yarbostdale",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r056"
+  },
+  {
+   "tier": "pets_mixed",
+   "title": "Updated 3BR house near the rail trail",
+   "price": "$2,325",
+   "attrs": "3BR / 1Ba 1290ft2 \u00b7 house \u00b7 dogs are OK - wooof \u00b7 air conditioning",
+   "location": "Tamgardburg",
+   "body": "This three-bedroom house has one bath and about 1290 square feet. Close to the elementary school. Water, sewer and trash are paid by the owner. Washer and dryer hookups. Asking $2,325/mo on a twelve month lease. Application fee is $35, deposit is one month's rent. Small dogs only, 25 lb limit. Call or text 555-0105 to see it this week.",
+   "gold": {
+    "rent": 2325,
+    "beds": 3,
+    "baths": 1,
+    "kind": "house",
+    "pets": "dogs ok",
+    "town": "Tamgardburg",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r057"
+  },
+  {
+   "tier": "half_baths",
+   "title": "Cozy 2BR condominium near the community college",
+   "price": "$1,425",
+   "attrs": "2BR / 1.5Ba 930ft2 \u00b7 condo \u00b7 no smoking \u00b7 off-street parking",
+   "location": "Cavwickfield",
+   "body": "This two-bedroom condo has one and a half baths and about 930 square feet. Close to the elementary school. Lawn care is handled for you. Dishwasher and gas range included. Rent is $1,425 per month. Application fee is $35, deposit is one month's rent. To see it, text 555-0166.",
+   "gold": {
+    "rent": 1425,
+    "beds": 2,
+    "baths": 1.5,
+    "kind": "condo",
+    "pets": "unclear",
+    "town": "Cavwickfield",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r058"
+  },
+  {
+   "tier": "cats_only",
+   "title": "Clean 2BR condo near the lake",
+   "price": "$1,475",
+   "attrs": "2BR / 1Ba 920ft2 \u00b7 condo \u00b7 w/d hookups \u00b7 laundry in bldg",
+   "location": "Brevtranford",
+   "body": "This two-bedroom condo has one bath and about 920 square feet. Laminate floors, no carpet in the main rooms. Brand new water heater. Central air and heat. $1,475 a month, first month and deposit due at signing. Application fee is $45, deposit is one month's rent. We allow cats only. Call or text 555-0113 to see it this week.",
+   "gold": {
+    "rent": 1475,
+    "beds": 2,
+    "baths": 1,
+    "kind": "condo",
+    "pets": "cats only",
+    "town": "Brevtranford",
+    "red_flags": []
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r059"
+  },
+  {
+   "tier": "cats_only",
+   "title": "Charming 3BR single-family home near the rail trail",
+   "price": "$1,850",
+   "attrs": "3BR / 1Ba 1390ft2 \u00b7 house \u00b7 off-street parking",
+   "location": "Heskaridale",
+   "body": "A three bedroom, one bath house on 1485 Hesksen Way. Storage shed on the lot. Central air and heat. Water, sewer and trash are paid by the owner. Asking $1,850/mo on a twelve month lease. Application fee is $35, deposit is one month's rent. Cats are welcome. No dogs. To see it, text 555-0167.",
+   "gold": {
+    "rent": 1850,
+    "beds": 3,
+    "baths": 1,
+    "kind": "house",
+    "pets": "cats only",
+    "town": "Heskaridale",
+    "red_flags": [
+     "no dogs"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r060"
+  },
+  {
+   "tier": "long_body",
+   "title": "Bright 3BR townhome near the hospital",
+   "price": "$2,100",
+   "attrs": "3BR / 1Ba 1460ft2 \u00b7 townhouse \u00b7 air conditioning \u00b7 w/d hookups",
+   "location": "Ostwickmont",
+   "body": "A three bedroom, one bath townhome on 7905 Ulmmere Ln. Quiet street with little traffic. A covered patio out back. Lawn care is handled for you. Rent is $2,100 per month. We prefer tenants who plan to stay at least a year. Photos were taken last month. Lawn care is handled for you. Storage shed on the lot. Neighbors here have been in place for years and keep to themselves. Repairs are handled within a few days of a request. Close to the elementary school. Water, sewer and trash are paid by the owner. Close to the elementary school. Rent is due on the first and late after the fifth. Central air and heat. Water, sewer and trash are paid by the owner. The furnace was serviced this fall. Dishwasher and gas range included. Utilities not listed here are paid by the tenant. Dishwasher and gas range included. Trash pickup is on Tuesdays. Washer and dryer hookups. Updated bathroom with a tub and shower. The owner has kept this place maintained for a long time. Snow and ice removal on the driveway is up to the tenant. Granite counters in the kitchen. The lot is on a gentle slope with good drainage. The furnace was serviced this fall. Trash pickup is on Tuesdays. Water, sewer and trash are paid by the owner. Smoking is not allowed inside. The lot is on a gentle slope with good drainage. Neighbors here have been in place for years and keep to themselves. Renters insurance is required before move-in. The lot is on a gentle slope with good drainage. The lot is on a gentle slope with good drainage. Lawn care is handled for you. Updated bathroom with a tub and shower. We prefer tenants who plan to stay at least a year. Dishwasher and gas range included. Lots of closet space. Smoking is not allowed inside. Photos were taken last month. Central air and heat. A covered patio out back. The owner has kept this place maintained for a long time. A covered patio out back. There is a grocery store a short drive away. Updated bathroom with a tub and shower. Please read the whole ad before you reach out. Storage shed on the lot. Snow and ice removal on the driveway is up to the tenant. Trash pickup is on Tuesdays. Snow and ice removal on the driveway is up to the tenant. Neighbors here have been in place for years and keep to themselves. Washer and dryer hookups. Ceiling fans in every room. Lawn care is handled for you. Granite counters in the kitchen. There is a grocery store a short drive away. Rent is due on the first and late after the fifth. Updated bathroom with a tub and shower. Renters insurance is required before move-in. Central air and heat. Laminate floors, no carpet in the main rooms. Off-street parking for two cars. Cats are okay with a deposit. No dogs. We prefer tenants who plan to stay at least a year. Laminate floors, no carpet in the main rooms. The owner has kept this place maintained for a long time. Washer and dryer hookups. We prefer tenants who plan to stay at least a year. We run a credit and background check on every adult applicant. Quiet street with little traffic. Brand new water heater. Brand new water heater. Please read the whole ad before you reach out. The owner has kept this place maintained for a long time. Repairs are handled within a few days of a request. Laminate floors, no carpet in the main rooms. There is a grocery store a short drive away. Bright kitchen with a pantry. Off-street parking for two cars. Income should be about three times the rent. Close to the elementary school. A covered patio out back. Granite counters in the kitchen. Neighbors here have been in place for years and keep to themselves. The area has an easy commute to the main highway. Please read the whole ad before you reach out. The lot is on a gentle slope with good drainage. Close to the elementary school. Please read the whole ad before you reach out. Ceiling fans in every room. The owner has kept this place maintained for a long time. The area has an easy commute to the main highway. Please read the whole ad before you reach out. Utilities not listed here are paid by the tenant. Trash pickup is on Tuesdays. A covered patio out back. New carpet and fresh paint throughout. Rent is due on the first and late after the fifth. Updated bathroom with a tub and shower. We run a credit and background check on every adult applicant. To see it, text 555-0145.",
+   "gold": {
+    "rent": 2100,
+    "beds": 3,
+    "baths": 1,
+    "kind": "townhouse",
+    "pets": "cats only",
+    "town": "Ostwickmont",
+    "red_flags": [
+     "no dogs"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r061"
+  },
+  {
+   "tier": "cats_only",
+   "title": "Cozy 2BR home near the farmers market",
+   "price": "$1,950",
+   "attrs": "2BR / 2Ba 890ft2 \u00b7 house \u00b7 no smoking \u00b7 laundry in bldg",
+   "location": "Zanwickmont",
+   "body": "A two bedroom, two bath single-family home on 1238 Velwick Ave. Washer and dryer hookups. Close to the elementary school. Lots of closet space. $1,950 a month, first month and deposit due at signing. Application fee is $50, deposit is one month's rent. Cats are welcome. No dogs. Text 555-0120 to schedule a viewing.",
+   "gold": {
+    "rent": 1950,
+    "beds": 2,
+    "baths": 2,
+    "kind": "house",
+    "pets": "cats only",
+    "town": "Zanwickmont",
+    "red_flags": [
+     "no dogs"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r062"
+  },
+  {
+   "tier": "studio",
+   "title": "Studio apartment near the farmers market",
+   "price": "$725",
+   "attrs": "studio / 1Ba 380ft2 \u00b7 apartment",
+   "location": "Zanwickville",
+   "body": "A bright studio with one bathroom at 3859 Jorvmere Dr. Quiet street with little traffic. Close to the elementary school. Central air and heat. Rent is $725 per month. To see it, text 555-0133.",
+   "gold": {
+    "rent": 725,
+    "beds": 0,
+    "baths": 1,
+    "kind": "apartment",
+    "pets": "unclear",
+    "town": "Zanwickville",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r063"
+  },
+  {
+   "tier": "plain",
+   "title": "Spacious 3BR manufactured home near the community college",
+   "price": "$1,225",
+   "attrs": "3BR / 1Ba 1390ft2 \u00b7 w/d hookups \u00b7 no smoking",
+   "location": "Quinbostmont",
+   "body": "Available now: three bedrooms, one baths, manufactured home on 3295 Kordell Ave. Quiet street with little traffic. Updated bathroom with a tub and shower. A covered patio out back. Rent is $1,225 per month. Application fee is $35, deposit is one month's rent. Pets are not permitted in this building. Call or text 555-0144 to see it this week.",
+   "gold": {
+    "rent": 1225,
+    "beds": 3,
+    "baths": 1,
+    "kind": "mobile home",
+    "pets": "no pets",
+    "town": "Quinbostmont",
+    "red_flags": []
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r064"
+  },
+  {
+   "tier": "pets_attrs",
+   "title": "Spacious 2BR condo near Main Street shops",
+   "price": "$1,325",
+   "attrs": "2BR / 1Ba 1170ft2 \u00b7 condo \u00b7 cats are OK - purrr \u00b7 dogs are OK - wooof \u00b7 laundry in bldg",
+   "location": "Quinariridge",
+   "body": "A two bedroom, one bath condo on 6464 Tamlin Way. A covered patio out back. Off-street parking for two cars. Close to the elementary school. $1,325 a month, first month and deposit due at signing. Application fee is $50, deposit is one month's rent. Call or text 555-0105 to see it this week.",
+   "gold": {
+    "rent": 1325,
+    "beds": 2,
+    "baths": 1,
+    "kind": "condo",
+    "pets": "dogs ok",
+    "town": "Quinariridge",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r065"
+  },
+  {
+   "tier": "pets_passing",
+   "title": "Spacious 3BR duplex near the rail trail",
+   "price": "$1,925",
+   "attrs": "3BR / 2Ba 1330ft2 \u00b7 no smoking",
+   "location": "Quinvoraford",
+   "body": "This three-bedroom duplex has two baths and about 1330 square feet. Quiet street with little traffic. Water, sewer and trash are paid by the owner. Updated bathroom with a tub and shower. Rent is $1,925 per month. Application fee is $50, deposit is one month's rent. Walk to the dog park; dogs under 50 lb are welcome here too. The furnace was serviced this fall. Photos were taken last month. To see it, text 555-0115.",
+   "gold": {
+    "rent": 1925,
+    "beds": 3,
+    "baths": 2,
+    "kind": "duplex",
+    "pets": "dogs ok",
+    "town": "Quinvoraford",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r066"
+  },
+  {
+   "tier": "pets_passing",
+   "title": "Roomy 2BR single-family home near the rail trail",
+   "price": "$1,575",
+   "attrs": "2BR / 2.5Ba 990ft2",
+   "location": "Tamkryford",
+   "body": "A two bedroom, two and a half bath house on 1961 Quinlin Ln. Bright kitchen with a pantry. Quiet street with little traffic. Lots of closet space. Rent is $1,575 per month. Application fee is $35, deposit is one month's rent. There is a dog run out back and we welcome dogs; ask about the deposit. Neighbors here have been in place for years and keep to themselves. Repairs are handled within a few days of a request. To see it, text 555-0152.",
+   "gold": {
+    "rent": 1575,
+    "beds": 2,
+    "baths": 2.5,
+    "kind": "house",
+    "pets": "dogs ok",
+    "town": "Tamkryford",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r067"
+  },
+  {
+   "tier": "pets_absent",
+   "title": "Clean 3BR single-family home near the community college",
+   "price": "$1,925",
+   "attrs": "3BR / 1Ba 1200ft2 \u00b7 house \u00b7 laundry in bldg \u00b7 carport",
+   "location": "Korlinridge",
+   "body": "A three bedroom, one bath single-family home on 3178 Quinmere Ave. New carpet and fresh paint throughout. Bright kitchen with a pantry. Close to the elementary school. Asking $1,925/mo on a twelve month lease. Application fee is $50, deposit is one month's rent. Smoking is not allowed inside. Photos were taken last month. Text 555-0162 to schedule a viewing.",
+   "gold": {
+    "rent": 1925,
+    "beds": 3,
+    "baths": 1,
+    "kind": "house",
+    "pets": "unclear",
+    "town": "Korlinridge",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r068"
+  },
+  {
+   "tier": "other_kind",
+   "title": "Office suite for lease in Ostgardhaven",
+   "price": "$650",
+   "attrs": "400ft2",
+   "location": "Ostgardhaven",
+   "body": "Office suite for lease at 5821 Heskari Ave. It is not a living space and is not for sleeping in. $650 a month, one month deposit. We run a credit and background check on every adult applicant. The area has an easy commute to the main highway. Call or text 555-0147 to see it this week.",
+   "gold": {
+    "rent": 650,
+    "beds": null,
+    "baths": null,
+    "kind": "other",
+    "pets": "unclear",
+    "town": "Ostgardhaven",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r069"
+  },
+  {
+   "tier": "scam",
+   "title": "Charming 2BR duplex near the rail trail",
+   "price": "$1,400",
+   "attrs": "2BR / 2Ba 1050ft2 \u00b7 duplex \u00b7 carport",
+   "location": "Quinkrymont",
+   "body": "A two bedroom, two bath half of a duplex on 5137 Cavtran Dr. Laminate floors, no carpet in the main rooms. Water, sewer and trash are paid by the owner. Storage shed on the lot. $1,400 a month, first month and deposit due at signing. Application fee is $50, deposit is one month's rent. I am out of the country for work right now and everything is done by email. No viewings or showings until the deposit has cleared; the photos speak for themselves.",
+   "gold": {
+    "rent": 1400,
+    "beds": 2,
+    "baths": 2,
+    "kind": "duplex",
+    "pets": "unclear",
+    "town": "Quinkrymont",
+    "red_flags": [
+     "no viewing",
+     "owner abroad"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r070"
+  },
+  {
+   "tier": "plain",
+   "title": "Clean 2BR townhome near the old mill",
+   "price": "$1,575",
+   "attrs": "2BR / 2Ba 920ft2 \u00b7 laundry in bldg \u00b7 carport",
+   "location": "Ulmwickburg",
+   "body": "Available now: two bedrooms, two baths, townhouse on 1658 Zanari Ct. Washer and dryer hookups. Bright kitchen with a pantry. Off-street parking for two cars. Rent is $1,575 per month. Application fee is $45, deposit is one month's rent. Sorry, cats only (one cat, $200 deposit). To see it, text 555-0128.",
+   "gold": {
+    "rent": 1575,
+    "beds": 2,
+    "baths": 2,
+    "kind": "townhouse",
+    "pets": "cats only",
+    "town": "Ulmwickburg",
+    "red_flags": []
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r071"
+  },
+  {
+   "tier": "plain",
+   "title": "Cozy 2BR condominium near the hospital",
+   "price": "$1,375",
+   "attrs": "2BR / 1Ba 1030ft2 \u00b7 condo \u00b7 air conditioning",
+   "location": "Jorvwickhaven",
+   "body": "A two bedroom, one bath condominium on 3473 Brevmere St. Quiet street with little traffic. Bright kitchen with a pantry. A covered patio out back. $1,375 a month, first month and deposit due at signing. Application fee is $45, deposit is one month's rent. Dogs welcome with a $300 pet deposit. Text 555-0166 to schedule a viewing.",
+   "gold": {
+    "rent": 1375,
+    "beds": 2,
+    "baths": 1,
+    "kind": "condo",
+    "pets": "dogs ok",
+    "town": "Jorvwickhaven",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r072"
+  },
+  {
+   "tier": "scam",
+   "title": "Roomy 2BR half of a duplex near the rail trail",
+   "price": "$500",
+   "attrs": "2BR / 1.5Ba 880ft2 \u00b7 duplex \u00b7 air conditioning \u00b7 carport",
+   "location": "Draarifield",
+   "body": "A two bedroom, one and a half bath duplex on 4424 Korari Way. New carpet and fresh paint throughout. Lawn care is handled for you. Washer and dryer hookups. Rent is $500 per month. Application fee is $50, deposit is one month's rent. Text 555-0126 to schedule a viewing.",
+   "gold": {
+    "rent": 500,
+    "beds": 2,
+    "baths": 1.5,
+    "kind": "duplex",
+    "pets": "unclear",
+    "town": "Draarifield",
+    "red_flags": [
+     "price far below area"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r073"
+  },
+  {
+   "tier": "restricted",
+   "title": "Quiet 4BR townhome near the community college",
+   "price": "$2,025",
+   "attrs": "4BR / 1.5Ba 1500ft2 \u00b7 townhouse \u00b7 no smoking \u00b7 w/d hookups",
+   "location": "Velkryfield",
+   "body": "A four bedroom, one and a half bath townhouse on 5773 Ostlin St. Ceiling fans in every room. Laminate floors, no carpet in the main rooms. Storage shed on the lot. Asking $2,025/mo on a twelve month lease. Application fee is $50, deposit is one month's rent. Section 8 vouchers only, please do not apply otherwise. To see it, text 555-0128.",
+   "gold": {
+    "rent": 2025,
+    "beds": 4,
+    "baths": 1.5,
+    "kind": "townhouse",
+    "pets": "unclear",
+    "town": "Velkryfield",
+    "red_flags": [
+     "section 8 only"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r074"
+  },
+  {
+   "tier": "cats_only",
+   "title": "Roomy 2BR single-family home near Main Street shops",
+   "price": "$1,500",
+   "attrs": "2BR / 2Ba 1030ft2 \u00b7 house \u00b7 air conditioning \u00b7 carport",
+   "location": "Ostlinfield",
+   "body": "A two bedroom, two bath single-family home on 4628 Cavari Ave. Brand new water heater. Ceiling fans in every room. Lots of closet space. Rent is $1,500 per month. Application fee is $50, deposit is one month's rent. Cats only please. To see it, text 555-0144.",
+   "gold": {
+    "rent": 1500,
+    "beds": 2,
+    "baths": 2,
+    "kind": "house",
+    "pets": "cats only",
+    "town": "Ostlinfield",
+    "red_flags": []
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r075"
+  },
+  {
+   "tier": "room",
+   "title": "Room for rent in Veltranford",
+   "price": "$550",
+   "attrs": "1BR / 1Ba 170ft2 \u00b7 room",
+   "location": "Veltranford",
+   "body": "Room for rent in a shared house on 7147 Tamari Rd. Furnished room, shared kitchen and bath. $550 a month, utilities split between the housemates. We run a credit and background check on every adult applicant. Income should be about three times the rent. No pets. Text 555-0192 to schedule a viewing.",
+   "gold": {
+    "rent": 550,
+    "beds": 1,
+    "baths": 1,
+    "kind": "room",
+    "pets": "no pets",
+    "town": "Veltranford",
+    "red_flags": [
+     "room for rent"
+    ]
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r076"
+  },
+  {
+   "tier": "cats_only",
+   "title": "Bright 2BR condominium near the rail trail",
+   "price": "$1,700",
+   "attrs": "2BR / 1Ba 980ft2 \u00b7 condo \u00b7 w/d hookups \u00b7 air conditioning",
+   "location": "Osttranridge",
+   "body": "This two-bedroom condo has one bath and about 980 square feet. Storage shed on the lot. Laminate floors, no carpet in the main rooms. Updated bathroom with a tub and shower. Asking $1,700/mo on a twelve month lease. Application fee is $50, deposit is one month's rent. We allow cats only. To see it, text 555-0126.",
+   "gold": {
+    "rent": 1700,
+    "beds": 2,
+    "baths": 1,
+    "kind": "condo",
+    "pets": "cats only",
+    "town": "Osttranridge",
+    "red_flags": []
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r077"
+  },
+  {
+   "tier": "half_baths",
+   "title": "Clean 4BR home near the hospital",
+   "price": "$2,375",
+   "attrs": "4BR / 1.5Ba 1590ft2 \u00b7 house \u00b7 off-street parking \u00b7 laundry in bldg",
+   "location": "Mavtranmont",
+   "body": "Available now: four bedrooms, one and a half baths, house on 3551 Cavgard Ln. Bright kitchen with a pantry. Washer and dryer hookups. Central air and heat. Rent is $2,375 per month. Application fee is $50, deposit is one month's rent. Text 555-0142 to schedule a viewing.",
+   "gold": {
+    "rent": 2375,
+    "beds": 4,
+    "baths": 1.5,
+    "kind": "house",
+    "pets": "unclear",
+    "town": "Mavtranmont",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r078"
+  },
+  {
+   "tier": "studio",
+   "title": "Studio apartment near the community college",
+   "price": "$650",
+   "attrs": "0BR / 1Ba 425ft2 \u00b7 apartment",
+   "location": "Tammeredale",
+   "body": "Studio apartment, one bath, about 425 square feet on 737 Jorvpell Rd. Quiet street with little traffic. Water, sewer and trash are paid by the owner. Dishwasher and gas range included. Rent is $650 per month. To see it, text 555-0111.",
+   "gold": {
+    "rent": 650,
+    "beds": 0,
+    "baths": 1,
+    "kind": "apartment",
+    "pets": "unclear",
+    "town": "Tammeredale",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r079"
+  },
+  {
+   "tier": "plain",
+   "title": "Roomy 2BR half of a duplex near the rail trail",
+   "price": "$1,350",
+   "attrs": "2BR / 1.5Ba 1000ft2",
+   "location": "Zanlinville",
+   "body": "This two-bedroom half of a duplex has one and a half baths and about 1000 square feet. Lots of closet space. Central air and heat. Dishwasher and gas range included. Asking $1,350/mo on a twelve month lease. Application fee is $35, deposit is one month's rent. Sorry, cats only (one cat, $200 deposit). Text 555-0104 to schedule a viewing.",
+   "gold": {
+    "rent": 1350,
+    "beds": 2,
+    "baths": 1.5,
+    "kind": "duplex",
+    "pets": "cats only",
+    "town": "Zanlinville",
+    "red_flags": []
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r080"
+  },
+  {
+   "tier": "scam",
+   "title": "Clean 3BR home near the community college",
+   "price": "$1,825",
+   "attrs": "3BR / 1Ba 1470ft2 \u00b7 house \u00b7 air conditioning",
+   "location": "Ixendellmont",
+   "body": "Available now: three bedrooms, one baths, single-family home on 996 Ixenvora Way. Off-street parking for two cars. Storage shed on the lot. Washer and dryer hookups. Rent is $1,825 per month. Application fee is $45, deposit is one month's rent. We only take the deposit as gift cards, and will tell you which ones when you write. I am out of the country for work right now and everything is done by email. Call or text 555-0171 to see it this week.",
+   "gold": {
+    "rent": 1825,
+    "beds": 3,
+    "baths": 1,
+    "kind": "house",
+    "pets": "unclear",
+    "town": "Ixendellmont",
+    "red_flags": [
+     "gift card",
+     "owner abroad"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r081"
+  },
+  {
+   "tier": "scam",
+   "title": "Updated 3BR house near the farmers market",
+   "price": "$2,150",
+   "attrs": "3BR / 2Ba 1460ft2 \u00b7 house",
+   "location": "Ulmsenmont",
+   "body": "This three-bedroom single-family home has two baths and about 1460 square feet. New carpet and fresh paint throughout. Central air and heat. Off-street parking for two cars. Rent is $2,150 per month. Application fee is $45, deposit is one month's rent. Payment of the first month goes by Western Union wire, and the keys follow once it is received. Call or text 555-0177 to see it this week.",
+   "gold": {
+    "rent": 2150,
+    "beds": 3,
+    "baths": 2,
+    "kind": "house",
+    "pets": "unclear",
+    "town": "Ulmsenmont",
+    "red_flags": [
+     "wire payment"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r082"
+  },
+  {
+   "tier": "pets_attrs",
+   "title": "Spacious 3BR manufactured home near the community college",
+   "price": "$1,150",
+   "attrs": "3BR / 1Ba 1510ft2 \u00b7 manufactured \u00b7 cats are OK - purrr \u00b7 dogs are OK - wooof",
+   "location": "Nolwickdale",
+   "body": "A three bedroom, one bath mobile home on 5944 Ixentran Dr. New carpet and fresh paint throughout. A covered patio out back. Water, sewer and trash are paid by the owner. $1,150 a month, first month and deposit due at signing. Application fee is $45, deposit is one month's rent. Call or text 555-0185 to see it this week.",
+   "gold": {
+    "rent": 1150,
+    "beds": 3,
+    "baths": 1,
+    "kind": "mobile home",
+    "pets": "dogs ok",
+    "town": "Nolwickdale",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r083"
+  },
+  {
+   "tier": "pets_passing",
+   "title": "Clean 3BR townhome near the community college",
+   "price": "$1,775",
+   "attrs": "3BR / 2Ba 1250ft2 \u00b7 air conditioning",
+   "location": "Ulmlinmont",
+   "body": "This three-bedroom townhome has two baths and about 1250 square feet. Dishwasher and gas range included. Washer and dryer hookups. New carpet and fresh paint throughout. Asking $1,775/mo on a twelve month lease. Application fee is $35, deposit is one month's rent. Walk to the dog park; dogs under 50 lb are welcome here too. The lot is on a gentle slope with good drainage. Utilities not listed here are paid by the tenant. To see it, text 555-0196.",
+   "gold": {
+    "rent": 1775,
+    "beds": 3,
+    "baths": 2,
+    "kind": "townhouse",
+    "pets": "dogs ok",
+    "town": "Ulmlinmont",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r084"
+  },
+  {
+   "tier": "room",
+   "title": "Room for rent in Brevdellford",
+   "price": "$725",
+   "attrs": "1BR / 1Ba 180ft2 \u00b7 room",
+   "location": "Brevdellford",
+   "body": "Room for rent in a shared house on 5555 Cavlin Way. Furnished room, shared kitchen and bath. $725 a month, utilities split between the housemates. Trash pickup is on Tuesdays. Utilities not listed here are paid by the tenant. Text 555-0138 to schedule a viewing.",
+   "gold": {
+    "rent": 725,
+    "beds": 1,
+    "baths": 1,
+    "kind": "room",
+    "pets": "unclear",
+    "town": "Brevdellford",
+    "red_flags": [
+     "room for rent"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r085"
+  },
+  {
+   "tier": "utilities",
+   "title": "Bright 3BR duplex near the community college",
+   "price": "$1,500",
+   "attrs": "3BR / 2Ba 1170ft2 \u00b7 duplex \u00b7 laundry in bldg \u00b7 off-street parking",
+   "location": "Nolvoramont",
+   "body": "This three-bedroom half of a duplex has two baths and about 1170 square feet. Quiet street with little traffic. Water, sewer and trash are paid by the owner. Dishwasher and gas range included. $1,500/mo plus about $180 a month in utilities. Application fee is $50, deposit is one month's rent. Text 555-0193 to schedule a viewing.",
+   "gold": {
+    "rent": 1500,
+    "beds": 3,
+    "baths": 2,
+    "kind": "duplex",
+    "pets": "unclear",
+    "town": "Nolvoramont",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r086"
+  },
+  {
+   "tier": "nodogs_buried",
+   "title": "Clean 4BR single-family home near the lake",
+   "price": "$2,750",
+   "attrs": "4BR / 1Ba 1490ft2",
+   "location": "Nolariford",
+   "body": "This four-bedroom single-family home has one bath and about 1490 square feet. New carpet and fresh paint throughout. Close to the elementary school. Quiet street with little traffic. Updated bathroom with a tub and shower. Asking $2,750/mo on a twelve month lease. Smoking is not allowed inside. The lease is twelve months with a option to renew. Schools in the district have a good reputation locally. We prefer tenants who plan to stay at least a year. Utilities not listed here are paid by the tenant. Please read the whole ad before you reach out. Cats are okay with a deposit. No dogs, no exceptions. Repairs are handled within a few days of a request. Snow and ice removal on the driveway is up to the tenant. Please read the whole ad before you reach out. There is a grocery store a short drive away. Trash pickup is on Tuesdays. To see it, text 555-0177.",
+   "gold": {
+    "rent": 2750,
+    "beds": 4,
+    "baths": 1,
+    "kind": "house",
+    "pets": "cats only",
+    "town": "Nolariford",
+    "red_flags": [
+     "no dogs"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r087"
+  },
+  {
+   "tier": "room",
+   "title": "Room for rent in Tammereford",
+   "price": "$600",
+   "attrs": "1BR / 1Ba 140ft2 \u00b7 room",
+   "location": "Tammereford",
+   "body": "Room for rent in a shared house on 2346 Heskbost Ave. Furnished room, shared kitchen and bath. $600 a month, utilities split between the housemates. Rent is due on the first and late after the fifth. Income should be about three times the rent. Text 555-0169 to schedule a viewing.",
+   "gold": {
+    "rent": 600,
+    "beds": 1,
+    "baths": 1,
+    "kind": "room",
+    "pets": "unclear",
+    "town": "Tammereford",
+    "red_flags": [
+     "room for rent"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r088"
+  },
+  {
+   "tier": "pets_absent",
+   "title": "Quiet 3BR half of a duplex near the hospital",
+   "price": "$1,950",
+   "attrs": "3BR / 1.5Ba 1170ft2 \u00b7 duplex \u00b7 carport",
+   "location": "Brevsenfield",
+   "body": "This three-bedroom half of a duplex has one and a half baths and about 1170 square feet. Central air and heat. Lots of closet space. Bright kitchen with a pantry. Rent is $1,950 per month. Application fee is $45, deposit is one month's rent. Pet policy: contact the office. Smoking is not allowed inside. Snow and ice removal on the driveway is up to the tenant. To see it, text 555-0121.",
+   "gold": {
+    "rent": 1950,
+    "beds": 3,
+    "baths": 1.5,
+    "kind": "duplex",
+    "pets": "unclear",
+    "town": "Brevsenfield",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r089"
+  },
+  {
+   "tier": "nodogs_buried",
+   "title": "Quiet 2BR townhome near the lake",
+   "price": "$1,650",
+   "attrs": "2BR / 1Ba 1020ft2 \u00b7 carport \u00b7 w/d hookups",
+   "location": "Cavpellburg",
+   "body": "This two-bedroom townhouse has one bath and about 1020 square feet. A covered patio out back. Bright kitchen with a pantry. Ceiling fans in every room. Dishwasher and gas range included. Asking $1,650/mo on a twelve month lease. Please read the whole ad before you reach out. Photos were taken last month. Smoking is not allowed inside. Snow and ice removal on the driveway is up to the tenant. The area has an easy commute to the main highway. We prefer tenants who plan to stay at least a year. Cats are okay with a deposit. No dogs, no exceptions. Rent is due on the first and late after the fifth. Photos were taken last month. We prefer tenants who plan to stay at least a year. The furnace was serviced this fall. Income should be about three times the rent. Text 555-0143 to schedule a viewing.",
+   "gold": {
+    "rent": 1650,
+    "beds": 2,
+    "baths": 1,
+    "kind": "townhouse",
+    "pets": "cats only",
+    "town": "Cavpellburg",
+    "red_flags": [
+     "no dogs"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r090"
+  },
+  {
+   "tier": "utilities",
+   "title": "Quiet 2BR single-family home near the hospital",
+   "price": "$1,925",
+   "attrs": "2BR / 1.5Ba 1150ft2 \u00b7 house \u00b7 laundry in bldg \u00b7 w/d hookups",
+   "location": "Tamkryburg",
+   "body": "This two-bedroom home has one and a half baths and about 1150 square feet. Updated bathroom with a tub and shower. Washer and dryer hookups. Brand new water heater. Rent $1,925. Tenant pays electric and gas, estimated $90. Application fee is $50, deposit is one month's rent. To see it, text 555-0154.",
+   "gold": {
+    "rent": 1925,
+    "beds": 2,
+    "baths": 1.5,
+    "kind": "house",
+    "pets": "unclear",
+    "town": "Tamkryburg",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r091"
+  },
+  {
+   "tier": "plain",
+   "title": "Cozy 1BR apartment near Main Street shops",
+   "price": "$900",
+   "attrs": "1BR / 1Ba 720ft2 \u00b7 apartment",
+   "location": "Yarvoradale",
+   "body": "Available now: one bedrooms, one baths, apartment on 8803 Nolari Dr. Lots of closet space. Off-street parking for two cars. Granite counters in the kitchen. $900 a month, first month and deposit due at signing. Application fee is $35, deposit is one month's rent. No pets allowed, no exceptions. To see it, text 555-0172.",
+   "gold": {
+    "rent": 900,
+    "beds": 1,
+    "baths": 1,
+    "kind": "apartment",
+    "pets": "no pets",
+    "town": "Yarvoradale",
+    "red_flags": []
+   },
+   "lenient_flags": [
+    "no dogs"
+   ],
+   "id": "r092"
+  },
+  {
+   "tier": "price_disagree",
+   "title": "Charming 3BR house near the hospital",
+   "price": "$1",
+   "attrs": "3BR / 2.5Ba 1440ft2 \u00b7 house",
+   "location": "Jorvpellville",
+   "body": "This three-bedroom home has two and a half baths and about 1440 square feet. New carpet and fresh paint throughout. Updated bathroom with a tub and shower. Quiet street with little traffic. Rent is $2,050 per month (the price field is only a placeholder). Application fee is $50, deposit is one month's rent. Text 555-0196 to schedule a viewing.",
+   "gold": {
+    "rent": 2050,
+    "beds": 3,
+    "baths": 2.5,
+    "kind": "house",
+    "pets": "unclear",
+    "town": "Jorvpellville",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r093"
+  },
+  {
+   "tier": "pets_attrs",
+   "title": "Clean 2BR duplex near the farmers market",
+   "price": "$1,275",
+   "attrs": "2BR / 1.5Ba 1090ft2 \u00b7 duplex \u00b7 cats are OK - purrr \u00b7 dogs are OK - wooof \u00b7 no smoking",
+   "location": "Osttranhaven",
+   "body": "Available now: two bedrooms, one and a half baths, duplex on 1372 Heskkry Ct. New carpet and fresh paint throughout. Bright kitchen with a pantry. Ceiling fans in every room. Rent is $1,275 per month. Application fee is $45, deposit is one month's rent. To see it, text 555-0158.",
+   "gold": {
+    "rent": 1275,
+    "beds": 2,
+    "baths": 1.5,
+    "kind": "duplex",
+    "pets": "dogs ok",
+    "town": "Osttranhaven",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r094"
+  },
+  {
+   "tier": "restricted",
+   "title": "Spacious 2BR apartment near the community college",
+   "price": "$1,450",
+   "attrs": "2BR / 2Ba 1140ft2 \u00b7 apartment \u00b7 air conditioning",
+   "location": "Ostsenville",
+   "body": "A two bedroom, two bath apartment on 5757 Zantran Dr. New carpet and fresh paint throughout. Brand new water heater. Off-street parking for two cars. $1,450 a month, first month and deposit due at signing. Application fee is $50, deposit is one month's rent. This is an active adult community; residents must be 55 or older. To see it, text 555-0125.",
+   "gold": {
+    "rent": 1450,
+    "beds": 2,
+    "baths": 2,
+    "kind": "apartment",
+    "pets": "unclear",
+    "town": "Ostsenville",
+    "red_flags": [
+     "55+ only"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r095"
+  },
+  {
+   "tier": "price_disagree",
+   "title": "Bright 3BR duplex near the old mill",
+   "price": "$2,275",
+   "attrs": "3BR / 2Ba 1240ft2 \u00b7 duplex",
+   "location": "Cavwickburg",
+   "body": "Available now: three bedrooms, two baths, duplex on 1593 Velari Dr. Updated bathroom with a tub and shower. Brand new water heater. New carpet and fresh paint throughout. Reduced! Now $1,950 a month; the posted price is out of date. Application fee is $35, deposit is one month's rent. Text 555-0138 to schedule a viewing.",
+   "gold": {
+    "rent": 1950,
+    "beds": 3,
+    "baths": 2,
+    "kind": "duplex",
+    "pets": "unclear",
+    "town": "Cavwickburg",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r096"
+  },
+  {
+   "tier": "price_disagree",
+   "title": "Quiet 2BR apartment near the hospital",
+   "price": "$1",
+   "attrs": "2BR / 2Ba 1210ft2 \u00b7 apartment",
+   "location": "Drasenford",
+   "body": "This two-bedroom apartment has two baths and about 1210 square feet. Close to the elementary school. Dishwasher and gas range included. Washer and dryer hookups. Rent is $1,125 per month (the price field is only a placeholder). Application fee is $45, deposit is one month's rent. Call or text 555-0164 to see it this week.",
+   "gold": {
+    "rent": 1125,
+    "beds": 2,
+    "baths": 2,
+    "kind": "apartment",
+    "pets": "unclear",
+    "town": "Drasenford",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r097"
+  },
+  {
+   "tier": "long_body",
+   "title": "Quiet 4BR home near Main Street shops",
+   "price": "$2,150",
+   "attrs": "4BR / 2Ba 1430ft2 \u00b7 house \u00b7 carport",
+   "location": "Cavgardburg",
+   "body": "Available now: four bedrooms, two baths, single-family home on 6012 Zantran Rd. Washer and dryer hookups. Ceiling fans in every room. Updated bathroom with a tub and shower. Asking $2,150/mo on a twelve month lease. Updated bathroom with a tub and shower. Neighbors here have been in place for years and keep to themselves. Central air and heat. Renters insurance is required before move-in. Water, sewer and trash are paid by the owner. Smoking is not allowed inside. The furnace was serviced this fall. Please read the whole ad before you reach out. Schools in the district have a good reputation locally. Income should be about three times the rent. Photos were taken last month. Dishwasher and gas range included. Neighbors here have been in place for years and keep to themselves. A covered patio out back. Brand new water heater. Close to the elementary school. The owner has kept this place maintained for a long time. Please read the whole ad before you reach out. The lot is on a gentle slope with good drainage. The owner has kept this place maintained for a long time. Water, sewer and trash are paid by the owner. Central air and heat. Renters insurance is required before move-in. Lawn care is handled for you. Storage shed on the lot. Dishwasher and gas range included. Smoking is not allowed inside. Schools in the district have a good reputation locally. The owner has kept this place maintained for a long time. Quiet street with little traffic. Brand new water heater. Washer and dryer hookups. Snow and ice removal on the driveway is up to the tenant. Smoking is not allowed inside. Renters insurance is required before move-in. Utilities not listed here are paid by the tenant. Brand new water heater. The owner has kept this place maintained for a long time. Neighbors here have been in place for years and keep to themselves. Income should be about three times the rent. The lot is on a gentle slope with good drainage. Income should be about three times the rent. Utilities not listed here are paid by the tenant. Trash pickup is on Tuesdays. Storage shed on the lot. The lease is twelve months with a option to renew. Smoking is not allowed inside. Dishwasher and gas range included. Utilities not listed here are paid by the tenant. Quiet street with little traffic. Lots of closet space. Please read the whole ad before you reach out. There is a grocery store a short drive away. Renters insurance is required before move-in. Rent is due on the first and late after the fifth. Renters insurance is required before move-in. The area has an easy commute to the main highway. Utilities not listed here are paid by the tenant. Schools in the district have a good reputation locally. Central air and heat. Neighbors here have been in place for years and keep to themselves. A covered patio out back. The furnace was serviced this fall. Brand new water heater. Water, sewer and trash are paid by the owner. Cats are okay with a deposit. No dogs. Snow and ice removal on the driveway is up to the tenant. We prefer tenants who plan to stay at least a year. Laminate floors, no carpet in the main rooms. Lots of closet space. Photos were taken last month. Bright kitchen with a pantry. Off-street parking for two cars. We run a credit and background check on every adult applicant. Granite counters in the kitchen. Neighbors here have been in place for years and keep to themselves. There is a grocery store a short drive away. Off-street parking for two cars. Brand new water heater. Please read the whole ad before you reach out. Snow and ice removal on the driveway is up to the tenant. The furnace was serviced this fall. Smoking is not allowed inside. Lots of closet space. Income should be about three times the rent. Dishwasher and gas range included. The furnace was serviced this fall. Income should be about three times the rent. The area has an easy commute to the main highway. There is a grocery store a short drive away. Bright kitchen with a pantry. Close to the elementary school. Renters insurance is required before move-in. Smoking is not allowed inside. Brand new water heater. Central air and heat. Brand new water heater. Trash pickup is on Tuesdays. There is a grocery store a short drive away. Storage shed on the lot. Brand new water heater. Repairs are handled within a few days of a request. Ceiling fans in every room. Dishwasher and gas range included. Ceiling fans in every room. New carpet and fresh paint throughout. Brand new water heater. Please read the whole ad before you reach out. Storage shed on the lot. Repairs are handled within a few days of a request. To see it, text 555-0105.",
+   "gold": {
+    "rent": 2150,
+    "beds": 4,
+    "baths": 2,
+    "kind": "house",
+    "pets": "cats only",
+    "town": "Cavgardburg",
+    "red_flags": [
+     "no dogs"
+    ]
+   },
+   "lenient_flags": [],
+   "id": "r098"
+  },
+  {
+   "tier": "utilities",
+   "title": "Cozy 1BR apartment near Main Street shops",
+   "price": "$925",
+   "attrs": "1BR / 1Ba 750ft2 \u00b7 apartment \u00b7 no smoking \u00b7 air conditioning",
+   "location": "Heskbostburg",
+   "body": "Available now: one bedrooms, one baths, apartment on 2806 Ostpell Ct. Washer and dryer hookups. Storage shed on the lot. A covered patio out back. $925 per month, water, sewer and trash included. Application fee is $45, deposit is one month's rent. To see it, text 555-0176.",
+   "gold": {
+    "rent": 925,
+    "beds": 1,
+    "baths": 1,
+    "kind": "apartment",
+    "pets": "unclear",
+    "town": "Heskbostburg",
+    "red_flags": []
+   },
+   "lenient_flags": [],
+   "id": "r099"
+  }
+ ]
+}
