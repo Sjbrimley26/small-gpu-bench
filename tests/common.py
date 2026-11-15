@@ -76,7 +76,8 @@ def chat(args, messages, *, max_tokens, temperature=0.0, top_p=None, seed=None, 
             "reasoning_chars": len(msg.get("reasoning_content") or ""),
             "finish": ch.get("finish_reason"), "tool_calls": msg.get("tool_calls") or [],
             "completion_tokens": usage.get("completion_tokens"),
-            "prompt_tokens": usage.get("prompt_tokens")}
+            "prompt_tokens": usage.get("prompt_tokens"),
+            "timings": data.get("timings") or {}}      # llama.cpp's own decode speed and draft counters, when present
 
 
 def save_results(args, test, payload):

@@ -1,0 +1,372 @@
+{
+ "seed": 20261115,
+ "synthetic": true,
+ "n_questions": 50,
+ "kind_order": [
+  "count",
+  "quoting",
+  "nulls",
+  "aggregate",
+  "groupby",
+  "join",
+  "nojoin",
+  "ties",
+  "subquery",
+  "dates",
+  "ordered"
+ ],
+ "schema": "CREATE TABLE aisles (aisle TEXT PRIMARY KEY, floor INTEGER, zone TEXT)\nCREATE TABLE kinds (kind TEXT PRIMARY KEY, description TEXT, aisle TEXT REFERENCES aisles(aisle))\nCREATE TABLE maker_finishes (maker TEXT, kind TEXT, finish TEXT)\nCREATE TABLE maker_kinds (maker TEXT, kind TEXT)\nCREATE TABLE makers (maker TEXT PRIMARY KEY, country TEXT, founded INTEGER)\nCREATE TABLE order_lines (order_id INTEGER, part_no TEXT, qty INTEGER, line_cost REAL)\nCREATE TABLE orders (order_id INTEGER PRIMARY KEY, vendor TEXT, ordered TEXT, received TEXT, status TEXT)\nCREATE TABLE stock_import (\"Part No\" TEXT, \"Item Name\" TEXT, \"Kind\" TEXT, \"Maker\" TEXT, \"Unit Price / Rate\" REAL, \"Unit Cost\" REAL, \"Qty On Hand\" INTEGER, \"Reorder?\" TEXT, \"Last Counted\" TEXT)\nCREATE TABLE vendor_makers (vendor TEXT, maker TEXT)\nCREATE TABLE vendors (vendor TEXT PRIMARY KEY, city TEXT, terms TEXT)",
+ "samples": "aisles: cols=['aisle', 'floor', 'zone']\n   A1 | 1 | Fasteners\n   A2 | 1 | Fasteners\nkinds: cols=['kind', 'description', 'aisle']\n   bolt | threaded bolts and studs | A1\n   screw | wood and machine screws | A1\nmaker_finishes: cols=['maker', 'kind', 'finish']\n   Vantrell | bolt | zinc\n   Vantrell | clamp | black\nmaker_kinds: cols=['maker', 'kind']\n   Vantrell | bolt\n   Vantrell | clamp\nmakers: cols=['maker', 'country', 'founded']\n   Vantrell | Canada | 1974\n   Korbin | Germany | 1951\norder_lines: cols=['order_id', 'part_no', 'qty', 'line_cost']\n   5007 | PT-1679 | 10 | 23.9\n   5007 | PT-1091 | 25 | 465.0\norders: cols=['order_id', 'vendor', 'ordered', 'received', 'status']\n   5007 | Northline Supply | 2026-08-25 | 2026-09-01 | received\n   5013 | Cobalt Trade | 2026-02-27 | 2026-03-11 | received\nstock_import: cols=['Part No', 'Item Name', 'Kind', 'Maker', 'Unit Price / Rate', 'Unit Cost', 'Qty On Hand', 'Reorder?', 'Last Counted']\n   PT-1007 | Stainless Eye Bolt 1\" | bolt | Vantrell | 17.8 | 10.75 | 0 | N | 04/17/2025\n   PT-1014 | Nickel Sleeve Anchor 1/4\" | anchor | Korbin | 0.85 | 0.4 | 8 | N | 01/24/2025\nvendor_makers: cols=['vendor', 'maker']\n   Northline Supply | Dralund\n   Northline Supply | Korbin\nvendors: cols=['vendor', 'city', 'terms']\n   Northline Supply | Tucson | net 30\n   Cobalt Trade | Mesa | net 45",
+ "questions": [
+  {
+   "kind": "count",
+   "question": "How many parts are in stock_import?",
+   "gold": "SELECT COUNT(*) FROM stock_import",
+   "ordered": false,
+   "id": "q01"
+  },
+  {
+   "kind": "count",
+   "question": "How many vendors are in Tucson?",
+   "gold": "SELECT COUNT(*) FROM vendors WHERE city = 'Tucson'",
+   "ordered": false,
+   "id": "q02"
+  },
+  {
+   "kind": "count",
+   "question": "How many kinds are shelved in aisle B2?",
+   "gold": "SELECT COUNT(*) FROM kinds WHERE aisle = 'B2'",
+   "ordered": false,
+   "id": "q03"
+  },
+  {
+   "kind": "quoting",
+   "question": "List the Part No of every part with a selling price over 20.",
+   "gold": "SELECT \"Part No\" FROM stock_import WHERE \"Unit Price / Rate\" > 20",
+   "ordered": false,
+   "id": "q04"
+  },
+  {
+   "kind": "quoting",
+   "question": "List the Item Name of every screw part with fewer than 20 on hand.",
+   "gold": "SELECT \"Item Name\" FROM stock_import WHERE \"Kind\" = 'screw' AND \"Qty On Hand\" < 20",
+   "ordered": false,
+   "id": "q05"
+  },
+  {
+   "kind": "quoting",
+   "question": "List the Part No of parts flagged for reorder.",
+   "gold": "SELECT \"Part No\" FROM stock_import WHERE \"Reorder?\" = 'Y'",
+   "ordered": false,
+   "id": "q06"
+  },
+  {
+   "kind": "quoting",
+   "question": "List the Part No and Item Name of every part made by Hesketh.",
+   "gold": "SELECT \"Part No\", \"Item Name\" FROM stock_import WHERE \"Maker\" = 'Hesketh'",
+   "ordered": false,
+   "id": "q07"
+  },
+  {
+   "kind": "quoting",
+   "question": "How many parts have nothing on hand?",
+   "gold": "SELECT COUNT(*) FROM stock_import WHERE \"Qty On Hand\" = 0",
+   "ordered": false,
+   "id": "q08"
+  },
+  {
+   "kind": "quoting",
+   "question": "List the Item Name of parts whose name contains 'Brass'.",
+   "gold": "SELECT \"Item Name\" FROM stock_import WHERE \"Item Name\" LIKE '%Brass%'",
+   "ordered": false,
+   "id": "q09"
+  },
+  {
+   "kind": "quoting",
+   "question": "List the Part No of parts that sell for more than they cost.",
+   "gold": "SELECT \"Part No\" FROM stock_import WHERE \"Unit Price / Rate\" > \"Unit Cost\"",
+   "ordered": false,
+   "id": "q10"
+  },
+  {
+   "kind": "nulls",
+   "question": "How many parts have no cost recorded?",
+   "gold": "SELECT COUNT(*) FROM stock_import WHERE \"Unit Cost\" IS NULL",
+   "ordered": false,
+   "id": "q11"
+  },
+  {
+   "kind": "nulls",
+   "question": "How many parts have never been flagged either way in the reorder column?",
+   "gold": "SELECT COUNT(*) FROM stock_import WHERE \"Reorder?\" IS NULL",
+   "ordered": false,
+   "id": "q12"
+  },
+  {
+   "kind": "nulls",
+   "question": "What is the average unit cost across parts that have a cost recorded?",
+   "gold": "SELECT AVG(\"Unit Cost\") FROM stock_import",
+   "ordered": false,
+   "id": "q13"
+  },
+  {
+   "kind": "nulls",
+   "question": "How many orders have not been received yet?",
+   "gold": "SELECT COUNT(*) FROM orders WHERE received IS NULL",
+   "ordered": false,
+   "id": "q14"
+  },
+  {
+   "kind": "nulls",
+   "question": "How many parts are not flagged Y for reorder, counting parts with no flag at all?",
+   "gold": "SELECT COUNT(*) FROM stock_import WHERE \"Reorder?\" IS NULL OR \"Reorder?\" <> 'Y'",
+   "ordered": false,
+   "id": "q15"
+  },
+  {
+   "kind": "aggregate",
+   "question": "What is the total quantity on hand across all parts?",
+   "gold": "SELECT SUM(\"Qty On Hand\") FROM stock_import",
+   "ordered": false,
+   "id": "q16"
+  },
+  {
+   "kind": "aggregate",
+   "question": "What is the average selling price of screw parts?",
+   "gold": "SELECT AVG(\"Unit Price / Rate\") FROM stock_import WHERE \"Kind\" = 'screw'",
+   "ordered": false,
+   "id": "q17"
+  },
+  {
+   "kind": "aggregate",
+   "question": "What is the lowest selling price in stock_import?",
+   "gold": "SELECT MIN(\"Unit Price / Rate\") FROM stock_import",
+   "ordered": false,
+   "id": "q18"
+  },
+  {
+   "kind": "aggregate",
+   "question": "What is the total value on hand at selling price (price times quantity)?",
+   "gold": "SELECT SUM(\"Unit Price / Rate\" * \"Qty On Hand\") FROM stock_import",
+   "ordered": false,
+   "id": "q19"
+  },
+  {
+   "kind": "aggregate",
+   "question": "What is the total line cost of order 5007?",
+   "gold": "SELECT SUM(line_cost) FROM order_lines WHERE order_id = 5007",
+   "ordered": false,
+   "id": "q20"
+  },
+  {
+   "kind": "groupby",
+   "question": "How many parts are there of each kind? Return kind and count.",
+   "gold": "SELECT \"Kind\", COUNT(*) FROM stock_import GROUP BY \"Kind\"",
+   "ordered": false,
+   "id": "q21"
+  },
+  {
+   "kind": "groupby",
+   "question": "What is the average selling price per kind? Return kind and average.",
+   "gold": "SELECT \"Kind\", AVG(\"Unit Price / Rate\") FROM stock_import GROUP BY \"Kind\"",
+   "ordered": false,
+   "id": "q22"
+  },
+  {
+   "kind": "groupby",
+   "question": "What is the total quantity on hand per maker? Return maker and total.",
+   "gold": "SELECT \"Maker\", SUM(\"Qty On Hand\") FROM stock_import GROUP BY \"Maker\"",
+   "ordered": false,
+   "id": "q23"
+  },
+  {
+   "kind": "groupby",
+   "question": "How many orders has each vendor placed? Return vendor and count.",
+   "gold": "SELECT vendor, COUNT(*) FROM orders GROUP BY vendor",
+   "ordered": false,
+   "id": "q24"
+  },
+  {
+   "kind": "groupby",
+   "question": "Which kinds have more than 12 parts? Return the kind.",
+   "gold": "SELECT \"Kind\" FROM stock_import GROUP BY \"Kind\" HAVING COUNT(*) > 12",
+   "ordered": false,
+   "id": "q25"
+  },
+  {
+   "kind": "groupby",
+   "question": "Which vendors have placed at least 5 orders? Return the vendor.",
+   "gold": "SELECT vendor FROM orders GROUP BY vendor HAVING COUNT(*) >= 5",
+   "ordered": false,
+   "id": "q26"
+  },
+  {
+   "kind": "join",
+   "question": "List the vendors that supply the maker Dralund.",
+   "gold": "SELECT vendor FROM vendor_makers WHERE maker = 'Dralund'",
+   "ordered": false,
+   "id": "q27"
+  },
+  {
+   "kind": "join",
+   "question": "List the distinct cities of vendors that supply Dralund.",
+   "gold": "SELECT DISTINCT v.city FROM vendors v JOIN vendor_makers vm ON vm.vendor = v.vendor WHERE vm.maker = 'Dralund'",
+   "ordered": false,
+   "id": "q28"
+  },
+  {
+   "kind": "join",
+   "question": "On which floor is the hinge kind shelved?",
+   "gold": "SELECT a.floor FROM kinds k JOIN aisles a ON a.aisle = k.aisle WHERE k.kind = 'hinge'",
+   "ordered": false,
+   "id": "q29"
+  },
+  {
+   "kind": "join",
+   "question": "List the kinds shelved on floor 2.",
+   "gold": "SELECT k.kind FROM kinds k JOIN aisles a ON a.aisle = k.aisle WHERE a.floor = 2",
+   "ordered": false,
+   "id": "q30"
+  },
+  {
+   "kind": "join",
+   "question": "List the Part No of parts whose kind is shelved in the Doors zone.",
+   "gold": "SELECT s.\"Part No\" FROM stock_import s JOIN kinds k ON k.kind = s.\"Kind\" JOIN aisles a ON a.aisle = k.aisle WHERE a.zone = 'Doors'",
+   "ordered": false,
+   "id": "q31"
+  },
+  {
+   "kind": "join",
+   "question": "List the countries of the makers that Delmar Brothers buys from (distinct).",
+   "gold": "SELECT DISTINCT m.country FROM vendor_makers vm JOIN makers m ON m.maker = vm.maker WHERE vm.vendor = 'Delmar Brothers'",
+   "ordered": false,
+   "id": "q32"
+  },
+  {
+   "kind": "nojoin",
+   "question": "Which kinds does Brandel supply? Return the kind.",
+   "gold": "SELECT kind FROM maker_kinds WHERE maker = 'Brandel'",
+   "ordered": false,
+   "id": "q33"
+  },
+  {
+   "kind": "nojoin",
+   "question": "Which makers supply the screw kind? Return the maker.",
+   "gold": "SELECT maker FROM maker_kinds WHERE kind = 'screw'",
+   "ordered": false,
+   "id": "q34"
+  },
+  {
+   "kind": "nojoin",
+   "question": "Which finishes does Dralund offer for washer? Return the finish.",
+   "gold": "SELECT finish FROM maker_finishes WHERE maker = 'Dralund' AND kind = 'washer'",
+   "ordered": false,
+   "id": "q35"
+  },
+  {
+   "kind": "nojoin",
+   "question": "Which makers offer a nickel finish for washer? Return the maker.",
+   "gold": "SELECT maker FROM maker_finishes WHERE kind = 'washer' AND finish = 'nickel'",
+   "ordered": false,
+   "id": "q36"
+  },
+  {
+   "kind": "ties",
+   "question": "List the Part No of the most expensive part or parts by selling price.",
+   "gold": "SELECT \"Part No\" FROM stock_import WHERE \"Unit Price / Rate\" = (SELECT MAX(\"Unit Price / Rate\") FROM stock_import)",
+   "ordered": false,
+   "id": "q37"
+  },
+  {
+   "kind": "ties",
+   "question": "List the Part No of the cheapest part or parts by selling price.",
+   "gold": "SELECT \"Part No\" FROM stock_import WHERE \"Unit Price / Rate\" = (SELECT MIN(\"Unit Price / Rate\") FROM stock_import)",
+   "ordered": false,
+   "id": "q38"
+  },
+  {
+   "kind": "ties",
+   "question": "Which kind or kinds have the most parts? Return the kind.",
+   "gold": "SELECT \"Kind\" FROM stock_import GROUP BY \"Kind\" HAVING COUNT(*) = (SELECT MAX(c) FROM (SELECT COUNT(*) AS c FROM stock_import GROUP BY \"Kind\"))",
+   "ordered": false,
+   "id": "q39"
+  },
+  {
+   "kind": "subquery",
+   "question": "List the Part No of parts that sell for more than the average selling price.",
+   "gold": "SELECT \"Part No\" FROM stock_import WHERE \"Unit Price / Rate\" > (SELECT AVG(\"Unit Price / Rate\") FROM stock_import)",
+   "ordered": false,
+   "id": "q40"
+  },
+  {
+   "kind": "subquery",
+   "question": "Which makers have no parts in stock_import? Return the maker.",
+   "gold": "SELECT maker FROM makers WHERE maker NOT IN (SELECT \"Maker\" FROM stock_import)",
+   "ordered": false,
+   "id": "q41"
+  },
+  {
+   "kind": "subquery",
+   "question": "Which vendors have never placed an order? Return the vendor.",
+   "gold": "SELECT vendor FROM vendors WHERE vendor NOT IN (SELECT vendor FROM orders)",
+   "ordered": false,
+   "id": "q42"
+  },
+  {
+   "kind": "subquery",
+   "question": "List the Part No of parts that have never been ordered.",
+   "gold": "SELECT \"Part No\" FROM stock_import WHERE \"Part No\" NOT IN (SELECT part_no FROM order_lines)",
+   "ordered": false,
+   "id": "q43"
+  },
+  {
+   "kind": "dates",
+   "question": "List the Part No of parts last counted in March 2026.",
+   "gold": "SELECT \"Part No\" FROM stock_import WHERE \"Last Counted\" LIKE '03/%/2026'",
+   "ordered": false,
+   "id": "q44"
+  },
+  {
+   "kind": "dates",
+   "question": "List the order_id of orders placed in the third quarter of 2026 (July to September).",
+   "gold": "SELECT order_id FROM orders WHERE ordered >= '2026-07-01' AND ordered < '2026-10-01'",
+   "ordered": false,
+   "id": "q45"
+  },
+  {
+   "kind": "dates",
+   "question": "List the order_id of received orders that took more than 10 days from order to receipt.",
+   "gold": "SELECT order_id FROM orders WHERE received IS NOT NULL AND julianday(received) - julianday(ordered) > 10",
+   "ordered": false,
+   "id": "q46"
+  },
+  {
+   "kind": "dates",
+   "question": "What is the most recent order date for each vendor? Return vendor and date.",
+   "gold": "SELECT vendor, MAX(ordered) FROM orders GROUP BY vendor",
+   "ordered": false,
+   "id": "q47"
+  },
+  {
+   "kind": "ordered",
+   "question": "List the Part No and selling price of the 5 most expensive parts, highest first, ties broken by Part No ascending.",
+   "gold": "SELECT \"Part No\", \"Unit Price / Rate\" FROM stock_import ORDER BY \"Unit Price / Rate\" DESC, \"Part No\" ASC LIMIT 5",
+   "ordered": true,
+   "id": "q48"
+  },
+  {
+   "kind": "ordered",
+   "question": "List the order_id and ordered date of the 3 most recent orders, newest first, ties broken by order_id descending.",
+   "gold": "SELECT order_id, ordered FROM orders ORDER BY ordered DESC, order_id DESC LIMIT 3",
+   "ordered": true,
+   "id": "q49"
+  },
+  {
+   "kind": "ordered",
+   "question": "List every maker with its founding year, oldest first.",
+   "gold": "SELECT maker, founded FROM makers ORDER BY founded ASC",
+   "ordered": true,
+   "id": "q50"
+  }
+ ]
+}
