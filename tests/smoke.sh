@@ -40,7 +40,7 @@ rec() {    # rec TEST  -> a result JSON for TEST must exist in the smoke output 
 }
 
 # 1. offline self-tests (graders, fixtures, pattern logic: no server involved)
-for t in red aud mon hrd tool_probe judge crit sum_test ocr cat sql arena rent; do step "selftest-$t" python3 tests/$t.py --selftest; done
+for t in red aud mon hrd tool_probe judge crit sum_test ocr cat sql aux_lanes arena rent; do step "selftest-$t" python3 tests/$t.py --selftest; done
 step selftest-summarize_verify python3 patterns/summarize_verify.py --selftest
 step selftest-escalate python3 patterns/escalate.py --selftest
 
@@ -60,8 +60,10 @@ MODEL=mock-small step run-rent-small python3 tests/rent.py "${R[@]}" --limit 40 
 step run-cat        python3 tests/cat.py "${R[@]}" --limit 60
 MODEL=mock-small step run-cat-small python3 tests/cat.py "${R[@]}" --limit 60 --no-schema
 step run-sql        python3 tests/sql.py "${R[@]}"
+step run-aux        python3 tests/aux_lanes.py "${R[@]}" --nothink
+MODEL=mock-small step run-aux-small python3 tests/aux_lanes.py "${R[@]}" --nothink --limit 12
 MODEL=mock-small step run-sql-small python3 tests/sql.py "${R[@]}" --limit 20
-for T in RED AUD MON HRD TOOL JUDGE CRIT SUM OCR CAT SQL RENT; do rec $T; done
+for T in RED AUD MON HRD TOOL JUDGE CRIT SUM OCR CAT SQL AUX RENT; do rec $T; done
 step run-arena      python3 tests/arena.py "${R[@]}" $(ls "$OUT"/raw/CAT-*.json)
 rec ARENA
 

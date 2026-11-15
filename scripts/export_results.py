@@ -32,7 +32,7 @@ import os
 import re
 import sys
 
-PORTED = ["RED", "AUD", "MON", "HRD", "TOOL", "JUDGE", "CRIT", "SUM", "OCR", "CAT-SYN", "CAT-SYN-SCHEMA", "RENT-SYN", "SQL-SYN"]
+PORTED = ["RED", "AUD", "MON", "HRD", "TOOL", "JUDGE", "CRIT", "SUM", "OCR", "CAT-SYN", "CAT-SYN-SCHEMA", "RENT-SYN", "SQL-SYN", "AUX-SYN"]
 # OCR rows are exported with a caveat: they were measured on a page whose right-hand columns were clipped
 # (tests/ocr.py explains); the lab's log shows the miss was `total` for 4 of 5 models.
 CAVEAT = {"OCR": "CAVEAT: the 4/5 rows appear to come from a run on a page whose amount column was clipped at the right "
@@ -42,7 +42,7 @@ CAVEAT = {"OCR": "CAVEAT: the 4/5 rows appear to come from a run on a page whose
 HW = {"gpu": "GTX 1050 Ti", "vram_gb": "4", "cpu": "i5-6500"}
 
 # items per run, from the test definitions (tests.csv, notebook sections 96, 96.1)
-N_ITEMS = {"RED": "12", "HRD": "10", "MON": "1", "JUDGE": "6", "CRIT": "12", "SUM": "24", "OCR": "5", "CAT-SYN": "200", "CAT-SYN-SCHEMA": "100", "RENT-SYN": "100", "SQL-SYN": "50"}
+N_ITEMS = {"RED": "12", "HRD": "10", "MON": "1", "JUDGE": "6", "CRIT": "12", "SUM": "24", "OCR": "5", "CAT-SYN": "200", "CAT-SYN-SCHEMA": "100", "RENT-SYN": "100", "SQL-SYN": "50", "AUX-SYN": "27+12+6+31"}
 
 # n_runs that the notebook states but the row's notes do not (section cited in the comment)
 RUNS = {

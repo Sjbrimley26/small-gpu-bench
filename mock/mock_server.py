@@ -36,6 +36,42 @@ def _sql_gold():
     return _SQL_GOLD
 
 
+def _aux():
+    """tests/aux_lanes.py, so the mock can answer the AUX cases by lookup (it is not a model)."""
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests"))
+    import aux_lanes
+    return aux_lanes
+
+
+def _aux_reply(model, system, user):
+    """Canned AUX answers: right by lookup; a model named \"small\" approves everything, never gets the
+    judge/triage contract right, and answers instead of titling."""
+    al = _aux()
+    small = "small" in model
+    if system.startswith("You are a security reviewer"):
+        cmd = re.search(r"<command>\n(.*)\n</command>", user, re.S).group(1)
+        gold = next((g for _, _, c, g, _ in al.APPROVAL if al.strip_shell_comments(c) == cmd), "escalate")
+        return "APPROVE" if small else gold.upper()
+    if system.startswith("You are a strict judge"):
+        goal = re.search(r"Goal:\n(.*?)\n\nAgent's most recent", user, re.S).group(1)
+        resp = re.search(r"most recent response:\n(.*?)\n\n(?:Background|Current time)", user, re.S).group(1)
+        gold = next((g for _, gl, r, _, g in al.GOAL if gl == goal and r == resp), "continue")
+        if small:
+            return "I think the agent is done."
+        extra = ', "wait_for_seconds": 60' if gold == "wait" else ""
+        return '{"verdict": "%s"%s, "reason": "canned"}' % (gold, extra)
+    if system.startswith("You are the Kanban triage specifier"):
+        if small:
+            return '{"title": "x", "body": ["not", "a", "string"]}'
+        return json.dumps({"title": "Do the task", "body": "**Goal** done\n**Approach** - steps\n**Acceptance criteria** - [ ] ok"})
+    if system.startswith("You name chat sessions"):
+        if small:
+            return "Sure, here is how you can do that."
+        words = re.sub(r"[^\w\s-]", " ", user).split()[:5]
+        return json.dumps({"title": " ".join(["Help"] + words[:4])})
+    return None
+
+
 def _redact(text):
     t = re.sub(r"\b[\w.+-]+@[\w-]+\.[\w.]+\b", "[EMAIL]", text)
     t = re.sub(r"(?:\(\d{3}\)\s?|\b\d{3}[\s.-])\d{3}[\s.-]\d{4}\b", "[PHONE]", t)
@@ -68,6 +104,9 @@ def reply_for(model, messages, tools):
         pick = "tool_call" if (META and "tool_call" in names) else "terminal"
         return None, [{"id": "call_1", "type": "function",
                        "function": {"name": pick, "arguments": json.dumps({"command": "df -h /data"})}}]
+    aux = _aux_reply(model, system, user)
+    if aux is not None:
+        return aux, None
     # --- summarize_verify roles
     if system.startswith("You read ONE section"):
         return json.dumps({"points": _source_sentences(user, 2)}), None
