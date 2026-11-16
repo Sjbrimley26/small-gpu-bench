@@ -757,7 +757,10 @@ def main():
         capped += r.get("finish") == "length"
         bad = sum(1 for d in detail if d["finish"] == "length" or d["error"]) + (1 if (r.get("finish") == "length" or err) else 0)
         if a.abort_after and i < a.abort_after and bad >= a.abort_bad:
-            msg = "ABORTED: %d of the first %d listings hit the token cap or an error (spiral guard); seat unusable on this arm" % (bad, i + 1)
+            nerr = sum(1 for d in detail if d["error"]) + (1 if err else 0)
+            msg = ("ABORTED: %d of the first %d listings hit the token cap or an error (%d transport errors: check the server before blaming the model)"
+                   % (bad, i + 1, nerr)) if nerr else (
+                   "ABORTED: %d of the first %d listings hit the token cap (spiral guard); seat unusable on this arm" % (bad, i + 1))
             common.say(msg)
             common.save_results(a, "RENT", {"fixture_seed": fx["seed"], "synthetic": True, "n_rows": i + 1, "arm": arm,
                                             "reasoning_budget": a.reasoning_budget, "max_tokens": default_cap(a),
