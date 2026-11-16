@@ -726,6 +726,10 @@ def main():
     ap.add_argument("--reasoning-budget", type=int, default=0,
                     help="send reasoning_budget_tokens (llama.cpp per-request cap on thinking); 0 = not sent")
     ap.add_argument("--limit", type=int, default=0, help="score only the first N listings of the fixture")
+    ap.add_argument("--abort-after", type=int, default=15,
+                    help="spiral guard: look at the first N listings (0 = off)")
+    ap.add_argument("--abort-bad", type=int, default=4,
+                    help="spiral guard: stop the arm once this many of those listings hit the token cap or an error")
     ap.add_argument("--selftest", action="store_true")
     ap.add_argument("--gen", action="store_true", help="rewrite the committed fixture from the seed")
     a = ap.parse_args()
@@ -751,6 +755,14 @@ def main():
         wall += r["s"]
         toks += r.get("completion_tokens") or 0
         capped += r.get("finish") == "length"
+        bad = sum(1 for d in detail if d["finish"] == "length" or d["error"]) + (1 if (r.get("finish") == "length" or err) else 0)
+        if a.abort_after and i < a.abort_after and bad >= a.abort_bad:
+            msg = "ABORTED: %d of the first %d listings hit the token cap or an error (spiral guard); seat unusable on this arm" % (bad, i + 1)
+            common.say(msg)
+            common.save_results(a, "RENT", {"fixture_seed": fx["seed"], "synthetic": True, "n_rows": i + 1, "arm": arm,
+                                            "reasoning_budget": a.reasoning_budget, "max_tokens": default_cap(a),
+                                            "aborted": msg, "capped": bad, "wall_s": round(wall + r["s"], 1), "invalid": True})
+            return 1
         detail.append({"id": row["id"], "tier": row["tier"], "reply": r["content"], "finish": r.get("finish"), "error": r.get("error"),
                        "s": r["s"], "completion_tokens": r.get("completion_tokens"), "checker": sc["checker"], "check_msg": sc["check_msg"],
                        "fields": sc["fields"], "flags_exact": sc.get("flags_exact"), "tp": sc["tp"], "fp": sc["fp"], "fn": sc["fn"]})
