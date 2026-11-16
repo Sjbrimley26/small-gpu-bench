@@ -71,6 +71,17 @@ Stated plainly because several cells are one run:
   native API only, so `tests/tool_probe.py`'s `/v1` 20-tool result is new, not a replication.
 - **OCR** — 5 planted fields, single run per model; see the fixture caveat below.
 - **Reranker (§40.1c)** — one model, two document sizes; repeat counts per cell are not stated.
+- **EMBED** — one run per device, one batch size (8 x 3,200 chars), one text source generated from a
+  seed, one card. The query figure is the median of 10 warm calls with a p95 beside it; a cold load and
+  what the GPU copy does when a generation model is already resident are not measured.
+- **SPEED** — two reps per model after one discarded warm-up, on an emptied card. The min and max of the
+  two reps travel with every row because the spread is real (`ling3-tiny-64k` ranged 27.0 to 41.4 t/s).
+  444-token prompt, 200-token output: a long-context prefill is a different measurement and is not
+  reported. Two models could not be re-measured at all (their weights fail to load on this build) and
+  are marked not measured rather than carried over from the older table.
+- **FIM** — 58 cases cut from 29 lines (two cuts each), one pass per arm, one card. Two cases is noise.
+  The plain arm cannot see the suffix, so it is a floor, not a fair fight; the containers start
+  immediately before the test, so the first cases carry cold-load latency.
 
 ## Fixture reproducibility
 
@@ -104,6 +115,13 @@ sanitised excerpt so the claim can be checked against its source:
 | `docs/excerpts/097-single-pass-vs-pipeline.md` | §97 (and §97.1), single pass vs the verify pipeline |
 | `docs/excerpts/104-summarize-bonsai.md` | §104, summarize on the 35k-char transcript |
 | `docs/excerpts/107-ngram-spec-and-reasoning-budget.md` | §107, n-gram spec decoding and reasoning budgets |
+| `docs/excerpts/110-cat-synthetic.md` | §110, payee categorization on a synthetic fixture, the schema arm and the arena |
+| `docs/excerpts/111-aux.md` | §111, the agent's helper-model lanes on generic cases |
+| `docs/excerpts/112-sql-synthetic.md` | §112, text-to-SQL on an invented hardware store |
+| `docs/excerpts/113-rent-synthetic.md` | §113, rental-listing extraction on 100 invented listings |
+| `docs/excerpts/114-embed-device.md` | §114, the same embedding weights on the CPU and on the card |
+| `docs/excerpts/115-speed.md` | §115, the 24-model speed and residency sweep on one build |
+| `docs/excerpts/116-fim.md` | §116, inline shell completion on a synthetic case set |
 
 Every table and number in an excerpt is copied verbatim from the notebook section; prose is trimmed to what a
 reader needs to follow the numbers. What was generalised:

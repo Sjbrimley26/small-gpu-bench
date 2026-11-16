@@ -36,6 +36,53 @@ def _url(base):
     return base + ("/chat/completions" if base.endswith("/v1") else "/v1/chat/completions")
 
 
+def post_json(base_url, path, body, *, api_key="", timeout=600):
+    """POST JSON to base_url + path. Never raises: errors come back as {'error': ...}.
+
+    A path starting with "/" is absolute on the server root (llama.cpp's native /infill, /health);
+    anything else is an OpenAI-style path under /v1.
+    """
+    base = base_url.rstrip("/")
+    if path.startswith("/"):
+        url = base + path
+    else:
+        url = base + ("/" + path.lstrip("/") if base.endswith("/v1") else "/v1/" + path.lstrip("/"))
+    headers = {"Content-Type": "application/json"}
+    if api_key:
+        headers["Authorization"] = "Bearer " + api_key
+    req = urllib.request.Request(url, data=json.dumps(body).encode(), headers=headers)
+    t0 = time.time()
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            data = json.load(r)
+    except urllib.error.HTTPError as e:
+        return {"s": round(time.time() - t0, 3), "error": "HTTP %d: %s" % (e.code, e.read()[:300].decode("utf8", "replace"))}
+    except Exception as e:  # noqa: BLE001 - any transport problem is a recorded failure, not a crash
+        return {"s": round(time.time() - t0, 3), "error": "%s: %s" % (type(e).__name__, e)}
+    return {"s": round(time.time() - t0, 3), "data": data}
+
+
+def embed(args, texts, *, model=None, timeout=None, base_url=None):
+    """One /v1/embeddings call. Returns {'vectors': [[float]...], 's': seconds} or {'error': ...}."""
+    body = {"model": model or args.model or "local", "input": texts}
+    r = post_json(base_url or args.base_url, "embeddings", body, api_key=args.api_key, timeout=timeout or args.timeout)
+    if "error" in r:
+        return r
+    data = r["data"]
+    vecs = [d.get("embedding") or [] for d in (data.get("data") or [])]
+    return {"vectors": vecs, "s": r["s"], "usage": data.get("usage") or {}}
+
+
+def cosine(a, b):
+    """Cosine similarity of two equal-length vectors (0.0 if either is empty or a length differs)."""
+    if not a or not b or len(a) != len(b):
+        return 0.0
+    dot = sum(x * y for x, y in zip(a, b))
+    na = sum(x * x for x in a) ** 0.5
+    nb = sum(y * y for y in b) ** 0.5
+    return dot / (na * nb) if na and nb else 0.0
+
+
 def chat(args, messages, *, max_tokens, temperature=0.0, top_p=None, seed=None, tools=None, response_format=None, extra=None):
     """One non-streaming chat call. Never raises: errors come back as {'error': ...}."""
     body = {"model": args.model or "local", "messages": messages, "stream": False,

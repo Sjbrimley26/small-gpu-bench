@@ -74,6 +74,9 @@ repo, runs with `--selftest` (grader checks, no model), and writes one JSON reco
 | `tests/arena.py` | ARENA (synthetic) | offline: several models' CAT records vote on the same payees | each model alone vs weighted vote (quorum 1, 2) vs full agreement; agreement-tier precision; oracle ceiling |
 | `tests/rent.py` | RENT-SYN (synthetic) | extract one invented rental listing as strict JSON (rent, beds, baths, kind, pets, town, red_flags) with a checker that rejects replies contradicting the listing's own price and BR attributes; 100 listings from a seed in 16 tiers (pets stated plainly / in passing / mixed / absent, buried "no dogs", cats-only, 55+, room for rent, studio, half baths, price field vs body, scam signs, non-housing, 4000+ character bodies); thinking-off and thinking-on (256-token reasoning budget) arms | checker pass (= escalation rate); rent, beds, baths, kind, pets exact; red_flags precision / recall and spurious flags; per tier |
 | `tests/aux_lanes.py` | AUX (synthetic) | the four helper-model jobs of an agent on Hermes' verbatim prompts (MIT, attributed): approve/deny/escalate 27 flagged shell commands, a done/blocked/continue/wait goal judge (12), a JSON task-spec contract (6), session titles (31 openers) | exact and safe-direction per lane; **dangerous approved** (a destructive command approved); empty replies; title and triage contract passes |
+| `tests/embed_timing.py` | EMBED | what an embedding server costs, and whether two devices serving the same weights return the same vectors: 8 batched chunks of 3,200 chars, then 10 warm 120-char queries, on one or two endpoints | ms/chunk (indexing); query median and p95; minimum cosine between the two endpoints' vectors |
+| `tests/speed.py` | SPEED | prefill and generation throughput for one model on one endpoint, measured the same way every time: 444-token prompt, 200 tokens generated, `cache_prompt` off, `ignore_eos` on, one warm-up discarded | prefill t/s and gen t/s from the server's own timings (median of the reps), plus VRAM in use where `nvidia-smi` exists |
+| `tests/fim.py` | FIM | inline shell-command completion: 58 cases cut from 29 shell lines, two cuts per line (mid-word and three characters from the end), run through `/infill` (fim) and through `/v1/completions` (plain, the control) | first token must equal the missing remainder exactly; failures classified wrong / overlong / fenced / empty / echoed prefix; latency mean and p95 |
 
 **Bring-your-own data for JUDGE, CRIT and SUM.** The lab ran these on a copyrighted YouTube transcript, which is not
 included. `tests/fixtures/demo/` holds a short **invented** transcript, summary, fact list and plant specs so the
@@ -247,13 +250,84 @@ agrees (bolt and gemma4:e4b tie on pets, FrogNano weak on pets, ling3-tiny last 
 the private one separated them at 21/23 vs 15/23), pets is easier (94-97% vs 86%), and the private finding that thinking lowers pets is not reproduced. granite4.2 and LFM3 are not measured
 (the GPU dropped off the bus mid-sweep). One pass per arm: read one to three listings as noise ([§113](docs/excerpts/113-rent-synthetic.md); `results.csv` RENT-SYN rows).
 
+### An embedding server off the card: 7.4x slower to index, the same for a query (EMBED, [§114](docs/excerpts/114-embed-device.md))
+
+Same weights (`bge-m3`, 1024-dim) served twice on one machine: once with no GPU device, 3 threads, and
+once all-layers on the 4 GB card. Eight synthetic chunks of 3,200 characters in one batched call, then
+ten warm 120-character queries:
+
+| device | indexing | ms/chunk | warm query median / p95 | VRAM |
+|---|---|---|---|---|
+| CPU | 27.83 s for 8 chunks | **3,478.4** | 0.136 s / 0.154 s | 0 |
+| GPU | 3.74 s for 8 chunks | **467.4** | **0.049 s** / 0.059 s | 633 MiB |
+
+The vectors are the same: minimum cosine **0.999990** across the eight chunks, so an index built by one
+device is queryable by the other and the split is reversible. Indexing is **7.44x** slower on the CPU; an
+earlier measurement on the previous serving stack read 4.5x, and the difference is the CPU thread count
+and the batched path, not the weights. The decision it supports is unchanged (a batch import is minutes
+either way, a query is milliseconds either way), but the cost of a full re-index on the CPU is larger
+than was previously stated. One run per device, one batch size, one card; cold load and co-residency with
+a generation model are not measured ([§114](docs/excerpts/114-embed-device.md); `results.csv` EMBED rows).
+
+### Speed on one card: MoE beats dense while spilling, and one projector costs 11x (SPEED, [§115](docs/excerpts/115-speed.md))
+
+Every installed model was re-measured on the current build with one method: a 444-token prompt, 200 tokens
+generated, temperature 0, prompt cache **off**, `ignore_eos` **on**, one warm-up discarded, two reps, the
+card emptied between models and VRAM read from `nvidia-smi`. Prompt caching is the trap that matters: left
+on, the second rep reports prefill over the 1-4 tokens that were not cached, and `granite3.3:2b` reads
+33.4 t/s where the honest figure is 529.7.
+
+| model | ctx | VRAM MiB | prefill t/s | gen t/s |
+|---|---|---|---|---|
+| LFM3-1.7B | 32768 | 1441 | 791.5 | **45.2** |
+| Moon-Beam-8B-A1B | 32768 | 3975 | 530.2 | **37.4** |
+| lfm2-8b-a1b | 65536 | 3985 | 539.0 | **36.5** |
+| MiniCPM5-2B | 32768 | 2215 | 643.5 | **35.9** |
+| ling3-tiny-64k | 65536 | 4007 | 542.1 | **34.2** (27.0-41.4) |
+| granite3.3:2b | 8192 | 1957 | 529.7 | **34.0** |
+| granite4:3b-h | 32768 | 2249 | 333.9 | **26.9** |
+| granite4:7b-a1b-h | 65536 | 3993 | 369.9 | **24.2** (19.7-28.7) |
+| gemma4:e4b (text) | 16384 | 3551 | 463.2 | **17.4** |
+| gemma4:e4b + projector | 16384 | 3647 | 195.6 | **1.5** (1.2-1.8) |
+
+Three things worth taking from it. **MoE offload is cheap in the direction people fear:** an 8B-A1B at 97 %
+of a 4 GB card (Moon-Beam 37.4 t/s, lfm2 36.5) beats every dense 3-4B in the table. **The fastest seat has
+the smallest active set:** LFM3-1.7B does 45.2 t/s in 1.4 GB. And **a projector is not a fixed tax:**
+`gemma4:e4b` reads 17.4 t/s as text and 1.5 t/s with its projector, while `Qwen3.5-4B` reads 18.3 either
+way, so the cost is that model's projector not fitting beside its weights, not vision as such. The full
+24-row table, with min/max per model, is in [§115](docs/excerpts/115-speed.md); `gemma3:4b` and
+`ministral-3:3b` could not be re-measured (their weights will not load on this build) and are listed as not
+measured rather than carried over.
+
+### Inline shell completion: native FIM is worth 0.12-0.31, and the seat is the 1.5B (FIM, [§116](docs/excerpts/116-fim.md))
+
+58 synthetic cases cut from 29 shell lines, two cuts per line, one of them three characters from the end of a
+word. The model must return exactly the rest of that word; the first token is compared, so `oads/` for `oads`
+fails. Two arms: `/infill` (fill-in-the-middle) and plain `/v1/completions` as the control.
+
+| model | fim | plain | fim latency mean / p95 |
+|---|---|---|---|
+| qwen2.5-coder-1.5b Q8_0 | **27/58 (0.466)** | 12/58 (0.207) | **114 ms / 142 ms** |
+| granite4:3b-h | 24/58 (0.414) | 6/58 (0.103) | 272 ms / 529 ms |
+| qwen2.5-coder-0.5b Q8_0 | 17/58 (0.293) | 10/58 (0.172) | **66 ms / 63 ms** |
+
+Every model gains from native FIM (+0.26, +0.31, +0.12), which is the finding: whether the weights were
+trained for `/infill` matters more than the parameter count. The 1.5B is the seat at 27/58 in 1.65 GB with a
+p95 of 142 ms. The 3B matches it within three cases and blows the latency budget at a 529 ms p95, and the
+0.5B halves the latency for 17 points of accuracy. An earlier run of this test used a fixture that was 31 %
+the owner's shell history, which no model could complete and which flattened the ranking (every model scored
+0.20-0.27 there); this one is all synthetic and the order is cleaner, so the two runs are not comparable and
+the older numbers are not republished ([§116](docs/excerpts/116-fim.md); `results.csv` FIM rows).
+
 ## `results/results.csv`
 
-118 rows: for the ported tests only (RED 3, AUD 15, MON 11, HRD 4, TOOL 20, JUDGE 3, CRIT 4, SUM 16,
-OCR 4, CAT-SYN 11, CAT-SYN-SCHEMA 2, RENT-SYN 8, AUX-SYN 5, SQL-SYN 10 — 118 rows, regenerated by `scripts/export_results.py`
+150 rows: for the ported tests only (RED 3, AUD 15, MON 11, HRD 4, TOOL 20, JUDGE 3, CRIT 4, SUM 16,
+OCR 4, CAT-SYN 11, CAT-SYN-SCHEMA 2, RENT-SYN 8, AUX-SYN 5, SQL-SYN 10 — 116 rows, regenerated by `scripts/export_results.py`
 from the lab's source CSV (which is not in this repo), plus two hand-added `PTUNE` rows from the prompt-tune
 runs (see [Findings](#findings) and
-[prompt-tune.md](docs/excerpts/prompt-tune.md)); `export_results.py` does not regenerate those two.
+[prompt-tune.md](docs/excerpts/prompt-tune.md)), and rows measured after the port: `EMBED` 2, `SPEED` 24,
+and `FIM` 6 ([§114](docs/excerpts/114-embed-device.md), [§115](docs/excerpts/115-speed.md),
+[§116](docs/excerpts/116-fim.md)); `export_results.py` does not regenerate those.
 Added columns: `build`, `quant`, `n_runs`, `n_items`; each is filled only where the source row
 or its section states it, otherwise blank. **A blank means "not stated in the source", not 1.** `n_runs` is blank on
 57 of the 80 matrix rows and `build` on all of them, because the per-row notes do not state them.

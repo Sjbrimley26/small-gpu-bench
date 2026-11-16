@@ -40,7 +40,7 @@ rec() {    # rec TEST  -> a result JSON for TEST must exist in the smoke output 
 }
 
 # 1. offline self-tests (graders, fixtures, pattern logic: no server involved)
-for t in red aud mon hrd tool_probe judge crit sum_test ocr cat sql aux_lanes arena rent; do step "selftest-$t" python3 tests/$t.py --selftest; done
+for t in red aud mon hrd tool_probe judge crit sum_test ocr cat sql aux_lanes arena rent embed_timing fim; do step "selftest-$t" python3 tests/$t.py --selftest; done
 step selftest-summarize_verify python3 patterns/summarize_verify.py --selftest
 step selftest-escalate python3 patterns/escalate.py --selftest
 
@@ -63,7 +63,12 @@ step run-sql        python3 tests/sql.py "${R[@]}"
 step run-aux        python3 tests/aux_lanes.py "${R[@]}" --nothink
 MODEL=mock-small step run-aux-small python3 tests/aux_lanes.py "${R[@]}" --nothink --limit 12
 MODEL=mock-small step run-sql-small python3 tests/sql.py "${R[@]}" --limit 20
-for T in RED AUD MON HRD TOOL JUDGE CRIT SUM OCR CAT SQL AUX RENT; do rec $T; done
+MODEL=mock-small BASE_URL_B="$BASE_URL" MODEL_B=mock-big step run-embed \
+  python3 tests/embed_timing.py "${R[@]}" --chunks 3 --queries 3
+step run-speed      python3 tests/speed.py "${R[@]}" --reps 1 --gen 8
+step run-fim        python3 tests/fim.py "${R[@]}" --limit 6
+step run-fim-plain  python3 tests/fim.py "${R[@]}" --limit 6 --mode plain
+for T in RED AUD MON HRD TOOL JUDGE CRIT SUM OCR CAT SQL AUX RENT EMBED SPEED FIM; do rec $T; done
 step run-arena      python3 tests/arena.py "${R[@]}" $(ls "$OUT"/raw/CAT-*.json)
 rec ARENA
 

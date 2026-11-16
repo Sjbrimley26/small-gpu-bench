@@ -16,7 +16,9 @@ Behaviour worth knowing:
   python3 mock/mock_server.py [--port 8099] [--host 127.0.0.1] [--meta]
 """
 import argparse
+import hashlib
 import json
+import math
 import os
 import re
 import sys
@@ -24,6 +26,21 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 META = False
 _SQL_GOLD = None
+EMBED_DIM = 1024
+
+
+def fake_vector(text, dim=EMBED_DIM):
+    """Deterministic unit vector from the text's sha256. Same text -> identical vector."""
+    out, counter = [], 0
+    while len(out) < dim:
+        d = hashlib.sha256(("%d:%s" % (counter, text)).encode("utf-8", "replace")).digest()
+        for i in range(0, len(d), 2):
+            if len(out) == dim:
+                break
+            out.append((int.from_bytes(d[i:i + 2], "big") / 32767.5) - 1.0)
+        counter += 1
+    norm = math.sqrt(sum(v * v for v in out)) or 1.0
+    return [round(v / norm, 6) for v in out]
 
 
 def _sql_gold():
@@ -212,6 +229,46 @@ class H(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(b)
 
+    def _fake_timings(self, prompt_tokens, predicted):
+        """llama.cpp-shaped timings so a client that reads them has something consistent to read."""
+        return {"prompt_n": prompt_tokens, "prompt_ms": prompt_tokens * 2.0,
+                "predicted_n": predicted, "predicted_ms": predicted * 25.0,
+                "predicted_per_second": 1000.0 / 25.0,
+                "prompt_per_second": 1000.0 / 2.0}
+
+    def _embeddings(self, body):
+        """Deterministic pseudo-vector per text: same text -> same vector, different text -> different."""
+        inp = body.get("input")
+        items = inp if isinstance(inp, list) else [inp]
+        out, toks = [], 0
+        for i, text in enumerate(items):
+            text = text if isinstance(text, str) else json.dumps(text)
+            toks += max(1, len(text) // 4)
+            out.append({"object": "embedding", "index": i, "embedding": fake_vector(text)})
+        self._send({"object": "list", "model": body.get("model") or "mock-embed", "data": out,
+                    "usage": {"prompt_tokens": toks, "total_tokens": toks}})
+
+    def _completion(self, body):
+        prompt = body.get("prompt") or ""
+        if isinstance(prompt, list):
+            prompt = "".join(prompt)
+        text = " mock completion"
+        n = max(1, len(text) // 4)
+        self._send({"id": "mock", "object": "text_completion", "model": body.get("model"),
+                    "choices": [{"index": 0, "text": text, "finish_reason": "stop"}],
+                    "usage": {"prompt_tokens": max(1, len(prompt) // 4), "completion_tokens": n},
+                    "timings": self._fake_timings(max(1, len(prompt) // 4), n)})
+
+    def _infill(self, body):
+        """Answers with the rest of the first line of the prefix, which is enough to exercise the plumbing."""
+        prefix = body.get("input_prefix") or body.get("prompt") or ""
+        last = prefix.split("\n")[-1]
+        text = "mock-" + (last.strip().split()[-1][:6] if last.strip() else "infill")
+        n = max(1, len(text) // 4)
+        self._send({"content": text, "model": body.get("model"),
+                    "tokens_predicted": n, "tokens_evaluated": max(1, len(prefix) // 4),
+                    "stop": True, "timings": self._fake_timings(max(1, len(prefix) // 4), n)})
+
     def do_GET(self):
         if self.path.rstrip("/") in ("/v1/models", "/models"):
             self._send({"object": "list", "data": [{"id": "mock-small"}, {"id": "mock-big"}]})
@@ -224,7 +281,14 @@ class H(BaseHTTPRequestHandler):
             body = json.loads(self.rfile.read(n) or b"{}")
         except json.JSONDecodeError:
             return self._send({"error": "bad json"}, 400)
-        if not self.path.endswith("/chat/completions"):
+        path = self.path.rstrip("/")
+        if path.endswith("/embeddings"):
+            return self._embeddings(body)
+        if path.endswith("/completions") and not path.endswith("/chat/completions"):
+            return self._completion(body)
+        if path.endswith("/infill"):
+            return self._infill(body)
+        if not path.endswith("/chat/completions"):
             return self._send({"error": "not found"}, 404)
         content, tool_calls = reply_for(body.get("model", ""), body.get("messages") or [], body.get("tools"))
         msg = {"role": "assistant", "content": content or ""}
