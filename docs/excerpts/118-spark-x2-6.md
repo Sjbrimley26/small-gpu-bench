@@ -35,7 +35,7 @@ Every script self-tested before the run.
 
 **1. A reasoning seat, not a document seat.** 9/10 on the harder battery and the separate money problem to
 the cent in 11.3 s are the best short-problem numbers here (the battery's own one miss at each temperature
-is a multiplication slip on a discount line, 114.30 x 0.88 written as 100.684 and as 100.184). Then aud2, which plants a wrong total (`120 + 85 + 95`
+is a multiplication slip on a discount line, 114.30 x 0.88 written as 100.684 and as 100.184 against a true 100.584). Then aud2, which plants a wrong total (`120 + 85 + 95`
 given as 330), got "no inconsistencies or errors" from two of three runs, both of which asserted the sum was
 consistent; the third wrote the sum out, saw 300, and flagged it. The arithmetic is fine when the numbers
 arrive as a word problem and the re-check does not happen when they arrive inside a document.

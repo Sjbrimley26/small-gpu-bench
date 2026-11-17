@@ -4,8 +4,9 @@ Real tasks on a 4 GB Pascal card: what works, what doesn't, and the patterns tha
 
 This repo holds the portable parts of a lab's small-GPU LLM benchmark work:
 
-- **`tests/`**: a set of tests with synthetic fixtures (redaction, planted-error audit, arithmetic, tool selection,
-  LLM-as-judge, OCR) that run against any OpenAI-compatible endpoint.
+- **`tests/`**: 17 test scripts with synthetic fixtures (redaction, planted-error audit, arithmetic, tool selection,
+  LLM-as-judge, OCR) that run against any OpenAI-compatible endpoint — 16 of them call it, and `tests/arena.py`
+  votes offline over other models' saved records.
 - **`patterns/`**: two stdlib-only building blocks: a **checker-gated escalation loop** and a **summarize-verify
   pipeline**.
 - **`results/results.csv`**: the lab's recorded scores for exactly those tests (166 rows; the composition is
