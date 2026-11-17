@@ -4,6 +4,15 @@ Two things in this repo need explaining: how the lab's internal names were taken
 and how to read the columns (especially `section`) without over-reading them. The cited notebook sections
 themselves are in `docs/excerpts/`.
 
+## Where a row comes from
+
+`results/results.csv` here is the **published copy**. The lab keeps its own `results/results.csv` as the primary
+record for every test it runs — including the runs made with this repo's harnesses — and a row is copied into
+this repo only after it exists in the lab file, and only when it can be published. The ported matrix rows were
+produced by `scripts/export_results.py` from that lab file and rewritten by `scripts/sanitize_results.py`; rows
+measured after the port (EMBED, SPEED, FIM, the §117 and §118 runs) were added by hand under the same rule.
+A row that appears here with no lab-side counterpart is a bug in the record, not a variant of it.
+
 ## Sanitising the seat names
 
 The lab calls its server presets "seats". The exported CSV's `notes` column carried those names, which are

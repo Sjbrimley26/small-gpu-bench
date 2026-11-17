@@ -365,6 +365,12 @@ and `FIM` 6 ([§114](docs/excerpts/114-embed-device.md), [§115](docs/excerpts/1
 [§116](docs/excerpts/116-fim.md)), and ten `Spark-X2.6-4B` rows measured after that (TOOL, MON, HRD,
 AUX-SYN, CAT-SYN, SQL-SYN, RENT-SYN twice, RED, AUD — [§118](docs/excerpts/118-spark-x2-6.md); its SPEED row
 is the §115 one, re-measured); `export_results.py` does not regenerate those.
+
+**Where a row comes from.** The lab's own `results/results.csv` is the primary record for every test the lab
+runs, including the ones executed with this repo's harnesses (`tests/cat.py`, `tests/rent.py`, …). This file is
+the published copy: a row is copied here only after the lab row exists, and only if it can be published. A row
+here with no lab-side counterpart is a bug, not a variant — say so instead of editing around it.
+
 Added columns: `build`, `quant`, `n_runs`, `n_items`; each is filled only where the source row
 or its section states it, otherwise blank. **A blank means "not stated in the source", not 1.** `n_runs` is blank on
 57 of the 80 matrix rows and `build` on all of them, because the per-row notes do not state them.
