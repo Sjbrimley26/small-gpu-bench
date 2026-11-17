@@ -4,12 +4,12 @@ Real tasks on a 4 GB Pascal card: what works, what doesn't, and the patterns tha
 
 This repo holds the portable parts of a lab's small-GPU LLM benchmark work:
 
-- **`tests/`**: 17 test scripts with synthetic fixtures (redaction, planted-error audit, arithmetic, tool selection,
+- **`tests/`**: 21 test scripts — 19 on synthetic fixtures, 2 on real public documents (redaction, planted-error audit, arithmetic, tool selection,
   LLM-as-judge, OCR) that run against any OpenAI-compatible endpoint — 16 of them call it, and `tests/arena.py`
   votes offline over other models' saved records.
 - **`patterns/`**: two stdlib-only building blocks: a **checker-gated escalation loop** and a **summarize-verify
   pipeline**.
-- **`results/results.csv`**: the lab's recorded scores for exactly those tests (166 rows; the composition is
+- **`results/results.csv`**: the lab's recorded scores for exactly those tests (194 rows; the composition is
   broken down under [`results/results.csv`](#resultsresultscsv), including the two `PTUNE` rows from the
   prompt-tune runs, see [prompt-tune.md](docs/excerpts/prompt-tune.md)).
 - **`mock/`** and **`tests/smoke.sh`**: a fake server so everything can be exercised without a model.
@@ -77,6 +77,10 @@ repo, runs with `--selftest` (grader checks, no model), and writes one JSON reco
 | `tests/aux_lanes.py` | AUX (synthetic) | the four helper-model jobs of an agent on Hermes' verbatim prompts (MIT, attributed): approve/deny/escalate 27 flagged shell commands, a done/blocked/continue/wait goal judge (12), a JSON task-spec contract (6), session titles (31 openers) | exact and safe-direction per lane; **dangerous approved** (a destructive command approved); empty replies; title and triage contract passes |
 | `tests/embed_timing.py` | EMBED | what an embedding server costs, and whether two devices serving the same weights return the same vectors: 8 batched chunks of 3,200 chars, then 10 warm 120-char queries, on one or two endpoints | ms/chunk (indexing); query median and p95; minimum cosine between the two endpoints' vectors |
 | `tests/speed.py` | SPEED | prefill and generation throughput for one model on one endpoint, measured the same way every time: 444-token prompt, 200 tokens generated, `cache_prompt` off, `ignore_eos` on, one warm-up discarded | prefill t/s and gen t/s from the server's own timings (median of the reps), plus VRAM in use where `nvidia-smi` exists |
+| `tests/po.py` | PO-SYN (synthetic) | extract one invented purchase order (vendor, PO number, date, ship-to, currency, 8 line items with qty/unit price/amount, subtotal, freight, 8.1 % tax, total) into a fixed JSON shape; document and gold are generated together in code so they cannot disagree | **parse** (strict / fenced / wrapped / invalid / empty) reported apart from schema 10 keys, 5 header fields, 4 money fields to 0.01, items exact /8, and whether the reply's OWN numbers add up |
+| `tests/ragq.py` | RAGQ-SYN (synthetic) | grounded answering from a supplied context: 10 questions over an invented 11-document makerspace corpus in the five shapes that matter — exact lookup, freshness (a stale sheet and a live one disagree), negative (the fact is absent), synthesis (two documents, one needs arithmetic), vague phrasing; each question ships only the documents it "retrieved" | correct /10 per question from a key of regexes that must / must not match (no model judges); a stale value counts only when the answer labels it old; per-shape counts; citations counted, not scored |
+| `tests/po_real.py` | PO-REAL (real document) | extract a real published purchase order - a Texas HHS Commission PO (public record, personal contact details redacted) as `pdftotext -layout` renders it: interleaved columns, descriptions wrapped onto their own lines, repeated page headers, one stated "Not to exceed" total, 12 line items that each multiply out | **parse** apart from 8 schema keys, 4 header fields, line rows exact /12 (line label, class code, qty, UOM, unit price, amount), the schedule total, and the reply's own arithmetic (qty x price per line, amounts summing to the total) |
+| `tests/ragq_real.py` | RAGQ-REAL (real documents) | grounded answering over four real public documents that form **two revision pairs**: 13 CFR 125.6 (CFR 2026 vs 2023 editions) and NIST SP 800-63B-4 vs -3 password verifiers; 15 questions in six shapes, three of them arithmetic over the rule (apply the 50%/85% limit to a contract value rather than quote the percentage), each shipping the retrieved chunk(s) labelled only with title and edition date - resolving which source is current is the model's job | correct /15 by a per-question key of regexes that must / must not match (no model judges); a superseded value counts only when labelled as old or tied to the case it still applies to; per-shape counts |
 | `tests/fim.py` | FIM | inline shell-command completion: 58 cases cut from 29 shell lines, two cuts per line (mid-word and three characters from the end), run through `/infill` (fim) and through `/v1/completions` (plain, the control) | first token must equal the missing remainder exactly; failures classified wrong / overlong / fenced / empty / echoed prefix; latency mean and p95 |
 
 **Bring-your-own data for JUDGE, CRIT and SUM.** The lab ran these on a copyrighted YouTube transcript, which is not
@@ -354,17 +358,82 @@ answer at a 9,000-token cap, so the HRD arm was aborted rather than scored. One 
 n=3), temp 0 rather than the vendor's temp 1.0, one card, one build, one quant
 ([§118](docs/excerpts/118-spark-x2-6.md); `results.csv` rows with §118 in their notes).
 
+### A real purchase order: five seats read it perfectly, three misread every column (PO-REAL, [§120](docs/excerpts/120-real-documents.md))
+
+The synthetic PO is passed by every seat, so it measures formatting, not extraction. This one is a real Texas
+HHS Commission purchase order — public record, personal contact details redacted — read from its
+`pdftotext -layout` rendering: columns interleave, descriptions wrap onto their own lines, page headers repeat,
+the vendor's tax ID is printed above its name, and the only total on the page is a single "Not to exceed" line.
+Twelve line items, each of which multiplies out exactly, and the schedule sums to that total, so the gold is
+arithmetic rather than opinion. Thirteen seats, one run each, temp 0, thinking off.
+
+| what happened | seats |
+|---|---|
+| **12/12 items, all header fields, the total and the arithmetic** | granite4:3b-h, minicpm5-2b, gemma4:e4b, bolt-e4b, Spark-X2.6-4B |
+| 12/12 items, but a header field wrong | ling3-tiny-64k (took the vendor's **tax ID** as the vendor), granite4:micro, Moon-Beam-8B-A1B |
+| 11/12 items | LFM3-1.7B-QAD |
+| **0/12 items** — every price column read one place to the left | granite3.3:2b, FrogNano-4B, granite4.2:3b |
+| no JSON at all (`finish=length`) | LFM3-1.7B-Q4_K_M |
+
+The failure is not arithmetic and not omission: the three 0/12 seats produced twelve rows with the right line
+labels, descriptions and class codes, and put the quantity where the unit price goes (25.34 vs 102.00), so
+`qty x price = amount` fails on every line while the stated total still comes out right. That is what a
+real interleaved table does to a small model, and it is invisible on a generated one. 10-58 s per document.
+
+### Real documents, two revision pairs: lookups are free, applying a rule is not (RAGQ-REAL, [§120](docs/excerpts/120-real-documents.md))
+
+Four real public documents, arranged as two revision pairs — 13 CFR 125.6 from the **2026** and **2023** CFR
+editions (the 2026 text adds a per-order compliance rule for multi-agency set-asides, and a past-performance
+section the 2023 text lacks), and NIST SP 800-63B-**4** (2025) against -**3** (2017), where the single-factor
+password minimum went from 8 to 15 characters. Fifteen questions in six shapes; each ships the retrieved
+chunk(s) labelled only with title and edition date, so working out which source is current is the test. One
+run per seat, temp 0, thinking off, ~1.9k-token prompts.
+
+| score | seats |
+|---|---|
+| **15/15** | FrogNano-4B-2609-IQ4_XS, LFM3-1.7B-QAD |
+| 14/15 | granite4:micro, gemma4:e4b, granite4.2:3b |
+| 13/15 | minicpm5-2b, granite4:3b-h, LFM3-1.7B-Q4_K_M, Spark-X2.6-4B |
+| 11/15 | ling3-tiny-64k, granite3.3:2b, bolt-e4b |
+| 10/15 | Moon-Beam-8B-A1B |
+
+Eight of the fifteen questions are answered by **all thirteen** seats: the three exact lookups, the blocklist
+question, both negatives, the three-percentage enumeration, the 2017-vs-2025 freshness pair and the
+full-and-open-order exemption. Everything that separates the seats is one of two things:
+
+* **applying a rule to a number** — "a $4,000,000 general-construction contract pays $3,200,000 to
+  non-similarly-situated firms: compliant?" needs the 85 % cap computed and compared, and **6 of 13** get it
+  wrong (three by answering "not compliant" after computing 80 % < 85 %);
+* **multi-clause synthesis** — the CFR past-performance paragraph (5 of 13 fail) and the NIST composition-rule
+  change (4 of 13), both of which need two statements from the same passage combined.
+
+The ranking is not by size: the two perfect scores are a 4B (FrogNano) and a 1.7B (LFM3-QAD), and the 8B
+Moon-Beam is last. Read the gaps of one or two questions as noise (15 items, one run, one card, regex keys).
+
 ## `results/results.csv`
 
-166 rows: for the ported tests only (RED 3, AUD 15, MON 11, HRD 4, TOOL 20, JUDGE 3, CRIT 4, SUM 16,
-OCR 4, CAT-SYN 13, CAT-SYN-SCHEMA 2, RENT-SYN 9, AUX-SYN 7, SQL-SYN 11 — 122 rows, regenerated by `scripts/export_results.py`
-from the lab's source CSV (which is not in this repo), plus two hand-added `PTUNE` rows from the prompt-tune
-runs (see [Findings](#findings) and
-[prompt-tune.md](docs/excerpts/prompt-tune.md)), and rows measured after the port: `EMBED` 2, `SPEED` 24,
-and `FIM` 6 ([§114](docs/excerpts/114-embed-device.md), [§115](docs/excerpts/115-speed.md),
-[§116](docs/excerpts/116-fim.md)), and ten `Spark-X2.6-4B` rows measured after that (TOOL, MON, HRD,
-AUX-SYN, CAT-SYN, SQL-SYN, RENT-SYN twice, RED, AUD — [§118](docs/excerpts/118-spark-x2-6.md); its SPEED row
-is the §115 one, re-measured); `export_results.py` does not regenerate those.
+194 rows. 192 of them are regenerated by `scripts/export_results.py` from the lab's source CSV (which is not
+in this repo) and then rewritten by `scripts/sanitize_results.py`:
+
+| test | rows | | test | rows |
+|---|---|---|---|---|
+| RED | 4 | | CAT-SYN-SCHEMA | 2 |
+| AUD | 16 | | RENT-SYN | 11 |
+| MON | 12 | | SQL-SYN | 12 |
+| HRD | 5 | | AUX-SYN | 8 |
+| TOOL | 21 | | PO-SYN | 2 |
+| JUDGE | 3 | | PO-REAL | 13 |
+| CRIT | 4 | | RAGQ-REAL | 13 |
+| SUM | 16 | | | |
+| OCR | 4 | | | |
+| CAT-SYN | 14 | | | |
+
+The two remaining rows are hand-added `PTUNE` rows from the prompt-tune runs (see
+[prompt-tune.md](docs/excerpts/prompt-tune.md)). The `EMBED`, `SPEED`, `FIM` and `FIM-PLAIN` rows
+([§114](docs/excerpts/114-embed-device.md), [§115](docs/excerpts/115-speed.md),
+[§116](docs/excerpts/116-fim.md)) and the `Spark-X2.6-4B` set
+([§118](docs/excerpts/118-spark-x2-6.md)) are inside that export now: the lab CSV carries them, so a fresh
+export reproduces them rather than losing them.
 
 **Where a row comes from.** The lab's own `results/results.csv` is the primary record for every test the lab
 runs, including the ones executed with this repo's harnesses (`tests/cat.py`, `tests/rent.py`, …). This file is

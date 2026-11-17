@@ -1,0 +1,324 @@
+{
+ "test": "RAGQ-REAL",
+ "model": "granite42-3b",
+ "date": "20261117T234621Z",
+ "args": {
+  "regrade": "",
+  "selftest": false,
+  "limit": 0,
+  "max_tokens": 1200,
+  "model": "granite42-3b",
+  "timeout": 1200.0,
+  "think": "off"
+ },
+ "summary": {
+  "correct": 14,
+  "scored": 15,
+  "transport_errors": 0,
+  "by_type": {
+   "exact": "3/3",
+   "freshness": "2/2",
+   "negative": "2/2",
+   "synthesis": "2/3",
+   "vague": "2/2",
+   "arithmetic": "3/3"
+  },
+  "mean_s": 14.3,
+  "mean_completion_tokens": 198,
+  "mean_prompt_tokens": 1897
+ },
+ "rows": [
+  {
+   "qid": "E1",
+   "type": "exact",
+   "question": "for a contract for services, what share of what the government pays may go to firms that are not similarly situated?",
+   "docs": [
+    "A"
+   ],
+   "answer": "For a contract for services, the share of what the government pays that may go to firms that are not similarly situated is 50%.",
+   "correct": true,
+   "checks": {
+    "50%": true
+   },
+   "chars": 127,
+   "prompt_tokens": 1573,
+   "completion_tokens": 28,
+   "finish": "stop",
+   "s": 5.6
+  },
+  {
+   "qid": "E2",
+   "type": "exact",
+   "question": "what maximum password length should verifiers and CSPs permit?",
+   "docs": [
+    "C"
+   ],
+   "answer": "64 characters",
+   "correct": true,
+   "checks": {
+    "64": true
+   },
+   "chars": 13,
+   "prompt_tokens": 1665,
+   "completion_tokens": 786,
+   "finish": "stop",
+   "s": 37.9
+  },
+  {
+   "qid": "F1",
+   "type": "freshness",
+   "question": "under a multi-agency set-aside contract where more than one agency can issue orders, what period does the ordering agency use to determine compliance with the limitations on subcontracting?",
+   "docs": [
+    "A2",
+    "B2"
+   ],
+   "answer": "The period used to determine compliance for a multi-agency set-aside contract where more than one agency can issue orders is the period of performance for each order.",
+   "correct": true,
+   "checks": {
+    "per-order rule tied to the multi-agency case": true
+   },
+   "chars": 166,
+   "prompt_tokens": 579,
+   "completion_tokens": 33,
+   "finish": "stop",
+   "s": 2.7
+  },
+  {
+   "qid": "F2",
+   "type": "freshness",
+   "question": "what is the minimum length of a password used as a single-factor authentication mechanism?",
+   "docs": [
+    "C",
+    "D"
+   ],
+   "answer": "The minimum length of a password used as a single-factor authentication mechanism is 15 characters.",
+   "correct": true,
+   "checks": {
+    "15": true,
+    "an 8-char minimum only where it is tied to multi-factor use": true
+   },
+   "chars": 99,
+   "prompt_tokens": 3423,
+   "completion_tokens": 20,
+   "finish": "stop",
+   "s": 11.9
+  },
+  {
+   "qid": "N1",
+   "type": "negative",
+   "question": "what is the small business size standard, in dollars, for NAICS 236220?",
+   "docs": [
+    "A"
+   ],
+   "answer": "The provided context does not contain the small business size standard in dollars for NAICS 236220.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not invents a dollar size standard": true
+   },
+   "chars": 99,
+   "prompt_tokens": 1569,
+   "completion_tokens": 22,
+   "finish": "stop",
+   "s": 5.3
+  },
+  {
+   "qid": "N2",
+   "type": "negative",
+   "question": "which password manager product does NIST recommend using?",
+   "docs": [
+    "C",
+    "D"
+   ],
+   "answer": "The NOTE CONTEXT does not specify which password manager product NIST recommends using. It only provides technical requirements for password verification and usage, including guidance on using password managers generally (e.g., allowing password managers and autofill functionality), but it does not name or recommend a specific product.\n\nTherefore, the answer is: not recorded in the documents.",
+   "correct": true,
+   "checks": {
+    "says no product is named (or only the generic requirement)": true,
+    "not names a product": true
+   },
+   "chars": 395,
+   "prompt_tokens": 3416,
+   "completion_tokens": 72,
+   "finish": "stop",
+   "s": 14.3
+  },
+  {
+   "qid": "S1",
+   "type": "synthesis",
+   "question": "list the subcontracting limits as percentages for services, general construction and special trade construction",
+   "docs": [
+    "A"
+   ],
+   "answer": "The subcontracting limits as percentages for services, general construction, and special trade construction are:\n\n- Services: 50%\n- General construction: 85%\n- Special trade construction: 75%",
+   "correct": true,
+   "checks": {
+    "services 50%": true,
+    "general construction 85%": true,
+    "special trade 75%": true
+   },
+   "chars": 191,
+   "prompt_tokens": 1566,
+   "completion_tokens": 44,
+   "finish": "stop",
+   "s": 6.2
+  },
+  {
+   "qid": "S2",
+   "type": "synthesis",
+   "question": "what changed between the two versions about password composition rules and the minimum length of a single-factor password?",
+   "docs": [
+    "C",
+    "D"
+   ],
+   "answer": "The two versions are:\n\n- [C] NIST SP 800-63B-4, section 3.1.1.2 Password Verifiers (July 2025)  \n- [D] NIST SP 800-63B-3, section 5.1.1.2 Memorized Secret Verifiers (June 2017)\n\nThe question asks: what changed between the two versions about password composition rules and the minimum length of a single-factor password?\n\nFrom the context:\n\n- In [C] (SP 800-63B-4, July 2025):\n  - Minimum length for single-factor passwords: 15 characters.\n  - Composition rules: Verifiers SHALL NOT impose other composition rules (e.g., requiring mixtures of different character types).\n  - No mention of allowing shorter passwords for multi-factor use beyond the 15-character minimum.\n\n- In [D] (SP 800-63B-3, June 2017):\n  - Minimum length for memorized secrets (which are similar to single-factor passwords in this context): at least 8 characters.\n  - No explicit mention of composition rules (e.g., requiring mixtures of character types) being imposed or not imposed; it says Verifiers SHOULD NOT impose other composition rules (similar to [C]).\n  - However, the context does not state that [D] requires a minimum length of 8 characters for single-factor passwords in the same way [C] does. The [D] section is titled \u201cMemorized Secret Verifiers,\u201d and it states: Verifiers SHALL require subscriber-chosen memorized secrets to be at least 8 characters in length.\n\nBut the question is specifically about password composition rules and the minimum length of a single-factor password.\n\nIn [C], the single-factor password minimum length is 15 characters, and composition rules are not imposed (i.e., no mix of character types required).\n\nIn [D], the relevant rule is for memorized secrets (which are used in a similar context), and the minimum length is 8 characters. However, the question is about password composition rules and the minimum length of a single-factor password. In [D], the document is about memorized secret verifiers, which are a different type of password (memorized secrets). The question likely refers to the same concept (single-factor password) across both versions.\n\nThus, the change is:\n\n- Minimum length: [C] requires 15 characters for single-factor passwords; [D] requires 8 characters for memorized secrets (which correspond to single-factor passwords in the context).\n- Composition rules: In [C], Verifiers SHALL NOT impose other composition rules (e.g., requiring mixtures of different character types). In [D], the text says: Verifiers SHOULD NOT impose other composition rules (e.g., requiring mixtures of different character types or prohibiting consecutively repeated characters). So the rule about not imposing composition rules is present in both versions (though phrasing may differ slightly). In [D], it explicitly says \"Verifiers SHOULD NOT impose other composition rules (e.g., requiring mixtures of different character types or prohibiting consecutively repeated characters).\" In [C], it says \"Verifiers and CSPs SHALL NOT impose other composition rules (e.g., requiring mixtures of different character types).\" So the rule is essentially the same.\n\nTherefore, the change is only in the minimum length: from 15 characters in [C] to 8 characters in [D].\n\nThere is no change in composition rules (they remain the same: no imposition of other composition rules).\n\nSo the answer: The minimum length increased from 15 characters in the 2025 version ([C]) to 8 characters in the 2017 version ([D]). Composition rules remain unchanged (both versions prohibit imposing other composition rules).\n\nWe must answer using only the context, and if not recorded, say it's not recorded.\n\nThe context clearly states the minimum lengths and composition rules for each version. So we can state the change.\n\nWe should answer concisely, as per instruction: \"If the context does not answer the question, say plainly that it is not recorded in the documents.\"\n\nHere the context does answer.\n\nWe should not invent values; we are using values from context.\n\nThus, answer: The minimum length for single-factor passwords changed from 15 characters (as in NIST SP 800-63B-4, section 3.1.1.2, July 2025) to 8 characters (as in NIST SP 800-63B-3, section 5.1.1.2, June 2017). Composition rules (e.g., requiring mixtures of character types) remain the same in both versions: Verifiers SHALL NOT impose other composition rules.\n\nBut the instruction says: \"You answer questions using only the NOTE CONTEXT below.\" So we can state the change clearly.\n\nWe should keep it plain and answer the question directly.\n\nThe question: \"what changed between the two versions about password composition rules and the minimum length of a single-factor password?\"\n\nAnswer: The minimum length changed: 15 characters in the 2025 version ([C]) to 8 characters in the 2017 version ([D]). Composition rules (e.g., requiring mixtures of character types) are unchanged in both versions (both require that Verifiers SHALL NOT impose other composition rules).\n\nWe can phrase without extra fluff.\n\nBut we must not add extra info not in context. It's",
+   "correct": true,
+   "checks": {
+    "15 for single factor": true,
+    "composition rules dropped": true,
+    "an 8-char minimum only where it is tied to multi-factor use": true
+   },
+   "chars": 5013,
+   "prompt_tokens": 3427,
+   "completion_tokens": 1200,
+   "finish": "length",
+   "s": 66.6
+  },
+  {
+   "qid": "V1",
+   "type": "vague",
+   "question": "how much of the work does the prime contractor have to keep in house?",
+   "docs": [
+    "A"
+   ],
+   "answer": "The NOTE CONTEXT does not specify a fixed percentage of work the prime contractor must keep in house. Instead, it outlines subcontracting limits based on contract type (services, supplies, construction, special trade contractors) and defines thresholds (e.g., 50%, 75%, or 85%) that apply to subcontracted amounts, not a specific percentage of total work to be retained in house.\n\nTherefore, the question \"how much of the work does the prime contractor have to keep in house?\" cannot be answered from the provided documents.\n\nIt is not recorded in the documents.",
+   "correct": true,
+   "checks": {
+    "50% for services": true
+   },
+   "chars": 562,
+   "prompt_tokens": 1565,
+   "completion_tokens": 120,
+   "finish": "stop",
+   "s": 9.3
+  },
+  {
+   "qid": "E3",
+   "type": "exact",
+   "question": "what must a verifier do when a password a subscriber chooses appears on the blocklist?",
+   "docs": [
+    "C"
+   ],
+   "answer": "When a password a subscriber chooses appears on the blocklist, the verifier must require the subscriber to select a different secret and provide the reason for rejection.",
+   "correct": true,
+   "checks": {
+    "rejects it and makes them choose another": true,
+    "gives the reason": true
+   },
+   "chars": 170,
+   "prompt_tokens": 1670,
+   "completion_tokens": 31,
+   "finish": "stop",
+   "s": 5.9
+  },
+  {
+   "qid": "S3",
+   "type": "synthesis",
+   "question": "if a contractor finished a contract but did not meet the limitations on subcontracting, how is that handled in the past performance evaluation, and does the older text say the same?",
+   "docs": [
+    "A3",
+    "B3"
+   ],
+   "answer": "The NOTE CONTEXT does not contain a clear statement about how a contractor who finished a contract but did not meet the limitations on subcontracting is handled in the past performance evaluation, nor does it explicitly state whether the older text (e.g., the 2023 edition) says the same.\n\nTherefore, the answer is: it is not recorded in the documents.",
+   "correct": false,
+   "checks": {
+    "the contractor gets an opportunity to explain extenuating circumstances": false,
+    "higher-level concurrence is needed for a satisfactory rating": false,
+    "not claims the older text has the same rule": true
+   },
+   "chars": 352,
+   "prompt_tokens": 1050,
+   "completion_tokens": 75,
+   "finish": "stop",
+   "s": 5.8
+  },
+  {
+   "qid": "A1",
+   "type": "arithmetic",
+   "question": "a services contract is worth 2,000,000 dollars. what is the most it may pay to firms that are not similarly situated?",
+   "docs": [
+    "A"
+   ],
+   "answer": "The most it may pay to firms that are not similarly situated is 50% of the contract value.\n\nGiven the contract is worth $2,000,000, the maximum payment to non-similarly situated firms is 50% of $2,000,000, which is $1,000,000.\n\nThis follows from the relevant regulation in the NOTE CONTEXT:  \n(a) In the case of a contract for services (except construction), it will not pay more than 50% of the amount paid by the government to it to firms that are not similarly situated.\n\nSince the question specifies a services contract (not construction), the applicable limit is 50%.\n\nThus, the most it may pay is $1,000,000.\n\n(Note: The context does not provide any additional limits or adjustments for this specific services contract, so the answer is directly derived from the stated 50% limitation.)",
+   "correct": true,
+   "checks": {
+    "1,000,000 (the 50% cap applied)": true
+   },
+   "chars": 792,
+   "prompt_tokens": 1578,
+   "completion_tokens": 195,
+   "finish": "stop",
+   "s": 12.4
+  },
+  {
+   "qid": "A2",
+   "type": "arithmetic",
+   "question": "a general construction contract is worth 4,000,000 dollars and 3,200,000 dollars of it goes to firms that are not similarly situated. is that compliant?",
+   "docs": [
+    "A"
+   ],
+   "answer": "The contract in question is a general construction contract worth $4,000,000 dollars, and $3,200,000 of it goes to firms that are not similarly situated.\n\nAccording to the NOTE CONTEXT, for a general construction contract, the limitation is that the prime contractor will not pay more than 85% of the amount paid by the government to firms that are not similarly situated.\n\nHere, $3,200,000 / $4,000,000 = 0.8 = 80%.\n\nSince 80% \u2264 85%, the condition is satisfied.\n\nTherefore, the contract is compliant.\n\nAnswer: Yes, it is compliant.",
+   "correct": true,
+   "checks": {
+    "compliant, with the 85% cap stated": true,
+    "says it is within the limit": true,
+    "not calls it non-compliant": true
+   },
+   "chars": 532,
+   "prompt_tokens": 1586,
+   "completion_tokens": 141,
+   "finish": "stop",
+   "s": 10.2
+  },
+  {
+   "qid": "A3",
+   "type": "arithmetic",
+   "question": "an order is set aside under a full and open contract and was competed among small and other-than-small businesses. do the subcontracting limitations apply to that order?",
+   "docs": [
+    "A2"
+   ],
+   "answer": "The subcontracting limitations do not apply to that order.\n\nExplanation: According to the NOTE CONTEXT, for an order set aside under a full and open contract or a full and open contract with reserve, the agency uses the period of performance for each order to determine compliance unless the order is competed among small and other-than-small businesses. In this case, the order was competed among small and other-than-small businesses, so the subcontracting limitations will not apply.",
+   "correct": true,
+   "checks": {
+    "says they do not apply": true
+   },
+   "chars": 486,
+   "prompt_tokens": 376,
+   "completion_tokens": 97,
+   "finish": "stop",
+   "s": 4.7
+  },
+  {
+   "qid": "V2",
+   "type": "vague",
+   "question": "how long should a password be these days?",
+   "docs": [
+    "C",
+    "D"
+   ],
+   "answer": "The NOTE CONTEXT specifies that passwords used as a single-factor authentication mechanism must be a minimum of 15 characters in length. For passwords used in multi-factor authentication processes, the minimum length is 8 characters.\n\nTherefore, the answer to \"how long should a password be these days?\" is:\n\n- Single-factor authentication: minimum 15 characters.\n- Multi-factor authentication: minimum 8 characters.\n\nThis is based directly on the context provided.",
+   "correct": true,
+   "checks": {
+    "15": true,
+    "an 8-char minimum only where it is tied to multi-factor use": true
+   },
+   "chars": 465,
+   "prompt_tokens": 3415,
+   "completion_tokens": 99,
+   "finish": "stop",
+   "s": 15.5
+  }
+ ],
+ "invalid": false,
+ "arm": "ragq-real",
+ "thinking": "off"
+}

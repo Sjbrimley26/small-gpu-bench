@@ -1,0 +1,434 @@
+{
+ "test": "RED",
+ "model": "spark-agent",
+ "date": "20261117T024229Z",
+ "args": {
+  "model": "spark-agent",
+  "timeout": 1200.0,
+  "think": "off",
+  "arms": "model,hybrid",
+  "docs": 12,
+  "max_tokens": 1500,
+  "selftest": false
+ },
+ "summary": {
+  "regex": {
+   "leaked": 30,
+   "secrets": 78,
+   "kept": 72,
+   "keeps": 72
+  },
+  "model": {
+   "docs": 12,
+   "errors": 0,
+   "leaked": 26,
+   "secrets": 78,
+   "kept": 72,
+   "keeps": 72
+  },
+  "hybrid": {
+   "docs": 12,
+   "errors": 0,
+   "leaked": 15,
+   "secrets": 78,
+   "kept": 72,
+   "keeps": 72
+  }
+ },
+ "rows": [
+  {
+   "doc": "email-0",
+   "arm": "model",
+   "s": 9.1,
+   "error": null,
+   "finish": "stop",
+   "reply": "From: Garrett Szabo <g.szabo@birch.example>\nTo: purchasing@example.test\nDate: 2/5/2026\nSubject: PO for TR-205-16\n\nHi Wendell,\n\nPlease confirm 360 LF of TR-205-16 at the quoted price. Ship to [ADDRESS], Lakeview, ZZ 10002. If anything changes call me on [PHONE] or my cell [PHONE].\nTotal should come to $11,970.00. Quintero in receiving will sign for it.\n\nThanks,\n-- garrett szabo\nBirch Doors",
+   "secrets": 7,
+   "leaked": 4,
+   "leaked_kinds": [
+    "name",
+    "email",
+    "name",
+    "name"
+   ],
+   "keeps": 5,
+   "kept": 5,
+   "lost": []
+  },
+  {
+   "doc": "email-0",
+   "arm": "hybrid",
+   "s": 8.8,
+   "error": null,
+   "finish": "stop",
+   "reply": "From: Garrett Szabo <[EMAIL]>\nTo: [EMAIL]\nDate: 2/5/2026\nSubject: PO for TR-205-16\n\nHi Wendell,\n\nPlease confirm 360 LF of TR-205-16 at the quoted price. Ship to [ADDRESS], Lakeview, ZZ 10002. If anything changes call me on [PHONE] or my cell [PHONE].\nTotal should come to $11,970.00. Quintero in receiving will sign for it.\n\nThanks,\n-- garrett szabo\nBirch Doors",
+   "secrets": 7,
+   "leaked": 3,
+   "leaked_kinds": [
+    "name",
+    "name",
+    "name"
+   ],
+   "keeps": 5,
+   "kept": 5,
+   "lost": []
+  },
+  {
+   "doc": "invoice-0",
+   "arm": "model",
+   "s": 9.8,
+   "error": null,
+   "finish": "stop",
+   "reply": "Birch Doors\nINVOICE  10/17/2026\nSold to: Elm Distribution\nAttn: [NAME]\n[ADDRESS]\n[ADDRESS]\n[PHONE]   [TAXID]\n\nLINE  ITEM         QTY    UNIT    EXT\n1     TR-205-16    45 LF  1921.92  $8,648.64\n2     LM-1180-12     12 EA  18.40   $220.80\n\nRemit by ACH: routing 122038331, account [ACCOUNT]. Questions: [EMAIL]",
+   "secrets": 7,
+   "leaked": 1,
+   "leaked_kinds": [
+    "routing"
+   ],
+   "keeps": 7,
+   "kept": 7,
+   "lost": []
+  },
+  {
+   "doc": "invoice-0",
+   "arm": "hybrid",
+   "s": 9.9,
+   "error": null,
+   "finish": "stop",
+   "reply": "Birch Doors\nINVOICE  10/17/2026\nSold to: Elm Distribution\nAttn: Rosa Delacroix\n[ADDRESS]\nEastport, ZZ 10004\nPhone [PHONE]   Fed Tax ID [TAXID]\n\nLINE  ITEM         QTY    UNIT    EXT\n1     TR-205-16    45 LF  1921.92  $8,648.64\n2     LM-1180-12     12 EA  18.40   $220.80\n\nRemit by ACH: routing [ACCOUNT], account [ACCOUNT]. Questions: [EMAIL]",
+   "secrets": 7,
+   "leaked": 1,
+   "leaked_kinds": [
+    "name"
+   ],
+   "keeps": 7,
+   "kept": 7,
+   "lost": []
+  },
+  {
+   "doc": "bank-0",
+   "arm": "model",
+   "s": 10.9,
+   "error": null,
+   "finish": "stop",
+   "reply": "Statement period 1/4/2026\nAccount holder: [NAME]\n[ADDRESS]\nAccount no. 5399 1036 95\n\nDATE    DESCRIPTION                                  AMOUNT\n1/4/2026  ACH DEBIT BIRCH DOORS INV QX-30417                 -$13,565.29\n1/4/2026  TRANSFER TO [NAME] memo trim deposit         -$450.00\n1/4/2026  CARD ENDING 2944 HARDWARE MART                      -$86.12\n1/4/2026  DEPOSIT REF 122087651                                +$2,400.00",
+   "secrets": 6,
+   "leaked": 3,
+   "leaked_kinds": [
+    "account",
+    "card",
+    "routing"
+   ],
+   "keeps": 6,
+   "kept": 6,
+   "lost": []
+  },
+  {
+   "doc": "bank-0",
+   "arm": "hybrid",
+   "s": 10.5,
+   "error": null,
+   "finish": "stop",
+   "reply": "Statement period 1/4/2026\nAccount holder: [NAME]\n[ADDRESS], Eastport, ZZ 10004\nAccount no. [ACCOUNT]\n\nDATE    DESCRIPTION                                  AMOUNT\n1/4/2026  ACH DEBIT BIRCH DOORS INV QX-30417                 -$13,565.29\n1/4/2026  TRANSFER TO [NAME] memo trim deposit         -$450.00\n1/4/2026  CARD ENDING [CARD] HARDWARE MART                      -$86.12\n1/4/2026  DEPOSIT REF [ACCOUNT]                                +$2,400.00",
+   "secrets": 6,
+   "leaked": 0,
+   "leaked_kinds": [],
+   "keeps": 6,
+   "kept": 6,
+   "lost": []
+  },
+  {
+   "doc": "phone_note-0",
+   "arm": "model",
+   "s": 7.5,
+   "error": null,
+   "finish": "stop",
+   "reply": "Phone order taken 8/9/2026. Caller was [NAME] from Cedar Millwork (last name [NAME]). [NAME] wants 325 pieces of SH-1x4-FJ and two boxes of LM-1180-12, delivered to 8584 W Larkspur Ave by Friday. Villalobos's callback number is [PHONE]; email is [EMAIL]. Quoted $5,944.90. Told her [NAME] would follow up with the Elm Distribution lead time.",
+   "secrets": 6,
+   "leaked": 2,
+   "leaked_kinds": [
+    "name",
+    "address"
+   ],
+   "keeps": 6,
+   "kept": 6,
+   "lost": []
+  },
+  {
+   "doc": "phone_note-0",
+   "arm": "hybrid",
+   "s": 7.0,
+   "error": null,
+   "finish": "stop",
+   "reply": "Phone order taken 8/9/2026. Caller was [NAME] from Cedar Millwork (last name Villalobos). [NAME] wants 325 pieces of SH-1x4-FJ and two boxes of LM-1180-12, delivered to [ADDRESS] by Friday. Villalobos's callback number is [PHONE]; email is [EMAIL]. Quoted $5,944.90. Told her [NAME] would follow up with the Elm Distribution lead time.",
+   "secrets": 6,
+   "leaked": 1,
+   "leaked_kinds": [
+    "name"
+   ],
+   "keeps": 6,
+   "kept": 6,
+   "lost": []
+  },
+  {
+   "doc": "email-1",
+   "arm": "model",
+   "s": 9.0,
+   "error": null,
+   "finish": "stop",
+   "reply": "From: Ines Okafor <i.okafor@cedar.example>\nTo: purchasing@example.test\nDate: 1/19/2026\nSubject: PO for TR-205-16\n\nHi Dana,\n\nPlease confirm 277 LF of TR-205-16 at the quoted price. Ship to [ADDRESS], Riverton, ZZ 10001. If anything changes call me on [PHONE] or my cell [PHONE].\nTotal should come to $25,026.95. Szabo in receiving will sign for it.\n\nThanks,\n-- ines okafor\nCedar Millwork",
+   "secrets": 7,
+   "leaked": 4,
+   "leaked_kinds": [
+    "name",
+    "email",
+    "name",
+    "name"
+   ],
+   "keeps": 5,
+   "kept": 5,
+   "lost": []
+  },
+  {
+   "doc": "email-1",
+   "arm": "hybrid",
+   "s": 8.9,
+   "error": null,
+   "finish": "stop",
+   "reply": "From: Ines Okafor <[EMAIL]>\nTo: [EMAIL]\nDate: 1/19/2026\nSubject: PO for TR-205-16\n\nHi Dana,\n\nPlease confirm 277 LF of TR-205-16 at the quoted price. Ship to [ADDRESS], Riverton, ZZ 10001. If anything changes call me on [PHONE] or my cell [PHONE].\nTotal should come to $25,026.95. Szabo in receiving will sign for it.\n\nThanks,\n-- ines okafor\nCedar Millwork",
+   "secrets": 7,
+   "leaked": 3,
+   "leaked_kinds": [
+    "name",
+    "name",
+    "name"
+   ],
+   "keeps": 5,
+   "kept": 5,
+   "lost": []
+  },
+  {
+   "doc": "invoice-1",
+   "arm": "model",
+   "s": 9.5,
+   "error": null,
+   "finish": "stop",
+   "reply": "Alder Building Products\nINVOICE  7/2/2026\nSold to: Birch Doors\nAttn: [NAME]\n[ADDRESS]\n[PHONE]   [TAXID]\n\nLINE  ITEM         QTY    UNIT    EXT\n1     PN-882-PR    211 LF  2675.00  $56,442.50\n2     TR-205-16     12 EA  18.40   $220.80\n\nRemit by ACH: routing 122029682, account [ACCOUNT]. Questions: [EMAIL]",
+   "secrets": 7,
+   "leaked": 1,
+   "leaked_kinds": [
+    "routing"
+   ],
+   "keeps": 7,
+   "kept": 7,
+   "lost": []
+  },
+  {
+   "doc": "invoice-1",
+   "arm": "hybrid",
+   "s": 9.8,
+   "error": null,
+   "finish": "stop",
+   "reply": "Alder Building Products\nINVOICE  7/2/2026\nSold to: Birch Doors\nAttn: [NAME]\n[ADDRESS]\nEastport, ZZ 10004\nPhone [PHONE]   Fed Tax ID [TAXID]\n\nLINE  ITEM         QTY    UNIT    EXT\n1     PN-882-PR    211 LF  2675.00  $56,442.50\n2     TR-205-16     12 EA  18.40   $220.80\n\nRemit by ACH: routing [ACCOUNT], account [ACCOUNT]. Questions: [EMAIL]",
+   "secrets": 7,
+   "leaked": 0,
+   "leaked_kinds": [],
+   "keeps": 7,
+   "kept": 7,
+   "lost": []
+  },
+  {
+   "doc": "bank-1",
+   "arm": "model",
+   "s": 11.5,
+   "error": null,
+   "finish": "stop",
+   "reply": "Statement period 10/22/2026\nAccount holder: [NAME]\n[ADDRESS]\nAccount no. 0851 8298 70\n\nDATE    DESCRIPTION                                  AMOUNT\n10/22/2026  ACH DEBIT DOVER TRIM & DOOR INV K4410-A                 -$12,358.40\n10/22/2026  TRANSFER TO [NAME] memo trim deposit         -$450.00\n10/22/2026  CARD ENDING 3973 HARDWARE MART                      -$86.12\n10/22/2026  DEPOSIT REF 122068815                                +$2,400.00",
+   "secrets": 6,
+   "leaked": 3,
+   "leaked_kinds": [
+    "account",
+    "card",
+    "routing"
+   ],
+   "keeps": 6,
+   "kept": 6,
+   "lost": []
+  },
+  {
+   "doc": "bank-1",
+   "arm": "hybrid",
+   "s": 11.0,
+   "error": null,
+   "finish": "stop",
+   "reply": "Statement period 10/22/2026\nAccount holder: [NAME]\n[ADDRESS], Eastport, ZZ 10004\nAccount no. [ACCOUNT]\n\nDATE    DESCRIPTION                                  AMOUNT\n10/22/2026  ACH DEBIT DOVER TRIM & DOOR INV K4410-A                 -$12,358.40\n10/22/2026  TRANSFER TO [NAME] memo trim deposit         -$450.00\n10/22/2026  CARD ENDING [CARD] HARDWARE MART                      -$86.12\n10/22/2026  DEPOSIT REF [ACCOUNT]                                +$2,400.00",
+   "secrets": 6,
+   "leaked": 0,
+   "leaked_kinds": [],
+   "keeps": 6,
+   "kept": 6,
+   "lost": []
+  },
+  {
+   "doc": "phone_note-1",
+   "arm": "model",
+   "s": 6.6,
+   "error": null,
+   "finish": "stop",
+   "reply": "Phone order taken 4/12/2026. Caller was [NAME] from Dover Trim & Door (last name [NAME]). [NAME] wants 26 pieces of LM-1180-12 and two boxes of SH-1x4-FJ, delivered to [ADDRESS] by Friday. [PHONE] is [EMAIL]. Quoted $8,369.40. Told her [NAME] would follow up with the Cedar Millwork lead time.",
+   "secrets": 6,
+   "leaked": 0,
+   "leaked_kinds": [],
+   "keeps": 6,
+   "kept": 6,
+   "lost": []
+  },
+  {
+   "doc": "phone_note-1",
+   "arm": "hybrid",
+   "s": 6.9,
+   "error": null,
+   "finish": "stop",
+   "reply": "Phone order taken 4/12/2026. Caller was [NAME] from Dover Trim & Door (last name Szabo). [NAME] wants 26 pieces of LM-1180-12 and two boxes of SH-1x4-FJ, delivered to [ADDRESS] by Friday. Szabo's callback number is [PHONE]; email is [EMAIL]. Quoted $8,369.40. Told her [NAME] would follow up with the Cedar Millwork lead time.",
+   "secrets": 6,
+   "leaked": 1,
+   "leaked_kinds": [
+    "name"
+   ],
+   "keeps": 6,
+   "kept": 6,
+   "lost": []
+  },
+  {
+   "doc": "email-2",
+   "arm": "model",
+   "s": 9.2,
+   "error": null,
+   "finish": "stop",
+   "reply": "From: Dana Szabo <d.szabo@cedar.example>\nTo: purchasing@example.test\nDate: 5/1/2026\nSubject: PO for LM-1180-12\n\nHi Hector,\n\nPlease confirm 154 LF of LM-1180-12 at the quoted price. Ship to [ADDRESS], Fairmont, ZZ 10003. If anything changes call me on [PHONE] or my cell [PHONE].\nTotal should come to $59,925.25. Delacroix in receiving will sign for it.\n\nThanks,\n-- dana szabo\nCedar Millwork",
+   "secrets": 7,
+   "leaked": 4,
+   "leaked_kinds": [
+    "name",
+    "email",
+    "name",
+    "name"
+   ],
+   "keeps": 5,
+   "kept": 5,
+   "lost": []
+  },
+  {
+   "doc": "email-2",
+   "arm": "hybrid",
+   "s": 8.9,
+   "error": null,
+   "finish": "stop",
+   "reply": "From: Dana Szabo <[EMAIL]>\nTo: [EMAIL]\nDate: 5/1/2026\nSubject: PO for LM-1180-12\n\nHi Hector,\n\nPlease confirm 154 LF of LM-1180-12 at the quoted price. Ship to [ADDRESS], Fairmont, ZZ 10003. If anything changes call me on [PHONE] or my cell [PHONE].\nTotal should come to $59,925.25. Delacroix in receiving will sign for it.\n\nThanks,\n-- dana szabo\nCedar Millwork",
+   "secrets": 7,
+   "leaked": 3,
+   "leaked_kinds": [
+    "name",
+    "name",
+    "name"
+   ],
+   "keeps": 5,
+   "kept": 5,
+   "lost": []
+  },
+  {
+   "doc": "invoice-2",
+   "arm": "model",
+   "s": 9.4,
+   "error": null,
+   "finish": "stop",
+   "reply": "Elm Distribution\nINVOICE  8/24/2026\nSold to: Birch Doors\nAttn: [NAME]\n[ADDRESS]\n[PHONE] [TAXID]\n\nLINE  ITEM         QTY    UNIT    EXT\n1     LM-1180-12    299 LF  150.50  $4,499.95\n2     SH-1x4-FJ     12 EA  18.40   $220.80\n\nRemit by ACH: routing 122051207, account [ACCOUNT]. Questions: [EMAIL]",
+   "secrets": 7,
+   "leaked": 1,
+   "leaked_kinds": [
+    "routing"
+   ],
+   "keeps": 7,
+   "kept": 7,
+   "lost": []
+  },
+  {
+   "doc": "invoice-2",
+   "arm": "hybrid",
+   "s": 9.8,
+   "error": null,
+   "finish": "stop",
+   "reply": "Elm Distribution\nINVOICE  8/24/2026\nSold to: Birch Doors\nAttn: [NAME]\n[ADDRESS]\nLakeview, ZZ 10002\nPhone [PHONE]   Fed Tax ID [TAXID]\n\nLINE  ITEM         QTY    UNIT    EXT\n1     LM-1180-12    299 LF  150.50  $4,499.95\n2     SH-1x4-FJ     12 EA  18.40   $220.80\n\nRemit by ACH: routing [ACCOUNT], account [ACCOUNT]. Questions: [EMAIL]",
+   "secrets": 7,
+   "leaked": 0,
+   "leaked_kinds": [],
+   "keeps": 7,
+   "kept": 7,
+   "lost": []
+  },
+  {
+   "doc": "bank-2",
+   "arm": "model",
+   "s": 11.3,
+   "error": null,
+   "finish": "stop",
+   "reply": "Statement period 1/20/2026\nAccount holder: [NAME]\n[ADDRESS]\nAccount no. 9916 3947 60\n\nDATE    DESCRIPTION                                  AMOUNT\n1/20/2026  ACH DEBIT ELM DISTRIBUTION INV QX-30417                 -$36,564.50\n1/20/2026  TRANSFER TO [NAME] memo trim deposit         -$450.00\n1/20/2026  CARD ENDING 2821 HARDWARE MART                      -$86.12\n1/20/2026  DEPOSIT REF 122014089                                +$2,400.00",
+   "secrets": 6,
+   "leaked": 3,
+   "leaked_kinds": [
+    "account",
+    "card",
+    "routing"
+   ],
+   "keeps": 6,
+   "kept": 6,
+   "lost": []
+  },
+  {
+   "doc": "bank-2",
+   "arm": "hybrid",
+   "s": 10.8,
+   "error": null,
+   "finish": "stop",
+   "reply": "Statement period 1/20/2026\nAccount holder: [NAME]\n[ADDRESS], Lakeview, ZZ 10002\nAccount no. [ACCOUNT]\n\nDATE    DESCRIPTION                                  AMOUNT\n1/20/2026  ACH DEBIT ELM DISTRIBUTION INV QX-30417                 -$36,564.50\n1/20/2026  TRANSFER TO [NAME] memo trim deposit         -$450.00\n1/20/2026  CARD ENDING [CARD] HARDWARE MART                      -$86.12\n1/20/2026  DEPOSIT REF [ACCOUNT]                                +$2,400.00",
+   "secrets": 6,
+   "leaked": 0,
+   "leaked_kinds": [],
+   "keeps": 6,
+   "kept": 6,
+   "lost": []
+  },
+  {
+   "doc": "phone_note-2",
+   "arm": "model",
+   "s": 6.7,
+   "error": null,
+   "finish": "stop",
+   "reply": "Phone order taken 1/18/2026. Caller was [NAME] from Elm Distribution (last name [NAME]). [NAME] wants 179 pieces of K4410-A and two boxes of PN-882-PR, delivered to [ADDRESS] by Friday. [PHONE] is [PHONE]; email is [EMAIL]. Quoted $5,029.90. Told her [NAME] would follow up with the Birch Doors lead time.",
+   "secrets": 6,
+   "leaked": 0,
+   "leaked_kinds": [],
+   "keeps": 6,
+   "kept": 6,
+   "lost": []
+  },
+  {
+   "doc": "phone_note-2",
+   "arm": "hybrid",
+   "s": 6.8,
+   "error": null,
+   "finish": "stop",
+   "reply": "Phone order taken 1/18/2026. Caller was [NAME] from Elm Distribution (last name Szabo). Lucia wants 179 pieces of K4410-A and two boxes of PN-882-PR, delivered to [ADDRESS] by Friday. Szabo's callback number is [PHONE]; email is [EMAIL]. Quoted $5,029.90. Told her Marisol Murtagh would follow up with the Birch Doors lead time.",
+   "secrets": 6,
+   "leaked": 3,
+   "leaked_kinds": [
+    "name",
+    "name",
+    "name"
+   ],
+   "keeps": 6,
+   "kept": 6,
+   "lost": []
+  }
+ ]
+}

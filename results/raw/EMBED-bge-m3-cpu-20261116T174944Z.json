@@ -1,0 +1,47 @@
+{
+ "test": "EMBED",
+ "model": "bge-m3-cpu",
+ "date": "20261116T174944Z",
+ "args": {
+  "model": "bge-m3-cpu",
+  "timeout": 1200.0,
+  "think": "auto",
+  "base_url_b": "http://127.0.0.1:8090",
+  "model_b": "embed-gpu",
+  "chunks": 8,
+  "queries": 10,
+  "chunk_chars": 3200,
+  "query_chars": 120,
+  "selftest": false
+ },
+ "chunks": 8,
+ "chunk_chars": 3200,
+ "A": {
+  "label": "A",
+  "model": "bge-m3-cpu",
+  "n_chunks": 8,
+  "chunk_chars": 3200,
+  "batch_s": 27.605,
+  "ms_per_chunk": 3450.6,
+  "dim": 1024,
+  "query_median_s": 0.135,
+  "query_p95_s": 0.155,
+  "query_n": 10,
+  "query_chars": 120
+ },
+ "B": {
+  "label": "B",
+  "model": "embed-gpu",
+  "n_chunks": 8,
+  "chunk_chars": 3200,
+  "batch_s": 27.334,
+  "ms_per_chunk": 3416.8,
+  "dim": 1024,
+  "query_median_s": 0.1395,
+  "query_p95_s": 0.163,
+  "query_n": 10,
+  "query_chars": 120
+ },
+ "min_cosine": 0.9999999999999998,
+ "speed_ratio": 1.0098922968859751
+}

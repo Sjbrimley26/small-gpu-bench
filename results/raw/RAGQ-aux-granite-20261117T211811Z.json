@@ -1,0 +1,243 @@
+{
+ "test": "RAGQ",
+ "model": "aux-granite",
+ "date": "20261117T211811Z",
+ "args": {
+  "selftest": false,
+  "limit": 0,
+  "max_tokens": 900,
+  "model": "aux-granite",
+  "timeout": 1200.0,
+  "think": "off"
+ },
+ "summary": {
+  "correct": 9,
+  "scored": 10,
+  "transport_errors": 0,
+  "by_type": {
+   "exact": "2/2",
+   "freshness": "2/2",
+   "negative": "2/2",
+   "synthesis": "2/2",
+   "vague": "1/2"
+  },
+  "cited_something": 0,
+  "mean_s": 2.3,
+  "mean_completion_tokens": 66
+ },
+ "rows": [
+  {
+   "qid": "E1",
+   "type": "exact",
+   "question": "what are the terms from Ridgeway Clay for paying an invoice early?",
+   "docs": [
+    "D4"
+   ],
+   "answer": "According to the provided context, Ridgeway Clay offers a term for paying an invoice early with a 2% discount if the invoice is paid within 10 days. There is no information about additional terms or conditions for early payment.",
+   "correct": true,
+   "checks": {
+    "2% discount": true,
+    "10 days": true
+   },
+   "cited": [],
+   "chars": 228,
+   "finish": "stop",
+   "s": 1.8,
+   "completion_tokens": 52,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "E2",
+   "type": "exact",
+   "question": "what does a student pay per month for studio access?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "A student pays $30 per month for studio access.",
+   "correct": true,
+   "checks": {
+    "30": true,
+    "not 45 quoted as the student rate": true
+   },
+   "cited": [],
+   "chars": 47,
+   "finish": "stop",
+   "s": 0.6,
+   "completion_tokens": 14,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F1",
+   "type": "freshness",
+   "question": "how long does the kiln hold at cone 6 these days?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "The kiln holds at cone 6 for 12 minutes, as per the revised firing schedule from 2026-09. The 2019 schedule does not provide information on the cone 6 hold time.",
+   "correct": true,
+   "checks": {
+    "12 minutes": true,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [],
+   "chars": 161,
+   "finish": "stop",
+   "s": 2.1,
+   "completion_tokens": 55,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F2",
+   "type": "freshness",
+   "question": "what nozzle size is the 3D printer running?",
+   "docs": [
+    "D7",
+    "D8"
+   ],
+   "answer": "The 3D printer is running with a nozzle size of 0.4 mm, as per the first note.",
+   "correct": true,
+   "checks": {
+    "0.4 mm": true,
+    "stale value only if labelled old (0.6 mm)": true
+   },
+   "cited": [],
+   "chars": 78,
+   "finish": "stop",
+   "s": 1.1,
+   "completion_tokens": 26,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N1",
+   "type": "negative",
+   "question": "what does it cost to rent the kiln out to an outside group, and what deposit is required?",
+   "docs": [
+    "D1",
+    "D5",
+    "D9"
+   ],
+   "answer": "The cost to rent the kiln out to an outside group is not explicitly stated in the provided context. However, the firing cost is not charged per person but per cubic foot. The context does not provide specific pricing for this service. As for the deposit, the context does not mention any deposit requirement for renting the kiln. Therefore, the information is not recorded in the documents.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not invents a rental price": true,
+    "not invents a deposit": true
+   },
+   "cited": [],
+   "chars": 390,
+   "finish": "stop",
+   "s": 3.1,
+   "completion_tokens": 84,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N2",
+   "type": "negative",
+   "question": "when did the shop buy its second kiln?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "The note context does not provide information on when the shop bought its second kiln. Therefore, the answer is: Not recorded in the documents.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not asserts a purchase": true
+   },
+   "cited": [],
+   "chars": 143,
+   "finish": "stop",
+   "s": 1.4,
+   "completion_tokens": 32,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S1",
+   "type": "synthesis",
+   "question": "what was measured when the kiln element was replaced, and what does the firing schedule ask for at cone 6 now?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "When the kiln element was replaced, the resistance was measured at 9.8 ohms per element pair. The revised firing schedule for Cone 6 now asks for the following:\n\n1. Ramp the temperature 120\u00b0C per hour to 1200\u00b0C.\n2. Hold the temperature at 1200\u00b0C for 12 minutes.\n3. Cool the kiln down to 800\u00b0C at a rate of 80\u00b0C per hour.\n4. Close the lid after reaching 600\u00b0C.\n5. Do not open the lid above 300\u00b0C.\n\nThe next service for Kiln 1 is due in March 2027.",
+   "correct": true,
+   "checks": {
+    "9.8 ohms": true,
+    "12 minutes hold": true,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [],
+   "chars": 446,
+   "finish": "stop",
+   "s": 5.4,
+   "completion_tokens": 168,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S2",
+   "type": "synthesis",
+   "question": "someone visits once a week - is a membership or day passes cheaper for them in a month, and by how much?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "Based on the provided context, it's not explicitly stated how often the individual visits per month or the total number of visits. However, we can compare the costs for a monthly basis:\n\n1. Membership: 45 per month (regardless of the number of visits)\n2. Day pass: 12 per visit. Assuming an average of 4 visits per month (as no specific number is given), the total cost would be 48 per month.\n\nWithout the exact number of visits per month, it's not possible to definitively say whether a membership or day passes is cheaper. However, if we assume an average of 4 visits per month, a day pass would be approximately 8 more expensive than a membership in a month.",
+   "correct": true,
+   "checks": {
+    "45 dues": true,
+    "12 per pass": true,
+    "the comparison (48 / 3.75 visits / four visits)": true
+   },
+   "cited": [],
+   "chars": 661,
+   "finish": "stop",
+   "s": 5.1,
+   "completion_tokens": 168,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V1",
+   "type": "vague",
+   "question": "remind me what we charge the drop-in crowd",
+   "docs": [
+    "D5",
+    "D9"
+   ],
+   "answer": "We charge a day visit fee of 12 per visit. Firing charges are based on the cubic foot above the included shelf space.",
+   "correct": true,
+   "checks": {
+    "12 per day pass": true
+   },
+   "cited": [],
+   "chars": 117,
+   "finish": "stop",
+   "s": 1.1,
+   "completion_tokens": 30,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V2",
+   "type": "vague",
+   "question": "how long do we hold the top temperature?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "The top temperature is held for 20 minutes for Cone 04 bisque and 25 minutes for Cone 6 glaze.",
+   "correct": false,
+   "checks": {
+    "12 minutes": false,
+    "stale value only if labelled old (25 minutes)": false
+   },
+   "cited": [],
+   "chars": 94,
+   "finish": "stop",
+   "s": 1.4,
+   "completion_tokens": 32,
+   "reasoning_chars": 0
+  }
+ ],
+ "invalid": false,
+ "arm": "ragq-syn",
+ "thinking": "off"
+}

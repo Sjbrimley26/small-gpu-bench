@@ -10,7 +10,8 @@ themselves are in `docs/excerpts/`.
 record for every test it runs — including the runs made with this repo's harnesses — and a row is copied into
 this repo only after it exists in the lab file, and only when it can be published. The ported matrix rows were
 produced by `scripts/export_results.py` from that lab file and rewritten by `scripts/sanitize_results.py`; rows
-measured after the port (EMBED, SPEED, FIM, the §117 and §118 runs) were added by hand under the same rule.
+measured after the port (EMBED, SPEED, FIM, the §117, §118 and §120 runs — the §120 runs include the two
+tests added with them, PO-SYN and RAGQ-SYN) were added by hand under the same rule.
 A row that appears here with no lab-side counterpart is a bug in the record, not a variant of it.
 
 ## Sanitising the seat names

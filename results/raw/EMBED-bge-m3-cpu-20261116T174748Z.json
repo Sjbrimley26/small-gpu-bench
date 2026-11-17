@@ -1,0 +1,33 @@
+{
+ "test": "EMBED",
+ "model": "bge-m3-cpu",
+ "date": "20261116T174748Z",
+ "args": {
+  "model": "bge-m3-cpu",
+  "timeout": 1200.0,
+  "think": "auto",
+  "base_url_b": "",
+  "model_b": "",
+  "chunks": 8,
+  "queries": 10,
+  "chunk_chars": 3200,
+  "selftest": false
+ },
+ "chunks": 8,
+ "chunk_chars": 3200,
+ "A": {
+  "label": "A",
+  "model": "bge-m3-cpu",
+  "n_chunks": 8,
+  "chunk_chars": 3200,
+  "batch_s": 29.722,
+  "ms_per_chunk": 3715.2,
+  "dim": 1024,
+  "query_median_s": 3.495,
+  "query_p95_s": 3.736,
+  "query_n": 10
+ },
+ "B": null,
+ "min_cosine": null,
+ "speed_ratio": null
+}

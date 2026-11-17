@@ -1,0 +1,162 @@
+{
+ "test": "PO-REAL",
+ "model": "lfm3-qad",
+ "date": "20261117T233636Z",
+ "args": {
+  "selftest": false,
+  "max_tokens": 3000,
+  "model": "lfm3-qad",
+  "timeout": 1200.0,
+  "think": "off"
+ },
+ "row": {
+  "arm": "real",
+  "parse": "strict",
+  "finish": "stop",
+  "s": 31.8,
+  "chars": 2847,
+  "completion_tokens": 1257,
+  "prompt_tokens": 3752,
+  "thinking": "off",
+  "max_tokens": 3000,
+  "reply_head": "{\n  \"vendor\": \"1561558062 6\",\n  \"po_number\": \"HHSTX-7-0000417784\",\n  \"order_date\": \"11/02/26\",\n  \"payment_terms\": \"Net 30\",\n  \"freight_terms\": \"Prepaid & Allow\",\n  \"ship_to\": \"PO Box 318, Rusk TX 75785, United States\",\n  \"line_items\": [\n    {\"line\": \"1-1\", \"class_code\": \"200-16\", \"description\": \"Coat, Khaki Work Blanket Lnd/ Item # 652-KH /Khaki /1 ea/6 ea/mc/ SIZES\", \"qty\": 200, \"uom\": \"EA\", \"unit_price\": 102.00, \"amount\": 2584.68, \"due_date\": \"11/16/2026\"},\n    {\"line\": \"2-1\", \"class_code\": \"201-87\", \"description\": \"Boxers/ Item # EBXV- White/Value/12each/dz, 10dz-mc/SIZES\", \"qty\": 20, \"uom\"",
+  "json_valid": true,
+  "schema_keys": 8,
+  "fields": false,
+  "total_exact": true,
+  "items_found": 12,
+  "items_exact": 11,
+  "arith_consistent": false,
+  "parsed": {
+   "vendor": "1561558062 6",
+   "po_number": "HHSTX-7-0000417784",
+   "order_date": "11/02/26",
+   "payment_terms": "Net 30",
+   "freight_terms": "Prepaid & Allow",
+   "ship_to": "PO Box 318, Rusk TX 75785, United States",
+   "line_items": [
+    {
+     "line": "1-1",
+     "class_code": "200-16",
+     "description": "Coat, Khaki Work Blanket Lnd/ Item # 652-KH /Khaki /1 ea/6 ea/mc/ SIZES",
+     "qty": 200,
+     "uom": "EA",
+     "unit_price": 102.0,
+     "amount": 2584.68,
+     "due_date": "11/16/2026"
+    },
+    {
+     "line": "2-1",
+     "class_code": "201-87",
+     "description": "Boxers/ Item # EBXV- White/Value/12each/dz, 10dz-mc/SIZES",
+     "qty": 20,
+     "uom": "C12",
+     "unit_price": 15.7,
+     "amount": 314.0,
+     "due_date": "11/16/2026"
+    },
+    {
+     "line": "3-1",
+     "class_code": "200-44",
+     "description": "Sweatpants, Value/Item # VSP-GU- 4XL/Gray/1ea/24ea-mc/",
+     "qty": 24,
+     "uom": "EA",
+     "unit_price": 9.53,
+     "amount": 228.72,
+     "due_date": "11/16/2026"
+    },
+    {
+     "line": "4-1",
+     "class_code": "200-44",
+     "description": "Sweatpants, Value/Item # VSP-GU- 5XL/Gray/1ea/12ea-mc/",
+     "qty": 12,
+     "uom": "EA",
+     "unit_price": 9.95,
+     "amount": 119.4,
+     "due_date": "11/16/2026"
+    },
+    {
+     "line": "5-1",
+     "class_code": "200-44",
+     "description": "Jeans/Item # Z9393V3436/Blue Denim Size 34x36",
+     "qty": 12,
+     "uom": "EA",
+     "unit_price": 22.84,
+     "amount": 274.08,
+     "due_date": "11/16/2026"
+    },
+    {
+     "line": "6-1",
+     "class_code": "201-51",
+     "description": "Ankle Socks/Item # M4595/Men\u00bfs White Ankle Socks/Fits 8-12/ 12ea-dz, 15dz-mc",
+     "qty": 15,
+     "uom": "C12",
+     "unit_price": 12.94,
+     "amount": 194.1,
+     "due_date": "11/16/2026"
+    },
+    {
+     "line": "7-1",
+     "class_code": "201-51",
+     "description": "Sock-Big Foot/Item # WLOS16/Low Cut White Socks/12-cs/M20D12",
+     "qty": 20,
+     "uom": "C12",
+     "unit_price": 13.94,
+     "amount": 278.8,
+     "due_date": "11/16/2026"
+    },
+    {
+     "line": "8-1",
+     "class_code": "200-16",
+     "description": "Sweatshirt/Item # GVSS-GY/Sweatshirt, Value, Gray/1ea/24ea-mc/SIZES",
+     "qty": 96,
+     "uom": "EA",
+     "unit_price": 6.92,
+     "amount": 664.32,
+     "due_date": "11/16/2026"
+    },
+    {
+     "line": "9-1",
+     "class_code": "200-16",
+     "description": "Sweatshirt/Item # VSS-GY-4XL/1 ea Sweatshirt/Item #VSS-GY-",
+     "qty": 60,
+     "uom": "EA",
+     "unit_price": 9.53,
+     "amount": 571.8,
+     "due_date": "11/16/2026"
+    },
+    {
+     "line": "10-1",
+     "class_code": "200-44",
+     "description": "Sweatpants/Item # VSP-GY/Value, Gray, Sweatpants/1 ea, 24 ea-mc/SIZES",
+     "qty": 264,
+     "uom": "EA",
+     "unit_price": 6.92,
+     "amount": 1826.88,
+     "due_date": "11/16/2026"
+    },
+    {
+     "line": "11-1",
+     "class_code": "200-44",
+     "description": "Sweatpants/Item # VSP-GY-2XL/Value, Gray, Sweatpants/1 ea, 24 ea-mc",
+     "qty": 72,
+     "uom": "EA",
+     "unit_price": 7.79,
+     "amount": 560.88,
+     "due_date": "11/16/2026"
+    },
+    {
+     "line": "12-1",
+     "class_code": "200-44",
+     "description": "Sweatpants/Item # VSP-GY-3XL/Value, Gray, Sweatpants/1 ea, 24 ea-mc/",
+     "qty": 24,
+     "uom": "EA",
+     "unit_price": 9.53,
+     "amount": 228.72,
+     "due_date": "11/16/2026"
+    }
+   ],
+   "total": 7846.38
+  }
+ }
+}

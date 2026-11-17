@@ -1,0 +1,25 @@
+{
+ "test": "PO-REAL",
+ "model": "lfm3-agent",
+ "date": "20261117T233102Z",
+ "args": {
+  "selftest": false,
+  "max_tokens": 3000,
+  "model": "lfm3-agent",
+  "timeout": 1200.0,
+  "think": "off"
+ },
+ "row": {
+  "arm": "real",
+  "parse": "invalid",
+  "finish": "length",
+  "s": 76.1,
+  "chars": 12257,
+  "completion_tokens": 3000,
+  "prompt_tokens": 3752,
+  "thinking": "off",
+  "max_tokens": 3000,
+  "reply_head": "We need to extract a purchase order into a JSON object with specific fields. Let's parse the document carefully.\n\nFrom the document, we see multiple repeated sections. We need to find key values:\n\n- Vendor: \"1561558062 6\" or \"BOB BARKER COMPANY INC\"? The line says:\n  \"Vendor:         1561558062 6                                                          Bill To:      Terrell SH Whse\n                BOB BARKER COMPANY INC\"\n\nBut earlier: \"VENDOR CONTACT: [redacted] (682)218-7211\". Also, there is a PO number.\n\nLooking at the top:\n\"Purchase Order TX SmartBuy PO ID ... HHSTX-7-0000417784\"\nLater in t",
+  "json_valid": false
+ }
+}

@@ -1,0 +1,243 @@
+{
+ "test": "RAGQ",
+ "model": "moonbeam-agent",
+ "date": "20261117T214144Z",
+ "args": {
+  "selftest": false,
+  "limit": 0,
+  "max_tokens": 900,
+  "model": "moonbeam-agent",
+  "timeout": 1200.0,
+  "think": "off"
+ },
+ "summary": {
+  "correct": 6,
+  "scored": 10,
+  "transport_errors": 0,
+  "by_type": {
+   "exact": "2/2",
+   "freshness": "0/2",
+   "negative": "2/2",
+   "synthesis": "1/2",
+   "vague": "1/2"
+  },
+  "cited_something": 0,
+  "mean_s": 1.9,
+  "mean_completion_tokens": 19
+ },
+ "rows": [
+  {
+   "qid": "E1",
+   "type": "exact",
+   "question": "what are the terms from Ridgeway Clay for paying an invoice early?",
+   "docs": [
+    "D4"
+   ],
+   "answer": "2% discount if the invoice is paid within 10 days.",
+   "correct": true,
+   "checks": {
+    "2% discount": true,
+    "10 days": true
+   },
+   "cited": [],
+   "chars": 50,
+   "finish": "stop",
+   "s": 2.9,
+   "completion_tokens": 15,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "E2",
+   "type": "exact",
+   "question": "what does a student pay per month for studio access?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "A student pays 30 per month for studio access.",
+   "correct": true,
+   "checks": {
+    "30": true,
+    "not 45 quoted as the student rate": true
+   },
+   "cited": [],
+   "chars": 46,
+   "finish": "stop",
+   "s": 0.7,
+   "completion_tokens": 13,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F1",
+   "type": "freshness",
+   "question": "how long does the kiln hold at cone 6 these days?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "The context does not record how long the kiln holds at cone 6 these days.",
+   "correct": false,
+   "checks": {
+    "12 minutes": false,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [],
+   "chars": 73,
+   "finish": "stop",
+   "s": 3.6,
+   "completion_tokens": 18,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F2",
+   "type": "freshness",
+   "question": "what nozzle size is the 3D printer running?",
+   "docs": [
+    "D7",
+    "D8"
+   ],
+   "answer": "The context does not answer this question.",
+   "correct": false,
+   "checks": {
+    "0.4 mm": false,
+    "stale value only if labelled old (0.6 mm)": true
+   },
+   "cited": [],
+   "chars": 42,
+   "finish": "stop",
+   "s": 1.0,
+   "completion_tokens": 9,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N1",
+   "type": "negative",
+   "question": "what does it cost to rent the kiln out to an outside group, and what deposit is required?",
+   "docs": [
+    "D1",
+    "D5",
+    "D9"
+   ],
+   "answer": "The context does not record the cost to rent the kiln out to an outside group or the deposit required.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not invents a rental price": true,
+    "not invents a deposit": true
+   },
+   "cited": [],
+   "chars": 102,
+   "finish": "stop",
+   "s": 4.3,
+   "completion_tokens": 22,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N2",
+   "type": "negative",
+   "question": "when did the shop buy its second kiln?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "The context does not record when the shop bought its second kiln.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not asserts a purchase": true
+   },
+   "cited": [],
+   "chars": 65,
+   "finish": "stop",
+   "s": 0.9,
+   "completion_tokens": 14,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S1",
+   "type": "synthesis",
+   "question": "what was measured when the kiln element was replaced, and what does the firing schedule ask for at cone 6 now?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "The context does not record what was measured when the kiln element was replaced, nor does it state what the firing schedule asks for at cone 6 now.",
+   "correct": false,
+   "checks": {
+    "9.8 ohms": false,
+    "12 minutes hold": false,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [],
+   "chars": 148,
+   "finish": "stop",
+   "s": 1.4,
+   "completion_tokens": 32,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S2",
+   "type": "synthesis",
+   "question": "someone visits once a week - is a membership or day passes cheaper for them in a month, and by how much?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "A membership is cheaper. The membership costs 45 per month, while day passes cost 12 per visit. In a month with 4 visits, day passes would cost 48. The membership is cheaper by 3.",
+   "correct": true,
+   "checks": {
+    "45 dues": true,
+    "12 per pass": true,
+    "the comparison (48 / 3.75 visits / four visits)": true
+   },
+   "cited": [],
+   "chars": 179,
+   "finish": "stop",
+   "s": 1.7,
+   "completion_tokens": 49,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V1",
+   "type": "vague",
+   "question": "remind me what we charge the drop-in crowd",
+   "docs": [
+    "D5",
+    "D9"
+   ],
+   "answer": "The drop-in crowd is charged $12 per visit.",
+   "correct": true,
+   "checks": {
+    "12 per day pass": true
+   },
+   "cited": [],
+   "chars": 43,
+   "finish": "stop",
+   "s": 0.7,
+   "completion_tokens": 13,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V2",
+   "type": "vague",
+   "question": "how long do we hold the top temperature?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "The context does not answer this question.",
+   "correct": false,
+   "checks": {
+    "12 minutes": false,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [],
+   "chars": 42,
+   "finish": "stop",
+   "s": 2.1,
+   "completion_tokens": 9,
+   "reasoning_chars": 0
+  }
+ ],
+ "invalid": false,
+ "arm": "ragq-syn",
+ "thinking": "off"
+}

@@ -1,0 +1,254 @@
+{
+ "test": "RAGQ",
+ "model": "lfm3-agent",
+ "date": "20261117T214445Z",
+ "args": {
+  "selftest": false,
+  "limit": 0,
+  "max_tokens": 900,
+  "model": "lfm3-agent",
+  "timeout": 1200.0,
+  "think": "off"
+ },
+ "summary": {
+  "correct": 7,
+  "scored": 10,
+  "transport_errors": 0,
+  "by_type": {
+   "exact": "2/2",
+   "freshness": "1/2",
+   "negative": "2/2",
+   "synthesis": "2/2",
+   "vague": "0/2"
+  },
+  "cited_something": 4,
+  "mean_s": 5.9,
+  "mean_completion_tokens": 254
+ },
+ "rows": [
+  {
+   "qid": "E1",
+   "type": "exact",
+   "question": "what are the terms from Ridgeway Clay for paying an invoice early?",
+   "docs": [
+    "D4"
+   ],
+   "answer": "The provided NOTE CONTEXT under [D4] SUPPLIER TERMS states for Ridgeway Clay: \"net 30. 2% discount if the invoice is paid within 10 days.\" This indicates that paying an invoice early (within 10 days) qualifies for a 2% discount, while the standard net 30 terms apply otherwise.\n\nAnswer: The terms from Ridgeway Clay for paying an invoice early are a 2% discount if the invoice is paid within 10 days; otherwise, payment is due net 30.",
+   "correct": true,
+   "checks": {
+    "2% discount": true,
+    "10 days": true
+   },
+   "cited": [
+    "D4"
+   ],
+   "chars": 434,
+   "finish": "stop",
+   "s": 2.6,
+   "completion_tokens": 110,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "E2",
+   "type": "exact",
+   "question": "what does a student pay per month for studio access?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "The context states: \"Studio dues 45 per month, including two shelf-feet and firing up to 4 cu ft.\" This indicates that studio access for members costs $45 per month. However, there is also a line about \"Student rate 30 per month with a current student id.\" \n\nSince the question asks specifically what a *student* pays per month for studio access, the relevant entry is \"Student rate 30 per month with a current student id.\"\n\nTherefore, a student pays $30 per month for studio access.\n\nAnswer: $30 per month.",
+   "correct": true,
+   "checks": {
+    "30": true,
+    "not 45 quoted as the student rate": true
+   },
+   "cited": [],
+   "chars": 507,
+   "finish": "stop",
+   "s": 2.7,
+   "completion_tokens": 117,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F1",
+   "type": "freshness",
+   "question": "how long does the kiln hold at cone 6 these days?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "The provided NOTE CONTEXT includes two entries about firing schedules for KILN 1. \n\n- [D1] (revised 2026-09) states for \"Cone 6 glaze\": ramp 120 \u00b0C per hour to 1200 \u00b0C, **hold 12 minutes**, cool 80 \u00b0C per hour to 800 \u00b0C, lids shut after 600 \u00b0C. It also says: \"Do not open the lid above 300 \u00b0C.\"\n\n- [D2] (printed 2019) states for \"Cone 6 glaze\": ramp 120 \u00b0C per hour to 1200 \u00b0C, **hold 25 minutes**, lids shut at 900 \u00b0C.\n\nThe question asks: \"how long does the kiln hold at cone 6 these days?\" The term \"these days\" implies the most recent schedule. [D1] is labeled as revised 2026-09 (more recent than D2's 2019), so it represents the current schedule. According to [D1], for Cone 6 glaze, the hold time is **12 minutes**.\n\nThus, based on the most recent context ([D1]), the kiln holds at cone 6 for 12 minutes.\n\nAnswer: 12 minutes.",
+   "correct": true,
+   "checks": {
+    "12 minutes": true,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [
+    "D1",
+    "D2"
+   ],
+   "chars": 831,
+   "finish": "stop",
+   "s": 6.3,
+   "completion_tokens": 268,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F2",
+   "type": "freshness",
+   "question": "what nozzle size is the 3D printer running?",
+   "docs": [
+    "D7",
+    "D8"
+   ],
+   "answer": "The context contains two entries for a 3D printer:\n\n- [D7] from 2026-06: Nozzle size **0.4 mm hardened steel**.\n- [D8] from 2021: Nozzle size **0.6 mm brass**.\n\nSince the question asks about \"the 3D printer running\" without specifying a date, and D7 is more recent (2026 vs. 2021), the current/running nozzle size would be the one listed in [D7].\n\nThus, the 3D printer running has a **0.4 mm hardened steel** nozzle.\n\nNote: If multiple entries exist for different dates and \"running\" implies the latest update, D7 is appropriate. However, without explicit indication of which card corresponds to the current state, I rely on the most recent date (2026-06) as the running configuration.\n\nAnswer: **0.4 mm hardened steel** (from [D7] 3D PRINTER updated 2026-06).",
+   "correct": false,
+   "checks": {
+    "0.4 mm": true,
+    "stale value only if labelled old (0.6 mm)": false
+   },
+   "cited": [
+    "D7",
+    "D8"
+   ],
+   "chars": 760,
+   "finish": "stop",
+   "s": 5.1,
+   "completion_tokens": 217,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N1",
+   "type": "negative",
+   "question": "what does it cost to rent the kiln out to an outside group, and what deposit is required?",
+   "docs": [
+    "D1",
+    "D5",
+    "D9"
+   ],
+   "answer": "The provided NOTE CONTEXT does not contain information about renting a kiln out to an outside group or any required deposit for such a rental. Therefore, I cannot answer this question from the given documents.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not invents a rental price": true,
+    "not invents a deposit": true
+   },
+   "cited": [],
+   "chars": 209,
+   "finish": "stop",
+   "s": 4.2,
+   "completion_tokens": 172,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N2",
+   "type": "negative",
+   "question": "when did the shop buy its second kiln?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "The provided context includes details about \"FIRING SCHEDULE - KILN 1 (revised 2026-09)\" and a \"KILN 1 SERVICE NOTE (2026-03)\", but neither mentions when the shop bought its second kiln. Therefore, this information is not recorded in the documents.\n\nPlainly: It is not recorded in the documents.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not asserts a purchase": true
+   },
+   "cited": [],
+   "chars": 295,
+   "finish": "stop",
+   "s": 2.0,
+   "completion_tokens": 78,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S1",
+   "type": "synthesis",
+   "question": "what was measured when the kiln element was replaced, and what does the firing schedule ask for at cone 6 now?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "- When Element 3 was replaced, **resistance measured 9.8 ohms per element pair** (from KILN 1 SERVICE NOTE [D11]).\n- For Cone 6 glaze on KILN 1, the firing schedule now asks for: ramp at **120 \u00b0C per hour to 1200 \u00b0C**, hold **12 minutes**, cool at **80 \u00b0C per hour to 800 \u00b0C**, lids shut after **600 \u00b0C**, and do not open the lid above **300 \u00b0C** (from FIRING SCHEDULE [D1]).\n\nThus, the firing schedule asks for a ramp of 120\u202f\u00b0C/hr up to 1200\u202f\u00b0C, then hold 12 min, cool 80\u202f\u00b0C/hr down to 800\u202f\u00b0C, with lids shutting at 600\u202f\u00b0C and no opening above 300\u202f\u00b0C.",
+   "correct": true,
+   "checks": {
+    "9.8 ohms": true,
+    "12 minutes hold": true,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [
+    "D1",
+    "D11"
+   ],
+   "chars": 552,
+   "finish": "stop",
+   "s": 15.6,
+   "completion_tokens": 686,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S2",
+   "type": "synthesis",
+   "question": "someone visits once a week - is a membership or day passes cheaper for them in a month, and by how much?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "The provided NOTE CONTEXT does not include enough information to determine whether a membership or day passes would be cheaper for someone who visits once a week in a month, nor by how much. Specifically:\n\n- Membership costs $45 per month.\n- Day pass costs $12 per visit; firing charges are based on cubic feet but the rate per cubic foot is not given.\n- Without knowing the number of cubic feet or the charge per cubic foot for firing, we cannot calculate the total cost of day passes for a weekly visitor (approximately 4 visits per month).\n- The student rate ($30/month) is mentioned but only if the person qualifies as a student; even then, it doesn\u2019t allow comparison with day passes without firing costs.\n\nTherefore, the answer is not recorded in the documents.",
+   "correct": true,
+   "checks": {
+    "45 dues": true,
+    "12 per pass": true,
+    "the comparison (48 / 3.75 visits / four visits)": true
+   },
+   "cited": [],
+   "chars": 767,
+   "finish": "stop",
+   "s": 16.4,
+   "completion_tokens": 735,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V1",
+   "type": "vague",
+   "question": "remind me what we charge the drop-in crowd",
+   "docs": [
+    "D5",
+    "D9"
+   ],
+   "answer": "I don't have any information in the provided NOTE CONTEXT about what you charge the drop-in crowd. The context mentions studio dues, day passes, student rates, and shipping costs, but nothing about \"drop-in\" pricing. \n\nYou should say that it is not recorded in the documents.",
+   "correct": false,
+   "checks": {
+    "12 per day pass": false
+   },
+   "cited": [],
+   "chars": 275,
+   "finish": "stop",
+   "s": 1.6,
+   "completion_tokens": 60,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V2",
+   "type": "vague",
+   "question": "how long do we hold the top temperature?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "The provided NOTE CONTEXT includes firing schedules for kiln 1, but it does not mention \"top temperature\" or a specific duration to hold that top temperature. The relevant entries discuss ramp rates, holding times at certain temperatures (e.g., 1000 C, 1200 C, 800 C), and lid shut-off points, but none specify a \"top temperature\" hold time.\n\nTherefore, based on the given documents, it is not recorded how long we hold the top temperature.",
+   "correct": false,
+   "checks": {
+    "12 minutes": false,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [],
+   "chars": 440,
+   "finish": "stop",
+   "s": 2.5,
+   "completion_tokens": 101,
+   "reasoning_chars": 0
+  }
+ ],
+ "invalid": false,
+ "arm": "ragq-syn",
+ "thinking": "off"
+}

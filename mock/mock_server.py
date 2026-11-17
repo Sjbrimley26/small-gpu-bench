@@ -155,6 +155,93 @@ def reply_for(model, messages, tools):
         return json.dumps({"price": price, "item": kind, "condition": "good", "pickup_only": "ickup" in user,
                            "red_flags": flags}), None
     # --- tests
+    if first_user.startswith("Extract the purchase order below") and '"class_code"' in first_user:
+        # PO-REAL: gold by construction from the committed fixture; "small" drops lines and rounds the total
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests"))
+        import po_real
+        _, gold = po_real.load()
+        if "small" in model:
+            gold = json.loads(json.dumps(gold))
+            gold["line_items"] = gold["line_items"][:9]
+            gold["total"] = round(gold["total"] - 3, 2)
+        return json.dumps(gold), None
+    if first_user.startswith("Extract the purchase order below"):    # PO-SYN: gold by construction; "small" is wrong
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests"))
+        import po
+        _, gold = po.build()
+        if "small" in model:                     # drop three items, inflate the total, wrap it in prose
+            gold = json.loads(json.dumps(gold))
+            gold["line_items"] = gold["line_items"][:5]
+            gold["total"] = round(gold["total"] + 40, 2)
+            return "Here is the data: " + json.dumps(gold), None
+        return json.dumps(gold), None
+    if system.startswith("You answer questions using only the NOTE CONTEXT") and "13 CFR 125.6" in user or (
+            system.startswith("You answer questions using only the NOTE CONTEXT") and "NIST SP 800-63B" in user):
+        # RAGQ-REAL: canned answers by question; "small" repeats the superseded value where there is a pair
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests"))
+        import ragq_real
+        q = next((x for x in ragq_real.QUESTIONS if x["question"] in user), None)
+        if q is None:
+            return "The context does not record that.", None
+        small = "small" in model
+        good = {
+            "E1": "Services contracts may pay at most 50% to firms that are not similarly situated.",
+            "E2": "Verifiers and CSPs should permit at least 64 characters.",
+            "F1": "For a multi-agency set-aside, the ordering agency uses the period of performance for each order.",
+            "F2": "15 characters when the password is a single factor; 8 is still permitted for multi-factor use.",
+            "N1": "The documents do not state a size standard for NAICS 236220.",
+            "N2": "No password manager product is recommended; the documents only require that managers be allowed.",
+            "S1": "Services 50%, general construction 85%, special trade construction 75%.",
+            "S2": "Single-factor passwords went from 8 to 15 characters and composition rules are not imposed.",
+            "V1": "At most 50% of a services contract may go to non-similarly-situated firms (85% general construction, 75% special trade).",
+            "V2": "15 characters for a single-factor password, 8 when it is part of multi-factor authentication.",
+        }
+        stale = {
+            "E1": "Services contracts may pay at most 50% to firms that are not similarly situated.",
+            "E2": "Verifiers should permit at least 64 characters.",
+            "F1": "Compliance is measured over the base term and then each subsequent option period.",
+            "F2": "8 characters is the minimum password length.",
+            "N1": "The size standard is $30 million in average annual receipts.",
+            "N2": "NIST recommends Bitwarden.",
+            "S1": "Services 50% and general construction 85%.",
+            "S2": "The minimum password length is 8 characters.",
+            "V1": "The prime must keep at least half the work.",
+            "V2": "8 characters.",
+        }
+        return (stale if small else good).get(q["qid"], "The context does not record that."), None
+    if system.startswith("You answer questions using only the NOTE CONTEXT"):
+        # RAGQ-SYN: canned answers by question; a model named "small" repeats stale values and invents
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests"))
+        import ragq
+        q = next((x for x in ragq.QUESTIONS if x["question"] in user), None)
+        if q is None:
+            return "The context does not record that.", None
+        small = "small" in model
+        canned = {
+            "E1": "2% discount if the invoice is paid within 10 days.",
+            "E2": "45 per month.",
+            "F1": "It holds 25 minutes at cone 6.",
+            "F2": "0.6 mm brass.",
+            "N1": "Kiln rental is $80 a day with a $200 deposit.",
+            "N2": "The second kiln was bought in 2021.",
+            "S1": "Element 3 measured 9.8 ohms and cone 6 holds 12 minutes.",
+            "S2": "A day pass is 12, so four visits cost 48, more than the 45 membership.",
+            "V1": "12 per day pass.",
+            "V2": "12 minutes.",
+        }
+        good = {
+            "E1": "A 2% discount applies if paid within 10 days.",
+            "E2": "A student pays 30 per month.",
+            "F1": "The current schedule holds 12 minutes at cone 6.",
+            "F2": "0.4 mm hardened steel.",
+            "N1": "The documents do not mention kiln rental or a deposit.",
+            "N2": "The documents do not record a second kiln.",
+            "S1": "Element 3 measured 9.8 ohms; cone 6 holds 12 minutes.",
+            "S2": "A day pass is 12, so four visits cost 48, more than the 45 membership.",
+            "V1": "12 per day pass.",
+            "V2": "12 minutes.",
+        }
+        return (canned if small else good).get(q["qid"], "The context does not record that."), None
     if system.startswith("You are a SQLite expert"):      # SQL-SYN: gold by lookup; "small" is wrong; every 5th reply adds prose, every 7th a fence
         qtext = re.search(r"QUESTION: (.*)\nSQL:", user, re.S).group(1)
         if "small" in model:

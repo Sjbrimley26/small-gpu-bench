@@ -1,0 +1,39 @@
+{
+ "po_hhs.txt": {
+  "title": "Texas HHS Commission purchase order HHSTX-7-0000417784",
+  "date_on_document": "2026-11-02",
+  "url": "https://contracts.hhs.texas.gov/sites/default/files/documents/417784-contract.pdf",
+  "retrieved": "2026-11-17",
+  "licence": "public record published by the agency",
+  "form": "pdftotext -layout of the published PDF",
+  "redacted": "all personal names, e-mail addresses and telephone numbers of agency staff and vendor contacts (replaced with [name redacted] / [email redacted] / [phone redacted]); the vendor company, agency addresses, line items and prices are unchanged"
+ },
+ "cfr125_6_2026.txt": {
+  "title": "13 CFR 125.6, limitations on subcontracting - CFR 2026 annual edition",
+  "url": "https://www.govinfo.gov/content/pkg/CFR-2026-title13-vol1/xml/CFR-2026-title13-vol1.xml",
+  "retrieved": "2026-11-17",
+  "licence": "U.S. Government work, not subject to copyright (17 U.S.C. 105)",
+  "form": "section extracted from the XML edition, tags stripped"
+ },
+ "cfr125_6_2023.txt": {
+  "title": "13 CFR 125.6, limitations on subcontracting - CFR 2023 annual edition (superseded)",
+  "url": "https://www.govinfo.gov/content/pkg/CFR-2023-title13-vol1/xml/CFR-2023-title13-vol1.xml",
+  "retrieved": "2026-11-17",
+  "licence": "U.S. Government work, not subject to copyright (17 U.S.C. 105)",
+  "form": "section extracted from the XML edition, tags stripped"
+ },
+ "nist63b4_3_1_1_2.txt": {
+  "title": "NIST SP 800-63B-4 (July 2025), section 3.1.1.2 Password Verifiers",
+  "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b-4.pdf",
+  "retrieved": "2026-11-17",
+  "licence": "U.S. Government work, not subject to copyright",
+  "form": "subsection cut from the PDF text layer and re-flowed at 100 characters"
+ },
+ "nist63b3_5_1_1_2.txt": {
+  "title": "NIST SP 800-63B-3 (2017), section 5.1.1.2 Memorized Secret Verifiers (superseded)",
+  "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf",
+  "retrieved": "2026-11-17",
+  "licence": "U.S. Government work, not subject to copyright",
+  "form": "subsection cut from the PDF text layer and re-flowed at 100 characters"
+ }
+}

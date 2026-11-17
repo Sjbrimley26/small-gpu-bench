@@ -1,0 +1,324 @@
+{
+ "test": "RAGQ-REAL",
+ "model": "bolt-agent-40k",
+ "date": "20261117T230651Z",
+ "args": {
+  "regrade": "",
+  "selftest": false,
+  "limit": 0,
+  "max_tokens": 1200,
+  "model": "bolt-agent-40k",
+  "timeout": 1200.0,
+  "think": "off"
+ },
+ "summary": {
+  "correct": 11,
+  "scored": 15,
+  "transport_errors": 0,
+  "by_type": {
+   "exact": "3/3",
+   "freshness": "1/2",
+   "negative": "2/2",
+   "synthesis": "2/3",
+   "vague": "2/2",
+   "arithmetic": "1/3"
+  },
+  "mean_s": 12.2,
+  "mean_completion_tokens": 67,
+  "mean_prompt_tokens": 1943
+ },
+ "rows": [
+  {
+   "qid": "E1",
+   "type": "exact",
+   "question": "for a contract for services, what share of what the government pays may go to firms that are not similarly situated?",
+   "docs": [
+    "A"
+   ],
+   "answer": "In the case of a contract for services (except construction), a small business concern will not pay more than 50% of the amount paid by the government to it to firms that are not similarly situated.",
+   "correct": true,
+   "checks": {
+    "50%": true
+   },
+   "chars": 198,
+   "prompt_tokens": 1655,
+   "completion_tokens": 43,
+   "finish": "stop",
+   "s": 9.8
+  },
+  {
+   "qid": "E2",
+   "type": "exact",
+   "question": "what maximum password length should verifiers and CSPs permit?",
+   "docs": [
+    "C"
+   ],
+   "answer": "Verifiers and CSPs SHOULD permit a maximum password length of at least 64 characters.",
+   "correct": true,
+   "checks": {
+    "64": true
+   },
+   "chars": 85,
+   "prompt_tokens": 1676,
+   "completion_tokens": 20,
+   "finish": "stop",
+   "s": 6.5
+  },
+  {
+   "qid": "F1",
+   "type": "freshness",
+   "question": "under a multi-agency set-aside contract where more than one agency can issue orders, what period does the ordering agency use to determine compliance with the limitations on subcontracting?",
+   "docs": [
+    "A2",
+    "B2"
+   ],
+   "answer": "the ordering agency must use the period of performance for each order to determine compliance and monitor compliance with the limitations on subcontracting for that specific order.",
+   "correct": false,
+   "checks": {
+    "per-order rule tied to the multi-agency case": false
+   },
+   "chars": 180,
+   "prompt_tokens": 581,
+   "completion_tokens": 30,
+   "finish": "stop",
+   "s": 5.5
+  },
+  {
+   "qid": "F2",
+   "type": "freshness",
+   "question": "what is the minimum length of a password used as a single-factor authentication mechanism?",
+   "docs": [
+    "C",
+    "D"
+   ],
+   "answer": "Verifiers and CSPs SHALL require passwords that are used as a single-factor authentication mechanism to be a minimum of 15 characters in length.",
+   "correct": true,
+   "checks": {
+    "15": true,
+    "an 8-char minimum only where it is tied to multi-factor use": true
+   },
+   "chars": 144,
+   "prompt_tokens": 3460,
+   "completion_tokens": 31,
+   "finish": "stop",
+   "s": 12.1
+  },
+  {
+   "qid": "N1",
+   "type": "negative",
+   "question": "what is the small business size standard, in dollars, for NAICS 236220?",
+   "docs": [
+    "A"
+   ],
+   "answer": "It is not recorded in the documents.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not invents a dollar size standard": true
+   },
+   "chars": 36,
+   "prompt_tokens": 1654,
+   "completion_tokens": 9,
+   "finish": "stop",
+   "s": 4.9
+  },
+  {
+   "qid": "N2",
+   "type": "negative",
+   "question": "which password manager product does NIST recommend using?",
+   "docs": [
+    "C",
+    "D"
+   ],
+   "answer": "It is not recorded in the documents.",
+   "correct": true,
+   "checks": {
+    "says no product is named (or only the generic requirement)": true,
+    "not names a product": true
+   },
+   "chars": 36,
+   "prompt_tokens": 3452,
+   "completion_tokens": 9,
+   "finish": "stop",
+   "s": 9.0
+  },
+  {
+   "qid": "S1",
+   "type": "synthesis",
+   "question": "list the subcontracting limits as percentages for services, general construction and special trade construction",
+   "docs": [
+    "A"
+   ],
+   "answer": "For services (except construction), a small business concern will not pay more than 50% of the amount paid by the government to firms that are not similarly situated.\nFor general construction, a small business concern will not pay more than 85% of the amount paid by the government to it to firms that are not similarly situated.\nFor special trade contractors, no more than 75% of the amount paid by the government to the prime may be paid to firms that are not similarly situated.",
+   "correct": true,
+   "checks": {
+    "services 50%": true,
+    "general construction 85%": true,
+    "special trade 75%": true
+   },
+   "chars": 481,
+   "prompt_tokens": 1648,
+   "completion_tokens": 104,
+   "finish": "stop",
+   "s": 16.1
+  },
+  {
+   "qid": "S2",
+   "type": "synthesis",
+   "question": "what changed between the two versions about password composition rules and the minimum length of a single-factor password?",
+   "docs": [
+    "C",
+    "D"
+   ],
+   "answer": "The NOTE CONTEXT does not record what changed between two versions regarding password composition rules or the minimum length of a single-factor password.\n\nIn NIST SP 800-63B-4 (July 2025), single-factor authentication passwords must be a minimum of 15 characters in length, and verifiers SHALL NOT impose other composition rules.\nIn NIST SP 800-63B-3 (June 2017), memorized secrets (which function as passwords) must be at least 8 characters in length, and verifiers SHOULD NOT impose other composition rules.",
+   "correct": true,
+   "checks": {
+    "15 for single factor": true,
+    "composition rules dropped": true,
+    "an 8-char minimum only where it is tied to multi-factor use": true
+   },
+   "chars": 510,
+   "prompt_tokens": 3464,
+   "completion_tokens": 128,
+   "finish": "stop",
+   "s": 22.3
+  },
+  {
+   "qid": "V1",
+   "type": "vague",
+   "question": "how much of the work does the prime contractor have to keep in house?",
+   "docs": [
+    "A"
+   ],
+   "answer": "For a contract for services (except construction), a small business concern will not pay more than 50% of the amount paid by the government to firms that are not similarly situated. For a contract for supplies or products (other than from a nonmanufacturer), a small business concern will not pay more than 50% of the amount paid by the government to firms that are not similarly situated. For a contract for general construction, a small business concern will not pay more than 85% of the amount paid by the government to it to firms that are not similarly situated. For a contract for special trade contractors, no more than 75% of the amount paid by the government to the prime may be paid to firms that are not similarly situated.",
+   "correct": true,
+   "checks": {
+    "50% for services": true
+   },
+   "chars": 734,
+   "prompt_tokens": 1647,
+   "completion_tokens": 154,
+   "finish": "stop",
+   "s": 20.3
+  },
+  {
+   "qid": "E3",
+   "type": "exact",
+   "question": "what must a verifier do when a password a subscriber chooses appears on the blocklist?",
+   "docs": [
+    "C"
+   ],
+   "answer": "If the chosen password is found on the blocklist, the CSP SHALL require the subscriber to select a different secret and SHALL provide the reason for rejection. Verifiers SHALL offer guidance to the subscriber to help the subscriber choose a strong password, particularly following the rejection of a password on the blocklist.",
+   "correct": true,
+   "checks": {
+    "rejects it and makes them choose another": true,
+    "gives the reason": true
+   },
+   "chars": 326,
+   "prompt_tokens": 1682,
+   "completion_tokens": 60,
+   "finish": "stop",
+   "s": 10.3
+  },
+  {
+   "qid": "S3",
+   "type": "synthesis",
+   "question": "if a contractor finished a contract but did not meet the limitations on subcontracting, how is that handled in the past performance evaluation, and does the older text say the same?",
+   "docs": [
+    "A3",
+    "B3"
+   ],
+   "answer": "In the 2026 annual edition, if an agency determines a contractor has not met the applicable limitation on subcontracting requirement at the conclusion of contract performance, the agency must notify the business concern and give it the opportunity to explain any extenuating or mitigating circumstances. If the small business provides no such circumstances or the agency determines the failure was not beyond the concern's control, the agency may not give a satisfactory or higher past performance rating for the appropriate factor or subfactor. A satisfactory or higher rating may be given if a contracting officer determines extenuating circumstances warrant it and the individual at least one level above concurs.\n\nThe older text (2023 annual edition) states that the contracting officer may require the concern to comply with the applicable limitations on subcontracting for each order awarded under a total or partial set-aside contract, and contracting officers may require the contractor to demonstrate compliance at any time during performance and upon completion of a contract.\n\nIt is not recorded in the documents whether the older text says the same as the newer text regarding the specific handling of past performance evaluation when limitations are not met.",
+   "correct": false,
+   "checks": {
+    "the contractor gets an opportunity to explain extenuating circumstances": true,
+    "higher-level concurrence is needed for a satisfactory rating": true,
+    "not claims the older text has the same rule": false
+   },
+   "chars": 1271,
+   "prompt_tokens": 1061,
+   "completion_tokens": 227,
+   "finish": "stop",
+   "s": 26.3
+  },
+  {
+   "qid": "A1",
+   "type": "arithmetic",
+   "question": "a services contract is worth 2,000,000 dollars. what is the most it may pay to firms that are not similarly situated?",
+   "docs": [
+    "A"
+   ],
+   "answer": "For a contract for services, a small business concern must not pay more than 50% of the amount paid by the government to firms that are not similarly situated.",
+   "correct": false,
+   "checks": {
+    "1,000,000 (the 50% cap applied)": false
+   },
+   "chars": 159,
+   "prompt_tokens": 1664,
+   "completion_tokens": 35,
+   "finish": "stop",
+   "s": 6.8
+  },
+  {
+   "qid": "A2",
+   "type": "arithmetic",
+   "question": "a general construction contract is worth 4,000,000 dollars and 3,200,000 dollars of it goes to firms that are not similarly situated. is that compliant?",
+   "docs": [
+    "A"
+   ],
+   "answer": "In the case of a contract for general construction, it will not pay more than 85% of the amount paid by the government to it to firms that are not similarly situated.",
+   "correct": false,
+   "checks": {
+    "compliant, with the 85% cap stated": true,
+    "says it is within the limit": false,
+    "not calls it non-compliant": true
+   },
+   "chars": 166,
+   "prompt_tokens": 1676,
+   "completion_tokens": 38,
+   "finish": "stop",
+   "s": 8.3
+  },
+  {
+   "qid": "A3",
+   "type": "arithmetic",
+   "question": "an order is set aside under a full and open contract and was competed among small and other-than-small businesses. do the subcontracting limitations apply to that order?",
+   "docs": [
+    "A2"
+   ],
+   "answer": "the subcontracting limitations will not apply if the order is competed among small and other-than-small businesses for an order set aside under a full and open contract.",
+   "correct": true,
+   "checks": {
+    "says they do not apply": true
+   },
+   "chars": 169,
+   "prompt_tokens": 374,
+   "completion_tokens": 34,
+   "finish": "stop",
+   "s": 5.5
+  },
+  {
+   "qid": "V2",
+   "type": "vague",
+   "question": "how long should a password be these days?",
+   "docs": [
+    "C",
+    "D"
+   ],
+   "answer": "For passwords used as a single-factor authentication mechanism, verifiers and CSPs SHALL require a minimum of 15 characters in length. For passwords only used as part of multi-factor authentication processes, verifiers and CSPs SHALL require a minimum of eight characters in length. Verifiers and CSPs SHOULD permit a maximum password length of at least 64 characters.",
+   "correct": true,
+   "checks": {
+    "15": true,
+    "an 8-char minimum only where it is tied to multi-factor use": true
+   },
+   "chars": 368,
+   "prompt_tokens": 3452,
+   "completion_tokens": 76,
+   "finish": "stop",
+   "s": 18.6
+  }
+ ],
+ "invalid": false,
+ "arm": "ragq-real",
+ "thinking": "off"
+}

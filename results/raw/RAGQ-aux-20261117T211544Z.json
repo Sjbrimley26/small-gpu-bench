@@ -1,0 +1,249 @@
+{
+ "test": "RAGQ",
+ "model": "aux",
+ "date": "20261117T211544Z",
+ "args": {
+  "selftest": false,
+  "limit": 0,
+  "max_tokens": 900,
+  "model": "aux",
+  "timeout": 1200.0,
+  "think": "off"
+ },
+ "summary": {
+  "correct": 8,
+  "scored": 10,
+  "transport_errors": 0,
+  "by_type": {
+   "exact": "2/2",
+   "freshness": "1/2",
+   "negative": "2/2",
+   "synthesis": "2/2",
+   "vague": "1/2"
+  },
+  "cited_something": 2,
+  "mean_s": 2.4,
+  "mean_completion_tokens": 40
+ },
+ "rows": [
+  {
+   "qid": "E1",
+   "type": "exact",
+   "question": "what are the terms from Ridgeway Clay for paying an invoice early?",
+   "docs": [
+    "D4"
+   ],
+   "answer": "2% discount if the invoice is paid within 10 days.",
+   "correct": true,
+   "checks": {
+    "2% discount": true,
+    "10 days": true
+   },
+   "cited": [],
+   "chars": 50,
+   "finish": "stop",
+   "s": 0.7,
+   "completion_tokens": 15,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "E2",
+   "type": "exact",
+   "question": "what does a student pay per month for studio access?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "A student pays $30 per month for studio access with a current student ID.",
+   "correct": true,
+   "checks": {
+    "30": true,
+    "not 45 quoted as the student rate": true
+   },
+   "cited": [],
+   "chars": 73,
+   "finish": "stop",
+   "s": 0.9,
+   "completion_tokens": 18,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F1",
+   "type": "freshness",
+   "question": "how long does the kiln hold at cone 6 these days?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "The context does not provide current kiln holding times for Cone 6. The most recent schedule (revised 2026-09) shows a hold of 12 minutes, while the older printed schedule (2019) shows 25 minutes.",
+   "correct": true,
+   "checks": {
+    "12 minutes": true,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [],
+   "chars": 196,
+   "finish": "stop",
+   "s": 4.1,
+   "completion_tokens": 57,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F2",
+   "type": "freshness",
+   "question": "what nozzle size is the 3D printer running?",
+   "docs": [
+    "D7",
+    "D8"
+   ],
+   "answer": "The documents provide two different nozzle sizes for the 3D printer: 0.4 mm (D7) and 0.6 mm (D8).",
+   "correct": false,
+   "checks": {
+    "0.4 mm": true,
+    "stale value only if labelled old (0.6 mm)": false
+   },
+   "cited": [
+    "D7",
+    "D8"
+   ],
+   "chars": 97,
+   "finish": "stop",
+   "s": 1.2,
+   "completion_tokens": 34,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N1",
+   "type": "negative",
+   "question": "what does it cost to rent the kiln out to an outside group, and what deposit is required?",
+   "docs": [
+    "D1",
+    "D5",
+    "D9"
+   ],
+   "answer": "The context does not provide information about renting the kiln to an outside group or the deposit required.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not invents a rental price": true,
+    "not invents a deposit": true
+   },
+   "cited": [],
+   "chars": 108,
+   "finish": "stop",
+   "s": 1.2,
+   "completion_tokens": 20,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N2",
+   "type": "negative",
+   "question": "when did the shop buy its second kiln?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "The context does not contain information about when the shop bought its second kiln.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not asserts a purchase": true
+   },
+   "cited": [],
+   "chars": 84,
+   "finish": "stop",
+   "s": 0.9,
+   "completion_tokens": 16,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S1",
+   "type": "synthesis",
+   "question": "what was measured when the kiln element was replaced, and what does the firing schedule ask for at cone 6 now?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "The resistance was measured at 9.8 ohms per element pair. The firing schedule for cone 6 asks for a ramp of 120 C per hour to 1200 C, a hold of 12 minutes, and a cool of 80 C per hour to 800 C, with the lids shut after 600 C and not to be opened above 300 C.",
+   "correct": true,
+   "checks": {
+    "9.8 ohms": true,
+    "12 minutes hold": true,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [],
+   "chars": 258,
+   "finish": "stop",
+   "s": 4.1,
+   "completion_tokens": 90,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S2",
+   "type": "synthesis",
+   "question": "someone visits once a week - is a membership or day passes cheaper for them in a month, and by how much?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "A membership is cheaper. The membership costs 45 per month, while the day pass costs 12 per visit. In a month with 4 visits, the day pass would cost 48, which is 3 more than the membership.",
+   "correct": true,
+   "checks": {
+    "45 dues": true,
+    "12 per pass": true,
+    "the comparison (48 / 3.75 visits / four visits)": true
+   },
+   "cited": [],
+   "chars": 189,
+   "finish": "stop",
+   "s": 4.3,
+   "completion_tokens": 52,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V1",
+   "type": "vague",
+   "question": "remind me what we charge the drop-in crowd",
+   "docs": [
+    "D5",
+    "D9"
+   ],
+   "answer": "The drop-in crowd is charged $12 per visit.",
+   "correct": true,
+   "checks": {
+    "12 per day pass": true
+   },
+   "cited": [],
+   "chars": 43,
+   "finish": "stop",
+   "s": 1.9,
+   "completion_tokens": 13,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V2",
+   "type": "vague",
+   "question": "how long do we hold the top temperature?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "The context does not provide a single, clear answer to how long the top temperature should be held. It presents two different firing schedules with conflicting hold times for Cone 6 glaze (20 minutes in [D1] vs. 25 minutes in [D2]) and different lid-shut temperatures (600 C in [D1] vs. 900 C in [D2]).",
+   "correct": false,
+   "checks": {
+    "12 minutes": false,
+    "stale value only if labelled old (25 minutes)": false
+   },
+   "cited": [
+    "D1",
+    "D2"
+   ],
+   "chars": 302,
+   "finish": "stop",
+   "s": 4.4,
+   "completion_tokens": 84,
+   "reasoning_chars": 0
+  }
+ ],
+ "invalid": false,
+ "arm": "ragq-syn",
+ "thinking": "off"
+}

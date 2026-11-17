@@ -1,0 +1,54 @@
+{
+ "test": "SPEED",
+ "model": "spark-agent",
+ "date": "20261117T015615Z",
+ "args": {
+  "model": "spark-agent",
+  "timeout": 1200.0,
+  "think": "off",
+  "reps": 2,
+  "gen": 200,
+  "prompt_chars": 1776,
+  "nvidia_smi": true,
+  "selftest": false
+ },
+ "prompt_chars": 1776,
+ "gen_tokens": 200,
+ "rows": [
+  {
+   "prefill_tps": 299.1,
+   "gen_tps": 19.3,
+   "prompt_tokens": 384,
+   "completion_tokens": 200,
+   "source": "server timings",
+   "rep": 0,
+   "wall_s": 11.6,
+   "finish": "length"
+  },
+  {
+   "prefill_tps": 300.2,
+   "gen_tps": 19.3,
+   "prompt_tokens": 384,
+   "completion_tokens": 200,
+   "source": "server timings",
+   "rep": 1,
+   "wall_s": 11.6,
+   "finish": "length"
+  }
+ ],
+ "summary": {
+  "prefill_tps_median": 299.65,
+  "gen_tps_median": 19.3,
+  "gen_tps_min": 19.3,
+  "gen_tps_max": 19.3,
+  "n_ok": 2
+ },
+ "vram_before": {
+  "used_mib": 3713,
+  "total_mib": 4096
+ },
+ "vram_after": {
+  "used_mib": 3721,
+  "total_mib": 4096
+ }
+}

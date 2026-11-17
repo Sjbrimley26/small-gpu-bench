@@ -1,0 +1,259 @@
+{
+ "test": "RAGQ",
+ "model": "lfm3-qad",
+ "date": "20261117T214738Z",
+ "args": {
+  "selftest": false,
+  "limit": 0,
+  "max_tokens": 900,
+  "model": "lfm3-qad",
+  "timeout": 1200.0,
+  "think": "off"
+ },
+ "summary": {
+  "correct": 6,
+  "scored": 10,
+  "transport_errors": 0,
+  "by_type": {
+   "exact": "1/2",
+   "freshness": "1/2",
+   "negative": "2/2",
+   "synthesis": "2/2",
+   "vague": "0/2"
+  },
+  "cited_something": 5,
+  "mean_s": 5.3,
+  "mean_completion_tokens": 250
+ },
+ "rows": [
+  {
+   "qid": "E1",
+   "type": "exact",
+   "question": "what are the terms from Ridgeway Clay for paying an invoice early?",
+   "docs": [
+    "D4"
+   ],
+   "answer": "The provided context states under \"SUPPLIER TERMS\" for Ridgeway Clay: \"net 30. 2% discount if the invoice is paid within 10 days.\" This indicates that paying an invoice early (within 10 days) qualifies for a 2% discount, and otherwise the standard term is net 30.\n\nAnswer: The terms from Ridgeway Clay for paying an invoice early are \"net 30\" with a \"2% discount if the invoice is paid within 10 days.\"",
+   "correct": true,
+   "checks": {
+    "2% discount": true,
+    "10 days": true
+   },
+   "cited": [],
+   "chars": 402,
+   "finish": "stop",
+   "s": 2.2,
+   "completion_tokens": 105,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "E2",
+   "type": "exact",
+   "question": "what does a student pay per month for studio access?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "The context states: \"Studio dues 45 per month, including two shelf-feet and firing up to 4 cu ft.\" This indicates that a student pays $45 per month for studio access.\n\nAnswer: A student pays $45 per month for studio access.",
+   "correct": false,
+   "checks": {
+    "30": false,
+    "not 45 quoted as the student rate": false
+   },
+   "cited": [],
+   "chars": 223,
+   "finish": "stop",
+   "s": 1.2,
+   "completion_tokens": 54,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F1",
+   "type": "freshness",
+   "question": "how long does the kiln hold at cone 6 these days?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "According to document [D1] (Firing Schedule - Kiln 1, revised 2026-09), for Cone 6 glaze: ramp 120 \u00b0C per hour to 1200 \u00b0C, hold **12 minutes**, cool 80 \u00b0C per hour to 800 \u00b0C, lids shut after 600 \u00b0C. It also notes not to open the lid above 300 \u00b0C.\n\n(Note: Document [D2]",
+   "correct": true,
+   "checks": {
+    "12 minutes": true,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [
+    "D1",
+    "D2"
+   ],
+   "chars": 268,
+   "finish": "length",
+   "s": 18.6,
+   "completion_tokens": 900,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F2",
+   "type": "freshness",
+   "question": "what nozzle size is the 3D printer running?",
+   "docs": [
+    "D7",
+    "D8"
+   ],
+   "answer": "The context contains two entries for a 3D printer:\n\n- [D7] (updated 2026-06): Nozzle size is **0.4 mm hardened steel**.\n- [D8] (taped to the wall in 2021): Nozzle size is **0.6 mm brass**.\n\nSince these are different cards/entries, there are two recorded nozzle sizes for a 3D printer. The most recent entry ([D7], updated 2026-06) indicates 0.4 mm hardened steel.\n\nIf you need the current or latest configuration: **0.4 mm hardened steel**.\n\nIf you meant the older one: **0.6 mm brass** (from 2021).\n\nSo, depending on which record applies:\n\n- Most recent: **0.4 mm**\n- Earlier card: **0.6 mm**\n\nI will state plainly that there are two entries; the latest says 0.4 mm hardened steel.\n\nFinal answer based on the most recent context (D7):  \n**0.4 mm hardened steel**.",
+   "correct": false,
+   "checks": {
+    "0.4 mm": true,
+    "stale value only if labelled old (0.6 mm)": false
+   },
+   "cited": [
+    "D7",
+    "D8"
+   ],
+   "chars": 764,
+   "finish": "stop",
+   "s": 4.8,
+   "completion_tokens": 227,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N1",
+   "type": "negative",
+   "question": "what does it cost to rent the kiln out to an outside group, and what deposit is required?",
+   "docs": [
+    "D1",
+    "D5",
+    "D9"
+   ],
+   "answer": "The provided documents (D1, D5, D9) do not contain any information about renting the kiln out to an outside group or required deposits for such a rental. Therefore, this question is not recorded in the documents.\n\nPlainly: It is not recorded in the documents.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not invents a rental price": true,
+    "not invents a deposit": true
+   },
+   "cited": [
+    "D1",
+    "D5",
+    "D9"
+   ],
+   "chars": 259,
+   "finish": "stop",
+   "s": 1.6,
+   "completion_tokens": 61,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N2",
+   "type": "negative",
+   "question": "when did the shop buy its second kiln?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "The provided context does not contain any information about when the shop bought its second kiln. Therefore, I cannot answer this question based on the given documents.\n\nNote: If you have additional context or documents that might include this information, please provide them. Otherwise, it is not recorded in the current documents.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not asserts a purchase": true
+   },
+   "cited": [],
+   "chars": 333,
+   "finish": "stop",
+   "s": 1.5,
+   "completion_tokens": 62,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S1",
+   "type": "synthesis",
+   "question": "what was measured when the kiln element was replaced, and what does the firing schedule ask for at cone 6 now?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "When the kiln element (Element 3) was replaced, the service note [D11] records that \"Resistance measured 9.8 ohms per element pair.\"\n\nFor Cone 6 glaze in the revised firing schedule [D1], it asks for: ramp at 120 \u00b0C per hour to 1200 \u00b0C, hold 12 minutes, cool at 80 \u00b0C per hour to 800 \u00b0C, and lids shut after reaching 600 \u00b0C. Do not open the lid above 300 \u00b0C.\n\nSo:\n- Measured value when Element 3 was replaced: **9.8 ohms per element pair**.\n- Firing schedule for Cone 6 glaze now asks for a ramp of **120 \u00b0C per hour to 1200 \u00b0C**, hold **12 minutes**, cool **80 \u00b0C per hour to 800 \u00b0C**, and shut lids after **600 \u00b0C** (do not open above 300 \u00b0C).",
+   "correct": true,
+   "checks": {
+    "9.8 ohms": true,
+    "12 minutes hold": true,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [
+    "D1",
+    "D11"
+   ],
+   "chars": 645,
+   "finish": "stop",
+   "s": 10.7,
+   "completion_tokens": 507,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S2",
+   "type": "synthesis",
+   "question": "someone visits once a week - is a membership or day passes cheaper for them in a month, and by how much?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "The context states: \"Studio dues 45 per month... Day pass 12 per visit; firing charged by the cubic foot on top.\"\n\nFor someone who visits once a week:\n- Monthly membership cost = $45 (for studio dues, which includes two shelf-feet and up to 4 cu ft).\n- Number of visits in a month \u2248 4 (once per week \u00d7 ~4 weeks).\n- Day pass cost for 4 visits = 12 \u00d7 4 = $48.\n\nComparing: Membership ($45) vs. day passes ($48). The membership is cheaper by $3 per month.\n\nAnswer: Yes, the membership is cheaper; it saves $3 in a month (since 4 day passes would cost $48 versus $45 for membership).\n\nNote: This assumes roughly four visits per month and that \"once a week\" translates to about one visit each week. The context does not explicitly state number of weeks per month or exact frequency, but the standard interpretation is once weekly \u2248 4 times/month.\n\nFinal answer: A membership costs $45 per month versus day passes at $12 per visit; for four visits (one per week), that's $48 in day passes. So the membership saves **$3** per month.",
+   "correct": true,
+   "checks": {
+    "45 dues": true,
+    "12 per pass": true,
+    "the comparison (48 / 3.75 visits / four visits)": true
+   },
+   "cited": [],
+   "chars": 1024,
+   "finish": "stop",
+   "s": 5.2,
+   "completion_tokens": 253,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V1",
+   "type": "vague",
+   "question": "remind me what we charge the drop-in crowd",
+   "docs": [
+    "D5",
+    "D9"
+   ],
+   "answer": "The provided context does not contain any information about what is charged for the \"drop-in crowd.\" The notes mention studio dues, day pass rates, student rates, and shipping costs, but nothing specifically about drop-in pricing.\n\nTherefore, I cannot answer this question based on the given documents. It is not recorded in the documents.",
+   "correct": false,
+   "checks": {
+    "12 per day pass": false
+   },
+   "cited": [],
+   "chars": 339,
+   "finish": "stop",
+   "s": 1.5,
+   "completion_tokens": 66,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V2",
+   "type": "vague",
+   "question": "how long do we hold the top temperature?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "The question asks how long we hold the top temperature. Looking at the context:\n\n- [D1] FIRING SCHEDULE - KILN 1 (revised 2026-09): For \"Cone 6 glaze\", it says ramp to 1200 C, hold 12 minutes, cool... and for lids shut after 600 C. It also mentions \"Do not open the lid above 300 C.\" This doesn't specify a hold time at the top temperature (1200 C) explicitly beyond the initial hold of 12 minutes.\n\n- [D2] FIRING SCHEDULE - KILN 1 (printed 2019): For \"Cone 6 glaze\", it says ramp to 1200 C, hold 25 minutes, lids shut at 900 C. Again, no mention of a specific hold time above the final temperature.\n\nNeither document explicitly states how long to hold the top temperature for Cone 6 glaze or any other cone. The holds mentioned (12 min in D1 and 25 min in D2) are before reaching the final temperature (1200 C), not at the top temperature.\n\nTherefore, based solely on the provided context, it is not recorded how long to hold the top temperature.\n\nFINAL ANSWER: Not recorded in the documents.",
+   "correct": false,
+   "checks": {
+    "12 minutes": true,
+    "stale value only if labelled old (25 minutes)": false
+   },
+   "cited": [
+    "D1",
+    "D2"
+   ],
+   "chars": 993,
+   "finish": "stop",
+   "s": 5.8,
+   "completion_tokens": 270,
+   "reasoning_chars": 0
+  }
+ ],
+ "invalid": false,
+ "arm": "ragq-syn",
+ "thinking": "off"
+}

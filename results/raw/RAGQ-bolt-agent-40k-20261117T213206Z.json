@@ -1,0 +1,246 @@
+{
+ "test": "RAGQ",
+ "model": "bolt-agent-40k",
+ "date": "20261117T213206Z",
+ "args": {
+  "selftest": false,
+  "limit": 0,
+  "max_tokens": 900,
+  "model": "bolt-agent-40k",
+  "timeout": 1200.0,
+  "think": "off"
+ },
+ "summary": {
+  "correct": 7,
+  "scored": 10,
+  "transport_errors": 0,
+  "by_type": {
+   "exact": "2/2",
+   "freshness": "1/2",
+   "negative": "2/2",
+   "synthesis": "1/2",
+   "vague": "1/2"
+  },
+  "cited_something": 1,
+  "mean_s": 2.7,
+  "mean_completion_tokens": 28
+ },
+ "rows": [
+  {
+   "qid": "E1",
+   "type": "exact",
+   "question": "what are the terms from Ridgeway Clay for paying an invoice early?",
+   "docs": [
+    "D4"
+   ],
+   "answer": "2% discount if the invoice is paid within 10 days.",
+   "correct": true,
+   "checks": {
+    "2% discount": true,
+    "10 days": true
+   },
+   "cited": [],
+   "chars": 50,
+   "finish": "stop",
+   "s": 1.9,
+   "completion_tokens": 15,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "E2",
+   "type": "exact",
+   "question": "what does a student pay per month for studio access?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "30 per month",
+   "correct": true,
+   "checks": {
+    "30": true,
+    "not 45 quoted as the student rate": true
+   },
+   "cited": [],
+   "chars": 12,
+   "finish": "stop",
+   "s": 0.7,
+   "completion_tokens": 5,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F1",
+   "type": "freshness",
+   "question": "how long does the kiln hold at cone 6 these days?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "The firing schedule revised in 2026-09 for Cone 6 glaze is a hold of 12 minutes. The firing schedule printed in 2019 for Cone 6 glaze is a hold of 25 minutes.",
+   "correct": true,
+   "checks": {
+    "12 minutes": true,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [],
+   "chars": 158,
+   "finish": "stop",
+   "s": 5.0,
+   "completion_tokens": 52,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F2",
+   "type": "freshness",
+   "question": "what nozzle size is the 3D printer running?",
+   "docs": [
+    "D7",
+    "D8"
+   ],
+   "answer": "The 3D printer could be running a 0.4 mm hardened steel nozzle or a 0.6 mm brass nozzle.",
+   "correct": false,
+   "checks": {
+    "0.4 mm": true,
+    "stale value only if labelled old (0.6 mm)": false
+   },
+   "cited": [],
+   "chars": 88,
+   "finish": "stop",
+   "s": 2.7,
+   "completion_tokens": 28,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N1",
+   "type": "negative",
+   "question": "what does it cost to rent the kiln out to an outside group, and what deposit is required?",
+   "docs": [
+    "D1",
+    "D5",
+    "D9"
+   ],
+   "answer": "It is not recorded in the documents.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not invents a rental price": true,
+    "not invents a deposit": true
+   },
+   "cited": [],
+   "chars": 36,
+   "finish": "stop",
+   "s": 1.3,
+   "completion_tokens": 9,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N2",
+   "type": "negative",
+   "question": "when did the shop buy its second kiln?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "it is not recorded in the documents",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not asserts a purchase": true
+   },
+   "cited": [],
+   "chars": 35,
+   "finish": "stop",
+   "s": 1.5,
+   "completion_tokens": 8,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S1",
+   "type": "synthesis",
+   "question": "what was measured when the kiln element was replaced, and what does the firing schedule ask for at cone 6 now?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "Resistance measured 9.8 ohms per element pair when the kiln element was replaced. The firing schedule asks for a ramp of 120 C per hour to 1200 C, a hold of 12 minutes, and a cool of 80 C per hour to 800 C at cone 6.",
+   "correct": true,
+   "checks": {
+    "9.8 ohms": true,
+    "12 minutes hold": true,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [],
+   "chars": 216,
+   "finish": "stop",
+   "s": 5.7,
+   "completion_tokens": 70,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S2",
+   "type": "synthesis",
+   "question": "someone visits once a week - is a membership or day passes cheaper for them in a month, and by how much?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "It is not recorded in the documents.",
+   "correct": false,
+   "checks": {
+    "45 dues": false,
+    "12 per pass": false,
+    "the comparison (48 / 3.75 visits / four visits)": false
+   },
+   "cited": [],
+   "chars": 36,
+   "finish": "stop",
+   "s": 1.3,
+   "completion_tokens": 9,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V1",
+   "type": "vague",
+   "question": "remind me what we charge the drop-in crowd",
+   "docs": [
+    "D5",
+    "D9"
+   ],
+   "answer": "Day pass is 12 per visit; firing is charged by the cubic foot on top.",
+   "correct": true,
+   "checks": {
+    "12 per day pass": true
+   },
+   "cited": [],
+   "chars": 69,
+   "finish": "stop",
+   "s": 2.1,
+   "completion_tokens": 20,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V2",
+   "type": "vague",
+   "question": "how long do we hold the top temperature?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "For Cone 6 glaze, the hold time is 12 minutes according to [D1] and 25 minutes according to [D2]. For Cone 04 bisque, the hold time is 20 minutes according to both [D1] and [D2].",
+   "correct": false,
+   "checks": {
+    "12 minutes": true,
+    "stale value only if labelled old (25 minutes)": false
+   },
+   "cited": [
+    "D1",
+    "D2"
+   ],
+   "chars": 178,
+   "finish": "stop",
+   "s": 4.7,
+   "completion_tokens": 59,
+   "reasoning_chars": 0
+  }
+ ],
+ "invalid": false,
+ "arm": "ragq-syn",
+ "thinking": "off"
+}

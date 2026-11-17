@@ -1,0 +1,105 @@
+{
+ "test": "PO",
+ "model": "vision-text",
+ "date": "20261117T212812Z",
+ "args": {
+  "selftest": false,
+  "gen": false,
+  "max_tokens": 1400,
+  "temperature": 0.0,
+  "model": "vision-text",
+  "timeout": 1200.0,
+  "think": "off"
+ },
+ "row": {
+  "arm": "po",
+  "parse": "fenced",
+  "finish": "stop",
+  "s": 43.7,
+  "chars": 1575,
+  "completion_tokens": 720,
+  "prompt_tokens": 701,
+  "thinking": "off",
+  "max_tokens": 1400,
+  "reply_head": "```json\n{\n  \"vendor\": \"Northwind Fastener Supply\",\n  \"po_number\": \"PO-2026-1187\",\n  \"order_date\": \"2026-11-03\",\n  \"ship_to\": \"Riverbend Makerspace, 214 Mill St, Phoenix AZ 85004\",\n  \"currency\": \"USD\",\n  \"line_items\": [\n    {\n      \"sku\": \"NF-1042\",\n      \"description\": \"3 in structural screw, exterior, 5 lb box\",\n      \"qty\": 4,\n      \"unit_price\": 38.75,\n      \"amount\": 155.0\n    },\n    {\n      \"sku\": \"NF-2210\",\n      \"description\": \"1/2 in galvanized carriage bolt, 25 pack\",\n      \"qty\": 6,\n      \"unit_price\": 21.4,\n      \"amount\": 128.4\n    },\n    {\n      \"sku\": \"NF-3308\",\n      \"descriptio",
+  "json_valid": true,
+  "schema_keys": 10,
+  "fields": 5,
+  "field_subtotal": true,
+  "field_freight": true,
+  "field_tax": true,
+  "field_total": true,
+  "items_found": 8,
+  "items_exact": 8,
+  "arith_consistent": true,
+  "parsed": {
+   "vendor": "Northwind Fastener Supply",
+   "po_number": "PO-2026-1187",
+   "order_date": "2026-11-03",
+   "ship_to": "Riverbend Makerspace, 214 Mill St, Phoenix AZ 85004",
+   "currency": "USD",
+   "line_items": [
+    {
+     "sku": "NF-1042",
+     "description": "3 in structural screw, exterior, 5 lb box",
+     "qty": 4,
+     "unit_price": 38.75,
+     "amount": 155.0
+    },
+    {
+     "sku": "NF-2210",
+     "description": "1/2 in galvanized carriage bolt, 25 pack",
+     "qty": 6,
+     "unit_price": 21.4,
+     "amount": 128.4
+    },
+    {
+     "sku": "NF-3308",
+     "description": "joist hanger, 2x8, G185",
+     "qty": 24,
+     "unit_price": 2.65,
+     "amount": 63.6
+    },
+    {
+     "sku": "NF-4417",
+     "description": "construction adhesive, 28 oz tube",
+     "qty": 12,
+     "unit_price": 8.95,
+     "amount": 107.4
+    },
+    {
+     "sku": "NF-5520",
+     "description": "post base, 6x6, powder coated",
+     "qty": 8,
+     "unit_price": 17.3,
+     "amount": 138.4
+    },
+    {
+     "sku": "NF-6631",
+     "description": "stainless washer, 3/8 in, 100 count",
+     "qty": 3,
+     "unit_price": 12.1,
+     "amount": 36.3
+    },
+    {
+     "sku": "NF-7702",
+     "description": "hurricane tie, 18 gauge, 12 in",
+     "qty": 40,
+     "unit_price": 1.85,
+     "amount": 74.0
+    },
+    {
+     "sku": "NF-8814",
+     "description": "deck screw, 2-1/2 in, 5 lb box",
+     "qty": 10,
+     "unit_price": 31.2,
+     "amount": 312.0
+    }
+   ],
+   "subtotal": 1015.1,
+   "freight": 84.5,
+   "tax": 82.22,
+   "total": 1181.82
+  }
+ }
+}

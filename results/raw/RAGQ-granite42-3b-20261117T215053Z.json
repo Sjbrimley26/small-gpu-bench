@@ -1,0 +1,246 @@
+{
+ "test": "RAGQ",
+ "model": "granite42-3b",
+ "date": "20261117T215053Z",
+ "args": {
+  "selftest": false,
+  "limit": 0,
+  "max_tokens": 900,
+  "model": "granite42-3b",
+  "timeout": 1200.0,
+  "think": "off"
+ },
+ "summary": {
+  "correct": 5,
+  "scored": 10,
+  "transport_errors": 0,
+  "by_type": {
+   "exact": "2/2",
+   "freshness": "0/2",
+   "negative": "2/2",
+   "synthesis": "1/2",
+   "vague": "0/2"
+  },
+  "cited_something": 1,
+  "mean_s": 5.1,
+  "mean_completion_tokens": 120
+ },
+ "rows": [
+  {
+   "qid": "E1",
+   "type": "exact",
+   "question": "what are the terms from Ridgeway Clay for paying an invoice early?",
+   "docs": [
+    "D4"
+   ],
+   "answer": "The terms from Ridgeway Clay for paying an invoice early are: 2% discount if the invoice is paid within 10 days.",
+   "correct": true,
+   "checks": {
+    "2% discount": true,
+    "10 days": true
+   },
+   "cited": [],
+   "chars": 112,
+   "finish": "stop",
+   "s": 1.4,
+   "completion_tokens": 29,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "E2",
+   "type": "exact",
+   "question": "what does a student pay per month for studio access?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "The student pays 30 per month for studio access.",
+   "correct": true,
+   "checks": {
+    "30": true,
+    "not 45 quoted as the student rate": true
+   },
+   "cited": [],
+   "chars": 48,
+   "finish": "stop",
+   "s": 0.7,
+   "completion_tokens": 12,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F1",
+   "type": "freshness",
+   "question": "how long does the kiln hold at cone 6 these days?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "The NOTE CONTEXT does not specify how long the kiln holds at cone 6 these days.\n\nIt provides two relevant entries:\n- In [D1], for Cone 6 glaze: \"hold 12 minutes\"\n- In [D2], for Cone 6 glaze: \"hold 25 minutes\"\n\nHowever, the question asks: \"how long does the kiln hold at cone 6 these days?\" The context does not contain a single, definitive answer for \"these days\" (i.e., the current schedule). The two entries describe different schedules (revised 2026-09 vs. printed 2019), so there is no unified \"these days\" value.\n\nTherefore, I cannot provide a clear answer based on the given documents.\n\nAnswer: The NOTE CONTEXT does not answer the question.",
+   "correct": false,
+   "checks": {
+    "12 minutes": true,
+    "stale value only if labelled old (25 minutes)": false
+   },
+   "cited": [
+    "D1",
+    "D2"
+   ],
+   "chars": 647,
+   "finish": "stop",
+   "s": 7.4,
+   "completion_tokens": 176,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F2",
+   "type": "freshness",
+   "question": "what nozzle size is the 3D printer running?",
+   "docs": [
+    "D7",
+    "D8"
+   ],
+   "answer": "it is not recorded in the documents.",
+   "correct": false,
+   "checks": {
+    "0.4 mm": false,
+    "stale value only if labelled old (0.6 mm)": true
+   },
+   "cited": [],
+   "chars": 36,
+   "finish": "stop",
+   "s": 27.1,
+   "completion_tokens": 679,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N1",
+   "type": "negative",
+   "question": "what does it cost to rent the kiln out to an outside group, and what deposit is required?",
+   "docs": [
+    "D1",
+    "D5",
+    "D9"
+   ],
+   "answer": "The NOTE CONTEXT does not contain information about the cost to rent the kiln out to an outside group or the required deposit.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not invents a rental price": true,
+    "not invents a deposit": true
+   },
+   "cited": [],
+   "chars": 126,
+   "finish": "stop",
+   "s": 1.6,
+   "completion_tokens": 26,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N2",
+   "type": "negative",
+   "question": "when did the shop buy its second kiln?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "The NOTE CONTEXT does not contain any information about when the shop bought its second kiln. It only provides details about the firing schedule for Kiln 1 and a service note for Kiln 1. Therefore, the answer is not recorded in the documents.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not asserts a purchase": true
+   },
+   "cited": [],
+   "chars": 242,
+   "finish": "stop",
+   "s": 2.5,
+   "completion_tokens": 53,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S1",
+   "type": "synthesis",
+   "question": "what was measured when the kiln element was replaced, and what does the firing schedule ask for at cone 6 now?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "The kiln element was replaced, and the resistance measured was 9.8 ohms per element pair.\n\nThe firing schedule for cone 6 specifies: ramp 120 C per hour to 1200 C, hold 12 minutes, cool 80 C per hour to 800 C, with lids shut after 600 C and not opened above 300 C.\n\nThis answer is based solely on the provided NOTE CONTEXT.",
+   "correct": true,
+   "checks": {
+    "9.8 ohms": true,
+    "12 minutes hold": true,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [],
+   "chars": 323,
+   "finish": "stop",
+   "s": 4.1,
+   "completion_tokens": 90,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S2",
+   "type": "synthesis",
+   "question": "someone visits once a week - is a membership or day passes cheaper for them in a month, and by how much?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "The NOTE CONTEXT does not provide enough information to determine whether a membership or day passes is cheaper for someone visiting once a week in a month, nor does it give the exact cost difference.\n\nTherefore, the answer is not recorded in the documents.",
+   "correct": false,
+   "checks": {
+    "45 dues": false,
+    "12 per pass": false,
+    "the comparison (48 / 3.75 visits / four visits)": false
+   },
+   "cited": [],
+   "chars": 257,
+   "finish": "stop",
+   "s": 2.3,
+   "completion_tokens": 51,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V1",
+   "type": "vague",
+   "question": "remind me what we charge the drop-in crowd",
+   "docs": [
+    "D5",
+    "D9"
+   ],
+   "answer": "The context does not contain information about what we charge the drop-in crowd.",
+   "correct": false,
+   "checks": {
+    "12 per day pass": false
+   },
+   "cited": [],
+   "chars": 80,
+   "finish": "stop",
+   "s": 1.0,
+   "completion_tokens": 17,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V2",
+   "type": "vague",
+   "question": "how long do we hold the top temperature?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "The NOTE CONTEXT does not specify how long we hold the top temperature. It provides details about ramp rates, hold times, and cooling for specific cones, but the question asks specifically about the top temperature hold time, which is not explicitly stated in the given documents.\n\nTherefore, the answer is not recorded in the documents.",
+   "correct": false,
+   "checks": {
+    "12 minutes": false,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [],
+   "chars": 337,
+   "finish": "stop",
+   "s": 3.1,
+   "completion_tokens": 66,
+   "reasoning_chars": 0
+  }
+ ],
+ "invalid": false,
+ "arm": "ragq-syn",
+ "thinking": "off"
+}

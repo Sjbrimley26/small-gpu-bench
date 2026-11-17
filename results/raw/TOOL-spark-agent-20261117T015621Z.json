@@ -1,0 +1,45 @@
+{
+ "test": "TOOL",
+ "model": "spark-agent",
+ "date": "20261117T015621Z",
+ "args": {
+  "model": "spark-agent",
+  "timeout": 1200.0,
+  "think": "off",
+  "runs": 1,
+  "sets": "4,20",
+  "max_tokens": 300,
+  "temperature": 0.0,
+  "selftest": false
+ },
+ "summary": {
+  "4": "1/1",
+  "20": "1/1"
+ },
+ "rows": [
+  {
+   "tools": 4,
+   "run": 0,
+   "s": 1.8,
+   "error": null,
+   "n_calls": 1,
+   "first_tool": "terminal",
+   "right_tool": true,
+   "arguments": "{\"command\":\"df -h /data\"}",
+   "textual_call": false,
+   "content_head": ""
+  },
+  {
+   "tools": 20,
+   "run": 0,
+   "s": 4.5,
+   "error": null,
+   "n_calls": 1,
+   "first_tool": "terminal",
+   "right_tool": true,
+   "arguments": "{\"command\":\"df -h /data\"}",
+   "textual_call": false,
+   "content_head": "I'll run the command and report the result."
+  }
+ ]
+}

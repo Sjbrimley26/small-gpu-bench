@@ -1,0 +1,148 @@
+{
+ "test": "AUD",
+ "model": "spark-agent",
+ "date": "20261117T024501Z",
+ "args": {
+  "model": "spark-agent",
+  "timeout": 1200.0,
+  "think": "off",
+  "docs": "aud1,aud2",
+  "runs": 3,
+  "temperature": 0.3,
+  "max_tokens": 3000,
+  "selftest": false
+ },
+ "summary": {
+  "aud1": {
+   "runs": 3,
+   "all_found": 1,
+   "any_found": 3,
+   "says_none": 0,
+   "empty": 0,
+   "cap_hit": 0,
+   "runs_with_unknown_numbers": 0
+  },
+  "aud2": {
+   "runs": 3,
+   "all_found": 0,
+   "any_found": 1,
+   "says_none": 2,
+   "empty": 0,
+   "cap_hit": 0,
+   "runs_with_unknown_numbers": 0
+  }
+ },
+ "rows": [
+  {
+   "doc": "aud1",
+   "run": 0,
+   "s": 46.9,
+   "finish": "stop",
+   "error": null,
+   "prompt_tokens": 9025,
+   "reply": "Based on the document, there is one inconsistency or error in the figures or facts:\n\n**Finance note, first week of February vs. Buying memo, mid March (and Receiving note, mid June):**\n- **Figures involved:** Trim board TMB-8FT price of **12.40 per board** (Buying memo, mid March) and **14.10 per board** (Receiving note, mid June).\n- **Inconsistency:** The document states the price was renegotiated down from the winter rate to 12.40 per board in the spring renegotiation (mid March), but the mid June receiving note records the same board entering at 14.10 per board, which contradicts the stated downward adjustment and represents a higher price.",
+   "found": {
+    "price": true,
+    "freight": false
+   },
+   "n_found": 1,
+   "n_planted": 2,
+   "says_none": false,
+   "unknown_numbers": [],
+   "empty": false
+  },
+  {
+   "doc": "aud1",
+   "run": 1,
+   "s": 11.3,
+   "finish": "stop",
+   "error": null,
+   "prompt_tokens": 9025,
+   "reply": "Based on my review of the document's content, there is one inconsistency or error in the figures/facts:\n\n1. **Trim board price discrepancy (Finance note, first week of February vs. Receiving note, mid June):**\n   - The Finance note states that Trim board TMB-8FT was quoted at 12.40 per board in the spring renegotiation, \"down from the winter rate.\"\n   - The Receiving note (mid June) states the delivery that week included trim board TMB-8FT entered at 14.10 per board.\n   - These figures conflict with each other and with the stated direction of change (the mid-June price of 14.10 is higher than the 12.40 mentioned in the February note, contradicting the claim that the spring renegotiation lowered the price).",
+   "found": {
+    "price": true,
+    "freight": false
+   },
+   "n_found": 1,
+   "n_planted": 2,
+   "says_none": false,
+   "unknown_numbers": [],
+   "empty": false
+  },
+  {
+   "doc": "aud1",
+   "run": 2,
+   "s": 15.8,
+   "finish": "stop",
+   "error": null,
+   "prompt_tokens": 9025,
+   "reply": "Based on the document, there is one inconsistency/error in the figures or facts:\n\n**Finance note, first week of February vs. Buying memo, mid March vs. Receiving note, mid June (trim board TMB-8FT price):**\n- The Finance note (first week of February) states that freight for the north warehouse run was quoted as 4 loads at 285.00 each (total 1,140.00) and the June statement showed it as a single line invoiced at 1,420.00 for the same four loads.\n- The Buying memo (mid March) states that Trim board TMB-8FT was moved to 12.40 per board in the spring renegotiation.\n- The Receiving note (mid June) states that the delivery that week included trim board TMB-8FT entered at 14.10 per board.\n\nThese figures for the same product (TMB-8FT) and across different time periods (February, mid March, mid June) are inconsistent with one another (12.40, 14.10, and the freight line details in the February note).",
+   "found": {
+    "price": true,
+    "freight": true
+   },
+   "n_found": 2,
+   "n_planted": 2,
+   "says_none": false,
+   "unknown_numbers": [],
+   "empty": false
+  },
+  {
+   "doc": "aud2",
+   "run": 0,
+   "s": 52.0,
+   "finish": "stop",
+   "error": null,
+   "prompt_tokens": 10412,
+   "reply": "Based on my review of the document's content, there are **no inconsistencies or errors in the figures or facts** presented. \n\nThe only numerical figure in the document is in the \"Stock note, mid May\" section, which states: *\"The three pallets of cabinet hinge stock held 120, 85 and 95 units, and the count sheet totals them at 330 units for the quarter-end report.\"* The figures are mathematically consistent (120 + 85 + 95 = 330), and there are no contradictions, missing values, or conflicting facts regarding any other data in the document.",
+   "found": {
+    "terms": false,
+    "sum": false,
+    "chrono": false
+   },
+   "n_found": 0,
+   "n_planted": 3,
+   "says_none": true,
+   "unknown_numbers": [],
+   "empty": false
+  },
+  {
+   "doc": "aud2",
+   "run": 1,
+   "s": 17.9,
+   "finish": "stop",
+   "error": null,
+   "prompt_tokens": 10412,
+   "reply": "Based on the document, there are **no inconsistencies or errors in the figures or facts** presented. \n\nThe only numerical figure in the document is in the \"Stock note, mid May\" section, which states that three pallets of cabinet hinge stock held 120, 85, and 95 units, with the count sheet totaling them at 330 units. The figures are mathematically consistent (120 + 85 + 95 = 300... wait, 120 + 85 + 95 = 300, but the document states the total is 330). \n\n**Wait, let me recalculate:**\n120 + 85 + 95 = 300.\nThe document states the count sheet totals them at **330 units**.\n\nTherefore, there is **one inconsistency/error in the figures**:\n* **Figure involved:** The stock count in the \"Stock note, mid May\" section.\n* **Details:** The three pallets held 120, 85, and 95 units, but the count sheet totals them at 330 units. The arithmetic of the listed figures (120 + 85 + 95 = 300) contradicts the stated total of 330.",
+   "found": {
+    "terms": false,
+    "sum": true,
+    "chrono": false
+   },
+   "n_found": 1,
+   "n_planted": 3,
+   "says_none": false,
+   "unknown_numbers": [],
+   "empty": false
+  },
+  {
+   "doc": "aud2",
+   "run": 2,
+   "s": 7.7,
+   "finish": "stop",
+   "error": null,
+   "prompt_tokens": 10412,
+   "reply": "Based on my review of the document's content, there are **no inconsistencies or errors in the figures or facts** presented. \n\nThe only numerical figure in the document is in the \"Stock note, mid May\" section, which states that three pallets of cabinet hinge stock held 120, 85, and 95 units, with a count sheet totaling them at 330 units. The arithmetic is correct (120 + 85 + 95 = 330), and there are no conflicting figures or factual errors elsewhere in the document.",
+   "found": {
+    "terms": false,
+    "sum": false,
+    "chrono": false
+   },
+   "n_found": 0,
+   "n_planted": 3,
+   "says_none": true,
+   "unknown_numbers": [],
+   "empty": false
+  }
+ ]
+}

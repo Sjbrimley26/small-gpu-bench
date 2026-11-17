@@ -1,0 +1,30 @@
+{
+ "test": "MON",
+ "model": "spark-agent",
+ "date": "20261117T015633Z",
+ "args": {
+  "model": "spark-agent",
+  "timeout": 1200.0,
+  "think": "off",
+  "max_tokens": 900,
+  "runs": 1,
+  "temperature": 0.0,
+  "selftest": false
+ },
+ "passed": 1,
+ "total": 1,
+ "rows": [
+  {
+   "run": 0,
+   "ok": true,
+   "found": "821.64",
+   "expected": "821.64",
+   "s": 11.3,
+   "finish": "stop",
+   "completion_tokens": 216,
+   "reasoning_chars": 0,
+   "error": null,
+   "reply": "First, calculate the cost of the door slabs:\n14 \u00d7 $46.75 = $654.50\n\nNext, calculate the cost of the trim boards:\n9 \u00d7 $12.40 = $111.60\n\nNow, find the subtotal (cost before sales tax):\n$654.50 + $111.60 = $766.10\n\nFinally, calculate the sales tax (7.25% of the subtotal):\n$766.10 \u00d7 0.0725 = $55.54325\n\nAdd the sales tax to the subtotal to get the total cost:\n$766.10 + $55.54325 = $821.64325\n\nRounding to the nearest cent gives $821.64.\n\nTOTAL: $821.64"
+  }
+ ]
+}

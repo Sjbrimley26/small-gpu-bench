@@ -1,0 +1,245 @@
+{
+ "test": "RAGQ",
+ "model": "doc",
+ "date": "20261117T212044Z",
+ "args": {
+  "selftest": false,
+  "limit": 0,
+  "max_tokens": 900,
+  "model": "doc",
+  "timeout": 1200.0,
+  "think": "off"
+ },
+ "summary": {
+  "correct": 9,
+  "scored": 10,
+  "transport_errors": 0,
+  "by_type": {
+   "exact": "2/2",
+   "freshness": "2/2",
+   "negative": "2/2",
+   "synthesis": "2/2",
+   "vague": "1/2"
+  },
+  "cited_something": 1,
+  "mean_s": 2.4,
+  "mean_completion_tokens": 48
+ },
+ "rows": [
+  {
+   "qid": "E1",
+   "type": "exact",
+   "question": "what are the terms from Ridgeway Clay for paying an invoice early?",
+   "docs": [
+    "D4"
+   ],
+   "answer": "According to the terms provided for Ridgeway Clay, if an invoice is paid within 10 days, a 2% discount is applied. There is no mention of any other terms for paying an invoice early.",
+   "correct": true,
+   "checks": {
+    "2% discount": true,
+    "10 days": true
+   },
+   "cited": [],
+   "chars": 182,
+   "finish": "stop",
+   "s": 2.1,
+   "completion_tokens": 44,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "E2",
+   "type": "exact",
+   "question": "what does a student pay per month for studio access?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "According to the provided context, a student pays 30 per month for studio access.",
+   "correct": true,
+   "checks": {
+    "30": true,
+    "not 45 quoted as the student rate": true
+   },
+   "cited": [],
+   "chars": 81,
+   "finish": "stop",
+   "s": 1.1,
+   "completion_tokens": 18,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F1",
+   "type": "freshness",
+   "question": "how long does the kiln hold at cone 6 these days?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "According to the most recent firing schedule (D1, revised 2026-09), the kiln holds at cone 6 glaze temperature of 1200 C for 12 minutes. The kiln is then cooled down to 800 C with the lids shut.",
+   "correct": true,
+   "checks": {
+    "12 minutes": true,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [
+    "D1"
+   ],
+   "chars": 194,
+   "finish": "stop",
+   "s": 2.9,
+   "completion_tokens": 56,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "F2",
+   "type": "freshness",
+   "question": "what nozzle size is the 3D printer running?",
+   "docs": [
+    "D7",
+    "D8"
+   ],
+   "answer": "The 3D printer is running with a nozzle size of 0.4 mm hardened steel.",
+   "correct": true,
+   "checks": {
+    "0.4 mm": true,
+    "stale value only if labelled old (0.6 mm)": true
+   },
+   "cited": [],
+   "chars": 70,
+   "finish": "stop",
+   "s": 1.4,
+   "completion_tokens": 21,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N1",
+   "type": "negative",
+   "question": "what does it cost to rent the kiln out to an outside group, and what deposit is required?",
+   "docs": [
+    "D1",
+    "D5",
+    "D9"
+   ],
+   "answer": "The provided context does not contain any information regarding the rental cost of the kiln to an outside group or the deposit required for such rental. Therefore, this information is not recorded in the documents.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not invents a rental price": true,
+    "not invents a deposit": true
+   },
+   "cited": [],
+   "chars": 214,
+   "finish": "stop",
+   "s": 2.3,
+   "completion_tokens": 40,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "N2",
+   "type": "negative",
+   "question": "when did the shop buy its second kiln?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "The provided context does not contain any information about when the shop bought its second kiln.",
+   "correct": true,
+   "checks": {
+    "states it is not recorded": true,
+    "not asserts a purchase": true
+   },
+   "cited": [],
+   "chars": 97,
+   "finish": "stop",
+   "s": 1.5,
+   "completion_tokens": 19,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S1",
+   "type": "synthesis",
+   "question": "what was measured when the kiln element was replaced, and what does the firing schedule ask for at cone 6 now?",
+   "docs": [
+    "D1",
+    "D11"
+   ],
+   "answer": "When the kiln element was replaced, the resistance was measured. Specifically, the resistance of the replaced element was measured at 9.8 ohms per element pair. As for the firing schedule at cone 6, the kiln is now asked to ramp up at 120 C per hour to reach 1200 C, hold for 12 minutes, and then cool down at a rate of 80 C per hour to 800 C. The kiln lids should remain closed after reaching 600 C and should not be opened above 300 C.",
+   "correct": true,
+   "checks": {
+    "9.8 ohms": true,
+    "12 minutes hold": true,
+    "stale value only if labelled old (25 minutes)": true
+   },
+   "cited": [],
+   "chars": 437,
+   "finish": "stop",
+   "s": 5.0,
+   "completion_tokens": 113,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "S2",
+   "type": "synthesis",
+   "question": "someone visits once a week - is a membership or day passes cheaper for them in a month, and by how much?",
+   "docs": [
+    "D5"
+   ],
+   "answer": "Based on the provided context, a membership is cheaper for someone who visits once a week in a month. \n\nHere's the calculation:\n\n1. Monthly membership cost: $45\n2. Number of visits in a month: 4 (since they visit once a week)\n3. Monthly day pass cost: $12 per visit x 4 visits = $48\n\nTherefore, the monthly membership costs $3 less than the day passes for someone who visits once a week in a month.",
+   "correct": true,
+   "checks": {
+    "45 dues": true,
+    "12 per pass": true,
+    "the comparison (48 / 3.75 visits / four visits)": true
+   },
+   "cited": [],
+   "chars": 398,
+   "finish": "stop",
+   "s": 4.2,
+   "completion_tokens": 99,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V1",
+   "type": "vague",
+   "question": "remind me what we charge the drop-in crowd",
+   "docs": [
+    "D5",
+    "D9"
+   ],
+   "answer": "The charge for the drop-in crowd is $12 per visit for a day pass. Additional firing time is charged by the cubic foot on top of this fee.",
+   "correct": true,
+   "checks": {
+    "12 per day pass": true
+   },
+   "cited": [],
+   "chars": 137,
+   "finish": "stop",
+   "s": 1.8,
+   "completion_tokens": 33,
+   "reasoning_chars": 0
+  },
+  {
+   "qid": "V2",
+   "type": "vague",
+   "question": "how long do we hold the top temperature?",
+   "docs": [
+    "D1",
+    "D2"
+   ],
+   "answer": "According to the provided context, the top temperature for Cone 6 glaze is 1200 C. The kiln is held at this temperature for 25 minutes.",
+   "correct": false,
+   "checks": {
+    "12 minutes": false,
+    "stale value only if labelled old (25 minutes)": false
+   },
+   "cited": [],
+   "chars": 135,
+   "finish": "stop",
+   "s": 2.1,
+   "completion_tokens": 35,
+   "reasoning_chars": 0
+  }
+ ],
+ "invalid": false,
+ "arm": "ragq-syn",
+ "thinking": "off"
+}

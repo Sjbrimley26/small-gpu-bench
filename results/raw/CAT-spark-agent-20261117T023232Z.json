@@ -1,0 +1,1877 @@
+{
+ "test": "CAT",
+ "model": "spark-agent",
+ "date": "20261117T023232Z",
+ "args": {
+  "model": "spark-agent",
+  "timeout": 1200.0,
+  "think": "off",
+  "max_tokens": 256,
+  "limit": 0,
+  "no_schema": true,
+  "selftest": false,
+  "gen": false
+ },
+ "fixture_seed": 20261114,
+ "synthetic": true,
+ "n_rows": 200,
+ "summary": {
+  "all": {
+   "right": 145,
+   "wrong": 17,
+   "blank": 5,
+   "abstain_ok": 30,
+   "false_fill": 3,
+   "error": 0,
+   "wrong_share": 0.105
+  },
+  "tail": {
+   "right": 55,
+   "wrong": 15,
+   "blank": 5,
+   "abstain_ok": 30,
+   "false_fill": 3,
+   "error": 0,
+   "wrong_share": 0.214
+  },
+  "by_tier": {
+   "clear": [
+    68,
+    70
+   ],
+   "income": [
+    10,
+    10
+   ],
+   "transfer": [
+    12,
+    12
+   ],
+   "weak": [
+    21,
+    30
+   ],
+   "misleading": [
+    15,
+    25
+   ],
+   "dual": [
+    19,
+    20
+   ],
+   "opaque": [
+    15,
+    18
+   ],
+   "brand": [
+    15,
+    15
+   ]
+  }
+ },
+ "wall_s": 83.7,
+ "completion_tokens": 745,
+ "answers": [
+  {
+   "id": "p000",
+   "answer": "Insurance",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 1.5
+  },
+  {
+   "id": "p001",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p002",
+   "answer": "Dining Out",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p003",
+   "answer": "Income",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p004",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p005",
+   "answer": "Software & Streaming",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p006",
+   "answer": "Fuel",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p007",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p008",
+   "answer": "Income",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p009",
+   "answer": "Auto Service",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p010",
+   "answer": "Health & Pharmacy",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p011",
+   "answer": "Health & Pharmacy",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p012",
+   "answer": "Software & Streaming",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p013",
+   "answer": "Dining Out",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p014",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p015",
+   "answer": "UNSURE",
+   "outcome": "blank",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p016",
+   "answer": "Transfers & Cash",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p017",
+   "answer": "Travel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p018",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p019",
+   "answer": "Home & Hardware",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p020",
+   "answer": "Utilities",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p021",
+   "answer": "Home & Hardware",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p022",
+   "answer": "Groceries",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p023",
+   "answer": "UNSURE",
+   "outcome": "blank",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p024",
+   "answer": "Fuel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p025",
+   "answer": "Income",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p026",
+   "answer": "Groceries",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p027",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p028",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p029",
+   "answer": "Insurance",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p030",
+   "answer": "Income",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p031",
+   "answer": "Dining Out",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p032",
+   "answer": "Groceries",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p033",
+   "answer": "Software & Streaming",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p034",
+   "answer": "Entertainment",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p035",
+   "answer": "Income",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p036",
+   "answer": "Dining Out",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p037",
+   "answer": "UNSURE",
+   "outcome": "blank",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p038",
+   "answer": "Dining Out",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p039",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p040",
+   "answer": "Insurance",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p041",
+   "answer": "Insurance",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p042",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p043",
+   "answer": "Groceries",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p044",
+   "answer": "Transfers & Cash",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p045",
+   "answer": "Groceries",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p046",
+   "answer": "Dining Out",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p047",
+   "answer": "Income",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p048",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p049",
+   "answer": "Income",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p050",
+   "answer": "Software & Streaming",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p051",
+   "answer": "Auto Service",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p052",
+   "answer": "Entertainment",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p053",
+   "answer": "Dining Out",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p054",
+   "answer": "Clothing",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p055",
+   "answer": "Fuel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p056",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p057",
+   "answer": "Insurance",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p058",
+   "answer": "Auto Service",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p059",
+   "answer": "Utilities",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p060",
+   "answer": "Fuel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p061",
+   "answer": "Home & Hardware",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p062",
+   "answer": "Travel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p063",
+   "answer": "Auto Service",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p064",
+   "answer": "Utilities",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p065",
+   "answer": "Software & Streaming",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p066",
+   "answer": "Auto Service",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p067",
+   "answer": "Home & Hardware",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p068",
+   "answer": "Transfers & Cash",
+   "outcome": "false_fill",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p069",
+   "answer": "Groceries",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p070",
+   "answer": "Health & Pharmacy",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p071",
+   "answer": "Clothing",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p072",
+   "answer": "Income",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p073",
+   "answer": "Clothing",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p074",
+   "answer": "Utilities",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p075",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p076",
+   "answer": "Health & Pharmacy",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p077",
+   "answer": "Auto Service",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p078",
+   "answer": "Travel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p079",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p080",
+   "answer": "Fuel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p081",
+   "answer": "Software & Streaming",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p082",
+   "answer": "Dining Out",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p083",
+   "answer": "Fuel",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p084",
+   "answer": "Clothing",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p085",
+   "answer": "Travel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p086",
+   "answer": "Transfers & Cash",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p087",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p088",
+   "answer": "Transfers & Cash",
+   "outcome": "false_fill",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p089",
+   "answer": "Transfers & Cash",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p090",
+   "answer": "Travel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p091",
+   "answer": "Groceries",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p092",
+   "answer": "Entertainment",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p093",
+   "answer": "Auto Service",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p094",
+   "answer": "Health & Pharmacy",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p095",
+   "answer": "Home & Hardware",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p096",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p097",
+   "answer": "Insurance",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p098",
+   "answer": "Entertainment",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p099",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p100",
+   "answer": "Groceries",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p101",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p102",
+   "answer": "Travel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p103",
+   "answer": "Health & Pharmacy",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p104",
+   "answer": "Dining Out",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p105",
+   "answer": "Dining Out",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p106",
+   "answer": "Dining Out",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p107",
+   "answer": "Transfers & Cash",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p108",
+   "answer": "Transfers & Cash",
+   "outcome": "false_fill",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p109",
+   "answer": "Entertainment",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p110",
+   "answer": "Fuel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p111",
+   "answer": "Software & Streaming",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p112",
+   "answer": "Software & Streaming",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p113",
+   "answer": "Entertainment",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p114",
+   "answer": "Insurance",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p115",
+   "answer": "Clothing",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p116",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p117",
+   "answer": "Health & Pharmacy",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p118",
+   "answer": "Software & Streaming",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p119",
+   "answer": "Dining Out",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p120",
+   "answer": "Utilities",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p121",
+   "answer": "Utilities",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p122",
+   "answer": "Groceries",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p123",
+   "answer": "Auto Service",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p124",
+   "answer": "Entertainment",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p125",
+   "answer": "Utilities",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p126",
+   "answer": "Auto Service",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p127",
+   "answer": "Transfers & Cash",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p128",
+   "answer": "Groceries",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p129",
+   "answer": "Auto Service",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p130",
+   "answer": "Clothing",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p131",
+   "answer": "Travel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p132",
+   "answer": "Fuel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p133",
+   "answer": "Health & Pharmacy",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p134",
+   "answer": "Software & Streaming",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p135",
+   "answer": "Fuel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p136",
+   "answer": "Transfers & Cash",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p137",
+   "answer": "Insurance",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p138",
+   "answer": "Health & Pharmacy",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p139",
+   "answer": "Dining Out",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p140",
+   "answer": "Insurance",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p141",
+   "answer": "Software & Streaming",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p142",
+   "answer": "Income",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p143",
+   "answer": "Entertainment",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p144",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p145",
+   "answer": "Home & Hardware",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p146",
+   "answer": "UNSURE",
+   "outcome": "blank",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p147",
+   "answer": "Dining Out",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p148",
+   "answer": "Health & Pharmacy",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p149",
+   "answer": "Software & Streaming",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p150",
+   "answer": "Travel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p151",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p152",
+   "answer": "Dining Out",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p153",
+   "answer": "Transfers & Cash",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p154",
+   "answer": "Groceries",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p155",
+   "answer": "Groceries",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p156",
+   "answer": "UNSURE",
+   "outcome": "blank",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p157",
+   "answer": "Fuel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p158",
+   "answer": "Home & Hardware",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p159",
+   "answer": "Dining Out",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p160",
+   "answer": "Transfers & Cash",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p161",
+   "answer": "Income",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p162",
+   "answer": "Fuel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p163",
+   "answer": "Clothing",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p164",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p165",
+   "answer": "Home & Hardware",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p166",
+   "answer": "Groceries",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p167",
+   "answer": "Groceries",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p168",
+   "answer": "Entertainment",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p169",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p170",
+   "answer": "Software & Streaming",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p171",
+   "answer": "Auto Service",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p172",
+   "answer": "Health & Pharmacy",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p173",
+   "answer": "Groceries",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p174",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p175",
+   "answer": "Entertainment",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p176",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p177",
+   "answer": "Utilities",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p178",
+   "answer": "Travel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p179",
+   "answer": "Home & Hardware",
+   "outcome": "wrong",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p180",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p181",
+   "answer": "Transfers & Cash",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p182",
+   "answer": "Transfers & Cash",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p183",
+   "answer": "Health & Pharmacy",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p184",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p185",
+   "answer": "Software & Streaming",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p186",
+   "answer": "Insurance",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p187",
+   "answer": "Fuel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p188",
+   "answer": "Insurance",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p189",
+   "answer": "Dining Out",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p190",
+   "answer": "Clothing",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p191",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p192",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p193",
+   "answer": "Transfers & Cash",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p194",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p195",
+   "answer": "Utilities",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p196",
+   "answer": "Home & Hardware",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  },
+  {
+   "id": "p197",
+   "answer": "Travel",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.3
+  },
+  {
+   "id": "p198",
+   "answer": "Groceries",
+   "outcome": "right",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.5
+  },
+  {
+   "id": "p199",
+   "answer": "UNSURE",
+   "outcome": "abstain_ok",
+   "tries": 1,
+   "finish": "stop",
+   "error": null,
+   "s": 0.4
+  }
+ ],
+ "invalid": false
+}
