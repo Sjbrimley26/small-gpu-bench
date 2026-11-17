@@ -171,6 +171,8 @@ def main():
     ap = common.add_common_args(argparse.ArgumentParser(description=(__doc__ or "").split("\n\n")[0]))
     ap.add_argument("--max-tokens", type=int, default=6000)
     ap.add_argument("--temps", default="0,0.7", help="comma list of temperatures")
+    ap.add_argument("--reasoning-budget", type=int, default=0,
+                    help="send reasoning_budget_tokens (llama.cpp per-request cap on thinking); 0 = not sent")
     ap.add_argument("--only", default="", help="comma list of problem ids")
     ap.add_argument("--check", action="store_true", help="print computed answers and exit")
     ap.add_argument("--selftest", action="store_true")
@@ -188,13 +190,14 @@ def main():
         for pid, prompt, kind, exp in P:
             if only and pid not in only:
                 continue
-            r = common.chat(a, [{"role": "user", "content": prompt + FMT}], max_tokens=a.max_tokens, temperature=temp)
+            r = common.chat(a, [{"role": "user", "content": prompt + FMT}], max_tokens=a.max_tokens, temperature=temp,
+                            extra={"reasoning_budget_tokens": a.reasoning_budget} if a.reasoning_budget else None)
             ok, ans = grade(kind, exp, r["content"])
             if r.get("finish") == "length":
                 ok = False
             rows.append({"id": pid, "temp": temp, "ok": ok, "answer": ans, "expected": exp, "kind": kind, "s": r["s"],
                          "finish": r.get("finish"), "completion_tokens": r.get("completion_tokens"),
-                         "error": r.get("error"), "reply": r["content"]})
+                         "reasoning_chars": r.get("reasoning_chars"), "error": r.get("error"), "reply": r["content"]})
             common.say("%s@%s: %s ans=%r exp=%r %.0fs finish=%s %s" % (pid, temp, "PASS" if ok else "FAIL", ans, exp,
                                                                         r["s"], r.get("finish"), r.get("error") or ""))
     summary = {str(t): "%d/%d" % (sum(x["ok"] for x in rows if x["temp"] == t), sum(1 for x in rows if x["temp"] == t))
