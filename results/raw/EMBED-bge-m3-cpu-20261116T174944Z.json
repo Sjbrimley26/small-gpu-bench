@@ -6,7 +6,6 @@
   "model": "bge-m3-cpu",
   "timeout": 1200.0,
   "think": "auto",
-  "base_url_b": "http://127.0.0.1:8090",
   "model_b": "embed-gpu",
   "chunks": 8,
   "queries": 10,
