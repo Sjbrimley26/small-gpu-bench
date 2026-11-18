@@ -14,6 +14,14 @@ measured after the port (EMBED, SPEED, FIM, the §117, §118 and §120 runs — 
 tests added with them, PO-SYN and RAGQ-SYN) were added by hand under the same rule.
 A row that appears here with no lab-side counterpart is a bug in the record, not a variant of it.
 
+## Before a push: commit first, then scan
+
+`scripts/check_public.sh` reads `git ls-files`, so files that are still untracked (new `results/raw/` records,
+a fresh fixture) are not scanned. Running it before `git add` reports a clean tree that a fresh clone will
+fail on. The order is: `git add` the new files, run the scanner, then commit. Two §114 `EMBED` records did
+exactly this in reverse and shipped a `base_url_b` field naming the lab's router endpoint until a clone caught
+it (fixed in 77f3cd3); records written by `common.save_results` never carry it, because it skips `base_url`.
+
 ## Sanitising the seat names
 
 The lab calls its server presets "seats". The exported CSV's `notes` column carried those names, which are
