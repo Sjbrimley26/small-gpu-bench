@@ -100,6 +100,11 @@ Stated plainly because several cells are one run:
 - **FIM** — 58 cases cut from 29 lines (two cuts each), one pass per arm, one card. Two cases is noise.
   The plain arm cannot see the suffix, so it is a floor, not a fair fight; the containers start
   immediately before the test, so the first cases carry cold-load latency.
+- **CMP-SYN** — one seed (7), one run per seat, three rounds. "Kept" per round is out of the needles planted so
+  far (3, 5, 7), so the headline is round 3 out of 7. `overflow` (summary ran past the 3000-token ceiling) is a
+  result, not a harness fault; two seats CUDA-OOM at 40k on this card and have no row (stated in the excerpt).
+  Rows come from `scripts/raw_to_rows.py` over `results/raw/CMP-SYN-*.json`, not from the lab export. Not
+  comparable to the lab's private-transcript ladder (§85, §89).
 
 ## Fixture reproducibility
 

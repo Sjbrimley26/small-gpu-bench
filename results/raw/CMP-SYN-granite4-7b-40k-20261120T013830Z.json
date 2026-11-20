@@ -1,0 +1,105 @@
+{
+ "test": "CMP-SYN",
+ "model": "granite4-7b-40k",
+ "date": "20261120T013830Z",
+ "args": {
+  "model": "granite4-7b-40k",
+  "timeout": 1200.0,
+  "think": "auto",
+  "rounds": 3,
+  "seed": 7,
+  "size_tok": 23500,
+  "ceiling": 3000,
+  "write_transcript": null,
+  "selftest": false
+ },
+ "seed": 7,
+ "rounds": 3,
+ "ceiling": 3000,
+ "size_tok_est": 23500,
+ "chain": [
+  {
+   "round": 1,
+   "s": 39.6,
+   "prompt_tokens": 11314,
+   "out_tokens": 105,
+   "planted": 3,
+   "status": "ok",
+   "needles": {
+    "path": "lost",
+    "job": "lost",
+    "number": "lost"
+   },
+   "kept": 0,
+   "invented": 0,
+   "summary_chars": 386
+  },
+  {
+   "round": 2,
+   "s": 39.9,
+   "prompt_tokens": 11109,
+   "out_tokens": 125,
+   "planted": 5,
+   "status": "ok",
+   "needles": {
+    "path": "lost",
+    "job": "lost",
+    "number": "lost",
+    "question": "lost",
+    "rule": "lost"
+   },
+   "kept": 0,
+   "invented": 0,
+   "summary_chars": 484
+  },
+  {
+   "round": 3,
+   "s": 165.4,
+   "prompt_tokens": 10983,
+   "out_tokens": 3000,
+   "planted": 7,
+   "status": "overflow"
+  }
+ ],
+ "chain_status": "ok",
+ "final_kept": null,
+ "resume": {
+  "path": {
+   "exact": false,
+   "reply": "UNKNOWN",
+   "error": null
+  },
+  "job": {
+   "exact": false,
+   "reply": "UNKNOWN",
+   "error": null
+  },
+  "number": {
+   "exact": false,
+   "reply": "UNKNOWN",
+   "error": null
+  },
+  "question": {
+   "exact": false,
+   "reply": "UNKNOWN",
+   "error": null
+  },
+  "rule": {
+   "exact": false,
+   "reply": "config directory",
+   "error": null
+  },
+  "version": {
+   "exact": false,
+   "reply": "UNKNOWN",
+   "error": null
+  },
+  "name": {
+   "exact": false,
+   "reply": "UNKNOWN",
+   "error": null
+  }
+ },
+ "resume_exact": 0,
+ "final_summary": "## Active Task\n[The user's most recent unfulfilled request or question, in your words.]\n\n## Constraints & Rules\nThe user instructed not to touch the config directory.\n\n## Completed Actions\n1. Running the suite.\n   - [pytest -q](pytest -q)\n   - 3 failed, 55 passed in 39.25s\n\n## Active State\n- [pytest -q](pytest -q) completed successfully.\n- Files produced: None.\n- Background jobs still running: None.\n- Versions pinned: None.\n- People named: None.\n\n## Blocked / Open Questions\nNone."
+}

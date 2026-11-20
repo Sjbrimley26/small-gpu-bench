@@ -1,0 +1,117 @@
+{
+ "test": "CMP-SYN",
+ "model": "frog-agent",
+ "date": "20261120T012228Z",
+ "args": {
+  "model": "frog-agent",
+  "timeout": 1200.0,
+  "think": "auto",
+  "rounds": 3,
+  "seed": 7,
+  "size_tok": 23500,
+  "ceiling": 3000,
+  "write_transcript": null,
+  "selftest": false
+ },
+ "seed": 7,
+ "rounds": 3,
+ "ceiling": 3000,
+ "size_tok_est": 23500,
+ "chain": [
+  {
+   "round": 1,
+   "s": 145.2,
+   "prompt_tokens": 13922,
+   "out_tokens": 541,
+   "planted": 3,
+   "status": "ok",
+   "needles": {
+    "path": "lost",
+    "job": "lost",
+    "number": "lost"
+   },
+   "kept": 0,
+   "invented": 0,
+   "summary_chars": 2413
+  },
+  {
+   "round": 2,
+   "s": 126.3,
+   "prompt_tokens": 14406,
+   "out_tokens": 364,
+   "planted": 5,
+   "status": "ok",
+   "needles": {
+    "path": "lost",
+    "job": "lost",
+    "number": "lost",
+    "question": "lost",
+    "rule": "kept"
+   },
+   "kept": 1,
+   "invented": 0,
+   "summary_chars": 1719
+  },
+  {
+   "round": 3,
+   "s": 190.6,
+   "prompt_tokens": 13917,
+   "out_tokens": 797,
+   "planted": 7,
+   "status": "ok",
+   "needles": {
+    "path": "lost",
+    "job": "lost",
+    "number": "lost",
+    "question": "lost",
+    "rule": "kept",
+    "version": "lost",
+    "name": "lost"
+   },
+   "kept": 1,
+   "invented": 0,
+   "summary_chars": 3213
+  }
+ ],
+ "chain_status": "ok",
+ "final_kept": 1,
+ "resume": {
+  "path": {
+   "exact": false,
+   "reply": "UNKNOWN",
+   "error": null
+  },
+  "job": {
+   "exact": false,
+   "reply": "UNKNOWN",
+   "error": null
+  },
+  "number": {
+   "exact": false,
+   "reply": "UNKNOWN",
+   "error": null
+  },
+  "question": {
+   "exact": false,
+   "reply": "The user is waiting on the identification of the specific failing tests and their causes. The options are to identify the failing tests and their causes to proceed.",
+   "error": null
+  },
+  "rule": {
+   "exact": true,
+   "reply": "make purge-ledger",
+   "error": null
+  },
+  "version": {
+   "exact": false,
+   "reply": "UNKNOWN",
+   "error": null
+  },
+  "name": {
+   "exact": false,
+   "reply": "UNKNOWN",
+   "error": null
+  }
+ },
+ "resume_exact": 1,
+ "final_summary": "## Active Task\nRe-run the failing test suite after applying negative total validation fixes to resolve the 3 failures observed in the previous run.\n\n## Constraints & Rules\nNone specified by user.\nNever run make purge-ledger against the shared volume. It wipes the audit trail and there is no undo.\nNo files produced in this turn. No background jobs running. No specific versions pinned in this turn. No people named.\n\n## Completed Actions\n1. Applied negative total validation fix to `src/ledger/queue_retry.yaml` (added Decimal conversion and ValueError raise).\n2. Applied negative total validation fix to `docs/retry_batch.json` (added Decimal conversion and ValueError raise).\n3. Applied negative total validation fix to `tests/fixtures/window_split.py` (added Decimal conversion and ValueError raise).\n4. Applied negative total validation fix to `docs/cache_merge.yaml` (added Decimal conversion and ValueError raise).\n5. Applied negative total validation fix to `config/format_cache.md` (added Decimal conversion and ValueError raise).\n6. Applied negative total validation fix to `src/ledger/format_cache.py` (added Decimal conversion and ValueError raise).\n7. Applied negative total validation fix to `docs/mapper_retry.py` (added Decimal conversion and ValueError raise).\n8. Applied negative total validation fix to `scripts/mapper_diff.py` (added Decimal conversion and ValueError raise).\n9. Ran `pytest -q` suite (result: 1 failed, 50 passed).\n10. Ran `pytest -q` suite (result: 81 passed, 0 failed).\n11. Applied negative total validation fix to `tests/fixtures/totals_invoice.yaml` (added Decimal conversion and ValueError raise).\n12. Applied negative total validation fix to `docs/cache_index.yaml` (added Decimal conversion and ValueError raise).\n13. Ran `pytest -q` suite (result: 3 failed, 66 passed).\n14. Applied negative total validation fix to `src/report/queue_batch.yaml` (added Decimal conversion and ValueError raise).\n15. Ran `pytest -q` suite (result: 1 failed, 71 passed).\n16. Applied negative total validation fix to `tests/window_retry.json` (added Decimal conversion and ValueError raise).\n17. Applied negative total validation fix to `src/ingest/diff_rules.py` (added Decimal conversion and ValueError raise).\n18. Ran `pytest -q` suite (result: 1 failed, 64 passed).\n19. Applied negative total validation fix to `src/report/cache_audit.json` (added Decimal conversion and ValueError raise).\n20. Ran `pytest -q` suite (result: 1 failed, 39 passed).\n21. Ran `pytest -q` suite (result: 1 failed, 45 passed).\n22. Applied negative total validation fix to `tests/fixtures/parse_schema.sh` (added Decimal conversion and ValueError raise).\n23. Ran `pytest -q` suite (result: 1 failed, 37 passed).\n24. Ran `pytest -q` suite (result: 3 failed, 75 passed).\n25. Ran `pytest -q` suite (result: 2 failed, 59 passed).\n26. Ran `pytest -q` suite (result: 2 failed, 71 passed).\n27. Ran `pytest -q` suite (result: 2 failed, 59 passed).\n\n## Active State\nNo files produced in this turn. No background jobs running. No specific versions pinned in this turn. No people named.\n\n## Blocked / Open Questions\nThe test suite still shows 2 failures. Need to identify the specific failing tests and cause to proceed."
+}

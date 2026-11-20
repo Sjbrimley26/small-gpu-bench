@@ -278,6 +278,16 @@ def reply_for(model, messages, tools):
         hit = min(((payee.rfind(k), c) for k, c in kw if k in payee), default=None, key=lambda x: -x[0])
         ans = "Groceries" if "small" in model else (hit[1] if hit else "UNSURE")
         return json.dumps({"category": ans}), None
+    if first_user.startswith("You are a summarization agent creating a context checkpoint"):   # CMP-SYN
+        keep = re.compile(r"q3-recon-c81f|J-5521|0\.8137|retention window|purge-ledger|4\.19\.3-rc2|Quenneville")
+        return "## Summary\n" + "\n".join(l for l in first_user.splitlines() if keep.search(l)), None
+    if first_user.startswith("Below is a checkpoint summary of an earlier working session"):
+        summ, _, q = first_user.partition("QUESTION:")
+        keys = {"full path": "q3-recon-c81f", "background job": "J-5521", "AUC": "0.8137", "decision": "retention",
+                "never run": "purge-ledger", "version": "4.19.3-rc2", "owns": "Quenneville"}
+        want = next((v for k, v in keys.items() if k in q), None)
+        hit = [l for l in summ.splitlines() if want and want in l]
+        return (hit[0] if hit else "UNKNOWN"), None
     if "Read this document page" in first_user:           # OCR (the mock cannot see; it returns the planted values)
         return "TITLE: 88213\nPO: 4471\nDATE: 2026-09-14\nTOTAL: 1345.99\nVENDOR: ACME DOOR AND TRIM SUPPLY", None
     if "sanitizes business documents" in system:           # RED

@@ -81,6 +81,7 @@ repo, runs with `--selftest` (grader checks, no model), and writes one JSON reco
 | `tests/ragq.py` | RAGQ-SYN (synthetic) | grounded answering from a supplied context: 10 questions over an invented 11-document makerspace corpus in the five shapes that matter — exact lookup, freshness (a stale sheet and a live one disagree), negative (the fact is absent), synthesis (two documents, one needs arithmetic), vague phrasing; each question ships only the documents it "retrieved" | correct /10 per question from a key of regexes that must / must not match (no model judges); a stale value counts only when the answer labels it old; per-shape counts; citations counted, not scored |
 | `tests/po_real.py` | PO-REAL (real document) | extract a real published purchase order - a Texas HHS Commission PO (public record, personal contact details redacted) as `pdftotext -layout` renders it: interleaved columns, descriptions wrapped onto their own lines, repeated page headers, one stated "Not to exceed" total, 12 line items that each multiply out | **parse** apart from 8 schema keys, 4 header fields, line rows exact /12 (line label, class code, qty, UOM, unit price, amount), the schedule total, and the reply's own arithmetic (qty x price per line, amounts summing to the total) |
 | `tests/ragq_real.py` | RAGQ-REAL (real documents) | grounded answering over four real public documents that form **two revision pairs**: 13 CFR 125.6 (CFR 2026 vs 2023 editions) and NIST SP 800-63B-4 vs -3 password verifiers; 15 questions in six shapes, three of them arithmetic over the rule (apply the 50%/85% limit to a contract value rather than quote the percentage), each shipping the retrieved chunk(s) labelled only with title and edition date - resolving which source is current is the model's job | correct /15 by a per-question key of regexes that must / must not match (no model judges); a superseded value counts only when labelled as old or tied to the case it still applies to; per-shape counts |
+| `tests/cal/run.py` | CAL | code generation: the model writes 9 small JavaScript calendar helpers (`--extended`: 13), `node --test` grades each, a same-model critic diagnoses failures, up to 4 attempts; needs Node 20+; the answer key (`reference/*.js`) is not shipped (`--reference DIR` borrows failed dependencies and runs the gold selftest). Protocol in the script docstring: thinking off at 4500 tokens is the headline, `--think on --max-tokens 11000` the think arm | first-attempt pass per task (critic-independent, the clean number) and final pass after repairs; blocked tasks counted as fails; request errors reported, a quarter or more makes the run invalid |
 | `tests/fim.py` | FIM | inline shell-command completion: 58 cases cut from 29 shell lines, two cuts per line (mid-word and three characters from the end), run through `/infill` (fim) and through `/v1/completions` (plain, the control) | first token must equal the missing remainder exactly; failures classified wrong / overlong / fenced / empty / echoed prefix; latency mean and p95 |
 
 **Bring-your-own data for JUDGE, CRIT and SUM.** The lab ran these on a copyrighted YouTube transcript, which is not
@@ -117,6 +118,19 @@ that fits one context window it did worse than a plain single pass ([§97](docs/
 
 Sample sizes are stated per item. In general: one card, one build per section, mostly 1-3 runs per cell, and models of
 4B parameters or less except where named. Treat these as measurements on this setup, not as rankings.
+
+### Code generation (CAL): a local 35B MoE and a hosted model tie on nine tasks; four harder ones split them ([§124](docs/excerpts/124-cal.md))
+
+13 calendar-helper tasks, thinking off, up to 4 attempts with a same-model critic (`tests/cal/run.py`). Qwen3.6-35B-A3B
+(local) **9/13**, DeepSeek-V4.1-flash (hosted) **12/13**; both pass the nine originals on attempt 1. Sample: n=1 per
+model; the local throughput for the last four tasks is withheld (unexplained slowdown), and the hosted
+expandRecurrence failure shows zero critic calls, so it is not a clean read ([§124](docs/excerpts/124-cal.md)).
+
+### Context compression (synthetic transcript): best 4 GB seat keeps 1 of 7 facts after three rounds ([§125](docs/excerpts/125-compress-synthetic.md))
+
+Seeded ~23.5k-token generated transcript, 7 planted needles, three compaction rounds, 3000-token output ceiling
+(`tests/compress.py`). FrogNano-4B 1/7 kept; granite4-7B and lfm2 0/7 and overflow the ceiling in round 3; a small
+helper seat overflows in round 1; two seats CUDA-OOM at load at 40k. 0 invented facts anywhere. Sample: n=1 per seat, one seed.
 
 ### Speculative decoding (DFlash drafter) is slower here: no-go ([§88](docs/excerpts/088-dflash-no-go.md))
 

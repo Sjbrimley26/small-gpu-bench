@@ -1,0 +1,45 @@
+{
+ "test": "CMP-SYN",
+ "model": "aux",
+ "date": "20261120T011342Z",
+ "args": {
+  "model": "aux",
+  "timeout": 1200.0,
+  "think": "auto",
+  "rounds": 3,
+  "seed": 7,
+  "size_tok": 23500,
+  "ceiling": 3000,
+  "write_transcript": null,
+  "selftest": false
+ },
+ "seed": 7,
+ "rounds": 3,
+ "ceiling": 3000,
+ "size_tok_est": 23500,
+ "chain": [
+  {
+   "round": 1,
+   "s": 275.7,
+   "prompt_tokens": 14232,
+   "out_tokens": 3000,
+   "planted": 3,
+   "status": "overflow"
+  },
+  {
+   "round": 2,
+   "status": "not_run",
+   "planted": 5
+  },
+  {
+   "round": 3,
+   "status": "not_run",
+   "planted": 7
+  }
+ ],
+ "chain_status": "overflow",
+ "final_kept": null,
+ "resume": {},
+ "resume_exact": null,
+ "final_summary": null
+}

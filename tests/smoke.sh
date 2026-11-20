@@ -40,7 +40,8 @@ rec() {    # rec TEST  -> a result JSON for TEST must exist in the smoke output 
 }
 
 # 1. offline self-tests (graders, fixtures, pattern logic: no server involved)
-for t in red aud mon hrd tool_probe judge crit sum_test ocr cat sql aux_lanes arena rent embed_timing fim po ragq po_real ragq_real; do step "selftest-$t" python3 tests/$t.py --selftest; done
+for t in red aud mon hrd tool_probe judge crit sum_test ocr vision compress cat sql aux_lanes arena rent embed_timing fim po ragq po_real ragq_real; do step "selftest-$t" python3 tests/$t.py --selftest; done
+step selftest-cal python3 tests/cal/run.py --selftest
 step selftest-summarize_verify python3 patterns/summarize_verify.py --selftest
 step selftest-escalate python3 patterns/escalate.py --selftest
 
@@ -55,6 +56,8 @@ step run-judge      python3 tests/judge.py "${R[@]}" --runs 2
 step run-crit       python3 tests/crit.py "${R[@]}" --runs 2 --judge-writer small
 step run-sum        python3 tests/sum_test.py "${R[@]}" --runs 1 --pipeline
 step run-ocr        python3 tests/ocr.py "${R[@]}" --runs 1
+step run-vision     python3 tests/vision.py "${R[@]}"
+step run-compress   python3 tests/compress.py "${R[@]}"
 step run-rent       python3 tests/rent.py "${R[@]}" --limit 40
 MODEL=mock-small step run-rent-small python3 tests/rent.py "${R[@]}" --limit 40 --think on --reasoning-budget 256
 step run-cat        python3 tests/cat.py "${R[@]}" --limit 60
@@ -68,6 +71,7 @@ MODEL=mock-small BASE_URL_B="$BASE_URL" MODEL_B=mock-big step run-embed \
 step run-speed      python3 tests/speed.py "${R[@]}" --reps 1 --gen 8
 step run-fim        python3 tests/fim.py "${R[@]}" --limit 6
 step run-fim-plain  python3 tests/fim.py "${R[@]}" --limit 6 --mode plain
+step run-cal        python3 tests/cal/run.py "${R[@]}" --only startOfWeek,monthGrid
 step run-po         python3 tests/po.py "${R[@]}"
 MODEL=mock-small step run-po-small python3 tests/po.py "${R[@]}" --max-tokens 200
 step run-ragq       python3 tests/ragq.py "${R[@]}"
@@ -76,7 +80,7 @@ step run-po-real    python3 tests/po_real.py "${R[@]}"
 MODEL=mock-small step run-po-real-small python3 tests/po_real.py "${R[@]}"
 step run-ragq-real  python3 tests/ragq_real.py "${R[@]}"
 MODEL=mock-small step run-ragq-real-small python3 tests/ragq_real.py "${R[@]}" --limit 4
-for T in RED AUD MON HRD TOOL JUDGE CRIT SUM OCR CAT SQL AUX RENT EMBED SPEED FIM PO RAGQ PO-REAL RAGQ-REAL; do rec $T; done
+for T in RED AUD MON HRD TOOL JUDGE CRIT SUM OCR CMP-SYN CAT SQL AUX RENT EMBED SPEED FIM PO RAGQ PO-REAL RAGQ-REAL CAL; do rec $T; done
 step run-arena      python3 tests/arena.py "${R[@]}" $(ls "$OUT"/raw/CAT-*.json)
 rec ARENA
 
