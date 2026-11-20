@@ -1,0 +1,265 @@
+{
+ "test": "VISION",
+ "model": "ocr-qwen25vl",
+ "date": "20261120T081829Z",
+ "args": {
+  "model": "ocr-qwen25vl",
+  "timeout": 1200.0,
+  "think": "auto",
+  "runs": 1,
+  "max_tokens": 200,
+  "variants": "1,2",
+  "write_png": null,
+  "selftest": false
+ },
+ "total": 10,
+ "runs": [
+  {
+   "run": 0,
+   "variant": 1,
+   "questions": [
+    {
+     "q": "poster_title",
+     "image": "poster",
+     "weight": 2,
+     "ok": true,
+     "reply": "Iron Tide",
+     "s": 4.2,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 3,
+     "prompt_tokens": 359,
+     "decode_tps": 14.065587836079638
+    },
+    {
+     "q": "poster_year",
+     "image": "poster",
+     "weight": 1,
+     "ok": true,
+     "reply": "1987",
+     "s": 7.7,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 5,
+     "prompt_tokens": 358,
+     "decode_tps": 1.3076536313214429
+    },
+    {
+     "q": "logo_color",
+     "image": "logo",
+     "weight": 1,
+     "ok": true,
+     "reply": "Blue",
+     "s": 4.5,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 2,
+     "prompt_tokens": 223,
+     "decode_tps": 1.854351792787313
+    },
+    {
+     "q": "logo_word",
+     "image": "logo",
+     "weight": 1,
+     "ok": true,
+     "reply": "MARTEN",
+     "s": 4.8,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 4,
+     "prompt_tokens": 222,
+     "decode_tps": 3.7939865313478136
+    },
+    {
+     "q": "scene_count",
+     "image": "scene",
+     "weight": 2,
+     "ok": true,
+     "reply": "3",
+     "s": 5.2,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 2,
+     "prompt_tokens": 359,
+     "decode_tps": 1.7815626085639715
+    },
+    {
+     "q": "scene_sun",
+     "image": "scene",
+     "weight": 1,
+     "ok": true,
+     "reply": "Red",
+     "s": 5.5,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 2,
+     "prompt_tokens": 358,
+     "decode_tps": 1.6580778235407259
+    },
+    {
+     "q": "icon_dir",
+     "image": "icon",
+     "weight": 1,
+     "ok": true,
+     "reply": "right",
+     "s": 4.1,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 2,
+     "prompt_tokens": 122,
+     "decode_tps": 1.2082183008826035
+    },
+    {
+     "q": "icon_digit",
+     "image": "icon",
+     "weight": 1,
+     "ok": true,
+     "reply": "4",
+     "s": 4.3,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 2,
+     "prompt_tokens": 117,
+     "decode_tps": 10.278337376146034
+    }
+   ],
+   "points": 10,
+   "total": 10,
+   "passed": [
+    "poster_title",
+    "poster_year",
+    "logo_color",
+    "logo_word",
+    "scene_count",
+    "scene_sun",
+    "icon_dir",
+    "icon_digit"
+   ],
+   "failed": []
+  },
+  {
+   "run": 0,
+   "variant": 2,
+   "questions": [
+    {
+     "q": "poster_title",
+     "image": "poster",
+     "weight": 2,
+     "ok": true,
+     "reply": "Salt Road",
+     "s": 5.2,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 3,
+     "prompt_tokens": 359,
+     "decode_tps": 1.1139287319536584
+    },
+    {
+     "q": "poster_year",
+     "image": "poster",
+     "weight": 1,
+     "ok": true,
+     "reply": "2031",
+     "s": 4.4,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 5,
+     "prompt_tokens": 358,
+     "decode_tps": 9.791753874474612
+    },
+    {
+     "q": "logo_color",
+     "image": "logo",
+     "weight": 1,
+     "ok": true,
+     "reply": "Green",
+     "s": 3.4,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 2,
+     "prompt_tokens": 223,
+     "decode_tps": 2.410585362443562
+    },
+    {
+     "q": "logo_word",
+     "image": "logo",
+     "weight": 1,
+     "ok": true,
+     "reply": "HERON",
+     "s": 3.5,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 3,
+     "prompt_tokens": 222,
+     "decode_tps": 5.056263572907529
+    },
+    {
+     "q": "scene_count",
+     "image": "scene",
+     "weight": 2,
+     "ok": true,
+     "reply": "7",
+     "s": 5.8,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 2,
+     "prompt_tokens": 359,
+     "decode_tps": 1.5771800966180527
+    },
+    {
+     "q": "scene_sun",
+     "image": "scene",
+     "weight": 1,
+     "ok": true,
+     "reply": "Blue",
+     "s": 6.7,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 2,
+     "prompt_tokens": 358,
+     "decode_tps": 1.2722128361186313
+    },
+    {
+     "q": "icon_dir",
+     "image": "icon",
+     "weight": 1,
+     "ok": true,
+     "reply": "up",
+     "s": 2.4,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 2,
+     "prompt_tokens": 122,
+     "decode_tps": 1.4280410133379031
+    },
+    {
+     "q": "icon_digit",
+     "image": "icon",
+     "weight": 1,
+     "ok": false,
+     "reply": "1",
+     "s": 1.1,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 2,
+     "prompt_tokens": 117,
+     "decode_tps": 13.847922119286002
+    }
+   ],
+   "points": 9,
+   "total": 10,
+   "passed": [
+    "poster_title",
+    "poster_year",
+    "logo_color",
+    "logo_word",
+    "scene_count",
+    "scene_sun",
+    "icon_dir"
+   ],
+   "failed": [
+    "icon_digit"
+   ]
+  }
+ ]
+}

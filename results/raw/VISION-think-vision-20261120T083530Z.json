@@ -1,0 +1,47 @@
+{
+ "test": "VISION",
+ "model": "think-vision",
+ "date": "20261120T083530Z",
+ "args": {
+  "model": "think-vision",
+  "timeout": 1200.0,
+  "think": "auto",
+  "runs": 1,
+  "max_tokens": 600,
+  "only": "icon_dir",
+  "variants": "2",
+  "write_png": null,
+  "selftest": false
+ },
+ "total": 10,
+ "runs": [
+  {
+   "run": 0,
+   "variant": 2,
+   "questions": [
+    {
+     "q": "icon_dir",
+     "image": "icon",
+     "weight": 1,
+     "ok": true,
+     "reply": "up",
+     "s": 8.3,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 127,
+     "prompt_tokens": 96,
+     "decode_tps": 17.07398741430315
+    }
+   ],
+   "asked": [
+    "icon_dir"
+   ],
+   "points": 1,
+   "total": 10,
+   "passed": [
+    "icon_dir"
+   ],
+   "failed": []
+  }
+ ]
+}

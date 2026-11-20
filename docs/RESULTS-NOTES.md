@@ -101,9 +101,14 @@ Stated plainly because several cells are one run:
   portable `tests/cal/run.py`; an earlier unrecorded partial run of the same configuration passed two tasks this one
   failed, and the lab's ollama-era run of the same model scored 6/9 on the same nine (earlier harness revision). Read
   it as "somewhere between 3/9 and 6/9", not a point estimate. The first-attempt column is the clean one.
-- **VISION** — one run per seat, 8 questions / 10 points, 200 output tokens. A one-question difference is not a
-  ranking. Empty replies from the thinking seat are budget exhaustion, not misreads. Wall time is dominated by
-  thinking tokens on two seats, so it is not an image-encode cost. Whole-card VRAM includes the resting FIM server.
+- **VISION** — one run per image set, three sets of four images, 8 questions / 10 points each, 30 points in all,
+  200 output tokens. A one-point difference is not a ranking, and on the first set alone the same field read
+  10/9/9/8 while on 30 points it is 29/28/28/28/17: each seat's single miss is a different question, so the order
+  inside the leading group is unresolved at n=1. Empty replies from the thinking seat are budget exhaustion
+  (13 of its 13 lost points), not misreads; re-asking just those 11 questions with a 600-token budget recovered 7
+  of their 13 points and still produced no output at all on 5 of them, so the budget is only half the story. That
+  seat is also the slowest. Wall time is dominated by thinking
+  tokens on two seats, so it is not an image-encode cost. Whole-card VRAM includes the resting FIM server.
   The text-only control (HTTP 500 on every image) is shown in the excerpt, not as a CSV row.
 - **FIM** — 58 cases cut from 29 lines (two cuts each), one pass per arm, one card. Two cases is noise.
   The plain arm cannot see the suffix, so it is a floor, not a fair fight; the containers start

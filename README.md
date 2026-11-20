@@ -70,6 +70,7 @@ repo, runs with `--selftest` (grader checks, no model), and writes one JSON reco
 | `tests/crit.py` | CRIT | JUDGE on model-written summaries and a planted twin of each; self vs cross writer | paired drop; plants named |
 | `tests/sum_test.py` | SUM | single-pass summary scored in code against a fact list; `--pipeline` adds the verify pipeline | facts hit; numbers not in source |
 | `tests/ocr.py` | OCR | read 5 planted values from an invoice page drawn in code (vision model needed) | fields right /5 |
+| `tests/vision.py` | VISION | read four images drawn in code (a film poster, a logo, a scene with a countable number of stick figures, an arrow icon) in three sets that each use different titles, years, colours, wordmarks, figure counts, arrow directions and digits; 8 questions per set weighted 2/1 | points out of 30 (10 per set), per-set and per-question breakdown; code-side grading with accept/reject words, so "left or right" and "15" do not score |
 | `tests/cat.py` | CAT (synthetic) | categorize 200 invented bank-statement payees (descriptor noise, abbreviations, misleading and two-business names, unknowable ones) into 14 categories or UNSURE; fixture generated from a seed in code | right / wrong / blank on category rows; abstained vs false fill on unknowable rows; whole fixture and the hard tail separately |
 | `tests/sql.py` | SQL-SYN (synthetic) | 50 text-to-SQL questions on an invented hardware-store SQLite schema (quoted column names, near-duplicate names, a join not to make, NULLs, ties, text dates); gold verified by executing it; schema built from a seed in code | executed rows equal gold rows; errors by class (syntax, hallucinated column/table, other, wrong rows); lenient vs strict SQL extraction; per-kind accuracy |
 | `tests/arena.py` | ARENA (synthetic) | offline: several models' CAT records vote on the same payees | each model alone vs weighted vote (quorum 1, 2) vs full agreement; agreement-tier precision; oracle ceiling |
@@ -136,11 +137,14 @@ Seeded ~23.5k-token generated transcript, 7 planted needles, three compaction ro
 (`tests/compress.py`). FrogNano-4B 1/7 kept; granite4-7B and lfm2 0/7 and overflow the ceiling in round 3; a small
 helper seat overflows in round 1; two seats CUDA-OOM at load at 40k. 0 invented facts anywhere. Sample: n=1 per seat, one seed.
 
-### Vision on drawn images: a 4B Gemma 3 and a 3B Qwen2.5-VL read all or all-but-one point ([§126](docs/excerpts/126-vision-synthetic.md))
+### Vision on drawn images: four 4 GB seats read 28-29 of 30 across three image sets, and one set alone ranks them by luck ([§126](docs/excerpts/126-vision-synthetic.md))
 
-Four images drawn in code, eight questions, 10 points (`tests/vision.py`). gemma3-4b 10/10, qwen2.5vl-3b 9/10,
-Gemma-4 e4b variant 9/10, gemma4:e4b 8/10, qwen3.5-4b 6/10 (empty replies, thinking budget); the text-only control
-errors on every image. Sample: n=1 per seat, 10 points, so one question separates neighbours.
+Twelve images drawn in code in three sets of four (poster, logo, countable-figure scene, arrow icon), different
+answers in each set, eight questions per set, 30 points (`tests/vision.py --variants 0,1,2`). e4b-e2b-aggressive 29/30,
+gemma3-4b 28/30, qwen2.5vl-3b 28/30, gemma4:e4b 28/30, qwen3.5-4b 17/30 (all 13 lost points are empty replies at the
+200-token thinking cap); the text-only control errors on every image. Each seat's single miss is a different question,
+so the order inside the leading group is not a ranking. Sample: n=1 per image set, and on the first set alone the same
+field read 10/9/9/8 — one question per neighbour.
 
 ### Speculative decoding (DFlash drafter) is slower here: no-go ([§88](docs/excerpts/088-dflash-no-go.md))
 

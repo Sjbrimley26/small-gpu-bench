@@ -76,27 +76,72 @@ VIS_MODELS = {
 }
 
 
-def vision_row(rec, section):
-    runs = rec.get("runs") or []
-    if not runs:
+N_IMG_PER_SET = 4
+N_Q_PER_SET = 8
+
+
+def vision_row(recs, section):
+    """One published row per seat from every VISION record of that seat.
+
+    A record is one harness invocation and carries one run per image set (`--variants`); a seat read on several
+    image sets is one row scored over all its sets, with the per-set breakdown in the notes. Records whose every
+    run errored (the text-only control, HTTP 500 per image) produce no row, as before.
+    """
+    model = recs[0]["model"]
+    base = [r for r in recs if (r["args"].get("max_tokens") or 200) == 200] or recs
+    alt = [r for r in recs if r not in base]
+    alt_scores = []
+    for rec in alt:
+        rs = [r for r in rec.get("runs") or [] if not any(q.get("error") for q in r["questions"])]
+        if not rs:
+            continue
+        qs = [q for r in rs for q in r["questions"]]
+        asked = len(qs)
+        if asked < 5:
+            continue  # a smoke probe, not an arm
+        got_w = sum(q["weight"] for q in qs if q["ok"])
+        tot_w = sum(q["weight"] for q in qs)
+        empty = [q["q"] for q in qs if not q["ok"] and not (q.get("reply") or "").strip()]
+        alt_scores.append("A separate arm re-asked %d of them with a %d-token budget and scored %d of %d points on "
+                          "just those questions, still emitting nothing at all on %d of the %d"
+                          % (asked, rec["args"]["max_tokens"], got_w, tot_w, len(empty), asked))
+    scored, errored, per_set, sets = [], 0, [], []
+    for rec in sorted(base, key=lambda r: r["date"]):
+        for run in rec.get("runs") or []:
+            qs = run["questions"]
+            if any(q.get("error") for q in qs):
+                errored += 1
+                continue
+            sets.append(run.get("variant", 0))
+            scored.append(run)
+    if not scored:
         return None
-    qs = runs[0]["questions"]
-    if any(q.get("error") for q in qs):
-        return None
-    name, mib = VIS_MODELS.get(rec["model"], (rec["model"], None))
-    got = sum(q["weight"] for q in qs if q["ok"])
-    total = rec["total"]
-    failed = [q["q"] for q in qs if not q["ok"]]
-    secs = sum(q["s"] for q in qs)
-    notes = (f"Drawn-image vision test (small-gpu-bench tests/vision.py): four images drawn in code (poster, logo, "
-             f"5-figure scene, arrow icon), 8 questions weighted 2/1, {total} points, code-side grading, one run "
-             f"(n=1). Missed: {', '.join(failed) or 'none'}. Wall {secs:.0f} s for the 8 questions. Whole-card "
-             f"VRAM after load {mib} MiB from nvidia-smi (includes the resting fim server; /api/ps would "
-             f"under-report the projector). Section {section}.")
-    d = rec["date"]
+    got = sum(sum(q["weight"] for q in r["questions"] if q["ok"]) for r in scored)
+    total = sum(r["total"] for r in scored)
+    failed = ["v%d %s" % (r.get("variant", 0), q["q"]) for r in scored for q in r["questions"] if not q["ok"]]
+    empty = sum(1 for r in scored for q in r["questions"]
+                if not q["ok"] and not (q.get("reply") or "").strip())
+    for k in sorted(set(sets)):
+        rs = [r for r in scored if r.get("variant", 0) == k]
+        per_set.append("set %d %d/%d" % (k, sum(sum(q["weight"] for q in r["questions"] if q["ok"]) for r in rs),
+                                         sum(r["total"] for r in rs)))
+    secs = sum(q["s"] for r in scored for q in r["questions"])
+    nq = sum(len(r["questions"]) for r in scored)
+    name, mib = VIS_MODELS.get(model, (model, None))
+    notes = (f"Drawn-image vision test (small-gpu-bench tests/vision.py): "
+             f"{len(set(sets))} image sets ({len(set(sets)) * N_IMG_PER_SET} images drawn in code: poster, logo, "
+             f"countable-figure scene, arrow icon; each set has different titles, years, colours, wordmark, "
+             f"figure count, arrow direction and digit), {nq} questions weighted 2/1, {total} points, code-side "
+             f"grading, one run per image set (n=1). {', '.join(per_set)}. Missed: {', '.join(failed) or 'none'}"
+             f"{'; %d of those were empty replies' % empty if empty else ''}. Wall {secs:.0f} s for the "
+             f"{nq} questions. Whole-card VRAM after load {mib} MiB from nvidia-smi (includes the resting fim "
+             f"server; /api/ps would under-report the projector)."
+             f"{' ' + '; '.join(alt_scores) + ' (not part of this score).' if alt_scores else ''}"
+             f" Section {section}.")
+    d = base[0]["date"]
     date = f"{d[0:4]}-{d[4:6]}-{d[6:8]}"
-    return [name, "VISION", f"{got}/{total}", str(got), str(total), f"{secs:.0f}", "s wall (8 questions)", date,
-            section, notes, "", "", "1", "8"]
+    return [name, "VISION", f"{got}/{total}", str(got), str(total), f"{secs:.0f}", f"s wall ({nq} questions)", date,
+            section, notes, "", "", "1", str(nq)]
 
 
 def cal_row(rec, section):
@@ -144,9 +189,13 @@ def main():
             r = cal_row(json.load(f), a.cal_section)
         if r:
             rows.append(r)
+    vis = {}
     for p in sorted(glob.glob(os.path.join(a.raw, "VISION-*.json"))):
         with open(p) as f:
-            r = vision_row(json.load(f), a.vision_section)
+            rec = json.load(f)
+        vis.setdefault(rec["model"], []).append(rec)
+    for key, recs in sorted(vis.items()):
+        r = vision_row(recs, a.vision_section)
         if r:
             rows.append(r)
     w = csv.writer(sys.stdout, lineterminator="\n")
