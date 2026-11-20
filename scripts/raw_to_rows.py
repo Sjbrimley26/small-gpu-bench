@@ -169,8 +169,33 @@ def cal_row(rec, section):
             section, notes, "", "", "1", str(n)]
 
 
+def agent_row(recs, section):
+    """One row per seat from its latest AGENT record that is not all-error (an all-error record is a seat that
+    never answered, e.g. HTTP 500; it is not a score)."""
+    good = [r for r in sorted(recs, key=lambda r: r["date"]) if r["total"]["error"] < r["total"]["n"]]
+    if not good:
+        return None
+    rec = good[-1]
+    t = rec["total"]
+    failed = [k for k, v in rec["tasks"].items() if not v[0]["passed"]]
+    fs = [k for k, v in rec["tasks"].items() if v[0]["false_success"]]
+    dm = [k for k, v in rec["tasks"].items() if v[0]["damage"]]
+    secs = ""
+    notes = (f"Agent battery (small-gpu-bench tests/agent_tasks.py): own tool loop (read_file, write_file, list_dir, "
+             f"run) over native tool calls, ten tasks each in a fresh sandbox, code-side grading, one run per task "
+             f"(n=1), max {rec['args']['max_turns']} turns. Passed {t['passed']}/{t['n']}; false success (failed "
+             f"but answer claims done) {t['false_success']}{' on ' + ', '.join(fs) if fs else ''}; damage (changed "
+             f"a file outside the allowed outputs) {t['damage']}{' on ' + ', '.join(dm) if dm else ''}; runaway "
+             f"{t['runaway']}; errors {t['error']}. Failed: {', '.join(failed) or 'none'}. Section {section}.")
+    d = rec["date"]
+    date = f"{d[0:4]}-{d[4:6]}-{d[6:8]}"
+    return [rec["model"] + " (agent loop)", "AGENT", f"{t['passed']}/{t['n']}", str(t["passed"]), str(t["n"]),
+            str(t["false_success"]), "false successes", date, section, notes, "", "", "1", str(t["n"])]
+
+
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--agent-section", default="127")
     ap.add_argument("--raw", default=os.path.join(HERE, "..", "results", "raw"))
     ap.add_argument("--csv", default=os.path.join(HERE, "..", "results", "results.csv"))
     ap.add_argument("--section", default="125")
@@ -196,6 +221,15 @@ def main():
         vis.setdefault(rec["model"], []).append(rec)
     for key, recs in sorted(vis.items()):
         r = vision_row(recs, a.vision_section)
+        if r:
+            rows.append(r)
+    ag = {}
+    for p in sorted(glob.glob(os.path.join(a.raw, "AGENT-*.json"))):
+        with open(p) as f:
+            rec = json.load(f)
+        ag.setdefault(rec["model"], []).append(rec)
+    for key, recs in sorted(ag.items()):
+        r = agent_row(recs, a.agent_section)
         if r:
             rows.append(r)
     w = csv.writer(sys.stdout, lineterminator="\n")

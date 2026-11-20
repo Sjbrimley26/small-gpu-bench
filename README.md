@@ -70,6 +70,7 @@ repo, runs with `--selftest` (grader checks, no model), and writes one JSON reco
 | `tests/crit.py` | CRIT | JUDGE on model-written summaries and a planted twin of each; self vs cross writer | paired drop; plants named |
 | `tests/sum_test.py` | SUM | single-pass summary scored in code against a fact list; `--pipeline` adds the verify pipeline | facts hit; numbers not in source |
 | `tests/ocr.py` | OCR | read 5 planted values from an invoice page drawn in code (vision model needed) | fields right /5 |
+| `tests/agent_tasks.py` | AGENT | the model drives four tools (read_file, write_file, list_dir, run) in a fresh sandbox per task over ten tasks (chain, csv_sum, multi_file, edit, recover, missing, needle, injection, readonly, restraint) | tasks passed /10, false successes, damage, runaways; code-side grading, `--selftest` proves the grader |
 | `tests/vision.py` | VISION | read four images drawn in code (a film poster, a logo, a scene with a countable number of stick figures, an arrow icon) in three sets that each use different titles, years, colours, wordmarks, figure counts, arrow directions and digits; 8 questions per set weighted 2/1 | points out of 30 (10 per set), per-set and per-question breakdown; code-side grading with accept/reject words, so "left or right" and "15" do not score |
 | `tests/cat.py` | CAT (synthetic) | categorize 200 invented bank-statement payees (descriptor noise, abbreviations, misleading and two-business names, unknowable ones) into 14 categories or UNSURE; fixture generated from a seed in code | right / wrong / blank on category rows; abstained vs false fill on unknowable rows; whole fixture and the hard tail separately |
 | `tests/sql.py` | SQL-SYN (synthetic) | 50 text-to-SQL questions on an invented hardware-store SQLite schema (quoted column names, near-duplicate names, a join not to make, NULLs, ties, text dates); gold verified by executing it; schema built from a seed in code | executed rows equal gold rows; errors by class (syntax, hallucinated column/table, other, wrong rows); lenient vs strict SQL extraction; per-kind accuracy |
@@ -145,6 +146,15 @@ gemma3-4b 28/30, qwen2.5vl-3b 28/30, gemma4:e4b 28/30, qwen3.5-4b 17/30 (all 13 
 200-token thinking cap); the text-only control errors on every image. Each seat's single miss is a different question,
 so the order inside the leading group is not a ranking. Sample: n=1 per image set, and on the first set alone the same
 field read 10/9/9/8 — one question per neighbour.
+
+### Agent tool-loop battery: the seat that scores best still reports success on a value that is not there ([§127](docs/excerpts/127-agent-battery.md))
+
+Ten tasks in fresh sandboxes through the repo's own four-tool loop (`tests/agent_tasks.py`), graded in code, counting
+**false success** (failed but claims done) and **damage** (touched a file it should not) beside the pass count.
+frog-agent 9/10, spark-agent 8/10, lfm3-agent 7/10, moonbeam-agent 7/10, doc 2/10 with 7 false successes. All five
+seats that answered failed `missing` (the value is absent) by reporting success; 15 of 17 failures were confident
+"done"s. Two seats are not scored: they dropped the server connection (HTTP 500) on every request, twice. Sample: n=1
+per task per seat.
 
 ### Speculative decoding (DFlash drafter) is slower here: no-go ([§88](docs/excerpts/088-dflash-no-go.md))
 

@@ -157,6 +157,7 @@ sanitised excerpt so the claim can be checked against its source:
 | `docs/excerpts/113-rent-synthetic.md` | §113, rental-listing extraction on 100 invented listings |
 | `docs/excerpts/114-embed-device.md` | §114, the same embedding weights on the CPU and on the card |
 | `docs/excerpts/126-vision-synthetic.md` | §126, drawn-image vision test on six seats |
+| `docs/excerpts/127-agent-battery.md` | §127, ten-task tool-loop battery; n=1 per task, two seats unscored (HTTP 500 on every request) |
 | `docs/excerpts/115-speed.md` | §115, the 24-model speed and residency sweep on one build |
 | `docs/excerpts/116-fim.md` | §116, inline shell completion on a synthetic case set |
 
