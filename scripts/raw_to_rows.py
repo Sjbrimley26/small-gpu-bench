@@ -65,6 +65,39 @@ def row(rec, section):
 
 CAL_MODELS = {"aux": "ling3-tiny"}
 
+# VISION seats -> (published model, whole-card MiB after load, from nvidia-smi in the sweep log)
+VIS_MODELS = {
+    "vision": ("gemma4:e4b (vision)", 3155),
+    "vision-text": ("gemma4:e4b (text-only control, no image)", 3965),
+    "unc-vision": ("e4b-e2b-aggressive (vision)", 3977),
+    "think-vision": ("qwen3.5-4b (vision)", 3931),
+    "ocr-gemma3": ("gemma3-4b (ggml-org GGUF + mmproj)", 3517),
+    "ocr-qwen25vl": ("qwen2.5vl-3b (ggml-org GGUF + mmproj)", 3765),
+}
+
+
+def vision_row(rec, section):
+    runs = rec.get("runs") or []
+    if not runs:
+        return None
+    qs = runs[0]["questions"]
+    if any(q.get("error") for q in qs):
+        return None
+    name, mib = VIS_MODELS.get(rec["model"], (rec["model"], None))
+    got = sum(q["weight"] for q in qs if q["ok"])
+    total = rec["total"]
+    failed = [q["q"] for q in qs if not q["ok"]]
+    secs = sum(q["s"] for q in qs)
+    notes = (f"Drawn-image vision test (small-gpu-bench tests/vision.py): four images drawn in code (poster, logo, "
+             f"5-figure scene, arrow icon), 8 questions weighted 2/1, {total} points, code-side grading, one run "
+             f"(n=1). Missed: {', '.join(failed) or 'none'}. Wall {secs:.0f} s for the 8 questions. Whole-card "
+             f"VRAM after load {mib} MiB from nvidia-smi (includes the resting fim server; /api/ps would "
+             f"under-report the projector). Section {section}.")
+    d = rec["date"]
+    date = f"{d[0:4]}-{d[4:6]}-{d[6:8]}"
+    return [name, "VISION", f"{got}/{total}", str(got), str(total), f"{secs:.0f}", "s wall (8 questions)", date,
+            section, notes, "", "", "1", "8"]
+
 
 def cal_row(rec, section):
     if rec.get("request_errors") or not rec.get("results"):
@@ -97,6 +130,7 @@ def main():
     ap.add_argument("--csv", default=os.path.join(HERE, "..", "results", "results.csv"))
     ap.add_argument("--section", default="125")
     ap.add_argument("--cal-section", default="124")
+    ap.add_argument("--vision-section", default="126")
     ap.add_argument("--append", action="store_true")
     a = ap.parse_args()
     rows = []
@@ -108,6 +142,11 @@ def main():
     for p in sorted(glob.glob(os.path.join(a.raw, "CAL-*.json"))):
         with open(p) as f:
             r = cal_row(json.load(f), a.cal_section)
+        if r:
+            rows.append(r)
+    for p in sorted(glob.glob(os.path.join(a.raw, "VISION-*.json"))):
+        with open(p) as f:
+            r = vision_row(json.load(f), a.vision_section)
         if r:
             rows.append(r)
     w = csv.writer(sys.stdout, lineterminator="\n")

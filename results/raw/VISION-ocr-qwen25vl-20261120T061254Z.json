@@ -1,0 +1,140 @@
+{
+ "test": "VISION",
+ "model": "ocr-qwen25vl",
+ "date": "20261120T061254Z",
+ "args": {
+  "model": "ocr-qwen25vl",
+  "timeout": 1200.0,
+  "think": "auto",
+  "runs": 1,
+  "max_tokens": 200,
+  "write_png": null,
+  "selftest": false
+ },
+ "total": 10,
+ "runs": [
+  {
+   "run": 0,
+   "questions": [
+    {
+     "q": "poster_title",
+     "image": "poster",
+     "weight": 2,
+     "ok": true,
+     "reply": "Night Harbor",
+     "s": 4.7,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 3,
+     "prompt_tokens": 359,
+     "decode_tps": 5.7297560556359315
+    },
+    {
+     "q": "poster_year",
+     "image": "poster",
+     "weight": 1,
+     "ok": true,
+     "reply": "2026",
+     "s": 8.6,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 5,
+     "prompt_tokens": 358,
+     "decode_tps": 1.2147683026862475
+    },
+    {
+     "q": "logo_color",
+     "image": "logo",
+     "weight": 1,
+     "ok": true,
+     "reply": "Red",
+     "s": 4.5,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 2,
+     "prompt_tokens": 223,
+     "decode_tps": 4.752196702925928
+    },
+    {
+     "q": "logo_word",
+     "image": "logo",
+     "weight": 1,
+     "ok": true,
+     "reply": "KESTREL",
+     "s": 4.1,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 4,
+     "prompt_tokens": 222,
+     "decode_tps": 5.493177473577817
+    },
+    {
+     "q": "scene_count",
+     "image": "scene",
+     "weight": 2,
+     "ok": true,
+     "reply": "5",
+     "s": 5.1,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 2,
+     "prompt_tokens": 359,
+     "decode_tps": 3.4067255575958058
+    },
+    {
+     "q": "scene_sun",
+     "image": "scene",
+     "weight": 1,
+     "ok": true,
+     "reply": "Yellow",
+     "s": 4.6,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 2,
+     "prompt_tokens": 358,
+     "decode_tps": 4.7430680061090715
+    },
+    {
+     "q": "icon_dir",
+     "image": "icon",
+     "weight": 1,
+     "ok": true,
+     "reply": "Left",
+     "s": 3.2,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 2,
+     "prompt_tokens": 122,
+     "decode_tps": 4.749149902167512
+    },
+    {
+     "q": "icon_digit",
+     "image": "icon",
+     "weight": 1,
+     "ok": false,
+     "reply": "1",
+     "s": 3.3,
+     "finish": "stop",
+     "error": null,
+     "completion_tokens": 2,
+     "prompt_tokens": 117,
+     "decode_tps": 6.166824948507013
+    }
+   ],
+   "points": 9,
+   "total": 10,
+   "passed": [
+    "poster_title",
+    "poster_year",
+    "logo_color",
+    "logo_word",
+    "scene_count",
+    "scene_sun",
+    "icon_dir"
+   ],
+   "failed": [
+    "icon_digit"
+   ]
+  }
+ ]
+}

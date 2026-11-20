@@ -1,0 +1,139 @@
+{
+ "test": "VISION",
+ "model": "vision-text",
+ "date": "20261120T054036Z",
+ "args": {
+  "model": "vision-text",
+  "timeout": 1200.0,
+  "think": "auto",
+  "runs": 1,
+  "max_tokens": 200,
+  "write_png": null,
+  "selftest": false
+ },
+ "total": 10,
+ "runs": [
+  {
+   "run": 0,
+   "questions": [
+    {
+     "q": "poster_title",
+     "image": "poster",
+     "weight": 2,
+     "ok": false,
+     "reply": "",
+     "s": 0.0,
+     "finish": "error",
+     "error": "HTTP 500: {\"error\":{\"code\":500,\"message\":\"image input is not supported - hint: if this is unexpected, you may need to provide the mmproj\",\"type\":\"server_error\"}}",
+     "completion_tokens": null,
+     "prompt_tokens": null,
+     "decode_tps": null
+    },
+    {
+     "q": "poster_year",
+     "image": "poster",
+     "weight": 1,
+     "ok": false,
+     "reply": "",
+     "s": 0.0,
+     "finish": "error",
+     "error": "HTTP 500: {\"error\":{\"code\":500,\"message\":\"image input is not supported - hint: if this is unexpected, you may need to provide the mmproj\",\"type\":\"server_error\"}}",
+     "completion_tokens": null,
+     "prompt_tokens": null,
+     "decode_tps": null
+    },
+    {
+     "q": "logo_color",
+     "image": "logo",
+     "weight": 1,
+     "ok": false,
+     "reply": "",
+     "s": 0.0,
+     "finish": "error",
+     "error": "HTTP 500: {\"error\":{\"code\":500,\"message\":\"image input is not supported - hint: if this is unexpected, you may need to provide the mmproj\",\"type\":\"server_error\"}}",
+     "completion_tokens": null,
+     "prompt_tokens": null,
+     "decode_tps": null
+    },
+    {
+     "q": "logo_word",
+     "image": "logo",
+     "weight": 1,
+     "ok": false,
+     "reply": "",
+     "s": 0.0,
+     "finish": "error",
+     "error": "HTTP 500: {\"error\":{\"code\":500,\"message\":\"image input is not supported - hint: if this is unexpected, you may need to provide the mmproj\",\"type\":\"server_error\"}}",
+     "completion_tokens": null,
+     "prompt_tokens": null,
+     "decode_tps": null
+    },
+    {
+     "q": "scene_count",
+     "image": "scene",
+     "weight": 2,
+     "ok": false,
+     "reply": "",
+     "s": 0.0,
+     "finish": "error",
+     "error": "HTTP 500: {\"error\":{\"code\":500,\"message\":\"image input is not supported - hint: if this is unexpected, you may need to provide the mmproj\",\"type\":\"server_error\"}}",
+     "completion_tokens": null,
+     "prompt_tokens": null,
+     "decode_tps": null
+    },
+    {
+     "q": "scene_sun",
+     "image": "scene",
+     "weight": 1,
+     "ok": false,
+     "reply": "",
+     "s": 0.0,
+     "finish": "error",
+     "error": "HTTP 500: {\"error\":{\"code\":500,\"message\":\"image input is not supported - hint: if this is unexpected, you may need to provide the mmproj\",\"type\":\"server_error\"}}",
+     "completion_tokens": null,
+     "prompt_tokens": null,
+     "decode_tps": null
+    },
+    {
+     "q": "icon_dir",
+     "image": "icon",
+     "weight": 1,
+     "ok": false,
+     "reply": "",
+     "s": 0.0,
+     "finish": "error",
+     "error": "HTTP 500: {\"error\":{\"code\":500,\"message\":\"image input is not supported - hint: if this is unexpected, you may need to provide the mmproj\",\"type\":\"server_error\"}}",
+     "completion_tokens": null,
+     "prompt_tokens": null,
+     "decode_tps": null
+    },
+    {
+     "q": "icon_digit",
+     "image": "icon",
+     "weight": 1,
+     "ok": false,
+     "reply": "",
+     "s": 0.0,
+     "finish": "error",
+     "error": "HTTP 500: {\"error\":{\"code\":500,\"message\":\"image input is not supported - hint: if this is unexpected, you may need to provide the mmproj\",\"type\":\"server_error\"}}",
+     "completion_tokens": null,
+     "prompt_tokens": null,
+     "decode_tps": null
+    }
+   ],
+   "points": 0,
+   "total": 10,
+   "passed": [],
+   "failed": [
+    "poster_title",
+    "poster_year",
+    "logo_color",
+    "logo_word",
+    "scene_count",
+    "scene_sun",
+    "icon_dir",
+    "icon_digit"
+   ]
+  }
+ ]
+}

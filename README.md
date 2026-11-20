@@ -136,6 +136,12 @@ Seeded ~23.5k-token generated transcript, 7 planted needles, three compaction ro
 (`tests/compress.py`). FrogNano-4B 1/7 kept; granite4-7B and lfm2 0/7 and overflow the ceiling in round 3; a small
 helper seat overflows in round 1; two seats CUDA-OOM at load at 40k. 0 invented facts anywhere. Sample: n=1 per seat, one seed.
 
+### Vision on drawn images: a 4B Gemma 3 and a 3B Qwen2.5-VL read all or all-but-one point ([§126](docs/excerpts/126-vision-synthetic.md))
+
+Four images drawn in code, eight questions, 10 points (`tests/vision.py`). gemma3-4b 10/10, qwen2.5vl-3b 9/10,
+Gemma-4 e4b variant 9/10, gemma4:e4b 8/10, qwen3.5-4b 6/10 (empty replies, thinking budget); the text-only control
+errors on every image. Sample: n=1 per seat, 10 points, so one question separates neighbours.
+
 ### Speculative decoding (DFlash drafter) is slower here: no-go ([§88](docs/excerpts/088-dflash-no-go.md))
 
 `bolt-e4b` (UD-Q4_K_XL) with its DFlash drafter (BF16, 736,812,096 B) on the llama.cpp router, build 11889. Every drafter

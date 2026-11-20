@@ -101,6 +101,10 @@ Stated plainly because several cells are one run:
   portable `tests/cal/run.py`; an earlier unrecorded partial run of the same configuration passed two tasks this one
   failed, and the lab's ollama-era run of the same model scored 6/9 on the same nine (earlier harness revision). Read
   it as "somewhere between 3/9 and 6/9", not a point estimate. The first-attempt column is the clean one.
+- **VISION** — one run per seat, 8 questions / 10 points, 200 output tokens. A one-question difference is not a
+  ranking. Empty replies from the thinking seat are budget exhaustion, not misreads. Wall time is dominated by
+  thinking tokens on two seats, so it is not an image-encode cost. Whole-card VRAM includes the resting FIM server.
+  The text-only control (HTTP 500 on every image) is shown in the excerpt, not as a CSV row.
 - **FIM** — 58 cases cut from 29 lines (two cuts each), one pass per arm, one card. Two cases is noise.
   The plain arm cannot see the suffix, so it is a floor, not a fair fight; the containers start
   immediately before the test, so the first cases carry cold-load latency.
@@ -147,6 +151,7 @@ sanitised excerpt so the claim can be checked against its source:
 | `docs/excerpts/112-sql-synthetic.md` | §112, text-to-SQL on an invented hardware store |
 | `docs/excerpts/113-rent-synthetic.md` | §113, rental-listing extraction on 100 invented listings |
 | `docs/excerpts/114-embed-device.md` | §114, the same embedding weights on the CPU and on the card |
+| `docs/excerpts/126-vision-synthetic.md` | §126, drawn-image vision test on six seats |
 | `docs/excerpts/115-speed.md` | §115, the 24-model speed and residency sweep on one build |
 | `docs/excerpts/116-fim.md` | §116, inline shell completion on a synthetic case set |
 
