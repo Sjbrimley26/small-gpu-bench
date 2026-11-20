@@ -118,6 +118,11 @@ def reply_for(model, messages, tools):
     first_user = next((text_of(m["content"]) for m in messages if m["role"] == "user"), "")
     if tools:
         names = [t["function"]["name"] for t in tools]
+        if "list_dir" in names:          # tests/agent_tasks.py: one list_dir call, then a final "done" (scripted, not a model)
+            if messages and messages[-1]["role"] == "tool":
+                return "Done.", None
+            return None, [{"id": "call_1", "type": "function",
+                           "function": {"name": "list_dir", "arguments": json.dumps({"path": "."})}}]
         pick = "tool_call" if (META and "tool_call" in names) else "terminal"
         return None, [{"id": "call_1", "type": "function",
                        "function": {"name": pick, "arguments": json.dumps({"command": "df -h /data"})}}]

@@ -1,0 +1,403 @@
+{
+ "test": "CAL",
+ "model": "aux",
+ "date": "20261120T053235Z",
+ "args": {
+  "model": "aux",
+  "timeout": 1200.0,
+  "think": "off",
+  "max_tokens": 4500,
+  "only": null,
+  "extended": false,
+  "reference": "/home/spencer/chunk/ai/calagent/calagent/reference",
+  "selftest": false
+ },
+ "tasks": 9,
+ "first_attempt_pass": 1,
+ "final_pass": 3,
+ "request_errors": 0,
+ "attempts_total": 30,
+ "max_attempts": 4,
+ "critic": "same model",
+ "gold_deps_borrowed": [
+  "eventsForDay",
+  "monthGrid"
+ ],
+ "results": [
+  {
+   "id": "startOfWeek",
+   "status": "passed",
+   "first_attempt_pass": true,
+   "attempts": 1,
+   "best_passed": 7,
+   "total": 7,
+   "coder_tokens": 92,
+   "coder_seconds": 6.0,
+   "critic_calls": 0,
+   "errors": 0,
+   "history": [
+    {
+     "attempt": 1,
+     "completion_tokens": 92,
+     "s": 6.0,
+     "finish": "stop",
+     "passed": 7,
+     "total": 7
+    }
+   ],
+   "tok_s": 15.3
+  },
+  {
+   "id": "monthGrid",
+   "status": "failed",
+   "first_attempt_pass": false,
+   "attempts": 4,
+   "best_passed": 0,
+   "total": 1,
+   "coder_tokens": 1432,
+   "coder_seconds": 75.7,
+   "critic_calls": 3,
+   "errors": 0,
+   "history": [
+    {
+     "attempt": 1,
+     "completion_tokens": 356,
+     "s": 23.3,
+     "finish": "stop",
+     "passed": 0,
+     "total": 1
+    },
+    {
+     "attempt": 2,
+     "completion_tokens": 353,
+     "s": 17.7,
+     "finish": "stop",
+     "passed": 0,
+     "total": 6
+    },
+    {
+     "attempt": 3,
+     "completion_tokens": 356,
+     "s": 13.9,
+     "finish": "stop",
+     "passed": 0,
+     "total": 1
+    },
+    {
+     "attempt": 4,
+     "completion_tokens": 367,
+     "s": 20.8,
+     "finish": "stop",
+     "passed": 0,
+     "total": 1
+    }
+   ],
+   "tok_s": 18.9
+  },
+  {
+   "id": "rowsToEvents",
+   "status": "failed",
+   "first_attempt_pass": false,
+   "attempts": 4,
+   "best_passed": 7,
+   "total": 10,
+   "coder_tokens": 7227,
+   "coder_seconds": 300.4,
+   "critic_calls": 3,
+   "errors": 0,
+   "history": [
+    {
+     "attempt": 1,
+     "completion_tokens": 4500,
+     "s": 179.4,
+     "finish": "length",
+     "passed": 0,
+     "total": 10
+    },
+    {
+     "attempt": 2,
+     "completion_tokens": 908,
+     "s": 46.0,
+     "finish": "stop",
+     "passed": 7,
+     "total": 10
+    },
+    {
+     "attempt": 3,
+     "completion_tokens": 911,
+     "s": 43.0,
+     "finish": "stop",
+     "passed": 0,
+     "total": 1
+    },
+    {
+     "attempt": 4,
+     "completion_tokens": 908,
+     "s": 32.0,
+     "finish": "stop",
+     "passed": 3,
+     "total": 10
+    }
+   ],
+   "tok_s": 24.1
+  },
+  {
+   "id": "eventsForDay",
+   "status": "failed",
+   "first_attempt_pass": false,
+   "attempts": 4,
+   "best_passed": 8,
+   "total": 9,
+   "coder_tokens": 1359,
+   "coder_seconds": 61.3,
+   "critic_calls": 3,
+   "errors": 0,
+   "history": [
+    {
+     "attempt": 1,
+     "completion_tokens": 357,
+     "s": 16.0,
+     "finish": "stop",
+     "passed": 7,
+     "total": 9
+    },
+    {
+     "attempt": 2,
+     "completion_tokens": 334,
+     "s": 11.4,
+     "finish": "stop",
+     "passed": 8,
+     "total": 9
+    },
+    {
+     "attempt": 3,
+     "completion_tokens": 334,
+     "s": 21.2,
+     "finish": "stop",
+     "passed": 6,
+     "total": 9
+    },
+    {
+     "attempt": 4,
+     "completion_tokens": 334,
+     "s": 12.7,
+     "finish": "stop",
+     "passed": 6,
+     "total": 9
+    }
+   ],
+   "tok_s": 22.2
+  },
+  {
+   "id": "layoutDay",
+   "status": "passed",
+   "first_attempt_pass": false,
+   "attempts": 2,
+   "best_passed": 13,
+   "total": 13,
+   "coder_tokens": 5838,
+   "coder_seconds": 236.60000000000002,
+   "critic_calls": 1,
+   "errors": 0,
+   "history": [
+    {
+     "attempt": 1,
+     "completion_tokens": 4500,
+     "s": 173.9,
+     "finish": "length",
+     "passed": 0,
+     "total": 1
+    },
+    {
+     "attempt": 2,
+     "completion_tokens": 1338,
+     "s": 62.7,
+     "finish": "stop",
+     "passed": 13,
+     "total": 13
+    }
+   ],
+   "tok_s": 24.7
+  },
+  {
+   "id": "eventToRow",
+   "status": "passed",
+   "first_attempt_pass": false,
+   "attempts": 3,
+   "best_passed": 5,
+   "total": 5,
+   "coder_tokens": 483,
+   "coder_seconds": 20.2,
+   "critic_calls": 2,
+   "errors": 0,
+   "history": [
+    {
+     "attempt": 1,
+     "completion_tokens": 119,
+     "s": 6.5,
+     "finish": "stop",
+     "passed": 3,
+     "total": 5
+    },
+    {
+     "attempt": 2,
+     "completion_tokens": 182,
+     "s": 6.7,
+     "finish": "stop",
+     "passed": 4,
+     "total": 5
+    },
+    {
+     "attempt": 3,
+     "completion_tokens": 182,
+     "s": 7.0,
+     "finish": "stop",
+     "passed": 5,
+     "total": 5
+    }
+   ],
+   "tok_s": 23.9
+  },
+  {
+   "id": "renderMonth",
+   "status": "failed",
+   "first_attempt_pass": false,
+   "attempts": 4,
+   "best_passed": 0,
+   "total": 11,
+   "coder_tokens": 2192,
+   "coder_seconds": 81.9,
+   "critic_calls": 3,
+   "errors": 0,
+   "history": [
+    {
+     "attempt": 1,
+     "completion_tokens": 555,
+     "s": 23.7,
+     "finish": "stop",
+     "passed": 0,
+     "total": 11
+    },
+    {
+     "attempt": 2,
+     "completion_tokens": 555,
+     "s": 18.0,
+     "finish": "stop",
+     "passed": 0,
+     "total": 11
+    },
+    {
+     "attempt": 3,
+     "completion_tokens": 539,
+     "s": 18.9,
+     "finish": "stop",
+     "passed": 0,
+     "total": 11
+    },
+    {
+     "attempt": 4,
+     "completion_tokens": 543,
+     "s": 21.3,
+     "finish": "stop",
+     "passed": 0,
+     "total": 11
+    }
+   ],
+   "tok_s": 26.8
+  },
+  {
+   "id": "renderAgenda",
+   "status": "failed",
+   "first_attempt_pass": false,
+   "attempts": 4,
+   "best_passed": 0,
+   "total": 1,
+   "coder_tokens": 2020,
+   "coder_seconds": 72.7,
+   "critic_calls": 3,
+   "errors": 0,
+   "history": [
+    {
+     "attempt": 1,
+     "completion_tokens": 505,
+     "s": 23.2,
+     "finish": "stop",
+     "passed": 0,
+     "total": 1
+    },
+    {
+     "attempt": 2,
+     "completion_tokens": 505,
+     "s": 16.5,
+     "finish": "stop",
+     "passed": 0,
+     "total": 1
+    },
+    {
+     "attempt": 3,
+     "completion_tokens": 505,
+     "s": 16.2,
+     "finish": "stop",
+     "passed": 0,
+     "total": 1
+    },
+    {
+     "attempt": 4,
+     "completion_tokens": 505,
+     "s": 16.8,
+     "finish": "stop",
+     "passed": 0,
+     "total": 1
+    }
+   ],
+   "tok_s": 27.8
+  },
+  {
+   "id": "renderWeek",
+   "status": "failed",
+   "first_attempt_pass": false,
+   "attempts": 4,
+   "best_passed": 2,
+   "total": 11,
+   "coder_tokens": 3858,
+   "coder_seconds": 178.10000000000002,
+   "critic_calls": 3,
+   "errors": 0,
+   "history": [
+    {
+     "attempt": 1,
+     "completion_tokens": 958,
+     "s": 39.0,
+     "finish": "stop",
+     "passed": 2,
+     "total": 11
+    },
+    {
+     "attempt": 2,
+     "completion_tokens": 976,
+     "s": 45.0,
+     "finish": "stop",
+     "passed": 2,
+     "total": 11
+    },
+    {
+     "attempt": 3,
+     "completion_tokens": 976,
+     "s": 43.9,
+     "finish": "stop",
+     "passed": 2,
+     "total": 11
+    },
+    {
+     "attempt": 4,
+     "completion_tokens": 948,
+     "s": 50.2,
+     "finish": "stop",
+     "passed": 2,
+     "total": 11
+    }
+   ],
+   "tok_s": 21.7
+  }
+ ]
+}

@@ -97,6 +97,10 @@ Stated plainly because several cells are one run:
   444-token prompt, 200-token output: a long-context prefill is a different measurement and is not
   reported. Two models could not be re-measured at all (their weights fail to load on this build) and
   are marked not measured rather than carried over from the older table.
+- **CAL** — one run per cell. The `ling3-tiny` row (nine tasks, 3/9 final, 1/9 on attempt 1) is a single run on the
+  portable `tests/cal/run.py`; an earlier unrecorded partial run of the same configuration passed two tasks this one
+  failed, and the lab's ollama-era run of the same model scored 6/9 on the same nine (earlier harness revision). Read
+  it as "somewhere between 3/9 and 6/9", not a point estimate. The first-attempt column is the clean one.
 - **FIM** — 58 cases cut from 29 lines (two cuts each), one pass per arm, one card. Two cases is noise.
   The plain arm cannot see the suffix, so it is a floor, not a fair fight; the containers start
   immediately before the test, so the first cases carry cold-load latency.

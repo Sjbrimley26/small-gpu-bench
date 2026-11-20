@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Turn results/raw/CMP-SYN-*.json records into results.csv rows (CMP-SYN test).
+"""Turn results/raw/CMP-SYN-*.json and CAL-*.json records into results.csv rows (CMP-SYN and CAL tests).
 
 Rebuilt for tests that post-date the lab's private export source: raw records are the primary evidence, this
 script only summarises them. Prints rows (CSV) to stdout; with --append, adds them to results/results.csv
@@ -63,17 +63,51 @@ def row(rec, section):
             section, notes, "", quant, "1", "7"]
 
 
+CAL_MODELS = {"aux": "ling3-tiny"}
+
+
+def cal_row(rec, section):
+    if rec.get("request_errors") or not rec.get("results"):
+        return None  # INVALID / endpoint trouble: not a scored row
+    name = CAL_MODELS.get(rec["model"], rec["model"])
+    n = rec["tasks"]
+    fa, fin = rec["first_attempt_pass"], rec["final_pass"]
+    a = rec["args"]
+    passed = [r["id"] for r in rec["results"] if r["status"] == "passed"]
+    tok = sum(r["coder_tokens"] for r in rec["results"])
+    secs = sum(r["coder_seconds"] for r in rec["results"])
+    score = f"{fin}/{n} final, {fa}/{n} on attempt 1"
+    notes = (f"Code generation (small-gpu-bench tests/cal/run.py): {n} original calendar-helper tasks, up to "
+             f"{rec['max_attempts']} attempts, critic = {rec['critic']}, borrowed (gold) dependencies for tasks "
+             f"that import another module, thinking {a['think']}, {a['max_tokens']} output tokens, one run (n=1). "
+             f"Passed: {', '.join(passed) or 'none'}. CAVEAT: n=1 variance is large: an earlier unrecorded "
+             f"partial run of this same configuration passed rowsToEvents and eventsForDay, which this run "
+             f"failed, and the lab's older ollama-era run of the same model scored 6/9 on these nine "
+             f"(earlier harness revision, not comparable row for row). First-attempt is the clean number; "
+             f"final depends on the critic. Section {section}.")
+    d = rec["date"]
+    date = f"{d[0:4]}-{d[4:6]}-{d[6:8]}"
+    return [name, "CAL", score, str(fin), str(n), f"{tok / secs:.1f}" if secs else "", "tok/s (coder)", date,
+            section, notes, "", "", "1", str(n)]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--raw", default=os.path.join(HERE, "..", "results", "raw"))
     ap.add_argument("--csv", default=os.path.join(HERE, "..", "results", "results.csv"))
     ap.add_argument("--section", default="125")
+    ap.add_argument("--cal-section", default="124")
     ap.add_argument("--append", action="store_true")
     a = ap.parse_args()
     rows = []
     for p in sorted(glob.glob(os.path.join(a.raw, "CMP-SYN-*.json"))):
         with open(p) as f:
             r = row(json.load(f), a.section)
+        if r:
+            rows.append(r)
+    for p in sorted(glob.glob(os.path.join(a.raw, "CAL-*.json"))):
+        with open(p) as f:
+            r = cal_row(json.load(f), a.cal_section)
         if r:
             rows.append(r)
     w = csv.writer(sys.stdout, lineterminator="\n")

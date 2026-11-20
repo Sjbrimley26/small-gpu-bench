@@ -126,6 +126,10 @@ Sample sizes are stated per item. In general: one card, one build per section, m
 model; the local throughput for the last four tasks is withheld (unexplained slowdown), and the hosted
 expandRecurrence failure shows zero critic calls, so it is not a clean read ([§124](docs/excerpts/124-cal.md)).
 
+On the nine originals, a 4 GB-class local seat (ling3-tiny, nine tasks, 4500 tokens, one run) scored **3/9 final, 1/9 on
+attempt 1**. n=1 with large variance: an earlier partial run of the same configuration passed two tasks this one
+failed, and an older run on a previous harness revision scored 6/9 (see `docs/RESULTS-NOTES.md`).
+
 ### Context compression (synthetic transcript): best 4 GB seat keeps 1 of 7 facts after three rounds ([§125](docs/excerpts/125-compress-synthetic.md))
 
 Seeded ~23.5k-token generated transcript, 7 planted needles, three compaction rounds, 3000-token output ceiling

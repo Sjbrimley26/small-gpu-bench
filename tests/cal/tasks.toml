@@ -1,0 +1,361 @@
+# Each task = one exported function in app/src/gen/<id>.js, checked by tests/<id>.test.js.
+# Tasks run in this order; `deps` must already pass before a task is attempted.
+#
+# Shared data shape used by several tasks:
+#   Event = { id, title: string, start: Date, end: Date, allDay: boolean, color: string|null }
+#   For all-day events, start and end are local midnights and `end` is the LAST day (inclusive).
+
+[[task]]
+id = "startOfWeek"
+difficulty = 1
+deps = []
+signature = "export function startOfWeek(date, weekStartsOn = 0)"
+spec = """
+Return a NEW Date at 00:00:00.000 local time on the first day of the week that contains `date`.
+`weekStartsOn` is 0 for Sunday, 1 for Monday, ... 6 for Saturday.
+If `date` is already on the week-start day, return that same day at midnight.
+Must work across month and year boundaries. Never mutate `date`.
+Hint: compute how many days back to go from date.getDay() and weekStartsOn, then use startOfDay and addDays.
+"""
+
+[[task]]
+id = "monthGrid"
+difficulty = 2
+deps = ["startOfWeek"]
+signature = "export function monthGrid(year, monthIndex, weekStartsOn = 0)"
+spec = """
+Return an array of exactly 42 Date objects (6 rows x 7 columns) for a month calendar.
+`monthIndex` is 0-based (0 = January). The first cell is startOfWeek(first day of the month, weekStartsOn).
+Each following cell is the next calendar day. Every Date is at 00:00 local time.
+"""
+
+[[task]]
+id = "rowsToEvents"
+difficulty = 3
+deps = []
+signature = "export function rowsToEvents(rows, fieldMap)"
+spec = """
+Convert Baserow rows into Event objects.
+
+`rows` is an array of plain objects such as
+  { id: 3, Name: "Dentist", Start: "2026-10-20T16:00:00Z", End: "2026-10-20T17:00:00Z", Category: {id: 1, value: "Work", color: "light-blue"} }
+`fieldMap` names the row keys to read: { title: "Name", start: "Start", end: "End", color: "Category" }.
+`fieldMap.end` and `fieldMap.color` may be missing; if missing, do not read those fields at all.
+
+For each row:
+- start: read row[fieldMap.start]. It is either a date-only string "YYYY-MM-DD" or an ISO date-time string.
+  - "YYYY-MM-DD" (exactly 10 characters, matches /^\\d{4}-\\d{2}-\\d{2}$/): allDay = true and
+    start = new Date(year, month - 1, day) (LOCAL midnight; do NOT use new Date("YYYY-MM-DD"), which is UTC).
+  - otherwise: allDay = false and start = new Date(string).
+  - If the value is missing, not a string, empty/blank, or gives an invalid Date: SKIP the row entirely.
+- end: parse row[fieldMap.end] the same way (if fieldMap.end exists and the value is a valid date).
+  - If the event is all-day, convert end to local midnight of its calendar day.
+  - If there is no valid end: timed events end = start + 1 hour; all-day events end = start (same day).
+  - If end is earlier than start, set end = start.
+- title: row[fieldMap.title] trimmed. If it is missing, not a string, or blank after trimming, use "(untitled)".
+- color: if fieldMap.color is missing -> null. Otherwise look at the value:
+  object with a string `color` property -> that string; non-empty string -> the string; anything else -> null.
+- id: row.id unchanged.
+
+Each Event must have exactly these keys: id, title, start, end, allDay, color.
+Return the events sorted by start time ascending.
+"""
+
+[[task]]
+id = "eventsForDay"
+difficulty = 3
+deps = []
+signature = "export function eventsForDay(events, day)"
+spec = """
+Return a NEW array of the events that appear on the calendar day of `day` (ignore the time part of `day`).
+Let dayStart = startOfDay(day) and dayEnd = addDays(dayStart, 1).
+- All-day event: include when startOfDay(e.start) <= dayStart AND dayStart <= startOfDay(e.end)  (end day is inclusive).
+- Timed event with end equal to start (zero length): include when dayStart <= e.start < dayEnd.
+- Other timed events: include when e.start < dayEnd AND e.end > dayStart.
+  (An event ending exactly at midnight does NOT appear on the next day.)
+Sort the result: all-day events first; then by start time ascending; then by title (localeCompare).
+Never mutate or re-order the input array.
+"""
+
+[[task]]
+id = "layoutDay"
+difficulty = 5
+deps = []
+signature = "export function layoutDay(events, day, opts = {})"
+spec = """
+Compute positions for the TIMED events of one day column in a week/day view.
+opts = { startHour = 0, endHour = 24 }. The visible window runs from day at startHour:00 to day at endHour:00 (local).
+Return an array of { event, top, height, column, columns }, where `event` is the original event object.
+
+Steps:
+1. Ignore events with allDay === true.
+2. For each event, use start/end in milliseconds. If end - start is less than 15 minutes, treat end as start + 15 minutes.
+3. Keep only events that overlap the window: start < windowEnd AND end > windowStart.
+   Clip: s = max(start, windowStart), e = min(end, windowEnd).
+4. top = (s - windowStart) / windowLength * 100, height = (e - s) / windowLength * 100.
+   Round both with Number(x.toFixed(2)).
+5. Sort items by s ascending, then by e DESCENDING (longer first), then by String(event.id).
+6. Group items into clusters: walk the sorted items; an item starts a NEW cluster when its s is >= the largest e seen
+   so far in the current cluster. (Touching events such as 9-10 and 10-11 are NOT overlapping.)
+7. Inside a cluster, give each item the lowest column index whose previous item's e is <= this item's s;
+   if none is free, open a new column. `columns` = number of columns that cluster used, the same value for every item in it.
+Return the items in the sorted order from step 5.
+"""
+
+[[task]]
+id = "eventToRow"
+difficulty = 1
+deps = []
+signature = "export function eventToRow(draft, fieldMap)"
+spec = """
+Build the JSON body to send to Baserow when creating or updating a row.
+draft = { title: string, start: Date, end: Date|null, allDay: boolean } (it may have other keys such as color; ignore them).
+fieldMap = { title, start, end?, color? }.
+Return a plain object:
+- row[fieldMap.title] = String(draft.title).trim()
+- row[fieldMap.start] = formatted draft.start
+- row[fieldMap.end]   = formatted draft.end, ONLY if fieldMap.end exists and draft.end is not null.
+Formatting: all-day -> dateKey(date) ("YYYY-MM-DD", local); timed -> date.toISOString().
+Never include the color field or any other keys.
+"""
+
+[[task]]
+id = "renderMonth"
+difficulty = 4
+deps = ["monthGrid", "eventsForDay"]
+signature = "export function renderMonth({ year, month, weekStartsOn = 0, events, today })"
+spec = """
+Return an HTML string for a month view. `month` is 0-based. Use EXACTLY this markup (no extra whitespace or newlines):
+
+<div class="cal-month">
+  then 7 weekday headers, starting at weekStartsOn:  <div class="cal-dow">Sun</div>  (names from DOW_SHORT)
+  then one cell for each of the 42 days from monthGrid(year, month, weekStartsOn):
+  <div class="CLASSES" data-date="YYYY-MM-DD"><span class="cal-daynum">D</span>EVENTS</div>
+</div>
+
+- CLASSES is "cal-day", plus " is-other-month" when the day is not in `month`, plus " is-today" when isSameDay(day, today).
+  Order: "cal-day is-other-month is-today".
+- data-date uses dateKey(day). D is day.getDate() with no padding.
+- EVENTS: take eventsForDay(events, day); render the first 3 as
+  <div class="cal-event" data-event-id="ID" data-color="COLOR">TITLE</div>
+  where ID = escapeHtml(e.id), COLOR = escapeHtml(e.color ?? ""), TITLE = escapeHtml(e.title).
+  If there are more than 3, append <div class="cal-more">+N more</div> where N is the number not shown.
+"""
+
+[[task]]
+id = "renderAgenda"
+difficulty = 3
+deps = ["eventsForDay"]
+signature = "export function renderAgenda({ from, days = 14, events, today })"
+spec = """
+Return an HTML string listing events for `days` consecutive days starting at startOfDay(from).
+Use EXACTLY this markup (no extra whitespace or newlines):
+
+<div class="cal-agenda">SECTIONS</div>
+
+For each day that has at least one event (use eventsForDay), in date order, a section:
+<section class="CLASSES" data-date="YYYY-MM-DD"><h3>LABEL</h3>ROWS</section>
+- CLASSES = "cal-agenda-day", plus " is-today" when isSameDay(day, today).
+- LABEL = DOW_SHORT[day.getDay()] + " " + MONTHS_SHORT[day.getMonth()] + " " + day.getDate(), e.g. "Mon Oct 19".
+- one row per event, in eventsForDay order:
+  <div class="cal-event" data-event-id="ID" data-color="COLOR"><span class="cal-time">TIME</span> <span class="cal-title">TITLE</span></div>
+  TIME = "All day" for all-day events, else formatTime(e.start) + "–" + formatTime(e.end) (the dash is an EN DASH U+2013).
+  ID, COLOR, TITLE escaped with escapeHtml (COLOR from e.color ?? "").
+If no day in the range has events, return exactly: <div class="cal-agenda"><p class="cal-empty">No events</p></div>
+"""
+
+[[task]]
+id = "renderWeek"
+difficulty = 5
+deps = ["startOfWeek", "eventsForDay", "layoutDay"]
+signature = "export function renderWeek({ anchor, weekStartsOn = 0, events, today, startHour = 0, endHour = 24, days = 7 })"
+spec = """
+Return an HTML string for a week view (days = 7) or a day view (days = 1).
+The first day is startOfWeek(anchor, weekStartsOn) when days === 7, otherwise startOfDay(anchor).
+Use EXACTLY this markup (no extra whitespace or newlines). DAYS means "repeat for each day", K = dateKey(day):
+
+<div class="cal-week" style="--days:N">
+  <div class="cal-head"><div class="cal-gutter-head"></div>
+    DAYS: <div class="HEADCLS" data-date="K"><span class="cal-dow">Mon</span> <span class="cal-daynum">19</span></div>
+  </div>
+  <div class="cal-allday-row"><div class="cal-gutter-head">all-day</div>
+    DAYS: <div class="cal-allday" data-date="K">ALLDAY_EVENTS</div>
+  </div>
+  <div class="cal-body"><div class="cal-gutter">HOURS</div>
+    DAYS: <div class="cal-col" data-date="K">TIMED_EVENTS</div>
+  </div>
+</div>
+
+- N = days. HEADCLS = "cal-col-head", plus " is-today" when isSameDay(day, today).
+- HOURS: for h from startHour to endHour - 1: <div class="cal-hour">HH:00</div> (pad2(h)).
+- ALLDAY_EVENTS: eventsForDay(events, day) filtered to allDay, each as
+  <div class="cal-event" data-event-id="ID" data-color="COLOR">TITLE</div>
+- TIMED_EVENTS: for each item p of layoutDay(events, day, { startHour, endHour }):
+  <div class="cal-event" data-event-id="ID" data-color="COLOR" style="top:T%;height:H%;left:L%;width:W%"><span class="cal-time">HH:MM</span> TITLE</div>
+  T = p.top, H = p.height, L = Number((p.column / p.columns * 100).toFixed(2)), W = Number((100 / p.columns).toFixed(2)),
+  HH:MM = formatTime(p.event.start).
+- ID, COLOR, TITLE escaped with escapeHtml (COLOR from e.color ?? "").
+"""
+# ---- calagent-hard battery (Sonnet, 2026-10-19); difficulty added by Hermes
+# Harder battery: append these [[task]] entries to tasks/tasks.toml.
+# ASSUMPTION: entries use id / signature / spec / deps (as the calagent README lists). If your
+# existing entries also carry fields such as `difficulty`, copy the pattern from one of them.
+
+[[task]]
+id = "expandRecurrence"
+difficulty = 5
+signature = "export function expandRecurrence(event, fromDate, toDate)"
+deps = []
+spec = '''
+Expand a recurring calendar event into its occurrences inside a date window.
+
+event = { start: 'YYYY-MM-DDTHH:mm', rule?: {...}, exdates?: ['YYYY-MM-DD', ...] }
+  start is a wall-clock label with no timezone.
+rule  = { freq: 'daily' | 'weekly' | 'monthly',
+          interval?: positive integer (default 1),
+          byDay?: ['MO','TU','WE','TH','FR','SA','SU']   (weekly only),
+          count?: total number of occurrences in the series,
+          until?: 'YYYY-MM-DD' (inclusive) }
+
+Return the occurrence start strings 'YYYY-MM-DDTHH:mm', ascending, with no duplicates, for
+occurrences whose DATE is >= fromDate and < toDate (both 'YYYY-MM-DD').
+
+Every occurrence keeps the event's time of day exactly as written; times are labels and are
+never converted. Do the day arithmetic on calendar dates (for example with Date.UTC and the
+getUTC* methods), never with local-time Date objects: the machine's timezone observes daylight
+saving, and 02:30 on a spring-forward day must still come out as 02:30.
+
+Rules
+- No rule: a single occurrence at start (if its date is inside the window).
+- daily: every `interval` days, starting at the start date.
+- weekly: weeks run Monday to Sunday. Without byDay, repeat on the start date's weekday. With
+  byDay, use exactly those weekdays (ignore duplicates; the list may be in any order) in every
+  interval-th week, where the week containing the start date is week 0. Dates before the start
+  date are never occurrences.
+- monthly: same day-of-month as the start, every `interval` months. A month that does not have
+  that day is skipped (Jan 31 monthly gives Mar 31; it does NOT clamp to Feb 28), and skipped
+  months do not count toward `count`.
+- count and until both end the series; whichever is reached first wins. count is measured from
+  the start of the series, not from the window.
+- exdates remove occurrences by date, but removed occurrences still count toward `count`.
+- Do not mutate the inputs. Return a new array.
+'''
+
+[[task]]
+id = "buildIcs"
+difficulty = 4
+signature = "export function buildIcs(events, opts)"
+deps = []
+spec = '''
+Build an iCalendar (.ics) file as a string.
+
+events: [{ uid, title, start, end?, allDay?, location?, description? }]
+  start/end are 'YYYY-MM-DDTHH:mm' wall-clock strings. For all-day events they may be just
+  'YYYY-MM-DD'; only the date part is used.
+opts: { dtstamp: 'YYYYMMDDTHHMMSSZ' (write it exactly as given), prodId?: default '-//calagent//EN' }
+
+Output these logical lines, in this order:
+  BEGIN:VCALENDAR
+  VERSION:2.0
+  PRODID:<prodId>
+  CALSCALE:GREGORIAN
+then, for each event in input order:
+  BEGIN:VEVENT
+  UID:<uid>
+  DTSTAMP:<dtstamp>
+  timed event:   DTSTART:YYYYMMDDTHHMM00   (floating local time, no Z, no TZID)
+                 DTEND:YYYYMMDDTHHMM00     (only if `end` is given)
+  all-day event: DTSTART;VALUE=DATE:YYYYMMDD
+                 DTEND;VALUE=DATE:YYYYMMDD
+                 For all-day events `end` is the INCLUSIVE last day and DTEND must be the day
+                 AFTER it (iCalendar's exclusive end; handle month, year and leap-day rollover).
+                 No end, or an end before the start, means a single day.
+  SUMMARY:<title>
+  LOCATION:<location>          (only if non-empty)
+  DESCRIPTION:<description>    (only if non-empty)
+  END:VEVENT
+and finally END:VCALENDAR.
+
+Text escaping, for the values of SUMMARY, LOCATION and DESCRIPTION only: backslash becomes two
+backslashes; ';' becomes backslash+';'; ',' becomes backslash+','; any line break (\r\n, \r or
+\n) becomes the two characters backslash+'n'. UID, DTSTAMP and PRODID are written as given.
+
+Line folding (RFC 5545 section 3.1), applied to EVERY logical line after escaping: a physical
+line holds at most 75 OCTETS (UTF-8 bytes), not counting its line break. Break a longer line
+by inserting CRLF followed by one space; that space counts toward the 75 on the continuation
+line. Never split a multi-byte character (a 4-byte emoji is a single unit). Fill each physical
+line as full as the limit allows; do not fold early and do not emit empty continuation lines.
+
+All line breaks are CRLF, including one after the final END:VCALENDAR. Do not mutate inputs.
+'''
+
+[[task]]
+id = "layoutWeekSpans"
+difficulty = 5
+signature = "export function layoutWeekSpans(events, weekStart, maxLanes = Infinity)"
+deps = []
+spec = '''
+Lay out all-day / multi-day events as horizontal banners for one 7-column week.
+
+events: [{ id, start: 'YYYY-MM-DD', end?: 'YYYY-MM-DD' }]   end is INCLUSIVE; a missing end, or
+        an end before the start, means a single-day event.
+weekStart: 'YYYY-MM-DD', the date of column 0. Columns 0..6 are weekStart .. weekStart+6.
+        (It can be any weekday.)
+maxLanes: optional, default Infinity.
+
+Return { segments, hidden }.
+
+segments is an array of { id, startCol, endCol, lane, continuesBefore, continuesAfter }:
+- Only events that overlap the week produce a segment. An event that ends the day before
+  weekStart, or starts the day after column 6, produces none.
+- startCol/endCol are the event's columns CLIPPED to 0..6.
+- continuesBefore is true if the event starts before weekStart; continuesAfter is true if it
+  ends after column 6 (an event ending exactly on column 6 does not continue).
+- Order and lane assignment: sort by startCol ascending, then by clipped span length
+  (endCol - startCol) DESCENDING, then by id ascending (string comparison). Walk that order and
+  give each segment the LOWEST lane number (0, 1, 2, ...) whose existing segments do not overlap
+  its columns (two segments overlap if their column ranges share at least one column). The
+  returned array is in that sorted order.
+- If maxLanes is given, lanes are still assigned exactly as above, and then every segment whose
+  lane >= maxLanes is removed from `segments`.
+
+hidden is an array of 7 integers: for each column, how many removed (lane >= maxLanes) segments
+cover that column. With the default maxLanes it is all zeros.
+
+Day arithmetic must be calendar-based (for example Date.UTC); the machine's timezone observes
+daylight saving, so a local-midnight difference is not always 24 hours. Do not mutate inputs.
+'''
+
+[[task]]
+id = "findFreeSlots"
+difficulty = 5
+signature = "export function findFreeSlots(events, date, opts)"
+deps = ["expandRecurrence"]
+spec = '''
+Find free time slots inside working hours on one date.
+
+events: [{ start: 'YYYY-MM-DDTHH:mm', end: 'YYYY-MM-DDTHH:mm', allDay?, rule?, exdates? }]
+        All times are wall-clock labels. rule/exdates have the same meaning as in
+        expandRecurrence.
+date:   'YYYY-MM-DD'
+opts (all optional): { workStart: 'HH:mm' (default '09:00'), workEnd: 'HH:mm' (default
+        '17:00'), minMinutes: 30, buffer: 0 }
+
+Return [{ start: 'HH:mm', end: 'HH:mm' }, ...], ascending: the maximal free gaps inside
+[workStart, workEnd] on `date` that are at least minMinutes long.
+
+- Every non-all-day event that has an end blocks the time from start to end. All-day events
+  never block. Events with end <= start are ignored. An event may start on an earlier date or
+  end on a later one; only the part that falls on `date` matters.
+- buffer: widen every event by `buffer` minutes on BOTH sides first, then clip to the work
+  window, then merge. (An event that ends just outside the work window can therefore still
+  block its first minutes.)
+- Overlapping or touching blocks merge into one. Zero-length gaps are never returned.
+- Recurring events (those with a `rule`): import { expandRecurrence } from './expandRecurrence.js'
+  and call it with fromDate = two days before `date` and toDate = the day after `date` (it is
+  exclusive), so an occurrence that began the previous evening is considered. Every occurrence
+  lasts as long as the event itself (end minus start, in wall-clock minutes). exdates refer to
+  the occurrence's START date.
+- workEnd <= workStart gives [].
+- Do not mutate the inputs.
+'''
