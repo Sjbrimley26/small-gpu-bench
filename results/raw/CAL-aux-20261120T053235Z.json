@@ -9,7 +9,7 @@
   "max_tokens": 4500,
   "only": null,
   "extended": false,
-  "reference": "/home/spencer/chunk/ai/calagent/calagent/reference",
+  "reference": "<private reference dir>",
   "selftest": false
  },
  "tasks": 9,

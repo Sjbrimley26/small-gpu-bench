@@ -238,7 +238,8 @@ def run_model(args, tasks):
     payload = {"tasks": n, "first_attempt_pass": first_n, "final_pass": final, "request_errors": errors,
                "attempts_total": attempts, "max_attempts": MAX_ATTEMPTS, "critic": "same model",
                "gold_deps_borrowed": sorted(set(borrowed)), "results": results}
-    common.save_results(args, "CAL", payload)
+    rec_args = argparse.Namespace(**{**vars(args), "reference": "<private reference dir>" if args.reference else None})
+    common.save_results(rec_args, "CAL", payload)
     if attempts and errors * 4 > attempts:
         print("INVALID: more than a quarter of the requests failed", file=sys.stderr)
         return 1

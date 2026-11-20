@@ -75,9 +75,9 @@ test('text escaping: newlines (LF, CRLF) become a literal backslash-n', () => {
   assert.ok(out.includes('DESCRIPTION:line1\\nline2\\nline3\r\n'));
 });
 test('UID, DTSTAMP and PRODID are not escaped', () => {
-  const out = buildIcs([ev({ uid: 'abc-123@cal.agent' })], { dtstamp: '20260101T000000Z', prodId: '-//Acme//Cal 1.0//EN' });
+  const out = buildIcs([ev({ uid: 'abc-123@example.com' })], { dtstamp: '20260101T000000Z', prodId: '-//Acme//Cal 1.0//EN' });
   assert.ok(out.includes('PRODID:-//Acme//Cal 1.0//EN\r\n'));
-  assert.ok(out.includes('UID:abc-123@cal.agent\r\n'));
+  assert.ok(out.includes('UID:abc-123@example.com\r\n'));
 });
 test('ASCII folding: 75-octet lines, continuation lines start with one space', () => {
   const out = buildIcs([ev({ description: 'x'.repeat(200) })], OPTS);
