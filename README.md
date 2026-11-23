@@ -512,7 +512,7 @@ patterns/   escalate.py, summarize_verify.py
 tests/      red.py aud.py mon.py hrd.py tool_probe.py judge.py crit.py sum_test.py ocr.py cat.py arena.py, common.py, smoke.sh, fixtures/
 mock/       mock_server.py (stdlib OpenAI-compatible stand-in)
 results/    results.csv, raw/ (your run records land here)
-scripts/    export_results.py, sanitize_results.py
+scripts/    export_results.py, raw_to_rows.py, sanitize_results.py, check_public.sh (leak scanner; --selftest)
 docs/       RESULTS-NOTES.md, SEATS.md, excerpts/ (one sanitised excerpt per cited notebook section)
 ```
 

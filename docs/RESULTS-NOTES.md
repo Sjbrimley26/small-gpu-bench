@@ -16,11 +16,18 @@ A row that appears here with no lab-side counterpart is a bug in the record, not
 
 ## Before a push: commit first, then scan
 
-`scripts/check_public.sh` reads `git ls-files`, so files that are still untracked (new `results/raw/` records,
-a fresh fixture) are not scanned. Running it before `git add` reports a clean tree that a fresh clone will
-fail on. The order is: `git add` the new files, run the scanner, then commit. Two §114 `EMBED` records did
-exactly this in reverse and shipped a `base_url_b` field naming the lab's router endpoint until a clone caught
-it (fixed in 77f3cd3); records written by `common.save_results` never carry it, because it skips `base_url`.
+Two scanners run before a push. This repo ships a generic one, `scripts/check_public.sh`: machine-specific
+home paths, private and CGNAT addresses, live e-mail addresses (the reserved `example.*` domains are allowed),
+and credential-shaped strings, with `--selftest` proving every rule still matches its sample. The lab also runs
+a stricter scanner whose rule list holds the private names and hosts this repo must stay clear of; it is
+deliberately not shipped, because the rule list is itself the thing it protects. Its verdict is the gate for
+anything derived from lab material.
+
+Both read `git ls-files`, so files that are still untracked (new `results/raw/` records, a fresh fixture) are not
+scanned. Running either before `git add` reports a clean tree that a fresh clone will fail on. The order is:
+`git add` the new files, run the scanners, then commit. Two §114 `EMBED` records did exactly this in reverse and
+shipped a `base_url_b` field naming the lab's router endpoint until a clone caught it (fixed in 77f3cd3);
+records written by `common.save_results` never carry it, because it skips `base_url`.
 
 ## Sanitising the seat names
 
