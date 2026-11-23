@@ -170,6 +170,15 @@ def reply_for(model, messages, tools):
             gold["line_items"] = gold["line_items"][:9]
             gold["total"] = round(gold["total"] - 3, 2)
         return json.dumps(gold), None
+    if first_user.startswith("Read the phone-call transcript below"):   # CALL-SYN: gold by construction
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests"))
+        import call
+        c = next((x for x in call.build() if x["transcript"] in first_user), None)
+        tasks = [] if c is None else [{"action": "do the " + g["kw"][0], "owner": g["owner"], "due": g["due"]}
+                                      for g in c["gold"]]
+        if "small" in model and c is not None:    # misses the last promise, invents one on every call
+            tasks = tasks[:-1] + [{"action": "catch up sometime", "owner": c["speakers"][0], "due": None}]
+        return json.dumps({"summary": "A call.", "tasks": tasks}), None
     if first_user.startswith("Extract the purchase order below"):    # PO-SYN: gold by construction; "small" is wrong
         sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "tests"))
         import po

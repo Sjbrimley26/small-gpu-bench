@@ -1,0 +1,735 @@
+[
+ {
+  "id": "plain-01",
+  "tier": "plain",
+  "date": "2026-11-12",
+  "weekday": "Thursday",
+  "speakers": [
+   "Jun",
+   "Nadia"
+  ],
+  "transcript": "Jun: Hi, it's Jun, do you have a minute?\nNadia: Sure, go ahead.\nJun: Did you see the game last night? That fourth quarter was something.\nNadia: Yeah.\nJun: Last year's holiday party was a lot more fun than the one they are planning.\nNadia: Mm-hm, go on.\nJun: The shop was quiet today, just the radio and the saw.\nNadia: Really? Huh.\nJun: Prices on everything keep creeping up, lumber included.\nNadia: Really? Huh.\nNadia: I'll call the supplier about the delay by the 18th.\nJun: Great, thanks.\nJun: We should catch up sometime, it has been ages.",
+  "gold": [
+   {
+    "kw": [
+     "supplier"
+    ],
+    "owner": "Nadia",
+    "due": "2026-11-18"
+   }
+  ]
+ },
+ {
+  "id": "plain-02",
+  "tier": "plain",
+  "date": "2026-11-23",
+  "weekday": "Monday",
+  "speakers": [
+   "Nadia",
+   "Marcus"
+  ],
+  "transcript": "Nadia: Hi, it's Nadia, do you have a minute?\nMarcus: Sure, go ahead.\nNadia: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nMarcus: Really? Huh.\nNadia: Prices on everything keep creeping up, lumber included.\nMarcus: Mm-hm, go on.\nNadia: It is supposed to cool off by the weekend, finally.\nMarcus: Mm-hm, go on.\nNadia: My kid's school moved pickup to a different gate and nobody told us.\nMarcus: Ha, that is true.\nNadia: Did you see the game last night? That fourth quarter was something.\nMarcus: That makes sense.\nMarcus: We ought to get lunch when things calm down.\nMarcus: Okay, I can confirm the delivery window by the 27th.\nNadia: Great, thanks.\nMarcus: I'll update the invoice by Wednesday.\nNadia: Great, thanks.",
+  "gold": [
+   {
+    "kw": [
+     "delivery"
+    ],
+    "owner": "Marcus",
+    "due": "2026-11-27"
+   },
+   {
+    "kw": [
+     "invoice"
+    ],
+    "owner": "Marcus",
+    "due": "2026-11-25"
+   }
+  ]
+ },
+ {
+  "id": "plain-03",
+  "tier": "plain",
+  "date": "2026-11-18",
+  "weekday": "Wednesday",
+  "speakers": [
+   "Rhea",
+   "Tomas"
+  ],
+  "transcript": "Rhea: Hi, it's Rhea, do you have a minute?\nTomas: Sure, go ahead.\nRhea: My kid's school moved pickup to a different gate and nobody told us.\nTomas: Really? Huh.\nRhea: Honestly the traffic on the loop has been worse since the lane closures.\nTomas: Really? Huh.\nRhea: The shop was quiet today, just the radio and the saw.\nTomas: That makes sense.\nRhea: Prices on everything keep creeping up, lumber included.\nTomas: Sure.\nRhea: Last year's holiday party was a lot more fun than the one they are planning.\nTomas: Okay, got it.\nRhea: I need a new phone, mine drops calls whenever I walk past the loading dock.\nTomas: Okay, got it.\nRhea: Okay, I can order the replacement hinges by Wednesday.\nTomas: Great, thanks.\nTomas: Okay, I can confirm the delivery window by the 24th.\nRhea: Great, thanks.\nRhea: We ought to get lunch when things calm down.\nTomas: Okay, I can email the install photos by Tuesday.\nRhea: Great, thanks.",
+  "gold": [
+   {
+    "kw": [
+     "hinge"
+    ],
+    "owner": "Rhea",
+    "due": "2026-11-25"
+   },
+   {
+    "kw": [
+     "delivery"
+    ],
+    "owner": "Tomas",
+    "due": "2026-11-24"
+   },
+   {
+    "kw": [
+     "photo"
+    ],
+    "owner": "Tomas",
+    "due": "2026-11-24"
+   }
+  ]
+ },
+ {
+  "id": "plain-04",
+  "tier": "plain",
+  "date": "2026-11-23",
+  "weekday": "Monday",
+  "speakers": [
+   "Owen",
+   "Rhea"
+  ],
+  "transcript": "Owen: Hi, it's Owen, do you have a minute?\nRhea: Sure, go ahead.\nOwen: Honestly the traffic on the loop has been worse since the lane closures.\nRhea: Really? Huh.\nOwen: The weather has been strange for November, hasn't it.\nRhea: Yeah.\nOwen: Prices on everything keep creeping up, lumber included.\nRhea: Really? Huh.\nOwen: I had the strangest dream about a warehouse full of doors.\nRhea: Okay, got it.\nRhea: We should catch up sometime, it has been ages.\nRhea: Okay, I can drop off the door samples by the 29th.\nOwen: Great, thanks.",
+  "gold": [
+   {
+    "kw": [
+     "sample"
+    ],
+    "owner": "Rhea",
+    "due": "2026-11-29"
+   }
+  ]
+ },
+ {
+  "id": "plain-05",
+  "tier": "plain",
+  "date": "2026-11-09",
+  "weekday": "Monday",
+  "speakers": [
+   "Perry",
+   "Rhea"
+  ],
+  "transcript": "Perry: Hi, it's Perry, do you have a minute?\nRhea: Sure, go ahead.\nPerry: The weather has been strange for November, hasn't it.\nRhea: Okay, got it.\nPerry: That new place on Mill Avenue finally opened, the line was out the door.\nRhea: Sure.\nPerry: Last year's holiday party was a lot more fun than the one they are planning.\nRhea: Okay, got it.\nPerry: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nRhea: Really? Huh.\nPerry: The shop was quiet today, just the radio and the saw.\nRhea: Sure.\nRhea: We ought to get lunch when things calm down.\nPerry: Let me schedule the field measure tomorrow.\nRhea: Great, thanks.\nRhea: Let me email the install photos by Friday.\nPerry: Great, thanks.",
+  "gold": [
+   {
+    "kw": [
+     "measure"
+    ],
+    "owner": "Perry",
+    "due": "2026-11-10"
+   },
+   {
+    "kw": [
+     "photo"
+    ],
+    "owner": "Rhea",
+    "due": "2026-11-13"
+   }
+  ]
+ },
+ {
+  "id": "plain-06",
+  "tier": "plain",
+  "date": "2026-11-23",
+  "weekday": "Monday",
+  "speakers": [
+   "Gabe",
+   "Jun"
+  ],
+  "transcript": "Gabe: Hi, it's Gabe, do you have a minute?\nJun: Sure, go ahead.\nGabe: I think the coffee machine in the office is finally dead.\nJun: Okay, got it.\nGabe: I had the strangest dream about a warehouse full of doors.\nJun: Yeah.\nGabe: Last year's holiday party was a lot more fun than the one they are planning.\nJun: Yeah.\nGabe: Prices on everything keep creeping up, lumber included.\nJun: Really? Huh.\nGabe: Honestly the traffic on the loop has been worse since the lane closures.\nJun: Mm-hm, go on.\nGabe: The shop was quiet today, just the radio and the saw.\nJun: Ha, that is true.\nGabe: Somebody ought to look at that gate hardware one of these days.\nJun: I'll email the install photos.\nGabe: Great, thanks.\nGabe: I'll send over the revised quote by Monday.\nJun: Great, thanks.\nGabe: Let me schedule the field measure by the 28th.\nJun: Great, thanks.",
+  "gold": [
+   {
+    "kw": [
+     "photo"
+    ],
+    "owner": "Jun",
+    "due": null
+   },
+   {
+    "kw": [
+     "quote"
+    ],
+    "owner": "Gabe",
+    "due": "2026-11-30"
+   },
+   {
+    "kw": [
+     "measure"
+    ],
+    "owner": "Gabe",
+    "due": "2026-11-28"
+   }
+  ]
+ },
+ {
+  "id": "plain-07",
+  "tier": "plain",
+  "date": "2026-11-30",
+  "weekday": "Monday",
+  "speakers": [
+   "Rhea",
+   "Gabe"
+  ],
+  "transcript": "Rhea: Hi, it's Rhea, do you have a minute?\nGabe: Sure, go ahead.\nRhea: The weather has been strange for November, hasn't it.\nGabe: Mm-hm, go on.\nRhea: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nGabe: Okay, got it.\nRhea: I think the coffee machine in the office is finally dead.\nGabe: Mm-hm, go on.\nRhea: I had the strangest dream about a warehouse full of doors.\nGabe: Right, I know what you mean.\nRhea: I really should learn that new scheduling software.\nGabe: Let me call the supplier about the delay by the 4th.\nRhea: Great, thanks.",
+  "gold": [
+   {
+    "kw": [
+     "supplier"
+    ],
+    "owner": "Gabe",
+    "due": "2026-12-04"
+   }
+  ]
+ },
+ {
+  "id": "plain-08",
+  "tier": "plain",
+  "date": "2026-11-05",
+  "weekday": "Thursday",
+  "speakers": [
+   "Tomas",
+   "Rhea"
+  ],
+  "transcript": "Tomas: Hi, it's Tomas, do you have a minute?\nRhea: Sure, go ahead.\nTomas: We had a long weekend, mostly yard work and a ball game.\nRhea: Right, I know what you mean.\nTomas: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nRhea: That makes sense.\nTomas: I had the strangest dream about a warehouse full of doors.\nRhea: Really? Huh.\nTomas: It is supposed to cool off by the weekend, finally.\nRhea: Right, I know what you mean.\nTomas: My brother-in-law is thinking about moving out to Tucson.\nRhea: Right, I know what you mean.\nTomas: I really should learn that new scheduling software.\nRhea: I'll order the replacement hinges tomorrow.\nTomas: Great, thanks.\nTomas: I'll file the permit paperwork by the 15th.\nRhea: Great, thanks.",
+  "gold": [
+   {
+    "kw": [
+     "hinge"
+    ],
+    "owner": "Rhea",
+    "due": "2026-11-06"
+   },
+   {
+    "kw": [
+     "permit"
+    ],
+    "owner": "Tomas",
+    "due": "2026-11-15"
+   }
+  ]
+ },
+ {
+  "id": "buried-01",
+  "tier": "buried",
+  "date": "2026-12-07",
+  "weekday": "Monday",
+  "speakers": [
+   "Jun",
+   "Ingrid"
+  ],
+  "transcript": "Jun: Hi, it's Jun, do you have a minute?\nIngrid: Sure, go ahead.\nJun: The shop was quiet today, just the radio and the saw.\nIngrid: Right, I know what you mean.\nJun: I need a new phone, mine drops calls whenever I walk past the loading dock.\nIngrid: Yeah.\nJun: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nIngrid: Yeah.\nJun: That new place on Mill Avenue finally opened, the line was out the door.\nIngrid: Really? Huh.\nJun: Last year's holiday party was a lot more fun than the one they are planning.\nIngrid: Yeah.\nJun: Prices on everything keep creeping up, lumber included.\nIngrid: Mm-hm, go on.\nJun: I think the coffee machine in the office is finally dead.\nIngrid: That makes sense.\nJun: My brother-in-law is thinking about moving out to Tucson.\nIngrid: Yeah.\nJun: The weather has been strange for November, hasn't it.\nIngrid: That makes sense.\nJun: My kid's school moved pickup to a different gate and nobody told us.\nIngrid: Really? Huh.\nIngrid: I really should learn that new scheduling software.\nJun: Let me drop off the door samples by the 11th.\nIngrid: Okay, noted.\nJun: I think the coffee machine in the office is finally dead.\nIngrid: Okay, got it.\nJun: Last year's holiday party was a lot more fun than the one they are planning.\nIngrid: That makes sense.\nJun: My brother-in-law is thinking about moving out to Tucson.\nIngrid: Okay, got it.\nJun: The weather has been strange for November, hasn't it.\nIngrid: Yeah.\nJun: Honestly the traffic on the loop has been worse since the lane closures.\nIngrid: Yeah.\nJun: The shop was quiet today, just the radio and the saw.\nIngrid: Really? Huh.\nJun: The dog got into the trash again, third time this week.\nIngrid: Right, I know what you mean.\nJun: I need a new phone, mine drops calls whenever I walk past the loading dock.\nIngrid: Really? Huh.\nJun: My kid's school moved pickup to a different gate and nobody told us.\nIngrid: Yeah.\nJun: Prices on everything keep creeping up, lumber included.\nIngrid: Mm-hm, go on.\nJun: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nIngrid: Sure.\nJun: I had the strangest dream about a warehouse full of doors.\nIngrid: Ha, that is true.\nJun: We had a long weekend, mostly yard work and a ball game.\nIngrid: Sure.\nJun: It is supposed to cool off by the weekend, finally.\nIngrid: Really? Huh.\nJun: That new place on Mill Avenue finally opened, the line was out the door.\nIngrid: Ha, that is true.\nJun: Did you see the game last night? That fourth quarter was something.\nIngrid: That makes sense.\nJun: I think the coffee machine in the office is finally dead.\nIngrid: Really? Huh.\nJun: Last year's holiday party was a lot more fun than the one they are planning.\nIngrid: Right, I know what you mean.\nJun: My brother-in-law is thinking about moving out to Tucson.\nIngrid: Mm-hm, go on.\nJun: The weather has been strange for November, hasn't it.\nIngrid: Right, I know what you mean.\nJun: Honestly the traffic on the loop has been worse since the lane closures.\nIngrid: Okay, got it.\nJun: The shop was quiet today, just the radio and the saw.\nIngrid: Really? Huh.\nJun: The dog got into the trash again, third time this week.\nIngrid: Really? Huh.\nJun: I need a new phone, mine drops calls whenever I walk past the loading dock.\nIngrid: That makes sense.\nJun: My kid's school moved pickup to a different gate and nobody told us.\nIngrid: Sure.\nJun: Prices on everything keep creeping up, lumber included.\nIngrid: Yeah.\nJun: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nIngrid: Okay, got it.\nJun: I had the strangest dream about a warehouse full of doors.\nIngrid: Mm-hm, go on.\nJun: We had a long weekend, mostly yard work and a ball game.\nIngrid: Okay, got it.\nJun: It is supposed to cool off by the weekend, finally.\nIngrid: Really? Huh.\nJun: That new place on Mill Avenue finally opened, the line was out the door.\nIngrid: That makes sense.",
+  "gold": [
+   {
+    "kw": [
+     "sample"
+    ],
+    "owner": "Jun",
+    "due": "2026-12-11"
+   }
+  ]
+ },
+ {
+  "id": "buried-02",
+  "tier": "buried",
+  "date": "2026-11-23",
+  "weekday": "Monday",
+  "speakers": [
+   "Tomas",
+   "Ingrid"
+  ],
+  "transcript": "Tomas: Hi, it's Tomas, do you have a minute?\nIngrid: Sure, go ahead.\nTomas: That new place on Mill Avenue finally opened, the line was out the door.\nIngrid: Ha, that is true.\nTomas: The dog got into the trash again, third time this week.\nIngrid: Ha, that is true.\nTomas: Did you see the game last night? That fourth quarter was something.\nIngrid: Really? Huh.\nTomas: Last year's holiday party was a lot more fun than the one they are planning.\nIngrid: That makes sense.\nTomas: Prices on everything keep creeping up, lumber included.\nIngrid: Right, I know what you mean.\nTomas: My brother-in-law is thinking about moving out to Tucson.\nIngrid: Okay, got it.\nTomas: I think the coffee machine in the office is finally dead.\nIngrid: Yeah.\nTomas: It is supposed to cool off by the weekend, finally.\nIngrid: That makes sense.\nTomas: The shop was quiet today, just the radio and the saw.\nIngrid: Right, I know what you mean.\nTomas: My kid's school moved pickup to a different gate and nobody told us.\nIngrid: Really? Huh.\nTomas: I had the strangest dream about a warehouse full of doors.\nIngrid: Mm-hm, go on.\nTomas: I need a new phone, mine drops calls whenever I walk past the loading dock.\nIngrid: Right, I know what you mean.\nTomas: We had a long weekend, mostly yard work and a ball game.\nIngrid: Really? Huh.\nIngrid: We ought to get lunch when things calm down.\nIngrid: I'll drop off the door samples tomorrow.\nTomas: Okay, noted.\nIngrid: Let me confirm the delivery window by Tuesday.\nTomas: Okay, noted.\nTomas: The dog got into the trash again, third time this week.\nIngrid: Mm-hm, go on.\nTomas: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nIngrid: That makes sense.\nTomas: My kid's school moved pickup to a different gate and nobody told us.\nIngrid: Yeah.\nTomas: We had a long weekend, mostly yard work and a ball game.\nIngrid: Mm-hm, go on.\nTomas: I need a new phone, mine drops calls whenever I walk past the loading dock.\nIngrid: Really? Huh.\nTomas: Honestly the traffic on the loop has been worse since the lane closures.\nIngrid: Sure.\nTomas: I think the coffee machine in the office is finally dead.\nIngrid: That makes sense.\nTomas: Last year's holiday party was a lot more fun than the one they are planning.\nIngrid: Really? Huh.\nTomas: It is supposed to cool off by the weekend, finally.\nIngrid: Mm-hm, go on.\nTomas: Prices on everything keep creeping up, lumber included.\nIngrid: Yeah.\nTomas: That new place on Mill Avenue finally opened, the line was out the door.\nIngrid: Yeah.\nTomas: I had the strangest dream about a warehouse full of doors.\nIngrid: Okay, got it.\nTomas: The weather has been strange for November, hasn't it.\nIngrid: Right, I know what you mean.\nTomas: The shop was quiet today, just the radio and the saw.\nIngrid: Mm-hm, go on.\nTomas: My brother-in-law is thinking about moving out to Tucson.\nIngrid: Right, I know what you mean.\nTomas: Did you see the game last night? That fourth quarter was something.\nIngrid: Sure.\nTomas: The dog got into the trash again, third time this week.\nIngrid: Ha, that is true.\nTomas: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nIngrid: Yeah.\nTomas: My kid's school moved pickup to a different gate and nobody told us.\nIngrid: Really? Huh.\nTomas: We had a long weekend, mostly yard work and a ball game.\nIngrid: Yeah.\nTomas: I need a new phone, mine drops calls whenever I walk past the loading dock.\nIngrid: Really? Huh.\nTomas: Honestly the traffic on the loop has been worse since the lane closures.\nIngrid: Yeah.\nTomas: I think the coffee machine in the office is finally dead.\nIngrid: Okay, got it.\nTomas: Last year's holiday party was a lot more fun than the one they are planning.\nIngrid: Yeah.\nTomas: It is supposed to cool off by the weekend, finally.\nIngrid: Ha, that is true.\nTomas: Prices on everything keep creeping up, lumber included.\nIngrid: Right, I know what you mean.\nTomas: That new place on Mill Avenue finally opened, the line was out the door.\nIngrid: Okay, got it.\nTomas: I had the strangest dream about a warehouse full of doors.\nIngrid: Yeah.",
+  "gold": [
+   {
+    "kw": [
+     "sample"
+    ],
+    "owner": "Ingrid",
+    "due": "2026-11-24"
+   },
+   {
+    "kw": [
+     "delivery"
+    ],
+    "owner": "Ingrid",
+    "due": "2026-11-24"
+   }
+  ]
+ },
+ {
+  "id": "buried-03",
+  "tier": "buried",
+  "date": "2026-11-09",
+  "weekday": "Monday",
+  "speakers": [
+   "Perry",
+   "Gabe"
+  ],
+  "transcript": "Perry: Hi, it's Perry, do you have a minute?\nGabe: Sure, go ahead.\nPerry: We had a long weekend, mostly yard work and a ball game.\nGabe: Okay, got it.\nPerry: The weather has been strange for November, hasn't it.\nGabe: Mm-hm, go on.\nPerry: Did you see the game last night? That fourth quarter was something.\nGabe: Okay, got it.\nPerry: It is supposed to cool off by the weekend, finally.\nGabe: Ha, that is true.\nPerry: I think the coffee machine in the office is finally dead.\nGabe: Yeah.\nPerry: That new place on Mill Avenue finally opened, the line was out the door.\nGabe: Sure.\nPerry: My kid's school moved pickup to a different gate and nobody told us.\nGabe: Right, I know what you mean.\nPerry: The shop was quiet today, just the radio and the saw.\nGabe: Mm-hm, go on.\nPerry: Prices on everything keep creeping up, lumber included.\nGabe: That makes sense.\nPerry: Last year's holiday party was a lot more fun than the one they are planning.\nGabe: Really? Huh.\nPerry: Honestly the traffic on the loop has been worse since the lane closures.\nGabe: Ha, that is true.\nPerry: My brother-in-law is thinking about moving out to Tucson.\nGabe: Yeah.\nPerry: The dog got into the trash again, third time this week.\nGabe: Really? Huh.\nPerry: I need a new phone, mine drops calls whenever I walk past the loading dock.\nGabe: Okay, got it.\nPerry: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nGabe: That makes sense.\nPerry: I had the strangest dream about a warehouse full of doors.\nGabe: Sure.\nGabe: I really should learn that new scheduling software.\nGabe: Okay, I can schedule the field measure tomorrow.\nPerry: Okay, noted.\nPerry: The shop was quiet today, just the radio and the saw.\nGabe: Yeah.\nPerry: That new place on Mill Avenue finally opened, the line was out the door.\nGabe: Ha, that is true.\nPerry: My brother-in-law is thinking about moving out to Tucson.\nGabe: Sure.\nPerry: It is supposed to cool off by the weekend, finally.\nGabe: Yeah.\nPerry: I had the strangest dream about a warehouse full of doors.\nGabe: Ha, that is true.\nPerry: Prices on everything keep creeping up, lumber included.\nGabe: Yeah.\nPerry: My kid's school moved pickup to a different gate and nobody told us.\nGabe: Sure.\nPerry: The dog got into the trash again, third time this week.\nGabe: That makes sense.\nPerry: We had a long weekend, mostly yard work and a ball game.\nGabe: Mm-hm, go on.\nPerry: Last year's holiday party was a lot more fun than the one they are planning.\nGabe: Really? Huh.\nPerry: I think the coffee machine in the office is finally dead.\nGabe: Mm-hm, go on.\nPerry: The weather has been strange for November, hasn't it.\nGabe: Ha, that is true.\nPerry: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nGabe: Right, I know what you mean.\nPerry: Honestly the traffic on the loop has been worse since the lane closures.\nGabe: Okay, got it.\nPerry: Did you see the game last night? That fourth quarter was something.\nGabe: Ha, that is true.\nPerry: I need a new phone, mine drops calls whenever I walk past the loading dock.\nGabe: Sure.\nPerry: The shop was quiet today, just the radio and the saw.\nGabe: Ha, that is true.\nPerry: That new place on Mill Avenue finally opened, the line was out the door.\nGabe: Really? Huh.\nPerry: My brother-in-law is thinking about moving out to Tucson.\nGabe: Sure.\nPerry: It is supposed to cool off by the weekend, finally.\nGabe: Really? Huh.\nPerry: I had the strangest dream about a warehouse full of doors.\nGabe: Yeah.\nPerry: Prices on everything keep creeping up, lumber included.\nGabe: Ha, that is true.\nPerry: My kid's school moved pickup to a different gate and nobody told us.\nGabe: Right, I know what you mean.\nPerry: The dog got into the trash again, third time this week.\nGabe: Ha, that is true.\nPerry: We had a long weekend, mostly yard work and a ball game.\nGabe: Really? Huh.",
+  "gold": [
+   {
+    "kw": [
+     "measure"
+    ],
+    "owner": "Gabe",
+    "due": "2026-11-10"
+   }
+  ]
+ },
+ {
+  "id": "buried-04",
+  "tier": "buried",
+  "date": "2026-11-02",
+  "weekday": "Monday",
+  "speakers": [
+   "Marcus",
+   "Rhea"
+  ],
+  "transcript": "Marcus: Hi, it's Marcus, do you have a minute?\nRhea: Sure, go ahead.\nMarcus: Last year's holiday party was a lot more fun than the one they are planning.\nRhea: That makes sense.\nMarcus: It is supposed to cool off by the weekend, finally.\nRhea: Right, I know what you mean.\nMarcus: Prices on everything keep creeping up, lumber included.\nRhea: That makes sense.\nMarcus: I need a new phone, mine drops calls whenever I walk past the loading dock.\nRhea: That makes sense.\nMarcus: The weather has been strange for November, hasn't it.\nRhea: Okay, got it.\nMarcus: We had a long weekend, mostly yard work and a ball game.\nRhea: Mm-hm, go on.\nMarcus: I had the strangest dream about a warehouse full of doors.\nRhea: Yeah.\nMarcus: I think the coffee machine in the office is finally dead.\nRhea: Really? Huh.\nMarcus: The shop was quiet today, just the radio and the saw.\nRhea: Really? Huh.\nMarcus: Honestly the traffic on the loop has been worse since the lane closures.\nRhea: Okay, got it.\nMarcus: My brother-in-law is thinking about moving out to Tucson.\nRhea: Ha, that is true.\nMarcus: My kid's school moved pickup to a different gate and nobody told us.\nRhea: Ha, that is true.\nMarcus: Did you see the game last night? That fourth quarter was something.\nRhea: Okay, got it.\nMarcus: That new place on Mill Avenue finally opened, the line was out the door.\nRhea: Sure.\nMarcus: The dog got into the trash again, third time this week.\nRhea: Yeah.\nMarcus: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nRhea: Really? Huh.\nMarcus: Last year's holiday party was a lot more fun than the one they are planning.\nRhea: Ha, that is true.\nMarcus: It is supposed to cool off by the weekend, finally.\nRhea: That makes sense.\nMarcus: Prices on everything keep creeping up, lumber included.\nRhea: Right, I know what you mean.\nMarcus: I really should learn that new scheduling software.\nRhea: I'll send over the revised quote by the 10th.\nMarcus: Okay, noted.\nMarcus: I'll call the supplier about the delay by the 9th.\nRhea: Okay, noted.\nMarcus: I had the strangest dream about a warehouse full of doors.\nRhea: Yeah.\nMarcus: That new place on Mill Avenue finally opened, the line was out the door.\nRhea: Ha, that is true.\nMarcus: We had a long weekend, mostly yard work and a ball game.\nRhea: Mm-hm, go on.\nMarcus: Last year's holiday party was a lot more fun than the one they are planning.\nRhea: That makes sense.\nMarcus: The dog got into the trash again, third time this week.\nRhea: Mm-hm, go on.\nMarcus: I think the coffee machine in the office is finally dead.\nRhea: Okay, got it.\nMarcus: The weather has been strange for November, hasn't it.\nRhea: Really? Huh.\nMarcus: I need a new phone, mine drops calls whenever I walk past the loading dock.\nRhea: Right, I know what you mean.\nMarcus: It is supposed to cool off by the weekend, finally.\nRhea: Right, I know what you mean.\nMarcus: The shop was quiet today, just the radio and the saw.\nRhea: Right, I know what you mean.\nMarcus: My brother-in-law is thinking about moving out to Tucson.\nRhea: Sure.\nMarcus: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nRhea: Mm-hm, go on.\nMarcus: Prices on everything keep creeping up, lumber included.\nRhea: Okay, got it.\nMarcus: Honestly the traffic on the loop has been worse since the lane closures.\nRhea: Mm-hm, go on.\nMarcus: My kid's school moved pickup to a different gate and nobody told us.\nRhea: Ha, that is true.\nMarcus: Did you see the game last night? That fourth quarter was something.\nRhea: Okay, got it.\nMarcus: I had the strangest dream about a warehouse full of doors.\nRhea: Really? Huh.\nMarcus: That new place on Mill Avenue finally opened, the line was out the door.\nRhea: That makes sense.\nMarcus: We had a long weekend, mostly yard work and a ball game.\nRhea: Right, I know what you mean.\nMarcus: Last year's holiday party was a lot more fun than the one they are planning.\nRhea: Okay, got it.\nMarcus: The dog got into the trash again, third time this week.\nRhea: Mm-hm, go on.\nMarcus: I think the coffee machine in the office is finally dead.\nRhea: Okay, got it.",
+  "gold": [
+   {
+    "kw": [
+     "quote"
+    ],
+    "owner": "Rhea",
+    "due": "2026-11-10"
+   },
+   {
+    "kw": [
+     "supplier"
+    ],
+    "owner": "Marcus",
+    "due": "2026-11-09"
+   }
+  ]
+ },
+ {
+  "id": "buried-05",
+  "tier": "buried",
+  "date": "2026-12-10",
+  "weekday": "Thursday",
+  "speakers": [
+   "Marcus",
+   "Leila"
+  ],
+  "transcript": "Marcus: Hi, it's Marcus, do you have a minute?\nLeila: Sure, go ahead.\nMarcus: We had a long weekend, mostly yard work and a ball game.\nLeila: Mm-hm, go on.\nMarcus: Last year's holiday party was a lot more fun than the one they are planning.\nLeila: Really? Huh.\nMarcus: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nLeila: Yeah.\nMarcus: I had the strangest dream about a warehouse full of doors.\nLeila: Okay, got it.\nMarcus: Honestly the traffic on the loop has been worse since the lane closures.\nLeila: Really? Huh.\nMarcus: The dog got into the trash again, third time this week.\nLeila: Ha, that is true.\nMarcus: My kid's school moved pickup to a different gate and nobody told us.\nLeila: Right, I know what you mean.\nMarcus: The shop was quiet today, just the radio and the saw.\nLeila: Yeah.\nMarcus: It is supposed to cool off by the weekend, finally.\nLeila: Ha, that is true.\nMarcus: I need a new phone, mine drops calls whenever I walk past the loading dock.\nLeila: Ha, that is true.\nMarcus: Did you see the game last night? That fourth quarter was something.\nLeila: Yeah.\nMarcus: I think the coffee machine in the office is finally dead.\nLeila: Right, I know what you mean.\nMarcus: My brother-in-law is thinking about moving out to Tucson.\nLeila: Really? Huh.\nMarcus: That new place on Mill Avenue finally opened, the line was out the door.\nLeila: Mm-hm, go on.\nMarcus: The weather has been strange for November, hasn't it.\nLeila: Really? Huh.\nMarcus: Prices on everything keep creeping up, lumber included.\nLeila: Mm-hm, go on.\nMarcus: We had a long weekend, mostly yard work and a ball game.\nLeila: Really? Huh.\nMarcus: Last year's holiday party was a lot more fun than the one they are planning.\nLeila: Yeah.\nMarcus: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nLeila: That makes sense.\nMarcus: I had the strangest dream about a warehouse full of doors.\nLeila: Really? Huh.\nMarcus: Honestly the traffic on the loop has been worse since the lane closures.\nLeila: Okay, got it.\nMarcus: The dog got into the trash again, third time this week.\nLeila: Mm-hm, go on.\nLeila: We ought to get lunch when things calm down.\nLeila: Let me call the supplier about the delay by Wednesday.\nMarcus: Okay, noted.\nMarcus: The shop was quiet today, just the radio and the saw.\nLeila: Mm-hm, go on.\nMarcus: My brother-in-law is thinking about moving out to Tucson.\nLeila: That makes sense.\nMarcus: My kid's school moved pickup to a different gate and nobody told us.\nLeila: Ha, that is true.\nMarcus: Last year's holiday party was a lot more fun than the one they are planning.\nLeila: Sure.\nMarcus: Did you see the game last night? That fourth quarter was something.\nLeila: Right, I know what you mean.\nMarcus: It is supposed to cool off by the weekend, finally.\nLeila: Mm-hm, go on.\nMarcus: I had the strangest dream about a warehouse full of doors.\nLeila: Sure.\nMarcus: The weather has been strange for November, hasn't it.\nLeila: Ha, that is true.\nMarcus: Prices on everything keep creeping up, lumber included.\nLeila: Mm-hm, go on.\nMarcus: We had a long weekend, mostly yard work and a ball game.\nLeila: Really? Huh.\nMarcus: I need a new phone, mine drops calls whenever I walk past the loading dock.\nLeila: Yeah.\nMarcus: That new place on Mill Avenue finally opened, the line was out the door.\nLeila: Mm-hm, go on.\nMarcus: I think the coffee machine in the office is finally dead.\nLeila: Sure.\nMarcus: The dog got into the trash again, third time this week.\nLeila: Mm-hm, go on.\nMarcus: Honestly the traffic on the loop has been worse since the lane closures.\nLeila: Ha, that is true.\nMarcus: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nLeila: That makes sense.\nMarcus: The shop was quiet today, just the radio and the saw.\nLeila: Really? Huh.\nMarcus: My brother-in-law is thinking about moving out to Tucson.\nLeila: Ha, that is true.\nMarcus: My kid's school moved pickup to a different gate and nobody told us.\nLeila: Mm-hm, go on.",
+  "gold": [
+   {
+    "kw": [
+     "supplier"
+    ],
+    "owner": "Leila",
+    "due": "2026-12-16"
+   }
+  ]
+ },
+ {
+  "id": "buried-06",
+  "tier": "buried",
+  "date": "2026-11-30",
+  "weekday": "Monday",
+  "speakers": [
+   "Jun",
+   "Nadia"
+  ],
+  "transcript": "Jun: Hi, it's Jun, do you have a minute?\nNadia: Sure, go ahead.\nJun: Last year's holiday party was a lot more fun than the one they are planning.\nNadia: Really? Huh.\nJun: We had a long weekend, mostly yard work and a ball game.\nNadia: Ha, that is true.\nJun: The dog got into the trash again, third time this week.\nNadia: Sure.\nJun: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nNadia: That makes sense.\nJun: I think the coffee machine in the office is finally dead.\nNadia: Mm-hm, go on.\nJun: The weather has been strange for November, hasn't it.\nNadia: That makes sense.\nJun: My kid's school moved pickup to a different gate and nobody told us.\nNadia: That makes sense.\nJun: It is supposed to cool off by the weekend, finally.\nNadia: Yeah.\nJun: Prices on everything keep creeping up, lumber included.\nNadia: Right, I know what you mean.\nJun: Did you see the game last night? That fourth quarter was something.\nNadia: Right, I know what you mean.\nJun: My brother-in-law is thinking about moving out to Tucson.\nNadia: Right, I know what you mean.\nJun: Honestly the traffic on the loop has been worse since the lane closures.\nNadia: Yeah.\nJun: That new place on Mill Avenue finally opened, the line was out the door.\nNadia: Right, I know what you mean.\nJun: The shop was quiet today, just the radio and the saw.\nNadia: That makes sense.\nJun: I had the strangest dream about a warehouse full of doors.\nNadia: Sure.\nJun: I need a new phone, mine drops calls whenever I walk past the loading dock.\nNadia: Yeah.\nJun: Last year's holiday party was a lot more fun than the one they are planning.\nNadia: Right, I know what you mean.\nJun: We had a long weekend, mostly yard work and a ball game.\nNadia: Okay, got it.\nJun: The dog got into the trash again, third time this week.\nNadia: Really? Huh.\nJun: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nNadia: Yeah.\nJun: I think the coffee machine in the office is finally dead.\nNadia: Ha, that is true.\nJun: The weather has been strange for November, hasn't it.\nNadia: Sure.\nJun: My kid's school moved pickup to a different gate and nobody told us.\nNadia: Okay, got it.\nJun: It is supposed to cool off by the weekend, finally.\nNadia: Ha, that is true.\nJun: Prices on everything keep creeping up, lumber included.\nNadia: Sure.\nNadia: We should catch up sometime, it has been ages.\nNadia: Okay, I can email the install photos by Wednesday.\nJun: Okay, noted.\nNadia: Okay, I can file the permit paperwork by Wednesday.\nJun: Okay, noted.\nJun: The shop was quiet today, just the radio and the saw.\nNadia: Right, I know what you mean.\nJun: Prices on everything keep creeping up, lumber included.\nNadia: Really? Huh.\nJun: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nNadia: Sure.\nJun: That new place on Mill Avenue finally opened, the line was out the door.\nNadia: Sure.\nJun: We had a long weekend, mostly yard work and a ball game.\nNadia: Okay, got it.\nJun: The weather has been strange for November, hasn't it.\nNadia: Ha, that is true.\nJun: I think the coffee machine in the office is finally dead.\nNadia: Sure.\nJun: The dog got into the trash again, third time this week.\nNadia: Yeah.\nJun: I need a new phone, mine drops calls whenever I walk past the loading dock.\nNadia: Sure.\nJun: Did you see the game last night? That fourth quarter was something.\nNadia: Yeah.\nJun: My brother-in-law is thinking about moving out to Tucson.\nNadia: That makes sense.\nJun: My kid's school moved pickup to a different gate and nobody told us.\nNadia: Mm-hm, go on.\nJun: I had the strangest dream about a warehouse full of doors.\nNadia: Yeah.\nJun: It is supposed to cool off by the weekend, finally.\nNadia: Ha, that is true.\nJun: Last year's holiday party was a lot more fun than the one they are planning.\nNadia: Mm-hm, go on.\nJun: Honestly the traffic on the loop has been worse since the lane closures.\nNadia: Right, I know what you mean.",
+  "gold": [
+   {
+    "kw": [
+     "photo"
+    ],
+    "owner": "Nadia",
+    "due": "2026-12-02"
+   },
+   {
+    "kw": [
+     "permit"
+    ],
+    "owner": "Nadia",
+    "due": "2026-12-02"
+   }
+  ]
+ },
+ {
+  "id": "buried-07",
+  "tier": "buried",
+  "date": "2026-12-07",
+  "weekday": "Monday",
+  "speakers": [
+   "Tomas",
+   "Rhea"
+  ],
+  "transcript": "Tomas: Hi, it's Tomas, do you have a minute?\nRhea: Sure, go ahead.\nTomas: That new place on Mill Avenue finally opened, the line was out the door.\nRhea: That makes sense.\nTomas: Prices on everything keep creeping up, lumber included.\nRhea: That makes sense.\nTomas: Last year's holiday party was a lot more fun than the one they are planning.\nRhea: Mm-hm, go on.\nTomas: I think the coffee machine in the office is finally dead.\nRhea: Sure.\nTomas: I need a new phone, mine drops calls whenever I walk past the loading dock.\nRhea: Right, I know what you mean.\nTomas: Did you see the game last night? That fourth quarter was something.\nRhea: Yeah.\nTomas: Honestly the traffic on the loop has been worse since the lane closures.\nRhea: Okay, got it.\nTomas: The shop was quiet today, just the radio and the saw.\nRhea: Mm-hm, go on.\nTomas: My brother-in-law is thinking about moving out to Tucson.\nRhea: Ha, that is true.\nTomas: The weather has been strange for November, hasn't it.\nRhea: Yeah.\nTomas: The dog got into the trash again, third time this week.\nRhea: Mm-hm, go on.\nTomas: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nRhea: Right, I know what you mean.\nTomas: My kid's school moved pickup to a different gate and nobody told us.\nRhea: Okay, got it.\nTomas: I had the strangest dream about a warehouse full of doors.\nRhea: Okay, got it.\nTomas: It is supposed to cool off by the weekend, finally.\nRhea: Sure.\nTomas: We had a long weekend, mostly yard work and a ball game.\nRhea: That makes sense.\nTomas: That new place on Mill Avenue finally opened, the line was out the door.\nRhea: Mm-hm, go on.\nTomas: Prices on everything keep creeping up, lumber included.\nRhea: Ha, that is true.\nTomas: Last year's holiday party was a lot more fun than the one they are planning.\nRhea: Yeah.\nTomas: I think the coffee machine in the office is finally dead.\nRhea: Really? Huh.\nTomas: I need a new phone, mine drops calls whenever I walk past the loading dock.\nRhea: Really? Huh.\nTomas: Did you see the game last night? That fourth quarter was something.\nRhea: Ha, that is true.\nTomas: Honestly the traffic on the loop has been worse since the lane closures.\nRhea: Okay, got it.\nTomas: The shop was quiet today, just the radio and the saw.\nRhea: Ha, that is true.\nTomas: My brother-in-law is thinking about moving out to Tucson.\nRhea: Right, I know what you mean.\nTomas: The weather has been strange for November, hasn't it.\nRhea: Mm-hm, go on.\nTomas: The dog got into the trash again, third time this week.\nRhea: Mm-hm, go on.\nTomas: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nRhea: Really? Huh.\nTomas: Somebody ought to look at that gate hardware one of these days.\nRhea: Okay, I can schedule the field measure tomorrow.\nTomas: Okay, noted.\nTomas: The dog got into the trash again, third time this week.\nRhea: That makes sense.\nTomas: My kid's school moved pickup to a different gate and nobody told us.\nRhea: Mm-hm, go on.\nTomas: Prices on everything keep creeping up, lumber included.\nRhea: Ha, that is true.\nTomas: I need a new phone, mine drops calls whenever I walk past the loading dock.\nRhea: Mm-hm, go on.\nTomas: The weather has been strange for November, hasn't it.\nRhea: That makes sense.\nTomas: Honestly the traffic on the loop has been worse since the lane closures.\nRhea: That makes sense.\nTomas: Did you see the game last night? That fourth quarter was something.\nRhea: Sure.\nTomas: We had a long weekend, mostly yard work and a ball game.\nRhea: Right, I know what you mean.\nTomas: My brother-in-law is thinking about moving out to Tucson.\nRhea: Yeah.\nTomas: I think the coffee machine in the office is finally dead.\nRhea: Mm-hm, go on.\nTomas: That new place on Mill Avenue finally opened, the line was out the door.\nRhea: Ha, that is true.\nTomas: It is supposed to cool off by the weekend, finally.\nRhea: Yeah.\nTomas: Last year's holiday party was a lot more fun than the one they are planning.\nRhea: Right, I know what you mean.",
+  "gold": [
+   {
+    "kw": [
+     "measure"
+    ],
+    "owner": "Rhea",
+    "due": "2026-12-08"
+   }
+  ]
+ },
+ {
+  "id": "buried-08",
+  "tier": "buried",
+  "date": "2026-12-07",
+  "weekday": "Monday",
+  "speakers": [
+   "Perry",
+   "Gabe"
+  ],
+  "transcript": "Perry: Hi, it's Perry, do you have a minute?\nGabe: Sure, go ahead.\nPerry: The weather has been strange for November, hasn't it.\nGabe: Right, I know what you mean.\nPerry: I had the strangest dream about a warehouse full of doors.\nGabe: Okay, got it.\nPerry: That new place on Mill Avenue finally opened, the line was out the door.\nGabe: That makes sense.\nPerry: We had a long weekend, mostly yard work and a ball game.\nGabe: Sure.\nPerry: Last year's holiday party was a lot more fun than the one they are planning.\nGabe: Okay, got it.\nPerry: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nGabe: Okay, got it.\nPerry: My kid's school moved pickup to a different gate and nobody told us.\nGabe: Okay, got it.\nPerry: My brother-in-law is thinking about moving out to Tucson.\nGabe: Ha, that is true.\nPerry: Did you see the game last night? That fourth quarter was something.\nGabe: Sure.\nPerry: I need a new phone, mine drops calls whenever I walk past the loading dock.\nGabe: Really? Huh.\nPerry: Honestly the traffic on the loop has been worse since the lane closures.\nGabe: Ha, that is true.\nPerry: Prices on everything keep creeping up, lumber included.\nGabe: Okay, got it.\nPerry: I think the coffee machine in the office is finally dead.\nGabe: Okay, got it.\nPerry: The shop was quiet today, just the radio and the saw.\nGabe: Mm-hm, go on.\nPerry: The dog got into the trash again, third time this week.\nGabe: Yeah.\nPerry: It is supposed to cool off by the weekend, finally.\nGabe: Mm-hm, go on.\nPerry: The weather has been strange for November, hasn't it.\nGabe: Yeah.\nPerry: I had the strangest dream about a warehouse full of doors.\nGabe: Really? Huh.\nPerry: That new place on Mill Avenue finally opened, the line was out the door.\nGabe: Yeah.\nPerry: We had a long weekend, mostly yard work and a ball game.\nGabe: Sure.\nPerry: Last year's holiday party was a lot more fun than the one they are planning.\nGabe: Yeah.\nPerry: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nGabe: Ha, that is true.\nPerry: My kid's school moved pickup to a different gate and nobody told us.\nGabe: Right, I know what you mean.\nPerry: My brother-in-law is thinking about moving out to Tucson.\nGabe: Really? Huh.\nPerry: Did you see the game last night? That fourth quarter was something.\nGabe: Yeah.\nPerry: I need a new phone, mine drops calls whenever I walk past the loading dock.\nGabe: Sure.\nPerry: Honestly the traffic on the loop has been worse since the lane closures.\nGabe: Sure.\nPerry: Prices on everything keep creeping up, lumber included.\nGabe: Okay, got it.\nPerry: I think the coffee machine in the office is finally dead.\nGabe: That makes sense.\nPerry: The shop was quiet today, just the radio and the saw.\nGabe: That makes sense.\nPerry: The dog got into the trash again, third time this week.\nGabe: Yeah.\nPerry: We should catch up sometime, it has been ages.\nPerry: Let me call the supplier about the delay by the 14th.\nGabe: Okay, noted.\nPerry: Let me update the invoice tomorrow.\nGabe: Okay, noted.\nPerry: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nGabe: Really? Huh.\nPerry: Honestly the traffic on the loop has been worse since the lane closures.\nGabe: Mm-hm, go on.\nPerry: Last year's holiday party was a lot more fun than the one they are planning.\nGabe: Mm-hm, go on.\nPerry: We had a long weekend, mostly yard work and a ball game.\nGabe: Mm-hm, go on.\nPerry: I had the strangest dream about a warehouse full of doors.\nGabe: Really? Huh.\nPerry: My kid's school moved pickup to a different gate and nobody told us.\nGabe: Really? Huh.\nPerry: The shop was quiet today, just the radio and the saw.\nGabe: Yeah.\nPerry: The weather has been strange for November, hasn't it.\nGabe: Right, I know what you mean.\nPerry: I need a new phone, mine drops calls whenever I walk past the loading dock.\nGabe: Right, I know what you mean.\nPerry: It is supposed to cool off by the weekend, finally.\nGabe: Sure.",
+  "gold": [
+   {
+    "kw": [
+     "supplier"
+    ],
+    "owner": "Perry",
+    "due": "2026-12-14"
+   },
+   {
+    "kw": [
+     "invoice"
+    ],
+    "owner": "Perry",
+    "due": "2026-12-08"
+   }
+  ]
+ },
+ {
+  "id": "conditional-01",
+  "tier": "conditional",
+  "date": "2026-11-18",
+  "weekday": "Wednesday",
+  "speakers": [
+   "Ingrid",
+   "Gabe"
+  ],
+  "transcript": "Ingrid: Hi, it's Ingrid, do you have a minute?\nGabe: Sure, go ahead.\nIngrid: Honestly the traffic on the loop has been worse since the lane closures.\nGabe: Okay, got it.\nIngrid: I had the strangest dream about a warehouse full of doors.\nGabe: Mm-hm, go on.\nIngrid: If the samples comes in, I'll drop off the door samples by Monday.\nGabe: Right, but nobody knows when that will be.\nIngrid: Exactly. No idea yet. We will see.\nIngrid: The weather has been strange for November, hasn't it.\nGabe: Right, I know what you mean.",
+  "gold": []
+ },
+ {
+  "id": "conditional-02",
+  "tier": "conditional",
+  "date": "2026-11-19",
+  "weekday": "Thursday",
+  "speakers": [
+   "Owen",
+   "Leila"
+  ],
+  "transcript": "Owen: Hi, it's Owen, do you have a minute?\nLeila: Sure, go ahead.\nOwen: Honestly the traffic on the loop has been worse since the lane closures.\nLeila: Yeah.\nOwen: Did you see the game last night? That fourth quarter was something.\nLeila: Really? Huh.\nOwen: If the frames comes in, I'll pick up the stained frames by Tuesday.\nLeila: Right, but nobody knows when that will be.\nOwen: Exactly. No idea yet. We will see.\nOwen: Honestly the traffic on the loop has been worse since the lane closures.\nLeila: Mm-hm, go on.",
+  "gold": []
+ },
+ {
+  "id": "conditional-03",
+  "tier": "conditional",
+  "date": "2026-11-30",
+  "weekday": "Monday",
+  "speakers": [
+   "Jun",
+   "Leila"
+  ],
+  "transcript": "Jun: Hi, it's Jun, do you have a minute?\nLeila: Sure, go ahead.\nJun: The dog got into the trash again, third time this week.\nLeila: Ha, that is true.\nJun: It is supposed to cool off by the weekend, finally.\nLeila: That makes sense.\nJun: If the hinges comes in, I'll order the replacement hinges by Friday.\nLeila: Right, but nobody knows when that will be.\nJun: Exactly. No idea yet. We will see.\nJun: My brother-in-law is thinking about moving out to Tucson.\nLeila: Right, I know what you mean.",
+  "gold": []
+ },
+ {
+  "id": "conditional-04",
+  "tier": "conditional",
+  "date": "2026-12-01",
+  "weekday": "Tuesday",
+  "speakers": [
+   "Leila",
+   "Owen"
+  ],
+  "transcript": "Leila: Hi, it's Leila, do you have a minute?\nOwen: Sure, go ahead.\nLeila: Last year's holiday party was a lot more fun than the one they are planning.\nOwen: Sure.\nLeila: My brother-in-law is thinking about moving out to Tucson.\nOwen: Really? Huh.\nLeila: If the hinges comes in, I'll order the replacement hinges tomorrow.\nOwen: Right, but nobody knows when that will be.\nLeila: Exactly. No idea yet. We will see.\nLeila: I had the strangest dream about a warehouse full of doors.\nOwen: Really? Huh.",
+  "gold": []
+ },
+ {
+  "id": "conditional-05",
+  "tier": "conditional",
+  "date": "2026-12-04",
+  "weekday": "Friday",
+  "speakers": [
+   "Leila",
+   "Jun"
+  ],
+  "transcript": "Leila: Hi, it's Leila, do you have a minute?\nJun: Sure, go ahead.\nLeila: That new place on Mill Avenue finally opened, the line was out the door.\nJun: Okay, got it.\nLeila: I think the coffee machine in the office is finally dead.\nJun: Ha, that is true.\nLeila: If the samples comes in, I'll drop off the door samples by Tuesday.\nJun: Right, but nobody knows when that will be.\nLeila: Exactly. No idea yet. We will see.\nLeila: The shop was quiet today, just the radio and the saw.\nJun: Yeah.",
+  "gold": []
+ },
+ {
+  "id": "conditional-06",
+  "tier": "conditional",
+  "date": "2026-11-25",
+  "weekday": "Wednesday",
+  "speakers": [
+   "Perry",
+   "Gabe"
+  ],
+  "transcript": "Perry: Hi, it's Perry, do you have a minute?\nGabe: Sure, go ahead.\nPerry: Did you see the game last night? That fourth quarter was something.\nGabe: Ha, that is true.\nPerry: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nGabe: That makes sense.\nPerry: If the deliverys comes in, I'll confirm the delivery window by Monday.\nGabe: Right, but nobody knows when that will be.\nPerry: Exactly. No idea yet. We will see.\nPerry: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nGabe: Okay, got it.",
+  "gold": []
+ },
+ {
+  "id": "cancelled-01",
+  "tier": "cancelled",
+  "date": "2026-11-24",
+  "weekday": "Tuesday",
+  "speakers": [
+   "Rhea",
+   "Nadia"
+  ],
+  "transcript": "Rhea: Hi, it's Rhea, do you have a minute?\nNadia: Sure, go ahead.\nRhea: My brother-in-law is thinking about moving out to Tucson.\nNadia: Ha, that is true.\nRhea: The dog got into the trash again, third time this week.\nRhea: Let me schedule the field measure.\nNadia: Wait, scratch that. The customer called and cancelled it.\nRhea: Okay, scratch that then. I won't do it.\nRhea: It is supposed to cool off by the weekend, finally.\nNadia: Yeah.",
+  "gold": []
+ },
+ {
+  "id": "cancelled-02",
+  "tier": "cancelled",
+  "date": "2026-12-07",
+  "weekday": "Monday",
+  "speakers": [
+   "Marcus",
+   "Nadia"
+  ],
+  "transcript": "Marcus: Hi, it's Marcus, do you have a minute?\nNadia: Sure, go ahead.\nMarcus: Honestly the traffic on the loop has been worse since the lane closures.\nNadia: Sure.\nMarcus: Last year's holiday party was a lot more fun than the one they are planning.\nMarcus: Let me drop off the door samples tomorrow.\nNadia: Wait, scratch that. The customer called and cancelled it.\nMarcus: Okay, scratch that then. I won't do it.\nMarcus: Prices on everything keep creeping up, lumber included.\nNadia: Okay, got it.",
+  "gold": []
+ },
+ {
+  "id": "cancelled-03",
+  "tier": "cancelled",
+  "date": "2026-11-16",
+  "weekday": "Monday",
+  "speakers": [
+   "Jun",
+   "Gabe"
+  ],
+  "transcript": "Jun: Hi, it's Jun, do you have a minute?\nGabe: Sure, go ahead.\nJun: Did you see the game last night? That fourth quarter was something.\nGabe: Okay, got it.\nJun: I had the strangest dream about a warehouse full of doors.\nJun: Let me email the install photos by the 22nd.\nGabe: Wait, scratch that. The customer called and cancelled it.\nJun: Okay, scratch that then. I won't do it.\nJun: My brother-in-law is thinking about moving out to Tucson.\nGabe: Okay, got it.",
+  "gold": []
+ },
+ {
+  "id": "cancelled-04",
+  "tier": "cancelled",
+  "date": "2026-11-19",
+  "weekday": "Thursday",
+  "speakers": [
+   "Rhea",
+   "Gabe"
+  ],
+  "transcript": "Rhea: Hi, it's Rhea, do you have a minute?\nGabe: Sure, go ahead.\nRhea: Did you see the game last night? That fourth quarter was something.\nGabe: Really? Huh.\nRhea: Last year's holiday party was a lot more fun than the one they are planning.\nRhea: Let me email the install photos.\nGabe: Wait, scratch that. The customer called and cancelled it.\nRhea: Okay, scratch that then. I won't do it.\nRhea: My brother-in-law is thinking about moving out to Tucson.\nGabe: Ha, that is true.",
+  "gold": []
+ },
+ {
+  "id": "cancelled-05",
+  "tier": "cancelled",
+  "date": "2026-11-03",
+  "weekday": "Tuesday",
+  "speakers": [
+   "Rhea",
+   "Nadia"
+  ],
+  "transcript": "Rhea: Hi, it's Rhea, do you have a minute?\nNadia: Sure, go ahead.\nRhea: I had the strangest dream about a warehouse full of doors.\nNadia: That makes sense.\nRhea: I think the coffee machine in the office is finally dead.\nRhea: Okay, I can call the supplier about the delay.\nNadia: Wait, scratch that. The customer called and cancelled it.\nRhea: Okay, scratch that then. I won't do it.\nRhea: Prices on everything keep creeping up, lumber included.\nNadia: That makes sense.",
+  "gold": []
+ },
+ {
+  "id": "cancelled-06",
+  "tier": "cancelled",
+  "date": "2026-11-23",
+  "weekday": "Monday",
+  "speakers": [
+   "Marcus",
+   "Ingrid"
+  ],
+  "transcript": "Marcus: Hi, it's Marcus, do you have a minute?\nIngrid: Sure, go ahead.\nMarcus: Last year's holiday party was a lot more fun than the one they are planning.\nIngrid: That makes sense.\nMarcus: My brother-in-law is thinking about moving out to Tucson.\nMarcus: Let me order the replacement hinges by Monday.\nIngrid: Wait, scratch that. The customer called and cancelled it.\nMarcus: Okay, scratch that then. I won't do it.\nMarcus: I think the coffee machine in the office is finally dead.\nIngrid: Mm-hm, go on.",
+  "gold": []
+ },
+ {
+  "id": "third_party-01",
+  "tier": "third_party",
+  "date": "2026-11-09",
+  "weekday": "Monday",
+  "speakers": [
+   "Nadia",
+   "Rhea"
+  ],
+  "transcript": "Nadia: Hi, it's Nadia, do you have a minute?\nRhea: Sure, go ahead.\nNadia: The shop was quiet today, just the radio and the saw.\nRhea: Yeah.\nNadia: I need a new phone, mine drops calls whenever I walk past the loading dock.\nNadia: Hollis said she'd email the install photos by the 16th.\nRhea: Good, then it is covered on their side.\nNadia: I had the strangest dream about a warehouse full of doors.\nRhea: Ha, that is true.\nNadia: My kid's school moved pickup to a different gate and nobody told us.",
+  "gold": []
+ },
+ {
+  "id": "third_party-02",
+  "tier": "third_party",
+  "date": "2026-12-11",
+  "weekday": "Friday",
+  "speakers": [
+   "Leila",
+   "Ingrid"
+  ],
+  "transcript": "Leila: Hi, it's Leila, do you have a minute?\nIngrid: Sure, go ahead.\nLeila: I need a new phone, mine drops calls whenever I walk past the loading dock.\nIngrid: Okay, got it.\nLeila: The dog got into the trash again, third time this week.\nLeila: Hollis is going to send over the revised quote tomorrow.\nIngrid: Good, then it is covered on their side.\nLeila: The weather has been strange for November, hasn't it.\nIngrid: Mm-hm, go on.\nLeila: The shop was quiet today, just the radio and the saw.",
+  "gold": []
+ },
+ {
+  "id": "third_party-03",
+  "tier": "third_party",
+  "date": "2026-11-30",
+  "weekday": "Monday",
+  "speakers": [
+   "Tomas",
+   "Perry"
+  ],
+  "transcript": "Tomas: Hi, it's Tomas, do you have a minute?\nPerry: Sure, go ahead.\nTomas: I need a new phone, mine drops calls whenever I walk past the loading dock.\nPerry: Mm-hm, go on.\nTomas: I think the coffee machine in the office is finally dead.\nTomas: Luis said she'd update the invoice by the 6th.\nPerry: Good, then it is covered on their side.\nTomas: The dog got into the trash again, third time this week.\nPerry: Sure.\nTomas: I was stuck behind a flatbed on the freeway for twenty minutes this morning.",
+  "gold": []
+ },
+ {
+  "id": "third_party-04",
+  "tier": "third_party",
+  "date": "2026-12-07",
+  "weekday": "Monday",
+  "speakers": [
+   "Nadia",
+   "Perry"
+  ],
+  "transcript": "Nadia: Hi, it's Nadia, do you have a minute?\nPerry: Sure, go ahead.\nNadia: It is supposed to cool off by the weekend, finally.\nPerry: Sure.\nNadia: I need a new phone, mine drops calls whenever I walk past the loading dock.\nNadia: Luis is going to call the supplier about the delay tomorrow.\nPerry: Good, then it is covered on their side.\nNadia: Last year's holiday party was a lot more fun than the one they are planning.\nPerry: Really? Huh.\nNadia: That new place on Mill Avenue finally opened, the line was out the door.",
+  "gold": []
+ },
+ {
+  "id": "third_party-05",
+  "tier": "third_party",
+  "date": "2026-11-11",
+  "weekday": "Wednesday",
+  "speakers": [
+   "Jun",
+   "Gabe"
+  ],
+  "transcript": "Jun: Hi, it's Jun, do you have a minute?\nGabe: Sure, go ahead.\nJun: My brother-in-law is thinking about moving out to Tucson.\nGabe: Yeah.\nJun: My kid's school moved pickup to a different gate and nobody told us.\nJun: Luis is going to pick up the stained frames tomorrow.\nGabe: Good, then it is covered on their side.\nJun: Honestly the traffic on the loop has been worse since the lane closures.\nGabe: Sure.\nJun: That new place on Mill Avenue finally opened, the line was out the door.",
+  "gold": []
+ },
+ {
+  "id": "third_party-06",
+  "tier": "third_party",
+  "date": "2026-11-23",
+  "weekday": "Monday",
+  "speakers": [
+   "Gabe",
+   "Perry"
+  ],
+  "transcript": "Gabe: Hi, it's Gabe, do you have a minute?\nPerry: Sure, go ahead.\nGabe: I need a new phone, mine drops calls whenever I walk past the loading dock.\nPerry: Okay, got it.\nGabe: Honestly the traffic on the loop has been worse since the lane closures.\nGabe: Dana said she'd order the replacement hinges by Monday.\nPerry: Good, then it is covered on their side.\nGabe: The shop was quiet today, just the radio and the saw.\nPerry: That makes sense.\nGabe: It is supposed to cool off by the weekend, finally.",
+  "gold": []
+ },
+ {
+  "id": "banter-01",
+  "tier": "banter",
+  "date": "2026-11-25",
+  "weekday": "Wednesday",
+  "speakers": [
+   "Tomas",
+   "Marcus"
+  ],
+  "transcript": "Tomas: Hi, it's Tomas, do you have a minute?\nMarcus: Sure, go ahead.\nTomas: It is supposed to cool off by the weekend, finally.\nMarcus: That makes sense.\nTomas: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nMarcus: Yeah.\nTomas: I had the strangest dream about a warehouse full of doors.\nMarcus: Right, I know what you mean.\nTomas: My kid's school moved pickup to a different gate and nobody told us.\nMarcus: Right, I know what you mean.\nTomas: The dog got into the trash again, third time this week.\nMarcus: Mm-hm, go on.\nTomas: We had a long weekend, mostly yard work and a ball game.\nMarcus: Ha, that is true.\nTomas: Last year's holiday party was a lot more fun than the one they are planning.\nMarcus: Really? Huh.\nTomas: That new place on Mill Avenue finally opened, the line was out the door.\nMarcus: Ha, that is true.",
+  "gold": []
+ },
+ {
+  "id": "banter-02",
+  "tier": "banter",
+  "date": "2026-12-10",
+  "weekday": "Thursday",
+  "speakers": [
+   "Marcus",
+   "Owen"
+  ],
+  "transcript": "Marcus: Hi, it's Marcus, do you have a minute?\nOwen: Sure, go ahead.\nMarcus: My brother-in-law is thinking about moving out to Tucson.\nOwen: Okay, got it.\nMarcus: I had the strangest dream about a warehouse full of doors.\nOwen: Really? Huh.\nMarcus: We had a long weekend, mostly yard work and a ball game.\nOwen: That makes sense.\nMarcus: That new place on Mill Avenue finally opened, the line was out the door.\nOwen: Mm-hm, go on.\nMarcus: Honestly the traffic on the loop has been worse since the lane closures.\nOwen: Really? Huh.\nMarcus: The shop was quiet today, just the radio and the saw.\nOwen: Really? Huh.\nMarcus: Last year's holiday party was a lot more fun than the one they are planning.\nOwen: Really? Huh.\nMarcus: The dog got into the trash again, third time this week.\nOwen: Sure.\nMarcus: The weather has been strange for November, hasn't it.\nOwen: Sure.",
+  "gold": []
+ },
+ {
+  "id": "banter-03",
+  "tier": "banter",
+  "date": "2026-11-02",
+  "weekday": "Monday",
+  "speakers": [
+   "Ingrid",
+   "Leila"
+  ],
+  "transcript": "Ingrid: Hi, it's Ingrid, do you have a minute?\nLeila: Sure, go ahead.\nIngrid: Last year's holiday party was a lot more fun than the one they are planning.\nLeila: Right, I know what you mean.\nIngrid: That new place on Mill Avenue finally opened, the line was out the door.\nLeila: Ha, that is true.\nIngrid: My kid's school moved pickup to a different gate and nobody told us.\nLeila: Mm-hm, go on.\nIngrid: The dog got into the trash again, third time this week.\nLeila: Sure.\nIngrid: Did you see the game last night? That fourth quarter was something.\nLeila: Sure.\nIngrid: My brother-in-law is thinking about moving out to Tucson.\nLeila: Right, I know what you mean.\nIngrid: Honestly the traffic on the loop has been worse since the lane closures.\nLeila: Sure.\nIngrid: I had the strangest dream about a warehouse full of doors.\nLeila: Right, I know what you mean.\nIngrid: It is supposed to cool off by the weekend, finally.\nLeila: Okay, got it.\nIngrid: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nLeila: That makes sense.",
+  "gold": []
+ },
+ {
+  "id": "banter-04",
+  "tier": "banter",
+  "date": "2026-12-07",
+  "weekday": "Monday",
+  "speakers": [
+   "Rhea",
+   "Jun"
+  ],
+  "transcript": "Rhea: Hi, it's Rhea, do you have a minute?\nJun: Sure, go ahead.\nRhea: I had the strangest dream about a warehouse full of doors.\nJun: Right, I know what you mean.\nRhea: My kid's school moved pickup to a different gate and nobody told us.\nJun: Really? Huh.\nRhea: Honestly the traffic on the loop has been worse since the lane closures.\nJun: That makes sense.\nRhea: The dog got into the trash again, third time this week.\nJun: Really? Huh.\nRhea: It is supposed to cool off by the weekend, finally.\nJun: Okay, got it.\nRhea: I need a new phone, mine drops calls whenever I walk past the loading dock.\nJun: Okay, got it.\nRhea: We had a long weekend, mostly yard work and a ball game.\nJun: Ha, that is true.\nRhea: My brother-in-law is thinking about moving out to Tucson.\nJun: That makes sense.\nRhea: Did you see the game last night? That fourth quarter was something.\nJun: Really? Huh.\nRhea: Prices on everything keep creeping up, lumber included.\nJun: Right, I know what you mean.\nRhea: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nJun: That makes sense.",
+  "gold": []
+ },
+ {
+  "id": "banter-05",
+  "tier": "banter",
+  "date": "2026-12-07",
+  "weekday": "Monday",
+  "speakers": [
+   "Gabe",
+   "Nadia"
+  ],
+  "transcript": "Gabe: Hi, it's Gabe, do you have a minute?\nNadia: Sure, go ahead.\nGabe: The dog got into the trash again, third time this week.\nNadia: Ha, that is true.\nGabe: I had the strangest dream about a warehouse full of doors.\nNadia: Right, I know what you mean.\nGabe: The shop was quiet today, just the radio and the saw.\nNadia: Sure.\nGabe: My kid's school moved pickup to a different gate and nobody told us.\nNadia: Sure.\nGabe: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nNadia: Mm-hm, go on.\nGabe: It is supposed to cool off by the weekend, finally.\nNadia: Ha, that is true.\nGabe: We had a long weekend, mostly yard work and a ball game.\nNadia: Right, I know what you mean.\nGabe: Honestly the traffic on the loop has been worse since the lane closures.\nNadia: Mm-hm, go on.\nGabe: That new place on Mill Avenue finally opened, the line was out the door.\nNadia: Mm-hm, go on.\nGabe: Did you see the game last night? That fourth quarter was something.\nNadia: Really? Huh.\nGabe: My brother-in-law is thinking about moving out to Tucson.\nNadia: Really? Huh.\nGabe: Prices on everything keep creeping up, lumber included.\nNadia: That makes sense.",
+  "gold": []
+ },
+ {
+  "id": "banter-06",
+  "tier": "banter",
+  "date": "2026-11-24",
+  "weekday": "Tuesday",
+  "speakers": [
+   "Gabe",
+   "Owen"
+  ],
+  "transcript": "Gabe: Hi, it's Gabe, do you have a minute?\nOwen: Sure, go ahead.\nGabe: Honestly the traffic on the loop has been worse since the lane closures.\nOwen: Really? Huh.\nGabe: The dog got into the trash again, third time this week.\nOwen: Sure.\nGabe: I need a new phone, mine drops calls whenever I walk past the loading dock.\nOwen: Mm-hm, go on.\nGabe: I had the strangest dream about a warehouse full of doors.\nOwen: Really? Huh.\nGabe: Last year's holiday party was a lot more fun than the one they are planning.\nOwen: Right, I know what you mean.\nGabe: My kid's school moved pickup to a different gate and nobody told us.\nOwen: Okay, got it.\nGabe: I was stuck behind a flatbed on the freeway for twenty minutes this morning.\nOwen: Sure.\nGabe: My brother-in-law is thinking about moving out to Tucson.\nOwen: Really? Huh.\nGabe: The shop was quiet today, just the radio and the saw.\nOwen: Mm-hm, go on.\nGabe: That new place on Mill Avenue finally opened, the line was out the door.\nOwen: Okay, got it.\nGabe: Did you see the game last night? That fourth quarter was something.\nOwen: Okay, got it.\nGabe: I think the coffee machine in the office is finally dead.\nOwen: Really? Huh.\nGabe: It is supposed to cool off by the weekend, finally.\nOwen: Yeah.",
+  "gold": []
+ },
+ {
+  "id": "short-01",
+  "tier": "short",
+  "date": "2026-11-26",
+  "weekday": "Thursday",
+  "speakers": [
+   "Leila",
+   "Marcus"
+  ],
+  "transcript": "Leila: Hello? Is this the door shop?\nMarcus: No, I think you have the wrong number.\nLeila: Oh, sorry. I was trying to reach the shop on the east side.\nMarcus: No problem. That is a different number from this one.\nLeila: Okay, thank you, sorry again for the trouble.\nMarcus: It happens. Have a good afternoon.\nLeila: You too, goodbye.\nMarcus: Bye.\nLeila: Sorry, one more thing, do you happen to know the right number?\nMarcus: I do not, I am afraid. Try the website.",
+  "gold": []
+ },
+ {
+  "id": "short-02",
+  "tier": "short",
+  "date": "2026-11-25",
+  "weekday": "Wednesday",
+  "speakers": [
+   "Jun",
+   "Rhea"
+  ],
+  "transcript": "Jun: Hello? Is this the door shop?\nRhea: No, I think you have the wrong number.\nJun: Oh, sorry. I was trying to reach the shop on the east side.\nRhea: No problem. That is a different number from this one.\nJun: Okay, thank you, sorry again for the trouble.\nRhea: It happens. Have a good afternoon.\nJun: You too, goodbye.\nRhea: Bye.\nJun: Sorry, one more thing, do you happen to know the right number?\nRhea: I do not, I am afraid. Try the website.\nJun: Okay, I will do that, thank you.",
+  "gold": []
+ },
+ {
+  "id": "short-03",
+  "tier": "short",
+  "date": "2026-11-26",
+  "weekday": "Thursday",
+  "speakers": [
+   "Rhea",
+   "Perry"
+  ],
+  "transcript": "Rhea: Hello? Is this the door shop?\nPerry: No, I think you have the wrong number.\nRhea: Oh, sorry. I was trying to reach the shop on the east side.\nPerry: No problem. That is a different number from this one.\nRhea: Okay, thank you, sorry again for the trouble.\nPerry: It happens. Have a good afternoon.\nRhea: You too, goodbye.\nPerry: Bye.\nRhea: Sorry, one more thing, do you happen to know the right number?\nPerry: I do not, I am afraid. Try the website.\nRhea: Okay, I will do that, thank you.\nPerry: Take care.",
+  "gold": []
+ },
+ {
+  "id": "short-04",
+  "tier": "short",
+  "date": "2026-11-16",
+  "weekday": "Monday",
+  "speakers": [
+   "Tomas",
+   "Jun"
+  ],
+  "transcript": "Tomas: Hello? Is this the door shop?\nJun: No, I think you have the wrong number.\nTomas: Oh, sorry. I was trying to reach the shop on the east side.\nJun: No problem. That is a different number from this one.\nTomas: Okay, thank you, sorry again for the trouble.\nJun: It happens. Have a good afternoon.\nTomas: You too, goodbye.\nJun: Bye.\nTomas: Sorry, one more thing, do you happen to know the right number?\nJun: I do not, I am afraid. Try the website.\nTomas: Okay, I will do that, thank you.\nJun: Take care.",
+  "gold": []
+ }
+]
