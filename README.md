@@ -71,6 +71,7 @@ repo, runs with `--selftest` (grader checks, no model), and writes one JSON reco
 | `tests/sum_test.py` | SUM | single-pass summary scored in code against a fact list; `--pipeline` adds the verify pipeline | facts hit; numbers not in source |
 | `tests/ocr.py` | OCR | read 5 planted values from an invoice page drawn in code (vision model needed) | fields right /5 |
 | `tests/agent_tasks.py` | AGENT | the model drives four tools (read_file, write_file, list_dir, run) in a fresh sandbox per task over ten tasks (chain, csv_sum, multi_file, edit, recover, missing, needle, injection, readonly, restraint) | tasks passed /10, false successes, damage, runaways; code-side grading, `--selftest` proves the grader |
+| `tests/call.py` | CALL (synthetic) | 44 invented two-speaker calls (about 50-740 words) with 27 planted commitments over 16 of them; tiers plain, buried, conditional, cancelled, third-party, banter, short; every promise call carries a decoy intention; gold built in code with the transcript; thinking-off and budgeted-thinking arms | promise recall /27, owner, due date resolved against the call date, false tasks and no-commitment calls that got one, per tier; code-side, no judge, `--selftest` proves the grader |
 | `tests/vision.py` | VISION | read four images drawn in code (a film poster, a logo, a scene with a countable number of stick figures, an arrow icon) in three sets that each use different titles, years, colours, wordmarks, figure counts, arrow directions and digits; 8 questions per set weighted 2/1 | points out of 30 (10 per set), per-set and per-question breakdown; code-side grading with accept/reject words, so "left or right" and "15" do not score |
 | `tests/cat.py` | CAT (synthetic) | categorize 200 invented bank-statement payees (descriptor noise, abbreviations, misleading and two-business names, unknowable ones) into 14 categories or UNSURE; fixture generated from a seed in code | right / wrong / blank on category rows; abstained vs false fill on unknowable rows; whole fixture and the hard tail separately |
 | `tests/sql.py` | SQL-SYN (synthetic) | 50 text-to-SQL questions on an invented hardware-store SQLite schema (quoted column names, near-duplicate names, a join not to make, NULLs, ties, text dates); gold verified by executing it; schema built from a seed in code | executed rows equal gold rows; errors by class (syntax, hallucinated column/table, other, wrong rows); lenient vs strict SQL extraction; per-kind accuracy |
@@ -155,6 +156,15 @@ frog-agent 9/10, spark-agent 8/10, lfm3-agent 7/10, moonbeam-agent 7/10, doc 2/1
 seats that answered failed `missing` (the value is absent) by reporting success; 15 of 17 failures were confident
 "done"s. Two seats are not scored: they dropped the server connection (HTTP 500) on every request, twice. Sample: n=1
 per task per seat.
+
+### Call action items: every seat finds the promises, every seat invents tasks, thinking cuts the inventing 2-3x (CALL, [§158](docs/excerpts/158-call-syn.md))
+
+44 invented calls with 27 planted commitments, scored in code. Seven of eleven rows find 26-27 of 27; false tasks on the
+same calls run from 3 to 49 and no seat reaches zero. They gather on calls where the promise is conditional, cancelled
+or somebody else's. A 256-token reasoning budget cuts them 2-3x (spark 27 to 16, bolt 16 to 9, frog 7 to 3) for about
+3.5-4x the wall time, and due dates stay the weak spot (11-22 of 26 on every row). An earlier six-transcript count-based
+bench (§155) had reported 0 false tasks everywhere; that was a four-snippet artefact and is not comparable. Sample: n=1
+per call per seat, one seed.
 
 ### Speculative decoding (DFlash drafter) is slower here: no-go ([§88](docs/excerpts/088-dflash-no-go.md))
 

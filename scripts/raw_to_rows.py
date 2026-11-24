@@ -193,8 +193,27 @@ def agent_row(recs, section):
             str(t["false_success"]), "false successes", date, section, notes, "", "", "1", str(t["n"])]
 
 
+def call_row(rec, section):
+    """One row per CALL record (thinking-off and think arms are separate rows)."""
+    a = rec["summary"]["ALL"]
+    think = rec["thinking"] != "off"
+    arm = f"thinking on, reasoning budget {rec['reasoning_budget']}" if think else "thinking off"
+    name = rec["model"] + (" (think)" if think else "")
+    score = (f"recall {a['recall']}/{a['gold']} · due {a['due_ok']}/{a['due_scored']} · false tasks {a['false_tasks']} "
+             f"on {a['false_calls']} calls")
+    notes = (f"CALL-SYN (small-gpu-bench tests/call.py, seed {rec['seed']}): {a['calls']} invented two-speaker calls, "
+             f"{a['gold']} planted commitments, scored in code (action keyword, owner, due date resolved against the "
+             f"call date; any task on a call with no commitment is a false task). {arm}, max_tokens "
+             f"{rec['max_tokens']}, temperature 0, one run per call (n=1); unparsed {a['unparsed']}. Section {section}.")
+    d = rec["date"]
+    date = f"{d[0:4]}-{d[4:6]}-{d[6:8]}"
+    return [name, "CALL", score, str(a["recall"]), str(a["gold"]), str(a["false_tasks"]), "false tasks", date,
+            section, notes, "", "", "1", str(a["calls"])]
+
+
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--call-section", default="158")
     ap.add_argument("--agent-section", default="127")
     ap.add_argument("--raw", default=os.path.join(HERE, "..", "results", "raw"))
     ap.add_argument("--csv", default=os.path.join(HERE, "..", "results", "results.csv"))
@@ -232,6 +251,9 @@ def main():
         r = agent_row(recs, a.agent_section)
         if r:
             rows.append(r)
+    for p in sorted(glob.glob(os.path.join(a.raw, "CALL-*.json"))):
+        with open(p) as f:
+            rows.append(call_row(json.load(f), a.call_section))
     w = csv.writer(sys.stdout, lineterminator="\n")
     for r in rows:
         w.writerow(r)
