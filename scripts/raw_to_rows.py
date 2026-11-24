@@ -211,6 +211,22 @@ def call_row(rec, section):
             section, notes, "", "", "1", str(a["calls"])]
 
 
+def chain_row(rec, section):
+    """One row per CALLCHAIN record (results/raw/call-chain/p2): a pass-1 seat audited by a second seat."""
+    a, b, au = rec["summary"]["ALL"], rec["pass1_summary"]["ALL"], rec["audit"]
+    name = f"{rec['pass1_model']}>{rec['model']}:{rec['variant']}"
+    score = (f"recall {a['recall']}/{a['gold']} · due {a['due_ok']}/{a['due_scored']} · false tasks {a['false_tasks']} "
+             f"on {a['false_calls']} calls (pass 1 alone: {b['false_tasks']})")
+    notes = (f"small-gpu-bench tests/call_chain.py, 44 invented calls, seed {rec['seed']}, n=1, temperature 0; pass 1 = saved "
+             f"{rec['pass1_model']} reply (think budget {rec['pass1_reasoning_budget']}), pass 2 = {rec['model']} audit (think "
+             f"budget {rec['reasoning_budget']}, variant {rec['variant']}) keeps/drops, never rewrites; true tasks dropped "
+             f"{au['true_dropped']}, false tasks dropped {au['false_dropped']}, audit unparsed {au['audit_unparsed']}; "
+             f"{a['secs']:.0f} s both passes (concurrent follow-on sweep shared the router, timings inflated); section {section}")
+    d = rec["date"]
+    return [name, "CALLCHAIN", score, str(a["recall"]), str(a["gold"]), str(a["false_tasks"]), "false tasks",
+            f"{d[0:4]}-{d[4:6]}-{d[6:8]}", section, notes, "", "", "1", str(a["calls"])]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--call-section", default="158")
@@ -254,6 +270,9 @@ def main():
     for p in sorted(glob.glob(os.path.join(a.raw, "CALL-*.json"))):
         with open(p) as f:
             rows.append(call_row(json.load(f), a.call_section))
+    for p in sorted(glob.glob(os.path.join(a.raw, "call-chain", "p2", "CALLCHAIN-*.json"))):
+        with open(p) as f:
+            rows.append(chain_row(json.load(f), "159"))
     w = csv.writer(sys.stdout, lineterminator="\n")
     for r in rows:
         w.writerow(r)

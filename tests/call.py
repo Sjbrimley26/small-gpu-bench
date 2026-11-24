@@ -317,6 +317,7 @@ def run(args, calls):
             row["parse"] = mode
             row.update(grade(obj, c))
             row["reply_head"] = r["content"][:300]
+            row["reply"] = r["content"]          # full text: tests/call_chain.py replays it as pass 1
         rows.append(row)
         common.say("%-14s parse=%-7s gold=%d recall=%d false=%d %ss" % (
             c["id"], row["parse"], row["gold_n"], row["recall"], row["false"], row["s"]))

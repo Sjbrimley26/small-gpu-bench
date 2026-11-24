@@ -40,7 +40,7 @@ rec() {    # rec TEST  -> a result JSON for TEST must exist in the smoke output 
 }
 
 # 1. offline self-tests (graders, fixtures, pattern logic: no server involved)
-for t in red aud mon hrd tool_probe judge crit sum_test ocr vision compress agent_tasks cat sql aux_lanes arena rent embed_timing fim po ragq po_real ragq_real call; do step "selftest-$t" python3 tests/$t.py --selftest; done
+for t in red aud mon hrd tool_probe judge crit sum_test ocr vision compress agent_tasks cat sql aux_lanes arena rent embed_timing fim po ragq po_real ragq_real call call_chain; do step "selftest-$t" python3 tests/$t.py --selftest; done
 step selftest-cal python3 tests/cal/run.py --selftest
 step selftest-summarize_verify python3 patterns/summarize_verify.py --selftest
 step selftest-escalate python3 patterns/escalate.py --selftest

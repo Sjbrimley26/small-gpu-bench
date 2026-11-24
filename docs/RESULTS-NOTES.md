@@ -165,6 +165,7 @@ sanitised excerpt so the claim can be checked against its source:
 | `docs/excerpts/114-embed-device.md` | §114, the same embedding weights on the CPU and on the card |
 | `docs/excerpts/126-vision-synthetic.md` | §126, drawn-image vision test on six seats |
 | `docs/excerpts/127-agent-battery.md` | §127, ten-task tool-loop battery; n=1 per task, two seats unscored (HTTP 500 on every request) |
+| `docs/excerpts/159-call-chain.md` | §159, two-pass audit over the §158 calls; n=1 per call, same fixture the seat order was chosen from; a concurrent sweep replicated the counts, seconds are inflated by router sharing |
 | `docs/excerpts/158-call-syn.md` | §158, call action items on 44 invented calls; n=1 per call per seat, one seed. Origin §155 (six transcripts, 1,391 characters, counts tasks emitted, n=2) is not comparable and no number from it is reused |
 | `docs/excerpts/115-speed.md` | §115, the 24-model speed and residency sweep on one build |
 | `docs/excerpts/116-fim.md` | §116, inline shell completion on a synthetic case set |
