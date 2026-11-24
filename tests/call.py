@@ -305,7 +305,8 @@ def run(args, calls):
     for c in calls[:args.limit] if args.limit else calls:
         prompt = PROMPT.format(date=c["date"], weekday=c["weekday"], transcript=c["transcript"])
         r = common.chat(args, [{"role": "user", "content": prompt}], max_tokens=args.max_tokens,
-                        temperature=args.temperature)
+                        temperature=args.temperature,
+                        extra=({"reasoning_budget_tokens": args.reasoning_budget} if args.reasoning_budget else None))
         row = {"id": c["id"], "tier": c["tier"], "s": r.get("s"), "finish": r.get("finish"),
                "completion_tokens": r.get("completion_tokens")}
         if r.get("error"):
@@ -324,7 +325,7 @@ def run(args, calls):
     common.say("CALL  recall %s/%s  owner %s/%s  due %s/%s  false tasks %s (on %s no-commitment calls)  unparsed %s  %ss" % (
         a.get("recall"), a.get("gold"), a.get("owner_ok"), a.get("recall"), a.get("due_ok"),
         a.get("due_scored"), a.get("false_tasks"), a.get("false_calls"), a.get("unparsed"), a.get("secs")))
-    common.save_results(args, "CALL", {"seed": SEED, "thinking": args.think, "max_tokens": args.max_tokens,
+    common.save_results(args, "CALL", {"seed": SEED, "thinking": args.think, "reasoning_budget": args.reasoning_budget, "max_tokens": args.max_tokens,
                                        "summary": summ, "rows": rows})
     return 0
 
@@ -406,6 +407,8 @@ def main():
     ap.add_argument("--max-tokens", type=int, default=900)
     ap.add_argument("--temperature", type=float, default=0.0)
     ap.add_argument("--limit", type=int, default=0, help="first N calls only (smoke / thinking arm)")
+    ap.add_argument("--reasoning-budget", type=int, default=0,
+                    help="send reasoning_budget_tokens (llama.cpp per-request cap on thinking); 0 = not sent")
     common.add_common_args(ap)
     args = ap.parse_args()
     if args.selftest:
