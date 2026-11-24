@@ -33,5 +33,30 @@ run (the §158 records keep only the first 300 characters of each reply) and rep
 - Requiring a verbatim quote, with a code check, changed no outcome against the plain keep-or-drop rule.
 - The chain costs both passes' time: about 2x frog alone. A second sweep run at the same time on the same router
   reproduced every arm but one self-audit (one task apart), so the counts hold; its seconds, like these, were inflated by sharing the card's router and are not a speed figure.
-- Not run: n=3 repeats (pass 1 is exactly repeatable at temperature 0, so they would add nothing; variance needs
-  sampling and a second fixture seed), and any held-out set. The fixture was built before this test and seat order was chosen from §158, so this is a tuned-on result.
+- Not run: same-seed repeats (pass 1 is exactly repeatable at temperature 0, so they would add nothing; the sample was
+  taken across fixture seeds instead, [§160](160-call-chain-seed-sample.md)) and any held-out set of this size. The
+  fixture was built before this test and seat order was chosen from §158, so this is a tuned-on result.
+
+**A second auditor, run afterwards on the same saved proposals.** A 3B thinking seat (the fastest single seat on this
+fixture, 664.5 s for 44 calls alone) audited the same five pass-1 records. Both passes thinking on, budget 256, same
+grader. Its arms ran with the card to themselves, unlike the six above.
+
+| pass 1 → audit (3B seat) | recall /27 | due /26 | false tasks (pass 1 alone) | true tasks dropped | false tasks dropped | audit replies unparsed |
+|---|---|---|---|---|---|---|
+| bolt → 3B seat | 22 | 18 | 3 (9) | 5 | 6 | 5 |
+| bolt → 3B seat, quote variant | 22 | 19 | 3 (9) | 5 | 6 | 2 |
+| frog → 3B seat | 23 | 14 | 2 (3) | 2 | 1 | 3 |
+| gemma4 → 3B seat | 22 | 14 | 4 (13) | 5 | 9 | 5 |
+| spark → 3B seat | 23 | 16 | 4 (16) | 3 | 12 | 5 |
+| 3B seat → 3B seat (self-audit control) | 25 | 17 | 5 (13) | 1 | 8 | 7 |
+
+- It prunes hardest of any auditor measured: 6 of the proposer's 9 false tasks removed (the cleaner seat removes 5), and
+  the only arm that takes the noisiest proposer's 16 down to 4. Recall is what pays for it: 5 of 27 promises lost where
+  the cleaner seat lost none, and due dates 22/26 → 18/26 because dropped promises take their dates with them.
+- As a proposer it is the wrong end of the chain: 13 false tasks (level with the second-noisiest seat, behind the two
+  best) and 18/26 due dates that a pruning pass can never repair.
+- 2-7 of its audit replies per arm did not parse and were scored as keep-everything, so its false-task counts are the
+  favourable reading. Why they failed was not investigated.
+- Reading both tables together: for three of the five proposals a second seat halves the false tasks at little or no
+  recall cost, the cleanest seat's own output has almost nothing left to prune, and the proposer auditing itself (9 → 6)
+  shows part of the gain is a second look rather than a better model.

@@ -326,7 +326,7 @@ def run(args, calls):
     common.say("CALL  recall %s/%s  owner %s/%s  due %s/%s  false tasks %s (on %s no-commitment calls)  unparsed %s  %ss" % (
         a.get("recall"), a.get("gold"), a.get("owner_ok"), a.get("recall"), a.get("due_ok"),
         a.get("due_scored"), a.get("false_tasks"), a.get("false_calls"), a.get("unparsed"), a.get("secs")))
-    common.save_results(args, "CALL", {"seed": SEED, "thinking": args.think, "reasoning_budget": args.reasoning_budget, "max_tokens": args.max_tokens,
+    common.save_results(args, "CALL", {"seed": args.seed, "thinking": args.think, "reasoning_budget": args.reasoning_budget, "max_tokens": args.max_tokens,
                                        "summary": summ, "rows": rows})
     return 0
 
@@ -336,6 +336,19 @@ def selftest():
     calls = build()
     c("44 calls", len(calls) == 44)
     c("deterministic", build() == calls)
+    # a second seed is a fresh sample: same plan and gold rules, different calls, reproducible
+    other = build(SEED + 1)
+    ob = {t: [x for x in other if x["tier"] == t] for t, _ in PLAN}
+    c("seed+1: 44 calls, tier sizes match the plan, reproducible",
+      len(other) == 44 and all(len(ob[t]) == n for t, n in PLAN) and build(SEED + 1) == other)
+    c("seed+1: no gold-bearing transcript repeats a default-seed call (short tier is a fixed script)",
+      not any(x["transcript"] == y["transcript"] for x in calls if x["tier"] != "short"
+              for y in other if y["tier"] != "short"))
+    c("seed+1: gold rules still hold", all(
+        (not g["due"] or g["due"] > x["date"]) and g["owner"] in x["speakers"]
+        and any(k in x["transcript"].lower() for k in g["kw"]) for x in other for g in x["gold"]))
+    c("seed+1: every call 60-900 words",
+      60 <= min(len(x["transcript"].split()) for x in other) and max(len(x["transcript"].split()) for x in other) <= 900)
     by = {t: [x for x in calls if x["tier"] == t] for t, _ in PLAN}
     c("tier sizes match the plan", all(len(by[t]) == n for t, n in PLAN))
     words = [len(x["transcript"].split()) for x in calls]
@@ -410,13 +423,15 @@ def main():
     ap.add_argument("--limit", type=int, default=0, help="first N calls only (smoke / thinking arm)")
     ap.add_argument("--reasoning-budget", type=int, default=0,
                     help="send reasoning_budget_tokens (llama.cpp per-request cap on thinking); 0 = not sent")
+    ap.add_argument("--seed", type=int, default=SEED,
+                    help="fixture seed; the default is the committed set, another value is a fresh sample of calls")
     common.add_common_args(ap)
     args = ap.parse_args()
     if args.selftest:
         sys.exit(selftest())
     if args.gen:
         return gen()
-    sys.exit(run(args, build()))
+    sys.exit(run(args, build(args.seed)))
 
 
 if __name__ == "__main__":

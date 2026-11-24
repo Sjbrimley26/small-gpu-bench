@@ -71,8 +71,8 @@ repo, runs with `--selftest` (grader checks, no model), and writes one JSON reco
 | `tests/sum_test.py` | SUM | single-pass summary scored in code against a fact list; `--pipeline` adds the verify pipeline | facts hit; numbers not in source |
 | `tests/ocr.py` | OCR | read 5 planted values from an invoice page drawn in code (vision model needed) | fields right /5 |
 | `tests/agent_tasks.py` | AGENT | the model drives four tools (read_file, write_file, list_dir, run) in a fresh sandbox per task over ten tasks (chain, csv_sum, multi_file, edit, recover, missing, needle, injection, readonly, restraint) | tasks passed /10, false successes, damage, runaways; code-side grading, `--selftest` proves the grader |
-| `tests/call.py` | CALL (synthetic) | 44 invented two-speaker calls (about 50-740 words) with 27 planted commitments over 16 of them; tiers plain, buried, conditional, cancelled, third-party, banter, short; every promise call carries a decoy intention; gold built in code with the transcript; thinking-off and budgeted-thinking arms | promise recall /27, owner, due date resolved against the call date, false tasks and no-commitment calls that got one, per tier; code-side, no judge, `--selftest` proves the grader |
-| `tests/call_chain.py` | CALLCHAIN (synthetic) | replays a saved CALL reply as pass 1; a second seat keeps or drops each candidate task against the transcript (never rewrites one); `--variant quote` also requires a verbatim quote that code checks | recall /27, due /26, false tasks, true tasks wrongly dropped, false tasks dropped; same code grader as CALL, `--selftest` proves the audit parser |
+| `tests/call.py` | CALL (synthetic) | 44 invented two-speaker calls (about 50-740 words) with 27 planted commitments over 16 of them; tiers plain, buried, conditional, cancelled, third-party, banter, short; every promise call carries a decoy intention; gold built in code with the transcript; thinking-off and budgeted-thinking arms; `--seed N` redraws a fresh 44-call set, so n>1 means fresh fixtures rather than a re-sample of one | promise recall /27, owner, due date resolved against the call date, false tasks and no-commitment calls that got one, per tier; code-side, no judge, `--selftest` proves the grader |
+| `tests/call_chain.py` | CALLCHAIN (synthetic) | replays a saved CALL reply as pass 1; a second seat keeps or drops each candidate task against the transcript (never rewrites one); `--variant quote` also requires a verbatim quote that code checks; `--seed N` must match the pass-1 record's seed | recall /27, due /26, false tasks, true tasks wrongly dropped, false tasks dropped; same code grader as CALL, `--selftest` proves the audit parser |
 | `tests/vision.py` | VISION | read four images drawn in code (a film poster, a logo, a scene with a countable number of stick figures, an arrow icon) in three sets that each use different titles, years, colours, wordmarks, figure counts, arrow directions and digits; 8 questions per set weighted 2/1 | points out of 30 (10 per set), per-set and per-question breakdown; code-side grading with accept/reject words, so "left or right" and "15" do not score |
 | `tests/cat.py` | CAT (synthetic) | categorize 200 invented bank-statement payees (descriptor noise, abbreviations, misleading and two-business names, unknowable ones) into 14 categories or UNSURE; fixture generated from a seed in code | right / wrong / blank on category rows; abstained vs false fill on unknowable rows; whole fixture and the hard tail separately |
 | `tests/sql.py` | SQL-SYN (synthetic) | 50 text-to-SQL questions on an invented hardware-store SQLite schema (quoted column names, near-duplicate names, a join not to make, NULLs, ties, text dates); gold verified by executing it; schema built from a seed in code | executed rows equal gold rows; errors by class (syntax, hallucinated column/table, other, wrong rows); lenient vs strict SQL extraction; per-kind accuracy |
@@ -175,6 +175,28 @@ single seat alone had 3 false tasks but missed two promises. The controls separa
 auditing itself reached 6, the cleaner seat auditing itself changed nothing. A rule requiring a verbatim quote, checked in
 code, changed no outcome. Sample: n=1 per call, one fixture the seat order was chosen from; a concurrent second sweep
 reproduced the counts (one self-audit arm one task apart). Cost is both passes' time, roughly 2x the cleaner seat alone.
+
+### The same chain with the fastest seat as the auditor: harder pruning, promises lost (CALLCHAIN, [§159](docs/excerpts/159-call-chain.md))
+
+Run afterwards on the same calls and the same saved proposals, a 3B thinking seat pruned harder than any other auditor:
+it cut the proposer's 9 false tasks to 3, and the noisiest proposer's 16 to 4. It paid in recall — 5 of 27 promises
+dropped, against 0 for the cleaner seat — and the survivors' due dates fell from 22 of 26 to 18 of 26, because the
+dropped promises took their dates with them. As a proposer it is the wrong end of the chain: 13 false tasks, level with
+the second-noisiest seat, and 18 of 26 due dates that an audit can never repair. Sample: n=1 per call, one fixture, and 2-7
+of its audit replies per arm failed to parse and were scored as keep-everything, which is the favourable reading.
+
+### The same pair on three further fixtures: the effect holds, its size does not (CALLCHAIN, [§160](docs/excerpts/160-call-chain-seed-sample.md))
+
+Temperature 0 is exactly repeatable, so a second run of the same fixture measures nothing; the sample here is three
+further 44-call fixtures, each with its own gold built in code (`--seed`, added for this). The proposing seat's false
+tasks fell from 9 to 7, 8 to 3 and 12 to 6, losing 2 promises on one fixture and none on the other two. Pooled over four
+fixtures the pair takes 38 false tasks to 20 for 2 of 108 promises and 1 due date, keeping 105/108 recall and 73/92 due
+dates; the cleanest single seat alone ties the pair on false tasks (21) but gives up 7 promises and 26 correct dates. So
+the arrangement holds and what it buys is the proposer's recall, not a lower false-task count — the first fixture's
+9 to 4 was its best of four. Both dropped promises sat in long transcripts with the commitment mid-call (that fixture
+lost 3 of 12 such promises; the others lost none), and 12 of the 20 surviving false tasks are the three wrong-number
+calls, where the auditor keeps an invented task every time. On a card to itself the pair costs about 1.45x the proposer
+alone. Sample: n=1 per call per fixture, three fixtures.
 
 ### Speculative decoding (DFlash drafter) is slower here: no-go ([§88](docs/excerpts/088-dflash-no-go.md))
 

@@ -119,9 +119,20 @@ def parse_verdicts(text, n, transcript, variant):
     return keep, True
 
 
+def seed_mismatch(rec, seed):
+    """The pass-1 record's fixture and the grader's fixture must be the same set of calls."""
+    s = rec.get("seed")
+    if s in (None, seed):
+        return None
+    return "pass-1 record is seed %s, not %s: the audit grader would score against another fixture" % (s, seed)
+
+
 def run(args):
     rec = json.load(open(args.pass1))
-    calls = {c["id"]: c for c in call.build()}
+    bad = seed_mismatch(rec, args.seed)
+    if bad:
+        common.die(bad)
+    calls = {c["id"]: c for c in call.build(args.seed)}
     rows, audit = [], {"audited_calls": 0, "tasks_in": 0, "true_dropped": 0, "false_dropped": 0, "false_kept": 0,
                        "audit_unparsed": 0, "audit_secs": 0.0, "quote_rejected": 0}
     for p1 in rec["rows"][:args.limit] if args.limit else rec["rows"]:
@@ -161,7 +172,7 @@ def run(args):
                    audit["audit_unparsed"], a["secs"]))
     args.pass1 = os.path.basename(args.pass1)        # the record must not carry a host path
     common.save_results(args, "CALLCHAIN", {
-        "seed": call.SEED, "pass1_model": rec["model"], "pass1_file": args.pass1,
+        "seed": args.seed, "pass1_model": rec["model"], "pass1_file": args.pass1,
         "pass1_thinking": rec.get("thinking"), "pass1_reasoning_budget": rec.get("reasoning_budget"),
         "variant": args.variant, "thinking": args.think, "reasoning_budget": args.reasoning_budget,
         "max_tokens": args.max_tokens, "summary": summ, "pass1_summary": base, "audit": audit, "rows": rows})
@@ -200,6 +211,17 @@ def selftest():
     c("dropping a true task lowers recall and does not create a false task", g["recall"] == 1 and g["false"] == 0)
     c("pass1_tasks reads a full reply", pass1_tasks({"reply": json.dumps({"summary": "s", "tasks": tasks})})[0] == tasks)
     c("pass1_tasks on garbage is empty", pass1_tasks({"reply": "nope"})[0] == [])
+    c("a foreign-seed pass-1 record is refused",
+      seed_mismatch({"seed": call.SEED + 1}, call.SEED) is not None)
+    c("a matching or seedless pass-1 record is accepted",
+      seed_mismatch({"seed": call.SEED}, call.SEED) is None and seed_mismatch({}, call.SEED) is None)
+    other = call.build(call.SEED + 1)
+    x2 = next(y for y in other if y["tier"] == "plain")
+    perfect = {"summary": "s", "tasks": [{"action": "do the " + g["kw"][0], "owner": g["owner"], "due": g["due"]}
+                                       for g in x2["gold"]]}
+    g2 = call.grade(perfect, x2)
+    c("seed+1: 44 calls, and its own gold grades a perfect reply clean",
+      len(other) == 44 and g2["recall"] == len(x2["gold"]) and g2["false"] == 0)
     return c.finish()
 
 
@@ -212,6 +234,8 @@ def main():
     ap.add_argument("--temperature", type=float, default=0.0)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--reasoning-budget", type=int, default=0)
+    ap.add_argument("--seed", type=int, default=call.SEED,
+                    help="fixture seed; must match the pass-1 record's seed")
     common.add_common_args(ap)
     args = ap.parse_args()
     if args.selftest:
